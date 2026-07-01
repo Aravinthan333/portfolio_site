@@ -1,0 +1,9 @@
+### what i done in wonderwhy solution as a full stack engineer
+
+- [] in this company i worked as a full stack engineer in a fleet management ERP software which consists of fleet management, driver management, employee management, trip management, income & expense management, gst management and trcking, ledger maintenance, fleet maintenance management, trip wise and category wise profit/loss calculation
+- [] technologies used here -> react, express, typescript, vitest, form handling, Test driven development, tailwindcss, zitadel, psql, docker, aws-ec2, s3, iam, sqs, terraform, github actions, nginx, ocr, scripting, automation, development using AI tools, Flutterflow app development
+- [] my working style- we worked along with a logistics company, we get requirements from them, then analyze the requirements and make a feasible and futuristic solution, then explain the flow to the logistics company team, got approval, then move on to the development
+- [] first i describe all possible scenarios as test cases, the writes code to cover all test cases, handles error message properly
+- [] after completion of development, there is an internal code review, then feature tested by another developer before delivery to the client, the deployed for client use, get feedback and worked accordingly
+- [] this software reduces the manual labour, remanids the deadlines properly, forecasts the profit margin of trip beforehand from the historical data, tracks the leakage of unaccounted finances, maintains all credits and debits, generates invoice & bills, shows exact tax to pay and credits on taxes
+- [] 
