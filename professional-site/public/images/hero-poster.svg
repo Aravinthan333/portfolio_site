@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a1628"/>
+      <stop offset="0.5" stop-color="#0f2744"/>
+      <stop offset="1" stop-color="#1e3a5f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 120) rotate(90) scale(400)">
+      <stop stop-color="#3b82f6" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#glow)"/>
+  <g opacity="0.15" stroke="#60a5fa" stroke-width="1">
+    <line x1="0" y1="112" x2="1200" y2="112"/><line x1="0" y1="225" x2="1200" y2="225"/>
+    <line x1="0" y1="338" x2="1200" y2="338"/><line x1="0" y1="450" x2="1200" y2="450"/>
+    <line x1="0" y1="563" x2="1200" y2="563"/>
+    <line x1="200" y1="0" x2="200" y2="675"/><line x1="400" y1="0" x2="400" y2="675"/>
+    <line x1="600" y1="0" x2="600" y2="675"/><line x1="800" y1="0" x2="800" y2="675"/>
+    <line x1="1000" y1="0" x2="1000" y2="675"/>
+  </g>
+  <text x="600" y="320" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="18" letter-spacing="0.2em">HERO BACKGROUND</text>
+  <text x="600" y="360" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="14">Drop hero-bg.mp4 in /public/videos/</text>
+</svg>
