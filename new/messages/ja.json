@@ -137,7 +137,10 @@
       "readArticle": "記事を読む",
       "relatedProject": "関連プロジェクト",
       "viewCaseStudy": "ケーススタディを見る",
-      "backToBlog": "ブログに戻る"
+      "backToBlog": "ブログに戻る",
+      "emptyState": "まだ記事は公開されていません。",
+      "hireCtaTitle": "似たようなものが必要ですか？",
+      "hireCtaDescription": "目標を教えてください - 本番環境への実践的な道筋をご提案します。"
     },
     "faq": {
       "label": "よくある質問",

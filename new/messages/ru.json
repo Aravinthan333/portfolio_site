@@ -137,7 +137,10 @@
       "readArticle": "Читать статью",
       "relatedProject": "Связанный проект",
       "viewCaseStudy": "Смотреть кейс",
-      "backToBlog": "Назад к блогу"
+      "backToBlog": "Назад к блогу",
+      "emptyState": "Статьи пока не опубликованы.",
+      "hireCtaTitle": "Нужно что-то похожее?",
+      "hireCtaDescription": "Расскажите о своих целях - предложу практичный путь к production."
     },
     "faq": {
       "label": "FAQ",

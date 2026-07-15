@@ -137,7 +137,10 @@
       "readArticle": "Read article",
       "relatedProject": "Related project",
       "viewCaseStudy": "View case study",
-      "backToBlog": "Back to blog"
+      "backToBlog": "Back to blog",
+      "emptyState": "No articles published yet.",
+      "hireCtaTitle": "Need something similar?",
+      "hireCtaDescription": "Share your goals - I'll suggest a practical path to production."
     },
     "faq": {
       "label": "FAQ",
