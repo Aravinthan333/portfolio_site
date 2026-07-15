@@ -152,11 +152,10 @@
     },
     "contact": {
       "label": "Kontakt",
-      "title": "Beauftragen",
+      "title": "Kontakt",
       "subtitle": "Erzählen Sie mir von Ihrem Projekt. Ich antworte mit klaren nächsten Schritten.",
       "preferConversation": "Bevorzugen Sie ein Gespräch?",
-      "preferConversationBody": "Buchen Sie ein kurzes Gespräch, um Umfang, Zeitplan und Eignung zu besprechen.",
-      "openCalendlyDirectly": "Oder Calendly direkt öffnen"
+      "preferConversationBody": "Buchen Sie ein kurzes Gespräch, um Umfang, Zeitplan und Eignung zu besprechen."
     },
     "bookCall": {
       "label": "Gespräch buchen",
@@ -203,10 +202,15 @@
       "email": "E-Mail",
       "company": "Unternehmen",
       "optional": "(optional)",
-      "serviceNeeded": "Benötigte Leistung",
-      "selectService": "Leistung auswählen",
-      "other": "Andere",
-      "projectDetails": "Projektdetails",
+      "purpose": "Zweck",
+      "selectPurpose": "Zweck auswählen",
+      "message": "Nachricht",
+      "purposes": {
+        "projectDiscussion": "Projektdiskussion",
+        "hire": "Beauftragung",
+        "scheduleCall": "Gespräch planen",
+        "other": "Sonstiges"
+      },
       "placeholderName": "Ihr Name",
       "placeholderEmail": "sie@unternehmen.com",
       "placeholderCompany": "Firmenname",

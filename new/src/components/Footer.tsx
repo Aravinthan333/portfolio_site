@@ -1,11 +1,11 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Calendar, Mail } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import { Mail } from "lucide-react";
 import { SITE } from "@/data/site";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons/SocialIcons";
 import { ResumeDownloadButton } from "@/components/ResumeDownloadButton";
+import { BookCallButton } from "@/components/BookCallButton";
 
 const socials = [
   { href: SITE.linkedIn, label: "LinkedIn", Icon: LinkedInIcon, external: true },
@@ -67,13 +67,11 @@ export function Footer() {
               className="btn-secondary !px-4 !py-2.5 !text-sm"
               iconSize={15}
             />
-            <Link
-              href="/book-call"
+            <BookCallButton
+              label={t("bookCall")}
               className="btn-primary !gap-2 !px-5 !py-2.5 !text-sm shadow-[0_8px_22px_-8px_rgba(37,99,235,0.55)]"
-            >
-              <Calendar size={16} strokeWidth={2} />
-              {t("bookCall")}
-            </Link>
+              iconSize={16}
+            />
           </div>
         </div>
 

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { HireCta } from "@/components/HireCta";
+import { BookCallButton } from "@/components/BookCallButton";
 import { services } from "@/data/services";
 import { getLocalizedService } from "@/lib/i18n-content";
 import { buildMetadata } from "@/lib/seo";
@@ -101,9 +102,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               {tCommon("hireMe")}
               <ArrowUpRight size={16} />
             </Link>
-            <Link href="/book-call" className="btn-secondary">
-              {tCommon("bookCall")}
-            </Link>
+            <BookCallButton label={tCommon("bookCall")} className="btn-secondary" />
           </div>
 
           <div className="mt-10 text-center">

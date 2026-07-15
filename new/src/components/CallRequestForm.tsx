@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { CheckCircle2, Phone } from "lucide-react";
 import { SITE } from "@/data/site";
+import { ThemedSelect } from "@/components/ThemedSelect";
 import {
   formatTimezoneLabel,
   getBrowserTimezone,
@@ -163,20 +164,19 @@ export function CallRequestForm() {
         >
           {t("timezone")}
         </label>
-        <select
+        <ThemedSelect
           id="preferredTimezone"
           name="preferredTimezone"
+          label={t("timezone")}
+          placeholder={t("timezone")}
           required
-          className="input-field"
           value={timezone}
-          onChange={(e) => setTimezone(e.target.value)}
-        >
-          {timezones.map((tz) => (
-            <option key={tz} value={tz}>
-              {formatTimezoneLabel(tz)}
-            </option>
-          ))}
-        </select>
+          onChange={setTimezone}
+          options={timezones.map((tz) => ({
+            value: tz,
+            label: formatTimezoneLabel(tz),
+          }))}
+        />
         <p className="mt-1.5 text-xs text-[var(--fg-subtle)]">{t("timezoneHint")}</p>
       </div>
 

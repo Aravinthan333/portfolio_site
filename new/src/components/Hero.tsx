@@ -9,6 +9,7 @@ import { SITE } from "@/data/site";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AtmosphereBg } from "@/components/AtmosphereBg";
 import { ResumeDownloadButton } from "@/components/ResumeDownloadButton";
+import { BookCallButton } from "@/components/BookCallButton";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons/SocialIcons";
 
 const tagKeys = ["webApps", "business", "saas", "backend"] as const;
@@ -94,9 +95,7 @@ export function Hero() {
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-              <Link href="/book-call" className="btn-secondary">
-                {t("bookCall")}
-              </Link>
+              <BookCallButton label={t("bookCall")} className="btn-secondary" />
             </motion.div>
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
               <Link href="/projects" className="btn-secondary">

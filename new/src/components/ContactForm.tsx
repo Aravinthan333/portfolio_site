@@ -1,19 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import { CheckCircle2, Send } from "lucide-react";
 import { SITE } from "@/data/site";
-import { useLocalizedServices } from "@/hooks/useLocalizedContent";
+import { BookCallButton } from "@/components/BookCallButton";
+import { ThemedSelect } from "@/components/ThemedSelect";
+
+const PURPOSE_KEYS = [
+  "projectDiscussion",
+  "hire",
+  "scheduleCall",
+  "other",
+] as const;
 
 export function ContactForm() {
   const t = useTranslations("forms.contact");
-  const services = useLocalizedServices();
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [purpose, setPurpose] = useState("");
+
+  const purposeOptions = useMemo(
+    () =>
+      PURPOSE_KEYS.map((key) => ({
+        value: t(`purposes.${key}`),
+        label: t(`purposes.${key}`),
+      })),
+    [t]
+  );
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!purpose) return;
+
     setStatus("loading");
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -26,13 +44,14 @@ export function ContactForm() {
           name: String(data.get("name") ?? "").trim(),
           email: String(data.get("email") ?? "").trim(),
           company: String(data.get("company") ?? "").trim() || undefined,
-          service: String(data.get("service") ?? "").trim(),
+          service: purpose,
           message: String(data.get("message") ?? "").trim() || undefined,
           type: "general",
         }),
       });
       if (res.ok) {
         setStatus("success");
+        setPurpose("");
         form.reset();
       } else {
         setStatus("error");
@@ -52,9 +71,7 @@ export function ContactForm() {
           <button type="button" onClick={() => setStatus("idle")} className="btn-secondary">
             {t("sendAnother")}
           </button>
-          <Link href="/book-call" className="btn-primary">
-            {t("bookInstead")}
-          </Link>
+          <BookCallButton label={t("bookInstead")} />
         </div>
       </div>
     );
@@ -107,26 +124,25 @@ export function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="service" className="mb-2 block text-xs font-medium text-[var(--fg-muted)]">
-            {t("serviceNeeded")}
+          <label htmlFor="purpose" className="mb-2 block text-xs font-medium text-[var(--fg-muted)]">
+            {t("purpose")}
           </label>
-          <select id="service" name="service" required className="input-field" defaultValue="">
-            <option value="" disabled>
-              {t("selectService")}
-            </option>
-            {services.map((s) => (
-              <option key={s.slug} value={s.shortTitle}>
-                {s.shortTitle}
-              </option>
-            ))}
-            <option value="Other">{t("other")}</option>
-          </select>
+          <ThemedSelect
+            id="purpose"
+            name="purpose"
+            label={t("purpose")}
+            placeholder={t("selectPurpose")}
+            options={purposeOptions}
+            value={purpose}
+            onChange={setPurpose}
+            required
+          />
         </div>
       </div>
 
       <div>
         <label htmlFor="message" className="mb-2 block text-xs font-medium text-[var(--fg-muted)]">
-          {t("projectDetails")}
+          {t("message")}
         </label>
         <textarea
           id="message"

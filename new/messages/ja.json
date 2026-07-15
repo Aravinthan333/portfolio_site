@@ -152,11 +152,10 @@
     },
     "contact": {
       "label": "お問い合わせ",
-      "title": "依頼する",
+      "title": "お問い合わせ",
       "subtitle": "プロジェクトについて教えてください。明確な次のステップをご返信します。",
       "preferConversation": "会話を希望しますか？",
-      "preferConversationBody": "短い通話を予約して、スコープ、スケジュール、適合性について話し合いましょう。",
-      "openCalendlyDirectly": "またはCalendlyを直接開く"
+      "preferConversationBody": "短い通話を予約して、スコープ、スケジュール、適合性について話し合いましょう。"
     },
     "bookCall": {
       "label": "通話を予約",
@@ -203,10 +202,15 @@
       "email": "メールアドレス",
       "company": "会社名",
       "optional": "（任意）",
-      "serviceNeeded": "必要なサービス",
-      "selectService": "サービスを選択",
-      "other": "その他",
-      "projectDetails": "プロジェクトの詳細",
+      "purpose": "目的",
+      "selectPurpose": "目的を選択",
+      "message": "メッセージ",
+      "purposes": {
+        "projectDiscussion": "プロジェクト相談",
+        "hire": "依頼",
+        "scheduleCall": "通話予約",
+        "other": "その他"
+      },
       "placeholderName": "お名前",
       "placeholderEmail": "you@company.com",
       "placeholderCompany": "会社名",

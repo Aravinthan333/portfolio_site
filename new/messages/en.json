@@ -152,11 +152,10 @@
     },
     "contact": {
       "label": "Contact",
-      "title": "Hire Me",
+      "title": "Contact",
       "subtitle": "Tell me about your project. I'll reply with clear next steps.",
       "preferConversation": "Prefer a conversation?",
-      "preferConversationBody": "Book a short call to discuss scope, timeline, and fit.",
-      "openCalendlyDirectly": "Or open Calendly directly"
+      "preferConversationBody": "Book a short call to discuss scope, timeline, and fit."
     },
     "bookCall": {
       "label": "Book a call",
@@ -203,10 +202,15 @@
       "email": "Email",
       "company": "Company",
       "optional": "(optional)",
-      "serviceNeeded": "Service needed",
-      "selectService": "Select a service",
-      "other": "Other",
-      "projectDetails": "Project details",
+      "purpose": "Purpose",
+      "selectPurpose": "Select a purpose",
+      "message": "Message",
+      "purposes": {
+        "projectDiscussion": "Project discussion",
+        "hire": "Hire",
+        "scheduleCall": "Schedule call",
+        "other": "Others"
+      },
       "placeholderName": "Your name",
       "placeholderEmail": "you@company.com",
       "placeholderCompany": "Company name",

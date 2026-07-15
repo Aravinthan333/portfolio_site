@@ -152,11 +152,10 @@
     },
     "contact": {
       "label": "Контакты",
-      "title": "Нанять меня",
+      "title": "Контакты",
       "subtitle": "Расскажите о проекте. Отвечу с понятными следующими шагами.",
       "preferConversation": "Предпочитаете разговор?",
-      "preferConversationBody": "Запишитесь на короткий звонок, чтобы обсудить объём работ, сроки и соответствие задаче.",
-      "openCalendlyDirectly": "Или открыть Calendly напрямую"
+      "preferConversationBody": "Запишитесь на короткий звонок, чтобы обсудить объём работ, сроки и соответствие задаче."
     },
     "bookCall": {
       "label": "Записаться на звонок",
@@ -203,10 +202,15 @@
       "email": "Email",
       "company": "Компания",
       "optional": "(необязательно)",
-      "serviceNeeded": "Требуемая услуга",
-      "selectService": "Выберите услугу",
-      "other": "Другое",
-      "projectDetails": "Детали проекта",
+      "purpose": "Цель",
+      "selectPurpose": "Выберите цель",
+      "message": "Сообщение",
+      "purposes": {
+        "projectDiscussion": "Обсуждение проекта",
+        "hire": "Найм",
+        "scheduleCall": "Назначить звонок",
+        "other": "Другое"
+      },
       "placeholderName": "Ваше имя",
       "placeholderEmail": "you@company.com",
       "placeholderCompany": "Название компании",

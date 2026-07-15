@@ -1,10 +1,10 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { ArrowUpRight, Calendar } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { SITE } from "@/data/site";
 import { AtmosphereBg } from "@/components/AtmosphereBg";
+import { BookCallButton } from "@/components/BookCallButton";
 
 type HireCtaProps = {
   title?: string;
@@ -52,23 +52,11 @@ export function HireCta({ title, description, className = "", compact = false }:
             {tCommon("hireMe")}
             <ArrowUpRight size={compact ? 14 : 16} />
           </Link>
-          <Link
-            href="/book-call"
+          <BookCallButton
+            label={tCommon("bookCall")}
             className={compact ? "btn-secondary !px-4 !py-2 !text-xs sm:!text-sm" : "btn-secondary"}
-          >
-            <Calendar size={compact ? 14 : 16} />
-            {tCommon("bookCall")}
-          </Link>
-          {!compact && (
-            <a
-              href={SITE.calendly}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-[var(--blue-600)] underline-offset-4 hover:underline"
-            >
-              {tCommon("openCalendly")}
-            </a>
-          )}
+            iconSize={compact ? 14 : 16}
+          />
         </div>
       </div>
     </section>

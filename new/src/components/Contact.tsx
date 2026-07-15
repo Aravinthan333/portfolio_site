@@ -6,6 +6,7 @@ import { ArrowUpRight, Mail, Code2, Briefcase } from "lucide-react";
 import { SITE } from "@/data/site";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ContactForm } from "@/components/ContactForm";
+import { BookCallButton } from "@/components/BookCallButton";
 import { AtmosphereBg } from "@/components/AtmosphereBg";
 
 export function Contact() {
@@ -72,9 +73,10 @@ export function Contact() {
                     {tCommon("hireMe")}
                     <ArrowUpRight size={16} />
                   </Link>
-                  <Link href="/book-call" className="btn-secondary inline-flex">
-                    {tHero("bookCall")}
-                  </Link>
+                  <BookCallButton
+                    label={tHero("bookCall")}
+                    className="btn-secondary inline-flex"
+                  />
                 </div>
               </ScrollReveal>
             </div>

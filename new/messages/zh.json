@@ -152,11 +152,10 @@
     },
     "contact": {
       "label": "联系",
-      "title": "雇用我",
+      "title": "联系",
       "subtitle": "告诉我您的项目情况，我会给出清晰的下一步安排。",
       "preferConversation": "更喜欢直接沟通？",
-      "preferConversationBody": "预约一次简短通话，讨论项目范围、时间安排和匹配度。",
-      "openCalendlyDirectly": "或直接打开 Calendly"
+      "preferConversationBody": "预约一次简短通话，讨论项目范围、时间安排和匹配度。"
     },
     "bookCall": {
       "label": "预约通话",
@@ -203,10 +202,15 @@
       "email": "电子邮箱",
       "company": "公司",
       "optional": "（选填）",
-      "serviceNeeded": "所需服务",
-      "selectService": "选择一项服务",
-      "other": "其他",
-      "projectDetails": "项目详情",
+      "purpose": "目的",
+      "selectPurpose": "选择目的",
+      "message": "留言",
+      "purposes": {
+        "projectDiscussion": "项目讨论",
+        "hire": "雇佣",
+        "scheduleCall": "预约通话",
+        "other": "其他"
+      },
       "placeholderName": "您的姓名",
       "placeholderEmail": "you@company.com",
       "placeholderCompany": "公司名称",
