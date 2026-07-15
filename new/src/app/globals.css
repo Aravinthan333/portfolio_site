@@ -71,6 +71,7 @@
   --color-surface-elevated: var(--bg-alt);
   --font-sans: var(--font-dm);
   --font-display: var(--font-cormorant);
+  --font-script: var(--font-dancing-script);
 }
 
 * {
@@ -137,6 +138,10 @@ body {
 
 .font-display {
   font-family: var(--font-display), Georgia, "Times New Roman", serif;
+}
+
+.font-script {
+  font-family: var(--font-script), "Segoe Script", "Apple Chancery", cursive;
 }
 
 /* Layout - fluid padding with a comfortable max width on large screens */

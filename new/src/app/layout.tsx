@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Cormorant_Garamond, Dancing_Script, DM_Sans } from "next/font/google";
 import { ClickRipple } from "@/components/ClickRipple";
 import { CustomCursor } from "@/components/CustomCursor";
 import { PageTracker } from "@/components/analytics/PageTracker";
@@ -16,6 +16,13 @@ const cormorant = Cormorant_Garamond({
 const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  variable: "--font-dancing-script",
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
@@ -49,7 +56,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${dmSans.variable} ${dancingScript.variable}`}>
       <body className="antialiased">
         <CustomCursor />
         <ClickRipple />

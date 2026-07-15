@@ -7,7 +7,6 @@ import { Menu, X } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ResumeDownloadButton } from "@/components/ResumeDownloadButton";
-import { SITE } from "@/data/site";
 
 const navHrefs = [
   { key: "work" as const, href: "/projects" },
@@ -22,7 +21,6 @@ export function Header() {
   const tA11y = useTranslations("a11y");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [headerHovered, setHeaderHovered] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -52,26 +50,50 @@ export function Header() {
   return (
     <>
       <header
-        onMouseEnter={() => setHeaderHovered(true)}
-        onMouseLeave={() => setHeaderHovered(false)}
         className={`fixed top-0 right-0 left-0 z-50 w-full border-b border-t-0 border-[rgba(15,23,42,0.08)] rounded-b-2xl backdrop-blur-xl transition-all duration-500 ${
           scrolled || menuOpen
             ? "bg-white/95 shadow-[var(--shadow-md)]"
             : "bg-white/80 shadow-[var(--shadow-sm)]"
         }`}
       >
-        <div className="section-wrap flex items-center justify-between gap-2 !py-3 sm:gap-3 sm:!py-3.5">
-          <Link href="/" className="group flex min-w-0 items-center gap-2.5 sm:gap-3">
-            <span className="relative flex h-2 w-2 shrink-0" aria-hidden>
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+        <div className="section-wrap flex items-center justify-between gap-2 !py-3.5 sm:gap-3 sm:!py-4">
+          <Link href="/" className="group flex shrink-0 items-center gap-1.5 overflow-visible sm:gap-2">
+            <span className="-ml-1 relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--blue-600)] shadow-[var(--shadow-sm)] transition-shadow duration-300 group-hover:shadow-[0_0_0_3px_rgba(37,99,235,0.18),0_8px_20px_-6px_rgba(37,99,235,0.55)] sm:-ml-1.5 sm:h-10 sm:w-10">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 14"
+                className="absolute top-1/2 left-1/2 h-[55%] w-[55%] -translate-x-1/2 -translate-y-1/2 text-white"
+                preserveAspectRatio="xMidYMid meet"
+                aria-hidden
+              >
+                <g
+                  transform="translate(-620, -374.5)"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  strokeWidth="0.85"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                  paintOrder="stroke fill"
+                >
+                  <path d="M632.316228,374.051317 C632.802747,374.21349 633.081651,374.71338 632.97918,375.203464 L632.948683,375.316228 L628.948683,387.316228 C628.774036,387.840171 628.207716,388.123331 627.683772,387.948683 C627.197253,387.78651 626.918349,387.28662 627.02082,386.796536 L627.051317,386.683772 L631.051317,374.683772 C631.225964,374.159829 631.792284,373.876669 632.316228,374.051317 Z M625.8,377.4 C626.105881,377.807841 626.053113,378.373293 625.695675,378.718504 L625.6,378.8 L622.667,381 L625.6,383.2 C626.007841,383.505881 626.11551,384.063489 625.86903,384.494975 L625.8,384.6 C625.494119,385.007841 624.936511,385.11551 624.505025,384.86903 L624.4,384.8 L620.4,381.8 C619.902222,381.426667 619.869037,380.704889 620.300444,380.285096 L620.4,380.2 L624.4,377.2 C624.841828,376.868629 625.468629,376.958172 625.8,377.4 Z M635.494975,377.13097 L635.6,377.2 L639.6,380.2 C640.097778,380.573333 640.130963,381.295111 639.699556,381.714904 L639.6,381.8 L635.6,384.8 C635.158172,385.131371 634.531371,385.041828 634.2,384.6 C633.894119,384.192159 633.946887,383.626707 634.304325,383.281496 L634.4,383.2 L637.333,381 L634.4,378.8 C633.992159,378.494119 633.88449,377.936511 634.13097,377.505025 L634.2,377.4 C634.505881,376.992159 635.063489,376.88449 635.494975,377.13097 Z" />
+                </g>
+              </svg>
             </span>
-            <span className="truncate font-display text-base font-semibold tracking-tight text-[var(--fg)] transition-colors group-hover:text-black sm:text-lg md:text-xl">
-              {SITE.shortName}
+            <span
+              className="font-script inline-block overflow-visible px-1.5 pt-2 pb-1 text-xl font-semibold leading-[1.4] tracking-normal text-[var(--fg)] normal-case transition-[text-shadow] duration-300 group-hover:[text-shadow:0_4px_14px_rgba(37,99,235,0.45)] sm:text-2xl md:text-[1.75rem]"
+              aria-label="Aravinthan B"
+            >
+              <span className="inline-block text-[1.35em] font-bold text-[var(--blue-600)]">
+                A
+              </span>
+              <span className="normal-case">ravinthan</span>{" "}
+              <span className="inline-block pr-1 font-bold text-[var(--blue-600)]">
+                B
+              </span>
             </span>
             <span className="ml-0.5 hidden items-center gap-1.5 rounded-full border border-emerald-600/20 bg-emerald-50 px-2.5 py-0.5 text-[11px] font-semibold tracking-wide text-emerald-700 uppercase md:inline-flex md:ml-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
-              {headerHovered ? t("available") : t("online")}
+              {t("online")}
             </span>
           </Link>
 
