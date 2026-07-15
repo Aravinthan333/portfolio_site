@@ -31,15 +31,12 @@ export function Header() {
   if (pathname?.startsWith("/admin")) return null;
 
   return (
-    <motion.header
+    <header
       className={`fixed top-0 right-0 left-0 z-50 w-full border-b border-t-0 border-[rgba(15,23,42,0.08)] rounded-b-2xl backdrop-blur-xl transition-all duration-500 ${
         scrolled
           ? "bg-white/95 shadow-[var(--shadow-md)]"
           : "bg-white/80 shadow-[var(--shadow-sm)]"
       }`}
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="section-wrap flex items-center justify-between gap-3 !py-3 sm:!py-3.5">
         <Link href="/" className="group flex items-center gap-2.5">
@@ -98,6 +95,6 @@ export function Header() {
           </motion.div>
         </div>
       </div>
-    </motion.header>
+    </header>
   );
 }

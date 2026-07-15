@@ -1,4 +1,3 @@
-import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Metrics } from "@/components/Metrics";
 import { Services } from "@/components/Services";
@@ -8,7 +7,6 @@ import { Process } from "@/components/Process";
 import { WhyMe } from "@/components/WhyMe";
 import { Skills } from "@/components/Skills";
 import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
 import { HireCta } from "@/components/HireCta";
 import { HomeFaq } from "@/components/HomeFaq";
 import { SITE } from "@/data/site";
@@ -38,7 +36,6 @@ export async function generateMetadata({ params }: Props) {
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("common");
   const homepageFaqs = await getLocalizedHomepageFaqs();
 
   const schema = [
@@ -54,29 +51,19 @@ export default async function HomePage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScript(schema)}
       />
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[var(--surface)] focus:px-4 focus:py-2 focus:shadow-lg"
-      >
-        {t("skipToContent")}
-      </a>
-      <Header />
-      <main id="main-content">
-        <Hero />
-        <Metrics />
-        <Services />
-        <Projects />
-        <Collaborators />
-        <Process />
-        <WhyMe />
-        <Skills />
-        <HomeFaq />
-        <div className="section-wrap pb-20 sm:pb-28">
-          <HireCta />
-        </div>
-        <Contact />
-      </main>
-      <Footer />
+      <Hero />
+      <Metrics />
+      <Services />
+      <Projects />
+      <Collaborators />
+      <Process />
+      <WhyMe />
+      <Skills />
+      <HomeFaq />
+      <div className="section-wrap pb-20 sm:pb-28">
+        <HireCta />
+      </div>
+      <Contact />
     </>
   );
 }
