@@ -1,0 +1,239 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact",
+    "hireMe": "Hire me"
+  },
+  "common": {
+    "brand": "Aravinthan B",
+    "getInTouch": "Get in touch",
+    "viewMyWork": "View my work",
+    "learnMore": "Learn more about me",
+    "sendMessage": "Send a message",
+    "workWithMe": "Work With Me",
+    "viewAllProjects": "View all projects",
+    "contactMe": "Contact Me",
+    "remoteWorldwide": "Remote work worldwide",
+    "contractEngagements": "Contract-based engagements",
+    "directContact": "Direct contact",
+    "location": "Location",
+    "discussService": "Discuss this service",
+    "readCaseStudy": "Read case study",
+    "viewProject": "View project",
+    "seeLiveWork": "See live work",
+    "startConversation": "Start a conversation",
+    "noArticles": "No articles published yet.",
+    "viewProjectCta": "View project ↗",
+    "email": "Email",
+    "linkedIn": "LinkedIn",
+    "github": "GitHub",
+    "schedule": "Schedule",
+    "bookCall": "Book a discovery call",
+    "messageTab": "Send a message",
+    "callTab": "Request a call",
+    "copyright": "Copyright © {year} {name} | All Rights Reserved",
+    "ctaSubtitle": "Open to remote and contract work. Tell me about your project and I'll respond within 24 hours.",
+    "language": "Language"
+  },
+  "home": {
+    "greeting": "Hello, I'm",
+    "andImA": "And I'm a",
+    "aboutMe": "About Me",
+    "aboutIntro": "I'm {name}, a {title} focused on delivering reliable, scalable software for businesses — from customer-facing applications and APIs to cloud infrastructure and production deployments.",
+    "latestProjects": "Latest Projects",
+    "mySkills": "My Skills",
+    "technologies": "Technologies",
+    "servicesProvide": "Services I provide",
+    "technicalSkills": "Technical skills",
+    "industries": "Industries"
+  },
+  "pages": {
+    "blog": {
+      "label": "Insights",
+      "title": "Blog & case studies",
+      "subtitle": "Architecture decisions, delivery lessons, and deep dives from projects I've shipped."
+    },
+    "expertise": {
+      "label": "Skills & Services",
+      "title": "What I build and how I work",
+      "subtitle": "From production web apps and APIs to cloud infrastructure — here are the services I deliver and the technologies behind them."
+    },
+    "work": {
+      "label": "Work",
+      "title": "Selected work",
+      "subtitle": "Production systems I've designed, built, and shipped across e-commerce, fintech, and enterprise.",
+      "projectsShipped": "Projects shipped",
+      "industryVerticals": "Industry verticals",
+      "remoteDelivery": "Remote delivery",
+      "haveProject": "Have a project in mind?",
+      "projectCta": "I work remotely with startups and businesses worldwide - on contract or project basis."
+    },
+    "services": {
+      "label": "Services",
+      "title": "What I can build for you",
+      "subtitle": "Web apps, APIs, SaaS products, and cloud infrastructure - tailored for remote and contract engagements.",
+      "intro": "{availability} I partner with founders and teams who need a reliable software engineer from architecture through production launch.",
+      "getQuote": "Get a quote",
+      "bottomTitle": "Not sure which service fits?",
+      "bottomDesc": "Describe your project and I'll recommend the right approach — no commitment required."
+    },
+    "about": {
+      "label": "About me",
+      "standFor": "What I stand for",
+      "experience": "Experience",
+      "para1": "I'm {name}, a {title} based in India. I help startups and businesses design, build, and ship production-grade software - from customer-facing web applications to backend APIs and cloud infrastructure.",
+      "para2": "My work spans e-commerce platforms, fintech systems, real-time messaging consoles, and enterprise ERP software. I take projects from requirements through architecture, test-driven development, deployment, and ongoing support.",
+      "para3": "I believe in transparent communication, clean architecture, and delivering software that solves real business problems."
+    },
+    "contact": {
+      "title": "Contact Me",
+      "subtitle": "Share your project requirements or request a call — I'll respond within 24 hours.",
+      "messageHint": "Tell me about the service you need and your project goals.",
+      "callHint": "Pick a preferred date and time in your timezone — I'll see the IST equivalent."
+    },
+    "process": {
+      "label": "Approach",
+      "title": "How I deliver value",
+      "subtitle": "Understanding your business goals and delivering tailored digital solutions with modern technology."
+    }
+  },
+  "profile": {
+    "title": "Full Stack Software Engineer",
+    "tagline": "I build production-grade web platforms, APIs, and cloud systems for startups and businesses worldwide.",
+    "availability": "Available for remote contract and project-based work worldwide."
+  },
+  "services": {
+    "web": {
+      "title": "Web Development",
+      "description": "Modern, high-performance web applications using React, Next.js, and TypeScript - from business websites to advanced enterprise platforms.",
+      "highlights": ["React & Next.js", "Responsive UI", "Performance tuning", "SEO-ready builds"]
+    },
+    "backend": {
+      "title": "Backend & API Development",
+      "description": "Scalable REST APIs, microservices, authentication, database design, and third-party integrations built for production workloads.",
+      "highlights": ["REST APIs", "Auth & security", "Database design", "Third-party integrations"]
+    },
+    "saas": {
+      "title": "SaaS & Product Engineering",
+      "description": "MVPs, admin dashboards, multi-tenant architectures, and subscription flows - shipped with clean architecture and test-driven practices.",
+      "highlights": ["MVPs & dashboards", "Multi-tenant apps", "Subscription flows", "Clean architecture"]
+    },
+    "cloud": {
+      "title": "Cloud & DevOps",
+      "description": "AWS infrastructure, Docker, Terraform, CI/CD pipelines, and zero-downtime deployments for reliable production systems.",
+      "highlights": ["AWS infrastructure", "Docker & Terraform", "CI/CD pipelines", "Zero-downtime deploys"]
+    },
+    "other": "Other / Not sure yet"
+  },
+  "industries": {
+    "ecommerce": "E-Commerce",
+    "fintech": "FinTech",
+    "erp": "Enterprise ERP",
+    "messaging": "Real-time Messaging"
+  },
+  "whyChoose": {
+    "engineering": {
+      "title": "Production-grade engineering",
+      "description": "Clean architecture, automated testing, and code structured to perform reliably under real-world load."
+    },
+    "delivery": {
+      "title": "End-to-end delivery",
+      "description": "Requirements through architecture, development, deployment, and post-launch support — one accountable owner."
+    },
+    "communication": {
+      "title": "Clear communication",
+      "description": "Defined milestones, regular progress updates, and direct access throughout the engagement."
+    },
+    "stack": {
+      "title": "Modern, proven stack",
+      "description": "React, Next.js, Node.js, PostgreSQL, Redis, Docker, and AWS — technologies validated in production."
+    }
+  },
+  "process": {
+    "understand": {
+      "title": "Understand",
+      "description": "I learn your business goals, users, and constraints - then define scope, milestones, and success metrics."
+    },
+    "design": {
+      "title": "Design & Architect",
+      "description": "System design, database schema, and a delivery plan that balances speed with long-term maintainability."
+    },
+    "build": {
+      "title": "Build & Ship",
+      "description": "Iterative development with staging environments, code reviews, and transparent progress throughout."
+    },
+    "launch": {
+      "title": "Launch & Support",
+      "description": "Production deployment, monitoring, documentation, and ongoing support for a smooth handoff."
+    }
+  },
+  "values": {
+    "outcomes": {
+      "title": "Business outcomes first",
+      "description": "Technical decisions are measured by the results they create — not by complexity or novelty."
+    },
+    "quality": {
+      "title": "Quality and reliability",
+      "description": "Software that holds up in production: tested, documented, and built for the long term."
+    },
+    "partnerships": {
+      "title": "Trusted partnerships",
+      "description": "Consistent delivery, honest communication, and support that extends beyond launch day."
+    }
+  },
+  "experience": {
+    "wonderwhy": {
+      "company": "Wonderwhy Solution",
+      "role": "Full Stack Engineer",
+      "period": "Nov 2024 - Nov 2025",
+      "description": "Delivered enterprise logistics software end-to-end — trip management, GST compliance, financial reporting, and AWS infrastructure for a fleet operations platform."
+    },
+    "independent": {
+      "company": "Independent Consultant",
+      "role": "Software Engineer",
+      "period": "Jan 2023 - Present",
+      "description": "Partner with businesses across e-commerce, fintech, and messaging to architect, build, and deploy production systems — from MVP to scale."
+    }
+  },
+  "contactForm": {
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "you@company.com",
+    "service": "Service",
+    "servicePlaceholder": "Select a service",
+    "message": "Message",
+    "messagePlaceholder": "Tell me about your project, timeline, and goals...",
+    "messageOptional": "(optional)",
+    "submit": "Send message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successDesc": "Thanks for reaching out. I'll get back to you within 24 hours.",
+    "sendAnother": "Send another message",
+    "error": "Something went wrong. Please try again or email me directly.",
+    "nameMin": "Name must be at least 2 characters",
+    "nameMax": "Name is too long",
+    "emailInvalid": "Enter a valid email address",
+    "serviceRequired": "Please select a service"
+  },
+  "callForm": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "country": "Country",
+    "date": "Preferred date",
+    "time": "Preferred time",
+    "timezone": "Timezone",
+    "notes": "Notes",
+    "notesPlaceholder": "What would you like to discuss?",
+    "submit": "Request a call",
+    "sending": "Sending...",
+    "successTitle": "Call request received!",
+    "successDesc": "I'll confirm the time by email shortly.",
+    "error": "Something went wrong. Please try again."
+  }
+}

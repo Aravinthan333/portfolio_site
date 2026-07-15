@@ -1,2 +1,7 @@
 **/.env
 **/node_modules
+projects
+my-projects
+my_details.md
+*.zip
+site.zip

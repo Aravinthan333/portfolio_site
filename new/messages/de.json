@@ -1,0 +1,624 @@
+{
+  "nav": {
+    "work": "Arbeit",
+    "services": "Leistungen",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "hireMe": "Beauftragen",
+    "online": "Online",
+    "language": "Sprache"
+  },
+  "hero": {
+    "roleLine": "Software Engineer | Freiberuflicher Softwareberater",
+    "tags": {
+      "webApps": "Individuelle Web-Apps",
+      "business": "Geschäftssoftware",
+      "saas": "SaaS-Plattformen",
+      "backend": "Backend-Systeme"
+    },
+    "bookCall": "Gespräch buchen",
+    "viewWork": "Meine Arbeit ansehen"
+  },
+  "common": {
+    "learnMore": "Mehr erfahren",
+    "hireMe": "Beauftragen",
+    "bookCall": "Gespräch buchen",
+    "openCalendly": "Oder Calendly öffnen",
+    "skipToContent": "Zum Inhalt springen",
+    "copyright": "© {year} {name}. Software Engineer verfügbar für Remote-Freelance- und Vertragsarbeit."
+  },
+  "metrics": {
+    "ownership": "Produktverantwortung",
+    "ownershipSub": "Von der Anforderung bis zum Deployment",
+    "delivered": "Gelieferte Produkte",
+    "deliveredSub": "Freiberufliche Produktionssysteme",
+    "types": "Lösungstypen",
+    "typesSub": "ERP, CRM, E-Commerce & mehr",
+    "remote": "Remote-bereit",
+    "remoteSub": "Flexible Arbeitszeiten, termingerechte Lieferung",
+    "endToEnd": "End-to-End"
+  },
+  "sections": {
+    "whatIDo": "Was ich tue",
+    "servicesTitle": "Software, die Geschäftsabläufe vereinfacht.",
+    "selectedWork": "Ausgewählte Arbeiten",
+    "projectsTitle": "Produktionssysteme, die live sind",
+    "projectsDesc": "Geschäftssoftware und digitale Produkte für E-Commerce, Finanzen, Einzelhandel und Betrieb — öffnen Sie eine Fallstudie für die vollständige Geschichte.",
+    "whoIWorkWith": "Mit wem ich arbeite",
+    "collaboratorsTitle": "Partner, die mit Zielsetzung bauen",
+    "collaboratorsDesc": "Startups, wachsende Unternehmen und Teams, die praxisnahe Software benötigen — Systeme, die Abläufe automatisieren, Effizienz steigern und langfristiges Wachstum unterstützen.",
+    "process": "Der Prozess",
+    "processTitle": "Vom Briefing zur Produktion",
+    "processDesc": "Ein zusammenhängender Delivery-Ablauf — jede Phase baut auf der vorherigen auf, damit der Scope klar bleibt und Releases termingerecht erfolgen.",
+    "whyMe": "Warum mit mir arbeiten",
+    "whyMeTitle": "Zuverlässige Lieferung. Klare Zusammenarbeit.",
+    "whyMeDesc": "Ich konzentriere mich darauf, Geschäftsprobleme zu lösen, wartbare Software zu bauen und Ergebnisse zu verantworten — ob unabhängig oder im Team.",
+    "expertise": "Expertise",
+    "skillsTitle": "Technologien, mit denen ich liefere",
+    "skillsDesc": "Moderne Stacks, ausgewählt für Wartbarkeit, Performance und praxisnahe Business-Delivery.",
+    "faq": "FAQ",
+    "faqTitle": "Häufig gestellte Fragen",
+    "faqMore": "Weitere Antworten auf der",
+    "faqPage": "FAQ-Seite",
+    "contactLabel": "Lassen Sie uns etwas aufbauen",
+    "contactTitle": "Bereit anzufangen?",
+    "contactDesc": "Teilen Sie ein Briefing und ich antworte mit klaren nächsten Schritten."
+  },
+  "process": {
+    "discover": "Discover",
+    "discoverDesc": "Geschäftsanforderungen, Nutzer und Rahmenbedingungen verstehen, damit die Lösung von Anfang an das richtige Problem adressiert.",
+    "design": "Design",
+    "designDesc": "Saubere Architektur, Datenmodelle und Delivery-Meilensteine definieren, die auch bei wachsendem Produkt wartbar bleiben.",
+    "build": "Build",
+    "buildDesc": "Iterativ entwickeln mit transparentem Fortschritt, Staging-Reviews und kontinuierlichem Feedback während des gesamten Engagements.",
+    "deliver": "Deliver",
+    "deliverDesc": "Mit Dokumentation und Support in Produktion bringen — Software, die zuverlässig, sicher und bereit ist, mit dem Unternehmen zu wachsen."
+  },
+  "whyMe": {
+    "solve": "Geschäftsprobleme lösen",
+    "solveDesc": "Ich konzentriere mich auf Ergebnisse, die Betrieb und Wachstum verbessern — nicht auf Komplexität um ihrer selbst willen.",
+    "solveStat": "Business-first Engineering",
+    "ship": "Wartbare Software liefern",
+    "shipDesc": "Saubere Architektur, skalierbares Design und Code, der geschrieben ist, um sich mit Ihren Anforderungen weiterzuentwickeln.",
+    "shipStat": "Qualität statt Abkürzungen",
+    "communicate": "Klar kommunizieren",
+    "communicateDesc": "Direkte Updates über den gesamten Projektverlauf, damit Stakeholder stets wissen, wo die Dinge stehen.",
+    "communicateStat": "Transparente Zusammenarbeit",
+    "own": "Die Umsetzung verantworten",
+    "ownDesc": "Unabhängig oder im Team arbeiten. Ich übernehme Verantwortung und priorisiere zuverlässige, termingerechte Umsetzung.",
+    "ownStat": "Unabhängig oder im Team"
+  },
+  "collaborators": {
+    "startups": "Startups, die ihr erstes Produkt aufbauen",
+    "startupsDesc": "Validierte Ideen in Produktionssoftware verwandeln — mit einer Architektur, die mit Ihrem Unternehmen skalieren kann.",
+    "modernize": "Unternehmen, die ihre Abläufe modernisieren",
+    "modernizeDesc": "Fragmentierte Tools und Tabellen durch ERP-, CRM-, POS-integrierte und interne Systeme ersetzen, die auf Ihre Arbeitsweise abgestimmt sind.",
+    "retail": "Einzelhandels- und Dienstleistungsunternehmen",
+    "retailDesc": "E-Commerce-Plattformen, Logistik-Tools und kundenorientierte Erlebnisse, entwickelt für reale Arbeitsabläufe.",
+    "teams": "Engineering-Teams, die Verstärkung benötigen",
+    "teamsDesc": "Als zuverlässiger Mitwirkender integrieren — oder die Umsetzung leiten, wenn Verantwortung und Koordination gefragt sind."
+  },
+  "hireCta": {
+    "label": "Beauftragen",
+    "title": "Lassen Sie uns Software bauen, die Ihr Unternehmen voranbringt",
+    "description": "Teilen Sie Ihre Ziele und Rahmenbedingungen. Ich helfe Startups und Unternehmen, Ideen in zuverlässige, wartbare Produkte zu verwandeln — von Neuentwicklungen bis hin zu Modernisierung und Teamerweiterung."
+  },
+  "footer": {
+    "projects": "Projekte",
+    "services": "Leistungen",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "bookCall": "Gespräch buchen"
+  },
+  "pages": {
+    "services": {
+      "label": "Was ich tue",
+      "title": "Leistungen",
+      "subtitle": "End-to-End-Software für Unternehmen, die Abläufe automatisieren, Effizienz steigern und online wachsen müssen.",
+      "hireCtaTitle": "Beauftragen Sie mich für eine dieser Leistungen",
+      "hireCtaDescription": "Teilen Sie Ihre Ziele und ich empfehle einen praxisnahen Umfang, Zeitplan und nächsten Schritt."
+    },
+    "projects": {
+      "label": "Ausgewählte Arbeiten",
+      "title": "Projekte",
+      "subtitle": "Produktionssysteme, entworfen, gebaut und geliefert für reale Geschäftsanforderungen.",
+      "hireCtaTitle": "Brauchen Sie etwas Ähnliches?",
+      "hireCtaDescription": "Teilen Sie Ihre Ziele — ich schlage einen praxisnahen Weg zur Produktion vor."
+    },
+    "blog": {
+      "label": "Einblicke",
+      "title": "Blog",
+      "subtitle": "Praxisnahe Artikel zu Delivery, Architektur und dem Aufbau von Geschäftssoftware.",
+      "readArticle": "Artikel lesen",
+      "relatedProject": "Verwandtes Projekt",
+      "viewCaseStudy": "Fallstudie ansehen",
+      "backToBlog": "Zurück zum Blog"
+    },
+    "faq": {
+      "label": "FAQ",
+      "title": "Häufig gestellte Fragen",
+      "subtitle": "Antworten zu Leistungen, Zusammenarbeit und wie Projekte typischerweise beginnen.",
+      "hireCtaTitle": "Noch Fragen?",
+      "hireCtaDescription": "Senden Sie eine Nachricht oder buchen Sie ein kurzes Gespräch — ich kläre gerne den Umfang, bevor wir uns verpflichten."
+    },
+    "contact": {
+      "label": "Kontakt",
+      "title": "Beauftragen",
+      "subtitle": "Erzählen Sie mir von Ihrem Projekt. Ich antworte mit klaren nächsten Schritten.",
+      "preferConversation": "Bevorzugen Sie ein Gespräch?",
+      "preferConversationBody": "Buchen Sie ein kurzes Gespräch, um Umfang, Zeitplan und Eignung zu besprechen.",
+      "openCalendlyDirectly": "Oder Calendly direkt öffnen"
+    },
+    "bookCall": {
+      "label": "Gespräch buchen",
+      "title": "Gespräch vereinbaren",
+      "subtitle": "Fordern Sie ein Gespräch an oder buchen Sie sofort über Calendly.",
+      "fastestPath": "Schnellster Weg",
+      "bookInstantlyTitle": "Sofort über Calendly buchen",
+      "bookInstantlyBody": "Wählen Sie einen passenden Zeitpunkt — die Bestätigung erfolgt sofort.",
+      "orRequestTitle": "Oder ein Gespräch anfragen",
+      "orRequestBody": "Hinterlassen Sie Ihren gewünschten Termin und ich bestätige ihn.",
+      "openCalendlyBtn": "Calendly öffnen"
+    },
+    "serviceDetail": {
+      "hireCtaTitle": "Bereit, mich für {service} zu beauftragen?",
+      "hireCtaDescription": "Erzählen Sie mir von Ihren Zielen und Rahmenbedingungen — ich antworte mit klaren nächsten Schritten."
+    }
+  },
+  "site": {
+    "title": "Software Engineer",
+    "tagline": "Ich entwerfe und baue skalierbare Webanwendungen, Geschäftssoftware und individuelle digitale Lösungen, die Unternehmen helfen, Abläufe zu automatisieren, Effizienz zu steigern und online zu wachsen.",
+    "bio": "Ich bin Software Engineer und Full-Stack-Entwickler, spezialisiert auf individuelle Webanwendungen, Geschäftssoftware, SaaS-Plattformen und Backend-Systeme. Ich arbeite mit Startups und wachsenden Unternehmen zusammen, um Ideen in zuverlässige, skalierbare, produktionsreife Software zu verwandeln — mit klarer Kommunikation und verlässlicher Lieferung.",
+    "summary": "Software Engineer mit Erfahrung in der Entwicklung von Geschäftsanwendungen, E-Commerce-Plattformen, ERP-Lösungen, CRM-Systemen und individuellen Webanwendungen. Ich begleite Produkte von der Anforderung über Architektur und Entwicklung bis zum Deployment — in Zusammenarbeit mit Teams und Kunden, um Software zu schaffen, die messbaren Geschäftswert liefert.",
+    "mission": "Software zu bauen, die Geschäftsabläufe vereinfacht, die Produktivität verbessert und Organisationen hilft, durch zuverlässige und skalierbare Technologie zu wachsen.",
+    "location": "Indien · Weltweit verfügbar (Remote)",
+    "availability": "Verfügbar für Freelance-Projekte, Vertragsengagements und Vollzeit-Remote-Rollen — unabhängig oder als Teil Ihres Teams."
+  },
+  "skills": {
+    "languages": "Sprachen & Runtimes",
+    "frameworks": "Frameworks, mit denen ich liefere",
+    "infra": "Infrastruktur & Betrieb",
+    "databases": "Datenbanken & Tools"
+  },
+  "breadcrumbs": {
+    "home": "Startseite",
+    "ariaLabel": "Breadcrumb"
+  },
+  "a11y": {
+    "primaryNav": "Hauptnavigation",
+    "footerNav": "Footer-Navigation"
+  },
+  "forms": {
+    "contact": {
+      "fullName": "Vollständiger Name",
+      "email": "E-Mail",
+      "company": "Unternehmen",
+      "optional": "(optional)",
+      "serviceNeeded": "Benötigte Leistung",
+      "selectService": "Leistung auswählen",
+      "other": "Andere",
+      "projectDetails": "Projektdetails",
+      "placeholderName": "Ihr Name",
+      "placeholderEmail": "sie@unternehmen.com",
+      "placeholderCompany": "Firmenname",
+      "placeholderMessage": "Ziele, Zeitplan, Budgetrahmen oder technischer Kontext…",
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet…",
+      "successTitle": "Nachricht gesendet",
+      "successBody": "Ich melde mich innerhalb von 24 Stunden bei Ihnen.",
+      "sendAnother": "Weitere Nachricht senden",
+      "bookInstead": "Stattdessen ein Gespräch buchen",
+      "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie eine E-Mail an {email}."
+    },
+    "call": {
+      "fullName": "Vollständiger Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "preferredDate": "Bevorzugtes Datum",
+      "preferredTime": "Bevorzugte Uhrzeit",
+      "timezone": "Zeitzone",
+      "timezoneHint": "Standardmäßig Ihre Browser-Zeitzone — bei Bedarf ändern.",
+      "note": "Notiz",
+      "optional": "(optional)",
+      "placeholderName": "Ihr Name",
+      "placeholderEmail": "sie@unternehmen.com",
+      "placeholderPhone": "+91 98765 43210",
+      "placeholderNote": "Gibt es etwas, das ich vor dem Gespräch wissen sollte?",
+      "submit": "Gespräch anfragen",
+      "submitting": "Wird gesendet…",
+      "successTitle": "Gesprächsanfrage erhalten",
+      "successBody": "Ich melde mich in Kürze, um einen Termin zu bestätigen.",
+      "submitAnother": "Weitere Anfrage senden",
+      "hireViaMessage": "Per Nachricht beauftragen",
+      "errorBefore": "Bitte überprüfen Sie das Formular und versuchen Sie es erneut, oder buchen Sie direkt über",
+      "errorAfter": "."
+    }
+  },
+  "errors": {
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "body": "Diese URL existiert nicht. Versuchen Sie eine der folgenden Optionen — oder kontaktieren Sie mich, wenn Sie mich beauftragen möchten.",
+      "home": "Startseite"
+    },
+    "unexpected": {
+      "label": "Etwas ist schiefgelaufen",
+      "title": "Unerwarteter Fehler",
+      "body": "Ein unerwarteter Fehler ist aufgetreten. Sie können es erneut versuchen oder mich kontaktieren, um mich zu beauftragen.",
+      "tryAgain": "Erneut versuchen",
+      "home": "Startseite"
+    }
+  },
+  "seo": {
+    "homeTitle": "{name} — Software Engineer & Full Stack Developer",
+    "homeDescription": "Beauftragen Sie Aravinthan Balaji mit dem Entwurf und Bau skalierbarer Webanwendungen, Geschäftssoftware, SaaS-Plattformen und Backend-Systeme für Startups und wachsende Unternehmen.",
+    "servicesDescription": "Individuelle Webanwendungen, E-Commerce, Backend-APIs, SaaS-, ERP- und CRM-Entwicklung — beauftragen Sie Aravinthan Balaji für zuverlässige Software-Delivery.",
+    "projectsDescription": "Ausgewählte Freelance- und Produktentwicklungsarbeiten — E-Commerce-, FinTech- und Enterprise-Plattformen, End-to-End geliefert.",
+    "blogDescription": "Engineering-Notizen zu E-Commerce, FinTech-Plattformen, Cloud-Delivery und der Beauftragung eines freiberuflichen Full-Stack-Engineers.",
+    "faqDescription": "Häufige Fragen zur Beauftragung von Aravinthan Balaji für Freelance-Projekte, Remote-Delivery, Zeitpläne und Engagement-Arten.",
+    "contactTitle": "Beauftragen — Kontakt",
+    "contactDescription": "Beauftragen Sie Aravinthan Balaji für freiberufliches Web-, E-Commerce-, API- und Cloud-Engineering. Senden Sie ein Projektbriefing und erhalten Sie innerhalb von 24 Stunden eine Antwort.",
+    "bookCallDescription": "Fordern Sie ein Gespräch mit Aravinthan Balaji an oder buchen Sie sofort über Calendly — besprechen Sie Freelance-Projekte, Architektur und Delivery.",
+    "softwareEngineering": "Software Engineering"
+  },
+  "projectLabels": {
+    "role": "Rolle",
+    "challenge": "Herausforderung",
+    "solution": "Lösung",
+    "highlights": "Highlights",
+    "outcome": "Ergebnis",
+    "stack": "Stack",
+    "liveSite": "Live-Seite",
+    "overview": "Überblick",
+    "caseStudy": "Fallstudie",
+    "viewCaseStudy": "Fallstudie ansehen",
+    "allProjects": "Alle Projekte",
+    "myRole": "Meine Rolle",
+    "theChallenge": "Die Herausforderung",
+    "theSolution": "Die Lösung",
+    "keyHighlights": "Wichtige Highlights",
+    "technologies": "Technologien",
+    "visitLive": "Live-Seite besuchen",
+    "discussSimilar": "Ähnliches Projekt besprechen",
+    "backToProjects": "Zurück zu Projekten"
+  },
+  "serviceLabels": {
+    "label": "Leistung",
+    "howIHelp": "Wie ich helfe",
+    "outcomes": "Ergebnisse",
+    "allServices": "Alle Leistungen"
+  },
+  "servicesContent": {
+    "web-development": {
+      "shortTitle": "Webentwicklung",
+      "title": "Individuelle Web- & Geschäftsanwendungen",
+      "description": "Individuelle Webanwendungen, Unternehmenswebsites und interne Tools, konzipiert für Klarheit, Performance und langfristige Wartbarkeit.",
+      "summary": "Ich helfe Unternehmen, ihre digitale Präsenz mit individuellen Webanwendungen, Landingpages und Unternehmenswebsites aufzubauen und zu verbessern. Die Zusammenarbeit umfasst Architektur, Interface-Umsetzung, API-Integration und Produktions-Deployment — praxisnahe, skalierbare Software, abgestimmt auf die Arbeitsweise Ihres Teams.",
+      "outcomes": [
+        "Individuelle Webanwendungen, zugeschnitten auf Geschäftsabläufe",
+        "Unternehmenswebsites und Landingpages, gebaut für Konversion und Klarheit",
+        "Interne Tools, die improvisierte Tabellen und manuelle Prozesse ersetzen",
+        "Saubere, wartbare Codebasen, bereit für zukünftiges Feature-Wachstum"
+      ],
+      "tags": [
+        "Web Apps",
+        "Business Sites",
+        "Next.js"
+      ],
+      "seoTitle": "Freelance Webentwickler beauftragen",
+      "seoDescription": "Beauftragen Sie Aravinthan Balaji für individuelle Webanwendungen, Unternehmenswebsites und Full-Stack-Entwicklung für Startups und wachsende Unternehmen."
+    },
+    "ecommerce-development": {
+      "shortTitle": "E-Commerce",
+      "title": "E-Commerce- & Einzelhandelsplattformen",
+      "description": "E-Commerce-Plattformen und POS-integrierte Einzelhandelssysteme, die das Storefront-Erlebnis mit realen Betriebsabläufen verbinden.",
+      "summary": "Von Online-Katalogen über Auftragsabwicklung bis zur Bestandsintegration baue ich Commerce-Systeme, die widerspiegeln, wie Einzelhandels- und Dienstleistungsunternehmen tatsächlich verkaufen. Die Arbeit umfasst häufig Admin-Konsolen, Lieferkoordination und Anbindungen an bestehende POS- oder Bestandssysteme, wenn ein vollständiger Ersatz keine Option ist.",
+      "outcomes": [
+        "Kundenseitige Storefronts mit zuverlässigem Checkout und Bestellabläufen",
+        "Admin-Tools für Katalog, Bestellungen und operatives Reporting",
+        "POS- und Bestandsintegration für hybride Einzelhandelsbetriebe",
+        "Produktions-Hosting, geeignet für Traffic, Medien und Wachstum"
+      ],
+      "tags": [
+        "E-Commerce",
+        "POS",
+        "Retail"
+      ],
+      "seoTitle": "E-Commerce-Entwickler beauftragen",
+      "seoDescription": "Freiberufliche E-Commerce- und Einzelhandelsplattform-Entwicklung — Storefronts, Admin-Tools und POS-Integration von Aravinthan Balaji."
+    },
+    "backend-apis": {
+      "shortTitle": "Backend & APIs",
+      "title": "Backend-Systeme & API-Entwicklung",
+      "description": "REST-APIs, Datenbankdesign und Backend-Systeme, die Geschäftsanwendungen mit Stabilität und klaren Verträgen antreiben.",
+      "summary": "Starke Backends verwandeln Produktideen in Systeme, die Teams betreiben können. Ich entwerfe APIs, Datenmodelle, Authentifizierung und Integrationen für ERP-Module, CRM-Workflows, Messaging-Plattformen und individuelle Geschäftssoftware — mit Schwerpunkt auf Wartbarkeit und Zuverlässigkeit.",
+      "outcomes": [
+        "Gut strukturierte REST-APIs mit Validierung und klarer Fehlerbehandlung",
+        "Datenbankdesign, abgestimmt auf Zugriffsmuster und Wachstum",
+        "Integrationen mit Drittanbieterdiensten, Webhooks und Job-Queues",
+        "Backend-Fundamente für Echtzeit- und geschäftskritische Anwendungen"
+      ],
+      "tags": [
+        "APIs",
+        "Backend",
+        "Databases"
+      ],
+      "seoTitle": "Backend-Entwickler beauftragen",
+      "seoDescription": "Beauftragen Sie einen freiberuflichen Backend-Engineer für REST-APIs, Datenbanken und Business-System-Integrationen — geliefert von Aravinthan Balaji."
+    },
+    "saas-cloud": {
+      "shortTitle": "SaaS & ERP",
+      "title": "SaaS-, ERP- & CRM-Lösungen",
+      "description": "SaaS-Produkte, ERP- und CRM-Lösungen sowie Business-Management-Software, die Abläufe automatisiert und Effizienz steigert.",
+      "summary": "Ich entwickle SaaS-Plattformen und Business-Systeme — einschließlich ERP- und CRM-Funktionen — die Organisationen helfen, Workflows zu automatisieren und Transparenz zu gewinnen. Die Leistung umfasst Feature-Entwicklung, technische Beratung, Wartung und Performance-Arbeit für Produkte, die nach dem Launch zuverlässig bleiben müssen.",
+      "outcomes": [
+        "SaaS-Dashboards und Multi-User-Geschäftsanwendungen",
+        "ERP- und CRM-Funktionen, zugeschnitten auf operative Anforderungen",
+        "Feature-Entwicklung, Wartung und Performance-Optimierung",
+        "Technische Beratung für Architektur- und Delivery-Entscheidungen"
+      ],
+      "tags": [
+        "SaaS",
+        "ERP",
+        "CRM"
+      ],
+      "seoTitle": "SaaS- & ERP-Entwickler beauftragen",
+      "seoDescription": "Freiberufliche SaaS-, ERP- und CRM-Entwicklung für Unternehmen, die ihre Abläufe modernisieren — Beratung und Delivery von Aravinthan Balaji."
+    }
+  },
+  "faqItems": {
+    "whatKinds": {
+      "question": "Welche Art von Software entwickeln Sie?",
+      "answer": "Individuelle Webanwendungen, Business-Management-Software, SaaS-Plattformen, ERP- und CRM-Lösungen, E-Commerce-Systeme, POS-integrierte Anwendungen, Landingpages, Unternehmenswebsites, interne Tools, REST-APIs und Echtzeitsysteme."
+    },
+    "remote": {
+      "question": "Arbeiten Sie remote?",
+      "answer": "Ja. Ich arbeite remote mit flexiblen Arbeitszeiten und bin verfügbar für Freelance-Projekte, Vertragsrollen und Vollzeit-Remote-Möglichkeiten. Der Fortschritt bleibt durch klare Updates und geplante Reviews sichtbar."
+    },
+    "aloneAndTeam": {
+      "question": "Können Sie sowohl allein als auch im Team arbeiten?",
+      "answer": "Ja. Ich bin es gewohnt, Delivery eigenständig zu verantworten oder mich in ein bestehendes Engineering-Team zu integrieren. Bei Bedarf kann ich Entwicklungsvorhaben auch durch Design, Build und Release leiten."
+    },
+    "delivery": {
+      "question": "Wie gehen Sie an die Umsetzung heran?",
+      "answer": "Ich konzentriere mich darauf, Geschäftsanforderungen zu verstehen, saubere Architektur und wartbaren Code zu liefern und zuverlässig zu kommunizieren. Verantwortung und termingerechte Lieferung stehen während des gesamten Engagements im Vordergrund."
+    },
+    "industries": {
+      "question": "Welche Branchen unterstützen Sie?",
+      "answer": "Logistik, Einzelhandel, E-Commerce, Startups, kleine und Dienstleistungsunternehmen, Fertigung, Bildung, Finanzen sowie Teams, die Business-Automatisierung und digitale Transformation verfolgen."
+    },
+    "howStart": {
+      "question": "Wie starten wir?",
+      "answer": "Buchen Sie ein kurzes Gespräch oder teilen Sie ein Projektbriefing über das Kontaktformular. Wir klären Ziele, Rahmenbedingungen und nächste Schritte, bevor irgendeine Verpflichtung entsteht."
+    }
+  },
+  "projectsContent": {
+    "raja-supermart": {
+      "title": "Raja Supermart",
+      "subtitle": "E-Commerce-Plattform für Lebensmittel",
+      "description": "End-to-End-Lebensmittelhandel für einen indischen Supermarkt — Storefront, Betriebskonsole, Lieferabläufe und Bestandsabgleich mit einem bestehenden POS-System.",
+      "overview": "Raja Supermart brauchte einen Online-Bestellkanal, der berücksichtigte, wie der Laden bereits im Tagesgeschäft lief. Ich habe eine vollständige Full-Stack-Plattform entworfen und geliefert, die Kundenbrowsing und Checkout, Mitarbeiter-Tools für Katalog und Telefonbestellungen, Lieferkoordination und Rückgaben abdeckt — während der Bestand mit einer bestehenden Optech-POS-Datenbank abgeglichen bleibt.",
+      "role": "Freiberuflicher Full-Stack-Engineer, verantwortlich für Architektur, APIs, Kunden- und Admin-Oberflächen sowie AWS-Deployment.",
+      "challenge": "Bestand und Preise lagen in einem bestehenden SQL-Server-POS, das nicht ersetzt werden konnte. Bestellungen kamen weiterhin sowohl telefonisch als auch über das Web ein. Lieferpartner benötigten nach Adresse gruppierte Zuweisungen, und die Geschäftsführung verlangte klares Umsatz- und Kategorie-Reporting — alles ohne den Filialbetrieb zu stören.",
+      "solution": "Ich habe eine React-Storefront und eine Node.js-API mit MongoDB für Commerce-Daten, Redis für Sessions und Cache sowie geplante Jobs geliefert, die den Bestand mit Optech SQL Server abgleichen. Die Admin-Konsole verwaltet Katalogstruktur, Telefonbestellungserfassung, Partnerzuweisung, Rückgaben und Analysen. Assets und Hosting laufen auf AWS mit S3 für Medien.",
+      "highlights": [
+        "Zwei-Datenbank-Design, das MongoDB-Commerce-Daten mit dem Optech-SQL-Server-Bestand synchron hält",
+        "Kundenerlebnis mit Katalog, Warenkorb, Wunschliste, Checkout und Rückgaben",
+        "Betriebskonsole für Telefonbestellungen, Lieferungen, Katalog und Umsatzeinblicke",
+        "Produktions-Hosting auf AWS mit zuverlässiger Medienauslieferung über S3"
+      ],
+      "outcome": "Eine Live-Lebensmittelplattform unter rajasupermart.com, bei der Online- und Filialbetrieb synchron bleiben.",
+      "tags": [
+        "E-Commerce",
+        "React",
+        "Node.js",
+        "AWS"
+      ]
+    },
+    "valathi-chits": {
+      "title": "Valathi Chit Funds",
+      "subtitle": "FinTech-Webplattform",
+      "description": "Regulierte Chit-Fund-Website mit zweisprachigen Inhalten, Online-Mitgliedschaftsanträgen, Rendite-Rechnern und automatisierter Generierung rechtlicher PDFs.",
+      "overview": "Valathi Chit Funds betreibt drei Niederlassungen in Tamil Nadu unter staatlicher Registrierung. Ich habe valathichits.com gebaut, damit potenzielle Mitglieder aktive Gruppen einsehen, Renditen abschätzen, online mit digitaler Signatur beantragen und regelkonforme Dokumente erhalten können — unterstützt von einer PostgreSQL-API und betriebsbereiten Admin-Tools. Eine begleitende WhatsApp-Betriebskonsole vereinheitlichte später Agenten-Kommunikation und Filialabläufe.",
+      "role": "Freiberuflicher Full-Stack-Engineer für die öffentliche Website, die REST-API, PDF-Automatisierung und AWS-Infrastruktur.",
+      "challenge": "Das Produkt musste sowohl englisch- als auch tamilsprachige Zielgruppen bedienen, regulatorische Erwartungen an Anträge erfüllen und markenspezifische rechtliche Formulare automatisieren — und dabei von einem kleinen Team ohne dediziertes Engineering-Personal betreibbar bleiben.",
+      "solution": "Ich habe ein zweisprachiges Next.js-Erlebnis mit Gruppenübersicht, fachspezifischen Rechnern und einem Antragsprozess mit Signaturerfassung geliefert. PostgreSQL speichert Inhalte und Anträge; Puppeteer generiert markenübergreifende rechtliche PDFs. Das Deployment läuft auf AWS EC2 hinter Nginx mit S3-Speicher und GitHub-Actions-Releases.",
+      "highlights": [
+        "Zweisprachige englisch/tamilische Website mit Rechnern und Gruppenübersicht",
+        "Online-Mitgliedschaftsanträge mit Unterstützung für digitale Signaturen",
+        "Automatisierte markenübergreifende Pipeline für rechtliche PDFs zur Einhaltung von Vorschriften",
+        "PostgreSQL-gestützte API, bereit für Inhalts- und Antragsverwaltung"
+      ],
+      "outcome": "Bedient drei Niederlassungen unter valathichits.com mit optimierten Anträgen und automatisierten rechtlichen Dokumenten.",
+      "tags": [
+        "FinTech",
+        "Next.js",
+        "PostgreSQL",
+        "AWS"
+      ]
+    },
+    "race-parts-india": {
+      "title": "Race Parts India",
+      "subtitle": "Motorsport-E-Commerce",
+      "description": "Hochleistungs-Motorsportkatalog mit WhatsApp-Checkout, Terraform-verwaltetem AWS-Hosting und automatisiertem CI/CD.",
+      "overview": "Race Parts India brauchte eine glaubwürdige, mobile-first Storefront für Rennsportkomponenten und Simulator-Hardware, ohne die Kosten eines vollständigen Commerce-Backends beim Launch. Ich habe die React-Storefront, den Produktions-AWS-Footprint und die Release-Automatisierung als ein einziges Engagement geliefert — vom UI bis zu Zero-Downtime-Deployments.",
+      "role": "Freiberuflicher Engineer für die Frontend-Anwendung, Cloud-Infrastruktur und CI/CD-Pipelines.",
+      "challenge": "Das Unternehmen benötigte ein ausgereiftes Browsing-, Filter-, Warenkorb- und Produktdetail-Erlebnis, bevorzugte jedoch ein schlankes Checkout-Modell. Hosting, SSL und wiederholbare Releases mussten zuverlässig bleiben, ohne ständige manuelle Serverarbeit.",
+      "solution": "Ich habe eine React-SPA mit einem responsiven Katalog, Warenkorb-Abläufen und bildreichen Produktseiten gebaut, wobei der Checkout über WhatsApp geführt wird — ein vertrauter mobiler Kaufweg. Terraform stellt AWS EC2 mit Nginx und automatisierter SSL bereit. GitHub-Actions-Pipelines standardisieren Builds und rsync-basierte Deployments.",
+      "highlights": [
+        "Nach Kategorie gefilterter Katalog mit responsivem Warenkorb und Produktdetail-Erlebnis",
+        "WhatsApp-Checkout, der frühen Backend-Aufwand für Bestellverwaltung vermeidet",
+        "Terraform-bereitgestelltes AWS EC2 mit Nginx und automatisierter SSL-Erneuerung",
+        "GitHub-Actions-CI/CD für konsistente, reibungsarme Releases"
+      ],
+      "outcome": "Live unter racepartsindia.com mit automatisierten Deployments und einem klaren Weg, später ein Backend hinzuzufügen.",
+      "tags": [
+        "E-Commerce",
+        "React",
+        "Terraform",
+        "CI/CD"
+      ]
+    },
+    "wondermove-erp": {
+      "title": "Wondermove ERP",
+      "subtitle": "Enterprise-Logistik",
+      "description": "Flottenbetriebsplattform mit Fahrtenmanagement, GST-Compliance, Buchführungs-Workflows und Finanzberichterstattung auf AWS.",
+      "overview": "Während meiner Zeit bei einem Startup in Tamil Nadu habe ich an Wondermove mitgewirkt — einem ERP für Logistikbetreiber, die über Tabellenkalkulationen hinausgewachsen waren. Das System konzentriert sich auf Fahrten-Lebenszyklusmanagement, Steuerkonformität, Buchführung und Management-Reporting, damit die Geschäftsführung Kosten und Profitabilität über die gesamte Flotte hinweg einsehen kann.",
+      "role": "Full-Stack-Engineer in einem Produktteam — Features über Frontend, APIs und AWS-gehostete Dienste.",
+      "challenge": "Logistikteams jonglierten Fahrten, Rechnungen und Steuerunterlagen über getrennte Tools. Finanzielle Genauigkeit und die GST-Abwicklung waren besonders sensibel, und jedes Ersatzsystem musste unter realer Betriebslast schnell Vertrauen gewinnen.",
+      "solution": "Wir haben ein Full-Stack-ERP auf einem modernen Web- und API-Stack, gehostet auf AWS, geliefert, mit disziplinierter Entwicklung rund um finanzielle Berechnungen und operative Abläufe. Fahrtenmanagement, GST-Tracking, Buchführung und Prognosen sitzen auf einer einzigen operativen Oberfläche für Disposition und Finanzabteilung.",
+      "highlights": [
+        "Einheitliches Fahrtenmanagement für den täglichen Flottenbetrieb",
+        "GST-bewusste Finanzabläufe und Buchführung",
+        "Reporting, das die Transparenz über Kosten und Profitabilität verbessert",
+        "AWS-gehostete Delivery, geeignet für wachsende Logistik-Workloads"
+      ],
+      "outcome": "Reduzierte manuelle Koordination und verbesserte finanzielle Transparenz für das Flottenmanagement.",
+      "tags": [
+        "Enterprise",
+        "Full Stack",
+        "AWS",
+        "ERP"
+      ]
+    }
+  },
+  "blogContent": {
+    "bridging-legacy-pos-with-modern-grocery-commerce": {
+      "title": "Ein bestehendes POS-System mit modernem Lebensmittel-Commerce verbinden",
+      "excerpt": "Wie Zwei-Datenbank-Design, Telefonbestell-Workflows und Liefertools einem traditionellen Supermarkt den Online-Verkauf ermöglichten, ohne das bestehende POS-System zu ersetzen.",
+      "category": "Engineering",
+      "readTime": "7 Min. Lesezeit",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Viele indische Händler betreiben bereits stabile Kassensysteme. Diese Grundlage zu ersetzen ist selten der erste Schritt, wenn Kunden anfangen, Lieferungen nach Hause zu erwarten. Der praktische Weg ist die Einführung eines Online-Kanals, der das POS als Quelle der Wahrheit für den Bestand behandelt."
+        },
+        {
+          "type": "heading",
+          "text": "Bestandsverantwortung klar halten"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bei Raja Supermart blieben Bestand und Preise im Optech-SQL-Server. Anwendungsdaten — Warenkörbe, Bestellungen, Kundenkonten — lagen in MongoDB. Ein geplanter Sync-Job glich die Mengen ab, sodass die Storefront nie weit von dem abwich, was die Kasse wusste."
+        },
+        {
+          "type": "heading",
+          "text": "Für die tatsächliche Art der Bestelleingänge gestalten"
+        },
+        {
+          "type": "paragraph",
+          "text": "Telefonbestellungen bleiben im Lebensmitteleinzelhandel üblich. Admins mussten diese Bestellungen in derselben Konsole aufgeben und verwalten, die auch Website-Checkouts, Partnerzuweisung und Rückgaben abwickelte. Eine einzige Betriebsoberfläche reduzierte Schulungskosten und verpasste Übergaben."
+        },
+        {
+          "type": "heading",
+          "text": "Mit operativer Transparenz liefern"
+        },
+        {
+          "type": "paragraph",
+          "text": "Dashboards für Umsatz, Kategorie-Performance und Lieferstatus sind genauso wichtig wie ein ausgereifter Katalog. Wenn die Geschäftsführung grundlegende Fragen beantworten kann, ohne Tabellen zu exportieren, gewinnt die Plattform schnell Vertrauen."
+        }
+      ]
+    },
+    "bilingual-fintech-sites-that-stay-compliant": {
+      "title": "Zweisprachige FinTech-Websites bauen, die regelkonform bleiben",
+      "excerpt": "Erkenntnisse aus der Lieferung einer öffentlichen Chit-Fund-Plattform mit englisch/tamilischen Inhalten, Online-Anträgen und automatisierter Generierung rechtlicher PDFs.",
+      "category": "Case Study",
+      "readTime": "6 Min. Lesezeit",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Regulierte Finanzprodukte brauchen mehr als eine Marketing-Landingpage. Mitglieder müssen Angebote in ihrer Sprache verstehen, Anträge mit klarer Einwilligung ausfüllen und Dokumente erhalten, die den rechtlichen Anforderungen über Marken oder Niederlassungen hinweg entsprechen."
+        },
+        {
+          "type": "heading",
+          "text": "Den gesamten Ablauf lokalisieren, nicht nur die Beschriftungen"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bei Valathi Chit Funds umfasste die zweisprachige Unterstützung Browsing, Rechner und Antragstexte. Lokalisierung funktioniert nur, wenn Renditeschätzungen und Formularsprache konsistent damit bleiben, wie Mitarbeiter Produkte in der Filiale erklären."
+        },
+        {
+          "type": "heading",
+          "text": "Papierarbeit sorgfältig automatisieren"
+        },
+        {
+          "type": "paragraph",
+          "text": "Puppeteer-gesteuerte PDF-Generierung erzeugte markenübergreifende rechtliche Formulare aus strukturierten Antragsdaten. Das Ziel waren weniger manuelle Bearbeitungen und weniger fehlerhafte Felder — besonders wertvoll, wenn mehrere Niederlassungen eine öffentliche Website teilen."
+        },
+        {
+          "type": "heading",
+          "text": "Für den Betrieb nach dem Launch planen"
+        },
+        {
+          "type": "paragraph",
+          "text": "Eine öffentliche Website ist nur die halbe Geschichte. Agenten-Workflows, Messaging und Admin-Content-Updates entscheiden, ob der digitale Kanal nützlich bleibt. Mit einer Betriebskonsole im Blick zu bauen, reduziert später den Bedarf an improvisierten Tools."
+        }
+      ]
+    },
+    "when-whatsapp-checkout-beats-a-payments-stack": {
+      "title": "Wenn WhatsApp-Checkout einen vollständigen Payment-Stack übertrifft",
+      "excerpt": "Die Wahl einer statisch-orientierten Motorsport-Storefront mit WhatsApp-Bestellung — die Technologieinvestition an die Geschäftsreife anpassen.",
+      "category": "Architecture",
+      "readTime": "5 Min. Lesezeit",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Nicht jeder Katalog braucht von Tag eins an Kartenverarbeitung. Für Fachhändler mit bestehenden WhatsApp-Verkaufsgesprächen kann eine schnelle Storefront, die den Checkout an den Chat übergibt, eine halbfertige Payment-Integration übertreffen."
+        },
+        {
+          "type": "heading",
+          "text": "Für Vertrauen und Geschwindigkeit optimieren"
+        },
+        {
+          "type": "paragraph",
+          "text": "Race Parts India benötigte eine ausgereifte Produktpräsentation, Filterung und Warenkorb-Klarheit auf Mobilgeräten. WhatsApp bot bereits das Vertrauen der Käufer. Die Verknüpfung dieser Abläufe verkürzte die Time-to-Market und die Hosting-Komplexität."
+        },
+        {
+          "type": "heading",
+          "text": "In Infrastruktur investieren, die Sie behalten werden"
+        },
+        {
+          "type": "paragraph",
+          "text": "Terraform, Nginx, SSL-Automatisierung und GitHub Actions sind auch in einer schlanken Architektur weiterhin wichtig. Sie schützen die Release-Qualität und lassen einen klaren Weg offen, später ein Backend einzuführen, wenn das Bestellvolumen es rechtfertigt."
+        }
+      ]
+    },
+    "hiring-a-freelance-full-stack-engineer": {
+      "title": "Was Sie erwartet, wenn Sie einen freiberuflichen Full-Stack-Engineer beauftragen",
+      "excerpt": "Ein praktischer Leitfaden für Gründer und Betriebsverantwortliche: Umfang, Kommunikation, Delivery-Rhythmus und wie Remote-Engagements im Zeitplan bleiben.",
+      "category": "Guide",
+      "readTime": "6 Min. Lesezeit",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Die Beauftragung eines freiberuflichen Engineers funktioniert am besten, wenn das Engagement einer Produktpartnerschaft ähnelt und nicht einer Ticket-Warteschlange. Klare Ergebnisse, Entscheidungsverantwortung und realistische Meilensteine schlagen jederzeit vage Feature-Listen."
+        },
+        {
+          "type": "heading",
+          "text": "Das Geschäftsergebnis zuerst definieren"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ob Sie einen E-Commerce-Kanal, ein internes ERP-Modul oder eine Unternehmenswebsite brauchen — beschreiben Sie Erfolg in operativen Begriffen: Wer nutzt es, welche Entscheidungen ermöglicht es, und was muss nach dem Launch zuverlässig bleiben."
+        },
+        {
+          "type": "heading",
+          "text": "Architektonisches Urteilsvermögen erwarten"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ein starker Full-Stack-Auftragnehmer sollte empfehlen, was nicht gebaut werden sollte. Schlanker Checkout, gestaffelte Migrationen und bewusste Cloud-Entscheidungen sparen oft mehr Geld als eine weitere Bibliothek oder ein Dashboard-Bildschirm."
+        },
+        {
+          "type": "heading",
+          "text": "Remote-Delivery braucht trotzdem Rhythmus"
+        },
+        {
+          "type": "paragraph",
+          "text": "Flexible Arbeitszeiten funktionieren, wenn Demos, schriftliche Updates und Staging-Reviews vorhersehbar bleiben. Termingerechte Lieferung ist ein Prozess — keine Charaktereigenschaft. Fragen Sie, wie Risiko, Scope-Änderungen und Übergaben gehandhabt werden, bevor der Kickoff-Call endet."
+        }
+      ]
+    }
+  }
+}

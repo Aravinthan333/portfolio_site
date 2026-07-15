@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import type { SiteProfileData } from "@/lib/site-profile";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { Button } from "@/components/ui/Button";
@@ -11,16 +12,21 @@ type Props = {
 };
 
 export function HeroHome({ profile }: Props) {
+  const t = useTranslations("home");
+  const tProfile = useTranslations("profile");
+  const tCommon = useTranslations("common");
+
   const firstName = profile.name.split(" ")[0];
   const lastName = profile.name.split(" ").slice(1).join(" ");
+  const title = tProfile("title");
 
   return (
-    <section className="hero-portfolio section-block min-h-[90vh] flex items-center">
+    <section className="hero-portfolio section-block min-h-[85vh] flex items-center sm:min-h-[90vh]">
       <div className="container-wide">
         <div className="hero-split">
           <div className="hero-split-content">
             <FadeUp>
-              <p className="hero-greeting">Hello, I&apos;m</p>
+              <p className="hero-greeting">{t("greeting")}</p>
             </FadeUp>
 
             <FadeUp delay={0.05}>
@@ -33,14 +39,14 @@ export function HeroHome({ profile }: Props) {
 
             <FadeUp delay={0.1}>
               <h2 className="hero-typed-line">
-                And I&apos;m a{" "}
-                <span className="text-accent">{profile.title}</span>
+                {t("andImA")}{" "}
+                <span className="text-accent">{title}</span>
               </h2>
             </FadeUp>
 
             <FadeUp delay={0.14}>
-              <p className="hero-intro">{profile.tagline}</p>
-              <p className="hero-intro-muted">{profile.availability}</p>
+              <p className="hero-intro">{tProfile("tagline")}</p>
+              <p className="hero-intro-muted">{tProfile("availability")}</p>
             </FadeUp>
 
             <FadeUp delay={0.18}>
@@ -68,9 +74,9 @@ export function HeroHome({ profile }: Props) {
 
             <FadeUp delay={0.22}>
               <div className="hero-actions">
-                <Button href="/contact">Get in touch</Button>
+                <Button href="/contact">{tCommon("getInTouch")}</Button>
                 <Link href="/work" className="btn-secondary">
-                  View my work
+                  {tCommon("viewMyWork")}
                 </Link>
               </div>
             </FadeUp>

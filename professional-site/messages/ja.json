@@ -1,0 +1,239 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "about": "自己紹介",
+    "skills": "スキル",
+    "projects": "プロジェクト",
+    "blog": "ブログ",
+    "contact": "お問い合わせ",
+    "hireMe": "採用する"
+  },
+  "common": {
+    "brand": "Aravinthan B",
+    "getInTouch": "お問い合わせ",
+    "viewMyWork": "作品を見る",
+    "learnMore": "詳しく見る",
+    "sendMessage": "メッセージを送る",
+    "workWithMe": "一緒に働く",
+    "viewAllProjects": "すべてのプロジェクトを見る",
+    "contactMe": "お問い合わせ",
+    "remoteWorldwide": "世界中でリモート対応",
+    "contractEngagements": "契約ベースの案件",
+    "directContact": "直接連絡",
+    "location": "所在地",
+    "discussService": "このサービスについて相談",
+    "readCaseStudy": "ケーススタディを読む",
+    "viewProject": "プロジェクトを見る",
+    "seeLiveWork": "ライブ作品を見る",
+    "startConversation": "会話を始める",
+    "noArticles": "まだ記事が公開されていません。",
+    "viewProjectCta": "プロジェクトを見る ↗",
+    "email": "メール",
+    "linkedIn": "LinkedIn",
+    "github": "GitHub",
+    "schedule": "スケジュール",
+    "bookCall": "ディスカバリーコールを予約",
+    "messageTab": "メッセージを送る",
+    "callTab": "通話をリクエスト",
+    "copyright": "Copyright © {year} {name} | All Rights Reserved",
+    "ctaSubtitle": "リモート・契約案件を受け付けています。プロジェクトについてお聞かせください。24時間以内に返信します。",
+    "language": "言語"
+  },
+  "home": {
+    "greeting": "こんにちは、私は",
+    "andImA": "私は",
+    "aboutMe": "自己紹介",
+    "aboutIntro": "私は{name}、{title}として、顧客向けアプリケーションやAPIからクラウドインフラ、本番デプロイまで、信頼性の高いスケーラブルなソフトウェアを企業に提供しています。",
+    "latestProjects": "最新のプロジェクト",
+    "mySkills": "私のスキル",
+    "technologies": "テクノロジー",
+    "servicesProvide": "提供サービス",
+    "technicalSkills": "技術スキル",
+    "industries": "業界"
+  },
+  "pages": {
+    "blog": {
+      "label": "インサイト",
+      "title": "ブログ＆ケーススタディ",
+      "subtitle": "アーキテクチャの決定、デリバリーの教訓、リリースしたプロジェクトからの深い洞察。"
+    },
+    "expertise": {
+      "label": "スキル＆サービス",
+      "title": "何を作り、どう働くか",
+      "subtitle": "本番WebアプリやAPIからクラウドインフラまで — 提供するサービスとその技術スタック。"
+    },
+    "work": {
+      "label": "実績",
+      "title": "選ばれた作品",
+      "subtitle": "Eコマース、フィンテック、エンタープライズ向けに設計・構築・リリースした本番システム。",
+      "projectsShipped": "リリースしたプロジェクト",
+      "industryVerticals": "業界分野",
+      "remoteDelivery": "リモートデリバリー",
+      "haveProject": "プロジェクトをお考えですか？",
+      "projectCta": "世界中のスタートアップや企業とリモートで協力 — 契約またはプロジェクトベース。"
+    },
+    "services": {
+      "label": "サービス",
+      "title": "お客様のために構築できるもの",
+      "subtitle": "Webアプリ、API、SaaS製品、クラウドインフラ — リモート・契約案件向けにカスタマイズ。",
+      "intro": "{availability} アーキテクチャから本番リリースまで、信頼できるソフトウェアエンジニアを必要とする創業者やチームと協力しています。",
+      "getQuote": "見積もりを依頼",
+      "bottomTitle": "どのサービスが合うかわからない？",
+      "bottomDesc": "プロジェクトを説明していただければ、最適なアプローチをご提案します — 義務はありません。"
+    },
+    "about": {
+      "label": "自己紹介",
+      "standFor": "私が大切にすること",
+      "experience": "経験",
+      "para1": "私は{name}、インド在住の{title}です。スタートアップや企業が本番品質のソフトウェアを設計・構築・リリースするお手伝いをしています — 顧客向けWebアプリからバックエンドAPI、クラウドインフラまで。",
+      "para2": "Eコマースプラットフォーム、フィンテックシステム、リアルタイムメッセージングコンソール、エンタープライズERPソフトウェアに携わってきました。要件定義からアーキテクチャ、TDD、デプロイ、継続サポートまで一貫して対応します。",
+      "para3": "透明なコミュニケーション、クリーンなアーキテクチャ、実際のビジネス課題を解決するソフトウェアを信じています。"
+    },
+    "contact": {
+      "title": "お問い合わせ",
+      "subtitle": "プロジェクト要件を共有するか、通話をリクエストしてください — 24時間以内に返信します。",
+      "messageHint": "必要なサービスとプロジェクトの目標についてお聞かせください。",
+      "callHint": "ご希望の日時をタイムゾーンで選択してください — ISTに換算して確認します。"
+    },
+    "process": {
+      "label": "アプローチ",
+      "title": "価値の提供方法",
+      "subtitle": "ビジネス目標を理解し、最新技術でカスタマイズされたデジタルソリューションを提供。"
+    }
+  },
+  "profile": {
+    "title": "フルスタックソフトウェアエンジニア",
+    "tagline": "世界中のスタートアップや企業向けに本番品質のWebプラットフォーム、API、クラウドシステムを構築しています。",
+    "availability": "世界中でリモート契約・プロジェクトベースの仕事を受け付けています。"
+  },
+  "services": {
+    "web": {
+      "title": "Web開発",
+      "description": "React、Next.js、TypeScriptを使用したモダンで高性能なWebアプリケーション — ビジネスサイトから高度なエンタープライズプラットフォームまで。",
+      "highlights": ["React & Next.js", "レスポンシブUI", "パフォーマンス最適化", "SEO対応ビルド"]
+    },
+    "backend": {
+      "title": "バックエンド＆API開発",
+      "description": "本番ワークロード向けのスケーラブルなREST API、マイクロサービス、認証、データベース設計、サードパーティ連携。",
+      "highlights": ["REST API", "認証＆セキュリティ", "データベース設計", "サードパーティ連携"]
+    },
+    "saas": {
+      "title": "SaaS＆プロダクトエンジニアリング",
+      "description": "MVP、管理ダッシュボード、マルチテナントアーキテクチャ、サブスクリプションフロー — クリーンアーキテクチャとTDDでリリース。",
+      "highlights": ["MVP＆ダッシュボード", "マルチテナントアプリ", "サブスクリプションフロー", "クリーンアーキテクチャ"]
+    },
+    "cloud": {
+      "title": "クラウド＆DevOps",
+      "description": "AWSインフラ、Docker、Terraform、CI/CDパイプライン、ゼロダウンタイムデプロイで信頼性の高い本番システムを構築。",
+      "highlights": ["AWSインフラ", "Docker & Terraform", "CI/CDパイプライン", "ゼロダウンタイムデプロイ"]
+    },
+    "other": "その他 / まだわからない"
+  },
+  "industries": {
+    "ecommerce": "Eコマース",
+    "fintech": "フィンテック",
+    "erp": "エンタープライズERP",
+    "messaging": "リアルタイムメッセージング"
+  },
+  "whyChoose": {
+    "engineering": {
+      "title": "本番品質のエンジニアリング",
+      "description": "クリーンアーキテクチャ、自動テスト、実環境の負荷下で信頼性の高いコード構造。"
+    },
+    "delivery": {
+      "title": "エンドツーエンドのデリバリー",
+      "description": "要件からアーキテクチャ、開発、デプロイ、リリース後サポートまで — 一貫した責任者。"
+    },
+    "communication": {
+      "title": "明確なコミュニケーション",
+      "description": "明確なマイルストーン、定期的な進捗報告、エンゲージメント全体を通じた直接アクセス。"
+    },
+    "stack": {
+      "title": "モダンで実証済みのスタック",
+      "description": "React、Next.js、Node.js、PostgreSQL、Redis、Docker、AWS — 本番で検証された技術。"
+    }
+  },
+  "process": {
+    "understand": {
+      "title": "理解",
+      "description": "ビジネス目標、ユーザー、制約を学び — スコープ、マイルストーン、成功指標を定義します。"
+    },
+    "design": {
+      "title": "設計＆アーキテクチャ",
+      "description": "システム設計、データベーススキーマ、スピードと長期保守性のバランスを取ったデリバリープラン。"
+    },
+    "build": {
+      "title": "構築＆リリース",
+      "description": "ステージング環境、コードレビュー、透明な進捗を伴う反復開発。"
+    },
+    "launch": {
+      "title": "ローンチ＆サポート",
+      "description": "本番デプロイ、モニタリング、ドキュメント、スムーズな引き継ぎのための継続サポート。"
+    }
+  },
+  "values": {
+    "outcomes": {
+      "title": "ビジネス成果を最優先",
+      "description": "技術的決定は、複雑さや新規性ではなく、生み出す結果で評価されます。"
+    },
+    "quality": {
+      "title": "品質と信頼性",
+      "description": "本番で持続するソフトウェア：テスト済み、文書化され、長期運用向けに構築。"
+    },
+    "partnerships": {
+      "title": "信頼できるパートナーシップ",
+      "description": "一貫したデリバリー、誠実なコミュニケーション、ローンチ後も続くサポート。"
+    }
+  },
+  "experience": {
+    "wonderwhy": {
+      "company": "Wonderwhy Solution",
+      "role": "フルスタックエンジニア",
+      "period": "2024年11月 - 2025年11月",
+      "description": "エンタープライズ物流ソフトウェアをエンドツーエンドで提供 — トリップ管理、GSTコンプライアンス、財務レポート、フリート運用プラットフォーム向けAWSインフラ。"
+    },
+    "independent": {
+      "company": "独立コンサルタント",
+      "role": "ソフトウェアエンジニア",
+      "period": "2023年1月 - 現在",
+      "description": "Eコマース、フィンテック、メッセージング分野の企業と協力し、MVPからスケールまで本番システムを設計・構築・デプロイ。"
+    }
+  },
+  "contactForm": {
+    "name": "名前",
+    "namePlaceholder": "お名前",
+    "email": "メール",
+    "emailPlaceholder": "you@company.com",
+    "service": "サービス",
+    "servicePlaceholder": "サービスを選択",
+    "message": "メッセージ",
+    "messagePlaceholder": "プロジェクト、スケジュール、目標についてお聞かせください...",
+    "messageOptional": "（任意）",
+    "submit": "メッセージを送る",
+    "sending": "送信中...",
+    "successTitle": "メッセージを送信しました！",
+    "successDesc": "お問い合わせありがとうございます。24時間以内に返信します。",
+    "sendAnother": "別のメッセージを送る",
+    "error": "問題が発生しました。再試行するか、直接メールでご連絡ください。",
+    "nameMin": "名前は2文字以上必要です",
+    "nameMax": "名前が長すぎます",
+    "emailInvalid": "有効なメールアドレスを入力してください",
+    "serviceRequired": "サービスを選択してください"
+  },
+  "callForm": {
+    "name": "名前",
+    "email": "メール",
+    "phone": "電話",
+    "country": "国",
+    "date": "希望日",
+    "time": "希望時間",
+    "timezone": "タイムゾーン",
+    "notes": "メモ",
+    "notesPlaceholder": "何について話したいですか？",
+    "submit": "通話をリクエスト",
+    "sending": "送信中...",
+    "successTitle": "通話リクエストを受け付けました！",
+    "successDesc": "メールで時間を確認します。",
+    "error": "問題が発生しました。再試行してください。"
+  }
+}

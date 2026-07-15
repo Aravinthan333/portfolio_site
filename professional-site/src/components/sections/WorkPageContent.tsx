@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { projects } from "@/data/projects";
 import { FadeUp } from "@/components/ui/FadeUp";
@@ -7,15 +8,17 @@ import { PageHero } from "@/components/ui/PageHero";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Button } from "@/components/ui/Button";
 
-export function WorkPageContent() {
+export async function WorkPageContent() {
+  const t = await getTranslations("pages.work");
+  const tCommon = await getTranslations("common");
   const [featured, ...rest] = projects;
 
   return (
     <>
       <PageHero
-        label="Portfolio"
-        title="Selected work"
-        subtitle="Production systems I've designed, built, and shipped across e-commerce, fintech, and enterprise."
+        label={t("label")}
+        title={t("title")}
+        subtitle={t("subtitle")}
       />
 
       <section className="section-block !pt-0">
@@ -23,15 +26,15 @@ export function WorkPageContent() {
           <div className="work-stats">
             <div className="work-stat">
               <p className="work-stat-value">{projects.length}</p>
-              <p className="work-stat-label">Projects shipped</p>
+              <p className="work-stat-label">{t("projectsShipped")}</p>
             </div>
             <div className="work-stat">
               <p className="work-stat-value">4+</p>
-              <p className="work-stat-label">Industry verticals</p>
+              <p className="work-stat-label">{t("industryVerticals")}</p>
             </div>
             <div className="work-stat">
               <p className="work-stat-value">100%</p>
-              <p className="work-stat-label">Remote delivery</p>
+              <p className="work-stat-label">{t("remoteDelivery")}</p>
             </div>
           </div>
 
@@ -56,7 +59,7 @@ export function WorkPageContent() {
                     ))}
                   </div>
                   <span className="work-card-link mt-6">
-                    Read case study
+                    {tCommon("readCaseStudy")}
                     <ArrowUpRight size={16} />
                   </span>
                 </div>
@@ -64,7 +67,7 @@ export function WorkPageContent() {
             </FadeUp>
           )}
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:mt-12">
+          <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:mt-12">
             {rest.map((project, i) => (
               <FadeUp key={project.slug} delay={0.05 + i * 0.05}>
                 <Link href={`/work/${project.slug}`} className="work-card group">
@@ -83,7 +86,7 @@ export function WorkPageContent() {
                       ))}
                     </div>
                     <span className="work-card-link">
-                      View project
+                      {tCommon("viewProject")}
                       <ArrowUpRight size={15} />
                     </span>
                   </div>
@@ -95,24 +98,23 @@ export function WorkPageContent() {
           <FadeUp delay={0.15}>
             <div className="work-cta-band">
               <div>
-                <h2 className="font-display text-xl font-semibold tracking-tight sm:text-2xl">
-                  Have a project in mind?
+                <h2 className="font-display text-lg font-semibold tracking-tight sm:text-xl md:text-2xl">
+                  {t("haveProject")}
                 </h2>
                 <p className="mt-2 max-w-lg text-sm leading-relaxed text-muted">
-                  I work remotely with startups and businesses worldwide - on contract or
-                  project basis.
+                  {t("projectCta")}
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
-                <Button href="/contact">Start a conversation</Button>
+                <Button href="/contact">{tCommon("startConversation")}</Button>
                 {featured?.liveUrl && (
                   <a
                     href={featured.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-border px-5 py-2.5 text-sm font-semibold transition-colors hover:border-accent/40 hover:text-accent"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm font-semibold transition-colors hover:border-accent/40 hover:text-accent sm:px-5 sm:py-2.5"
                   >
-                    See live work
+                    {tCommon("seeLiveWork")}
                     <ExternalLink size={14} />
                   </a>
                 )}

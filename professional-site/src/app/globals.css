@@ -91,7 +91,7 @@ body {
 }
 
 .section-heading {
-  @apply mb-10 text-center text-4xl font-bold tracking-tight sm:text-5xl md:mb-14 md:text-6xl;
+  @apply mb-8 text-center text-3xl font-bold tracking-tight sm:text-4xl md:mb-12 md:text-5xl lg:text-6xl;
 }
 
 /* Portfolio hero — inspired by aravinthan.netlify.app */
@@ -468,19 +468,19 @@ body {
 }
 
 .site-header-bar {
-  @apply flex h-16 w-full items-center justify-between gap-3 px-[5%] sm:h-[4.5rem] sm:gap-4 lg:px-[9%];
+  @apply flex h-14 w-full items-center justify-between gap-2 px-4 sm:h-16 sm:gap-3 sm:px-[5%] lg:px-[9%];
 }
 
 .site-header-logo {
-  @apply cursor-default font-display text-2xl font-bold text-accent sm:text-3xl;
+  @apply cursor-default font-display text-lg font-bold text-accent sm:text-2xl lg:text-3xl;
 }
 
 .site-header-nav {
-  @apply hidden flex-1 items-center justify-center gap-8 md:flex lg:gap-12;
+  @apply hidden flex-1 items-center justify-center gap-4 lg:flex xl:gap-8;
 }
 
 .site-header-link {
-  @apply text-base font-bold text-foreground transition-colors hover:text-accent lg:text-lg;
+  @apply text-sm font-bold text-foreground transition-colors hover:text-accent lg:text-base xl:text-lg;
 }
 
 .site-header-link.is-active {
@@ -630,7 +630,7 @@ body {
 
 /* Page heroes */
 .page-hero {
-  @apply border-b border-border/60 pt-20 sm:pt-24;
+  @apply border-b border-border/60 pt-16 sm:pt-[4.5rem];
   background: var(--gradient-hero);
 }
 
@@ -640,7 +640,7 @@ body {
 }
 
 .page-hero-inner {
-  @apply mx-auto max-w-3xl py-10 sm:py-12 md:py-14;
+  @apply mx-auto max-w-3xl py-6 sm:py-8 md:py-10;
 }
 
 .page-hero-label {
@@ -648,7 +648,7 @@ body {
 }
 
 .page-hero-title {
-  @apply font-display mt-2.5 text-3xl font-semibold leading-[1.12] tracking-tight sm:text-4xl md:text-5xl;
+  @apply font-display mt-2 text-2xl font-semibold leading-[1.12] tracking-tight sm:mt-2.5 sm:text-3xl md:text-4xl lg:text-5xl;
 }
 
 .page-hero-subtitle {
@@ -661,7 +661,7 @@ body {
 
 /* Blog cards */
 .blog-card {
-  @apply flex h-full min-h-[420px] flex-col overflow-hidden rounded-2xl border border-border/80 bg-surface transition-all duration-300;
+  @apply flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-border/80 bg-surface transition-all duration-300 sm:min-h-[380px];
 }
 
 .blog-card:hover {
@@ -715,7 +715,7 @@ body {
 
 /* Work page */
 .work-stats {
-  @apply mb-10 grid grid-cols-3 gap-4 rounded-2xl border border-border/80 bg-surface p-5 sm:mb-12 sm:gap-6 sm:p-6 md:p-8;
+  @apply mb-8 grid grid-cols-3 gap-2 rounded-2xl border border-border/80 bg-surface p-4 sm:mb-10 sm:gap-4 sm:p-6 md:p-8;
 }
 
 .work-stat {
@@ -723,7 +723,7 @@ body {
 }
 
 .work-stat-value {
-  @apply font-display text-2xl font-semibold tracking-tight sm:text-3xl;
+  @apply font-display text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl;
   background: var(--gradient-text);
   -webkit-background-clip: text;
   background-clip: text;
@@ -1028,7 +1028,31 @@ body {
 }
 
 .site-header-hire-btn {
-  @apply inline-flex items-center justify-center rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-background transition-all hover:bg-accent-hover hover:shadow-[0_0_1rem_rgba(89,178,244,0.35)];
+  @apply hidden items-center justify-center rounded-full bg-accent px-4 py-2 text-xs font-bold text-background transition-all hover:bg-accent-hover hover:shadow-[0_0_1rem_rgba(89,178,244,0.35)] sm:inline-flex sm:px-5 sm:py-2.5 sm:text-sm;
+}
+
+.site-header-mobile-hire {
+  @apply mt-2 rounded-lg bg-accent px-3 py-2.5 text-center text-sm font-bold text-background;
+}
+
+.lang-switcher {
+  @apply relative;
+}
+
+.lang-switcher-btn {
+  @apply inline-flex items-center gap-1 rounded-lg border border-border/80 bg-surface px-2 py-1.5 text-xs font-medium text-muted transition-colors hover:border-accent/40 hover:text-foreground sm:gap-1.5 sm:px-3 sm:py-2 sm:text-sm;
+}
+
+.lang-switcher-menu {
+  @apply absolute right-0 top-[calc(100%+0.5rem)] z-50 min-w-[9rem] overflow-hidden rounded-xl border border-border bg-surface py-1 shadow-xl;
+}
+
+.lang-switcher-option {
+  @apply block w-full px-4 py-2 text-left text-sm text-muted transition-colors hover:bg-surface-elevated hover:text-foreground;
+}
+
+.lang-switcher-option.is-active {
+  @apply bg-accent-soft font-semibold text-accent;
 }
 
 /* Admin list */

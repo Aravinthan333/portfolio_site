@@ -1,0 +1,239 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "hireMe": "Beauftragen"
+  },
+  "common": {
+    "brand": "Aravinthan B",
+    "getInTouch": "Kontakt aufnehmen",
+    "viewMyWork": "Meine Arbeit ansehen",
+    "learnMore": "Mehr über mich erfahren",
+    "sendMessage": "Nachricht senden",
+    "workWithMe": "Mit mir arbeiten",
+    "viewAllProjects": "Alle Projekte ansehen",
+    "contactMe": "Kontaktieren Sie mich",
+    "remoteWorldwide": "Remote weltweit",
+    "contractEngagements": "Vertragsbasierte Projekte",
+    "directContact": "Direkter Kontakt",
+    "location": "Standort",
+    "discussService": "Diesen Service besprechen",
+    "readCaseStudy": "Fallstudie lesen",
+    "viewProject": "Projekt ansehen",
+    "seeLiveWork": "Live-Arbeit ansehen",
+    "startConversation": "Gespräch beginnen",
+    "noArticles": "Noch keine Artikel veröffentlicht.",
+    "viewProjectCta": "Projekt ansehen ↗",
+    "email": "E-Mail",
+    "linkedIn": "LinkedIn",
+    "github": "GitHub",
+    "schedule": "Termin",
+    "bookCall": "Erstgespräch buchen",
+    "messageTab": "Nachricht senden",
+    "callTab": "Anruf anfragen",
+    "copyright": "Copyright © {year} {name} | Alle Rechte vorbehalten",
+    "ctaSubtitle": "Offen für Remote- und Vertragsarbeit. Erzählen Sie mir von Ihrem Projekt — ich antworte innerhalb von 24 Stunden.",
+    "language": "Sprache"
+  },
+  "home": {
+    "greeting": "Hallo, ich bin",
+    "andImA": "Und ich bin",
+    "aboutMe": "Über mich",
+    "aboutIntro": "Ich bin {name}, ein {title}, der sich auf zuverlässige, skalierbare Software für Unternehmen konzentriert — von kundenorientierten Anwendungen und APIs bis hin zu Cloud-Infrastruktur und Produktionsbereitstellungen.",
+    "latestProjects": "Neueste Projekte",
+    "mySkills": "Meine Fähigkeiten",
+    "technologies": "Technologien",
+    "servicesProvide": "Meine Dienstleistungen",
+    "technicalSkills": "Technische Fähigkeiten",
+    "industries": "Branchen"
+  },
+  "pages": {
+    "blog": {
+      "label": "Einblicke",
+      "title": "Blog & Fallstudien",
+      "subtitle": "Architekturentscheidungen, Lieferlektionen und tiefe Einblicke aus Projekten, die ich umgesetzt habe."
+    },
+    "expertise": {
+      "label": "Fähigkeiten & Services",
+      "title": "Was ich baue und wie ich arbeite",
+      "subtitle": "Von produktionsreifen Web-Apps und APIs bis zur Cloud-Infrastruktur — hier sind die Services, die ich liefere, und die Technologien dahinter."
+    },
+    "work": {
+      "label": "Arbeit",
+      "title": "Ausgewählte Arbeiten",
+      "subtitle": "Produktionssysteme, die ich für E-Commerce, FinTech und Unternehmen entworfen, gebaut und ausgeliefert habe.",
+      "projectsShipped": "Ausgelieferte Projekte",
+      "industryVerticals": "Branchen",
+      "remoteDelivery": "Remote-Lieferung",
+      "haveProject": "Haben Sie ein Projekt im Sinn?",
+      "projectCta": "Ich arbeite remote mit Startups und Unternehmen weltweit — auf Vertrags- oder Projektbasis."
+    },
+    "services": {
+      "label": "Services",
+      "title": "Was ich für Sie bauen kann",
+      "subtitle": "Web-Apps, APIs, SaaS-Produkte und Cloud-Infrastruktur — maßgeschneidert für Remote- und Vertragsengagements.",
+      "intro": "{availability} Ich arbeite mit Gründern und Teams zusammen, die einen zuverlässigen Software-Ingenieur von der Architektur bis zum Produktionsstart benötigen.",
+      "getQuote": "Angebot anfordern",
+      "bottomTitle": "Nicht sicher, welcher Service passt?",
+      "bottomDesc": "Beschreiben Sie Ihr Projekt und ich empfehle den richtigen Ansatz — ohne Verpflichtung."
+    },
+    "about": {
+      "label": "Über mich",
+      "standFor": "Wofür ich stehe",
+      "experience": "Erfahrung",
+      "para1": "Ich bin {name}, ein {title} aus Indien. Ich helfe Startups und Unternehmen, produktionsreife Software zu entwerfen, zu bauen und auszuliefern — von kundenorientierten Webanwendungen bis zu Backend-APIs und Cloud-Infrastruktur.",
+      "para2": "Meine Arbeit umfasst E-Commerce-Plattformen, FinTech-Systeme, Echtzeit-Messaging-Konsolen und Unternehmens-ERP-Software. Ich begleite Projekte von den Anforderungen über Architektur, testgetriebene Entwicklung, Bereitstellung bis hin zur laufenden Unterstützung.",
+      "para3": "Ich glaube an transparente Kommunikation, saubere Architektur und Software, die echte Geschäftsprobleme löst."
+    },
+    "contact": {
+      "title": "Kontaktieren Sie mich",
+      "subtitle": "Teilen Sie Ihre Projektanforderungen oder fordern Sie einen Anruf an — ich antworte innerhalb von 24 Stunden.",
+      "messageHint": "Erzählen Sie mir von dem Service, den Sie benötigen, und Ihren Projektzielen.",
+      "callHint": "Wählen Sie ein bevorzugtes Datum und eine Uhrzeit in Ihrer Zeitzone — ich sehe die IST-Entsprechung."
+    },
+    "process": {
+      "label": "Ansatz",
+      "title": "Wie ich Mehrwert liefere",
+      "subtitle": "Ihre Geschäftsziele verstehen und maßgeschneiderte digitale Lösungen mit moderner Technologie liefern."
+    }
+  },
+  "profile": {
+    "title": "Full-Stack-Softwareingenieur",
+    "tagline": "Ich baue produktionsreife Webplattformen, APIs und Cloud-Systeme für Startups und Unternehmen weltweit.",
+    "availability": "Verfügbar für Remote-Vertrags- und projektbasierte Arbeit weltweit."
+  },
+  "services": {
+    "web": {
+      "title": "Webentwicklung",
+      "description": "Moderne, leistungsstarke Webanwendungen mit React, Next.js und TypeScript — von Unternehmenswebsites bis zu fortgeschrittenen Enterprise-Plattformen.",
+      "highlights": ["React & Next.js", "Responsive UI", "Performance-Optimierung", "SEO-fertige Builds"]
+    },
+    "backend": {
+      "title": "Backend & API-Entwicklung",
+      "description": "Skalierbare REST-APIs, Microservices, Authentifizierung, Datenbankdesign und Drittanbieter-Integrationen für Produktionsworkloads.",
+      "highlights": ["REST-APIs", "Auth & Sicherheit", "Datenbankdesign", "Drittanbieter-Integrationen"]
+    },
+    "saas": {
+      "title": "SaaS & Produktentwicklung",
+      "description": "MVPs, Admin-Dashboards, Multi-Tenant-Architekturen und Abonnement-Flows — mit sauberer Architektur und testgetriebenen Praktiken.",
+      "highlights": ["MVPs & Dashboards", "Multi-Tenant-Apps", "Abonnement-Flows", "Saubere Architektur"]
+    },
+    "cloud": {
+      "title": "Cloud & DevOps",
+      "description": "AWS-Infrastruktur, Docker, Terraform, CI/CD-Pipelines und Zero-Downtime-Deployments für zuverlässige Produktionssysteme.",
+      "highlights": ["AWS-Infrastruktur", "Docker & Terraform", "CI/CD-Pipelines", "Zero-Downtime-Deployments"]
+    },
+    "other": "Sonstiges / Noch unsicher"
+  },
+  "industries": {
+    "ecommerce": "E-Commerce",
+    "fintech": "FinTech",
+    "erp": "Unternehmens-ERP",
+    "messaging": "Echtzeit-Messaging"
+  },
+  "whyChoose": {
+    "engineering": {
+      "title": "Produktionsreife Technik",
+      "description": "Saubere Architektur, automatisierte Tests und Code, der unter realen Lasten zuverlässig funktioniert."
+    },
+    "delivery": {
+      "title": "End-to-End-Lieferung",
+      "description": "Von Anforderungen über Architektur, Entwicklung, Bereitstellung bis zur Nachbetreuung — ein verantwortlicher Ansprechpartner."
+    },
+    "communication": {
+      "title": "Klare Kommunikation",
+      "description": "Definierte Meilensteine, regelmäßige Fortschrittsupdates und direkter Zugang während des gesamten Engagements."
+    },
+    "stack": {
+      "title": "Moderner, bewährter Stack",
+      "description": "React, Next.js, Node.js, PostgreSQL, Redis, Docker und AWS — in der Produktion validierte Technologien."
+    }
+  },
+  "process": {
+    "understand": {
+      "title": "Verstehen",
+      "description": "Ich lerne Ihre Geschäftsziele, Nutzer und Einschränkungen kennen — und definiere dann Umfang, Meilensteine und Erfolgsmetriken."
+    },
+    "design": {
+      "title": "Design & Architektur",
+      "description": "Systemdesign, Datenbankschema und ein Lieferplan, der Geschwindigkeit mit langfristiger Wartbarkeit in Einklang bringt."
+    },
+    "build": {
+      "title": "Bauen & Ausliefern",
+      "description": "Iterative Entwicklung mit Staging-Umgebungen, Code-Reviews und transparentem Fortschritt."
+    },
+    "launch": {
+      "title": "Start & Support",
+      "description": "Produktionsbereitstellung, Monitoring, Dokumentation und laufende Unterstützung für eine reibungslose Übergabe."
+    }
+  },
+  "values": {
+    "outcomes": {
+      "title": "Geschäftsergebnisse zuerst",
+      "description": "Technische Entscheidungen werden an den Ergebnissen gemessen, die sie erzielen — nicht an Komplexität oder Neuheit."
+    },
+    "quality": {
+      "title": "Qualität und Zuverlässigkeit",
+      "description": "Software, die in der Produktion Bestand hat: getestet, dokumentiert und für die Langzeit gebaut."
+    },
+    "partnerships": {
+      "title": "Vertrauensvolle Partnerschaften",
+      "description": "Konstante Lieferung, ehrliche Kommunikation und Support, der über den Launch-Tag hinausgeht."
+    }
+  },
+  "experience": {
+    "wonderwhy": {
+      "company": "Wonderwhy Solution",
+      "role": "Full-Stack-Ingenieur",
+      "period": "Nov. 2024 - Nov. 2025",
+      "description": "End-to-End-Logistiksoftware geliefert — Reiseverwaltung, GST-Compliance, Finanzberichterstattung und AWS-Infrastruktur für eine Flottenbetriebsplattform."
+    },
+    "independent": {
+      "company": "Unabhängiger Berater",
+      "role": "Softwareingenieur",
+      "period": "Jan. 2023 - heute",
+      "description": "Partnerschaften mit Unternehmen in E-Commerce, FinTech und Messaging, um Produktionssysteme vom MVP bis zur Skalierung zu entwerfen, zu bauen und bereitzustellen."
+    }
+  },
+  "contactForm": {
+    "name": "Name",
+    "namePlaceholder": "Ihr Name",
+    "email": "E-Mail",
+    "emailPlaceholder": "sie@firma.de",
+    "service": "Service",
+    "servicePlaceholder": "Service auswählen",
+    "message": "Nachricht",
+    "messagePlaceholder": "Erzählen Sie mir von Ihrem Projekt, Zeitplan und Zielen...",
+    "messageOptional": "(optional)",
+    "submit": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "successTitle": "Nachricht gesendet!",
+    "successDesc": "Danke für Ihre Nachricht. Ich melde mich innerhalb von 24 Stunden.",
+    "sendAnother": "Weitere Nachricht senden",
+    "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie mir direkt.",
+    "nameMin": "Name muss mindestens 2 Zeichen haben",
+    "nameMax": "Name ist zu lang",
+    "emailInvalid": "Geben Sie eine gültige E-Mail-Adresse ein",
+    "serviceRequired": "Bitte wählen Sie einen Service"
+  },
+  "callForm": {
+    "name": "Name",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "country": "Land",
+    "date": "Bevorzugtes Datum",
+    "time": "Bevorzugte Uhrzeit",
+    "timezone": "Zeitzone",
+    "notes": "Notizen",
+    "notesPlaceholder": "Worüber möchten Sie sprechen?",
+    "submit": "Anruf anfragen",
+    "sending": "Wird gesendet...",
+    "successTitle": "Anrufanfrage erhalten!",
+    "successDesc": "Ich bestätige die Uhrzeit in Kürze per E-Mail.",
+    "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+  }
+}

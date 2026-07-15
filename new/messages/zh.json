@@ -1,0 +1,624 @@
+{
+  "nav": {
+    "work": "作品",
+    "services": "服务",
+    "blog": "博客",
+    "faq": "常见问题",
+    "contact": "联系",
+    "hireMe": "雇用我",
+    "online": "在线",
+    "language": "语言"
+  },
+  "hero": {
+    "roleLine": "软件工程师 | 自由软件顾问",
+    "tags": {
+      "webApps": "定制网络应用",
+      "business": "企业软件",
+      "saas": "SaaS 平台",
+      "backend": "后端系统"
+    },
+    "bookCall": "预约通话",
+    "viewWork": "查看我的作品"
+  },
+  "common": {
+    "learnMore": "了解更多",
+    "hireMe": "雇用我",
+    "bookCall": "预约通话",
+    "openCalendly": "或打开 Calendly",
+    "skipToContent": "跳转到内容",
+    "copyright": "© {year} {name}。可为远程自由职业和合同工作提供服务的软件工程师。"
+  },
+  "metrics": {
+    "ownership": "产品全程负责",
+    "ownershipSub": "从需求到部署",
+    "delivered": "已交付产品",
+    "deliveredSub": "自由职业生产系统",
+    "types": "解决方案类型",
+    "typesSub": "ERP、CRM、电商等",
+    "remote": "支持远程协作",
+    "remoteSub": "灵活工作时间，按时交付",
+    "endToEnd": "全流程"
+  },
+  "sections": {
+    "whatIDo": "我的工作",
+    "servicesTitle": "简化企业运营的软件。",
+    "selectedWork": "精选作品",
+    "projectsTitle": "已上线的生产系统",
+    "projectsDesc": "面向电商、金融、零售和运营的企业软件与数字产品——打开案例研究查看完整故事。",
+    "whoIWorkWith": "合作对象",
+    "collaboratorsTitle": "有明确目标的合作伙伴",
+    "collaboratorsDesc": "需要实用软件的初创企业、成长型企业和团队——自动化运营、提升效率并支持长期增长的系统。",
+    "process": "工作流程",
+    "processTitle": "从需求说明到正式上线",
+    "processDesc": "环环相扣的交付流程——每个阶段都为下一阶段提供支撑，确保范围清晰、按时发布。",
+    "whyMe": "为什么与我合作",
+    "whyMeTitle": "可靠交付，清晰协作。",
+    "whyMeDesc": "我专注于解决业务问题、构建可维护的软件，并对结果负责——无论是独立工作还是融入您的团队。",
+    "expertise": "专业领域",
+    "skillsTitle": "我使用的技术栈",
+    "skillsDesc": "为可维护性、性能和实际业务交付而精选的现代技术栈。",
+    "faq": "常见问题",
+    "faqTitle": "常见问题解答",
+    "faqMore": "更多解答请查看",
+    "faqPage": "常见问题页面",
+    "contactLabel": "一起打造点什么",
+    "contactTitle": "准备好开始了吗？",
+    "contactDesc": "分享您的需求说明，我会给出清晰的下一步安排。"
+  },
+  "process": {
+    "discover": "探索",
+    "discoverDesc": "了解业务需求、用户和约束条件，确保解决方案从第一天起就针对正确的问题。",
+    "design": "设计",
+    "designDesc": "定义清晰的架构、数据模型和交付里程碑，使产品在演进过程中始终保持可维护性。",
+    "build": "构建",
+    "buildDesc": "以迭代方式开发，全程保持进度透明、开展预发布评审并持续获取反馈。",
+    "deliver": "交付",
+    "deliverDesc": "交付至生产环境并提供文档和支持——打造可靠、安全且能随业务共同成长的软件。"
+  },
+  "whyMe": {
+    "solve": "解决业务问题",
+    "solveDesc": "我专注于能改善运营和促进增长的成果——而非为复杂而复杂。",
+    "solveStat": "以业务为先的工程实践",
+    "ship": "交付可维护的软件",
+    "shipDesc": "清晰的架构、可扩展的设计，以及能随需求变化而演进的代码。",
+    "shipStat": "质量优先于捷径",
+    "communicate": "清晰沟通",
+    "communicateDesc": "在整个项目周期中提供直接明了的进展更新，让相关方始终了解现状。",
+    "communicateStat": "透明协作",
+    "own": "主动承担交付责任",
+    "ownDesc": "无论是独立工作还是融入您的团队，我都会主动承担责任，并优先保证可靠、按时的执行。",
+    "ownStat": "独立作战或融入团队"
+  },
+  "collaborators": {
+    "startups": "打造首款产品的初创企业",
+    "startupsDesc": "将经过验证的想法转化为生产级软件，架构可随业务规模扩展而成长。",
+    "modernize": "推进运营现代化的企业",
+    "modernizeDesc": "用围绕您的工作方式打造的 ERP、CRM、POS 集成及内部系统，取代零散的工具和电子表格。",
+    "retail": "零售与服务型组织",
+    "retailDesc": "为真实业务流程设计的电商平台、物流工具和面向客户的体验。",
+    "teams": "需要增援的工程团队",
+    "teamsDesc": "作为可靠的贡献者加入团队——或在需要责任担当和统筹协调时主导交付。"
+  },
+  "hireCta": {
+    "label": "雇用我",
+    "title": "一起打造推动业务发展的软件",
+    "description": "分享您的目标与约束条件。我帮助初创企业和成长型企业将想法转化为可靠、可维护的产品——从全新构建到系统现代化和团队增援皆可胜任。"
+  },
+  "footer": {
+    "projects": "项目",
+    "services": "服务",
+    "blog": "博客",
+    "faq": "常见问题",
+    "contact": "联系",
+    "bookCall": "预约通话"
+  },
+  "pages": {
+    "services": {
+      "label": "我的工作",
+      "title": "服务",
+      "subtitle": "面向需要自动化运营、提升效率并实现线上增长的企业的全流程软件服务。",
+      "hireCtaTitle": "雇用我提供以下服务",
+      "hireCtaDescription": "分享您的目标，我会为您推荐切实可行的项目范围、时间安排和下一步行动。"
+    },
+    "projects": {
+      "label": "精选作品",
+      "title": "项目",
+      "subtitle": "为真实业务需求设计、构建并交付的生产系统。",
+      "hireCtaTitle": "需要类似的解决方案？",
+      "hireCtaDescription": "分享您的目标——我会为您建议一条切实可行的上线路径。"
+    },
+    "blog": {
+      "label": "洞见",
+      "title": "博客",
+      "subtitle": "关于交付、架构以及构建企业软件的实用文章。",
+      "readArticle": "阅读文章",
+      "relatedProject": "相关项目",
+      "viewCaseStudy": "查看案例研究",
+      "backToBlog": "返回博客"
+    },
+    "faq": {
+      "label": "常见问题",
+      "title": "常见问题解答",
+      "subtitle": "关于服务、合作方式以及项目通常如何启动的解答。",
+      "hireCtaTitle": "还有疑问？",
+      "hireCtaDescription": "发送消息或预约一次简短通话——很高兴在我们正式合作前先厘清项目范围。"
+    },
+    "contact": {
+      "label": "联系",
+      "title": "雇用我",
+      "subtitle": "告诉我您的项目情况，我会给出清晰的下一步安排。",
+      "preferConversation": "更喜欢直接沟通？",
+      "preferConversationBody": "预约一次简短通话，讨论项目范围、时间安排和匹配度。",
+      "openCalendlyDirectly": "或直接打开 Calendly"
+    },
+    "bookCall": {
+      "label": "预约通话",
+      "title": "安排一次沟通",
+      "subtitle": "申请通话，或直接在 Calendly 上即时预约。",
+      "fastestPath": "最快方式",
+      "bookInstantlyTitle": "在 Calendly 上即时预约",
+      "bookInstantlyBody": "选择一个合适的时间——即时确认。",
+      "orRequestTitle": "或申请通话",
+      "orRequestBody": "留下您期望的时间段，我会与您确认。",
+      "openCalendlyBtn": "打开 Calendly"
+    },
+    "serviceDetail": {
+      "hireCtaTitle": "准备好雇用我提供 {service} 服务了吗？",
+      "hireCtaDescription": "告诉我您的目标与约束条件——我会给出清晰的下一步安排。"
+    }
+  },
+  "site": {
+    "title": "软件工程师",
+    "tagline": "我设计和构建可扩展的网络应用、企业软件和定制数字解决方案，帮助企业自动化运营、提升效率并实现线上增长。",
+    "bio": "我是一名软件工程师和全栈开发者，专注于定制网络应用、企业软件、SaaS 平台和后端系统。我与初创企业和成长型企业合作，将想法转化为可靠、可扩展、可投入生产的软件——沟通清晰、交付可靠。",
+    "summary": "拥有开发企业应用、电商平台、ERP 解决方案、CRM 系统和定制网络应用经验的软件工程师。我全程参与产品从需求梳理、架构设计、开发到部署的各个环节——与团队和客户紧密协作，打造能带来切实业务价值的软件。",
+    "mission": "打造能简化企业运营、提升生产力，并通过可靠、可扩展的技术帮助组织实现增长的软件。",
+    "location": "印度 · 面向全球提供服务（远程）",
+    "availability": "可承接自由职业项目、合同合作以及全职远程职位——无论是独立工作还是作为您团队的一员。"
+  },
+  "skills": {
+    "languages": "编程语言与运行时",
+    "frameworks": "我使用的框架",
+    "infra": "基础设施与运维",
+    "databases": "数据库与工具"
+  },
+  "breadcrumbs": {
+    "home": "首页",
+    "ariaLabel": "面包屑导航"
+  },
+  "a11y": {
+    "primaryNav": "主导航",
+    "footerNav": "页脚导航"
+  },
+  "forms": {
+    "contact": {
+      "fullName": "姓名",
+      "email": "电子邮箱",
+      "company": "公司",
+      "optional": "（选填）",
+      "serviceNeeded": "所需服务",
+      "selectService": "选择一项服务",
+      "other": "其他",
+      "projectDetails": "项目详情",
+      "placeholderName": "您的姓名",
+      "placeholderEmail": "you@company.com",
+      "placeholderCompany": "公司名称",
+      "placeholderMessage": "目标、时间安排、预算范围或技术背景……",
+      "submit": "发送消息",
+      "sending": "发送中……",
+      "successTitle": "消息已发送",
+      "successBody": "我会在 24 小时内回复您。",
+      "sendAnother": "发送另一条消息",
+      "bookInstead": "改为预约通话",
+      "error": "出现了一些问题。请重试，或发送邮件至 {email}。"
+    },
+    "call": {
+      "fullName": "姓名",
+      "email": "电子邮箱",
+      "phone": "电话",
+      "preferredDate": "期望日期",
+      "preferredTime": "期望时间",
+      "timezone": "时区",
+      "timezoneHint": "默认使用您浏览器的时区——如需可修改。",
+      "note": "备注",
+      "optional": "（选填）",
+      "placeholderName": "您的姓名",
+      "placeholderEmail": "you@company.com",
+      "placeholderPhone": "+91 98765 43210",
+      "placeholderNote": "通话前有什么需要我了解的吗？",
+      "submit": "申请通话",
+      "submitting": "提交中……",
+      "successTitle": "已收到通话申请",
+      "successBody": "我会尽快联系您确认时间。",
+      "submitAnother": "提交另一项申请",
+      "hireViaMessage": "通过消息雇用我",
+      "errorBefore": "请检查表单后重试，或直接在",
+      "errorAfter": "上预约。"
+    }
+  },
+  "errors": {
+    "notFound": {
+      "title": "页面未找到",
+      "body": "该网址不存在。请尝试以下链接——如果您想雇用我，也可以直接联系我。",
+      "home": "首页"
+    },
+    "unexpected": {
+      "label": "出现了一些问题",
+      "title": "意外错误",
+      "body": "发生了意外错误。您可以重试，或联系我洽谈合作。",
+      "tryAgain": "重试",
+      "home": "首页"
+    }
+  },
+  "seo": {
+    "homeTitle": "{name} — 软件工程师与全栈开发者",
+    "homeDescription": "雇用 Aravinthan Balaji，为初创企业和成长型企业设计并构建可扩展的网络应用、企业软件、SaaS 平台和后端系统。",
+    "servicesDescription": "定制网络应用、电商、后端 API、SaaS、ERP 和 CRM 开发——雇用 Aravinthan Balaji，获得可靠的软件交付。",
+    "projectsDescription": "精选的自由职业与产品工程作品——端到端交付的电商、金融科技和企业级平台。",
+    "blogDescription": "关于电商、金融科技平台、云端交付以及如何雇用自由职业全栈工程师的工程笔记。",
+    "faqDescription": "关于雇用 Aravinthan Balaji 从事自由职业项目、远程交付、时间安排和合作方式的常见问题解答。",
+    "contactTitle": "雇用我 — 联系方式",
+    "contactDescription": "雇用 Aravinthan Balaji，从事自由职业的网络、电商、API 和云工程项目。发送项目简述，24 小时内获得回复。",
+    "bookCallDescription": "申请与 Aravinthan Balaji 通话，或直接在 Calendly 上即时预约——讨论自由职业项目、架构与交付。",
+    "softwareEngineering": "软件工程"
+  },
+  "projectLabels": {
+    "role": "角色",
+    "challenge": "挑战",
+    "solution": "解决方案",
+    "highlights": "亮点",
+    "outcome": "成果",
+    "stack": "技术栈",
+    "liveSite": "上线网站",
+    "overview": "概览",
+    "caseStudy": "案例研究",
+    "viewCaseStudy": "查看案例研究",
+    "allProjects": "所有项目",
+    "myRole": "我的职责",
+    "theChallenge": "挑战",
+    "theSolution": "方案",
+    "keyHighlights": "关键亮点",
+    "technologies": "技术栈",
+    "visitLive": "访问线上站点",
+    "discussSimilar": "讨论类似项目",
+    "backToProjects": "返回项目"
+  },
+  "serviceLabels": {
+    "label": "服务",
+    "howIHelp": "我能提供的帮助",
+    "outcomes": "成果",
+    "allServices": "所有服务"
+  },
+  "servicesContent": {
+    "web-development": {
+      "shortTitle": "网站开发",
+      "title": "定制网站与企业应用",
+      "description": "为清晰性、性能和长期可维护性而设计的定制网络应用、企业官网和内部工具。",
+      "summary": "我帮助企业通过定制网络应用、落地页和企业官网建立并提升数字影响力。合作范围涵盖架构设计、界面实现、API 集成和生产环境部署——打造实用、可扩展并契合团队运作方式的软件。",
+      "outcomes": [
+        "根据业务流程量身定制的网络应用",
+        "为转化率和信息清晰度而打造的企业官网与落地页",
+        "取代临时电子表格和手工流程的内部工具",
+        "为未来功能扩展做好准备的整洁、可维护代码库"
+      ],
+      "tags": [
+        "网络应用",
+        "企业官网",
+        "Next.js"
+      ],
+      "seoTitle": "雇用自由职业网站开发工程师",
+      "seoDescription": "雇用 Aravinthan Balaji，为初创企业和成长型企业提供定制网络应用、企业官网和全栈开发服务。"
+    },
+    "ecommerce-development": {
+      "shortTitle": "电商开发",
+      "title": "电商与零售平台",
+      "description": "将店面体验与真实运营流程相连接的电商平台及 POS 集成零售系统。",
+      "summary": "从在线商品目录到订单运营与库存集成，我打造真正契合零售和服务型企业销售方式的商务系统。项目通常包括管理后台、配送协调，以及在无法完全替换现有系统时与现有 POS 或库存数据源的对接。",
+      "outcomes": [
+        "提供可靠结账和订单流程的面向客户店面",
+        "用于商品目录、订单和运营报表的后台管理工具",
+        "面向混合零售运营的 POS 与库存集成",
+        "适应流量、媒体资源和业务增长的生产环境托管"
+      ],
+      "tags": [
+        "电商",
+        "POS",
+        "零售"
+      ],
+      "seoTitle": "雇用电商开发工程师",
+      "seoDescription": "自由职业电商与零售平台开发——由 Aravinthan Balaji 打造的店面、后台工具与 POS 集成。"
+    },
+    "backend-apis": {
+      "shortTitle": "后端与 API",
+      "title": "后端系统与 API 开发",
+      "description": "为企业应用提供稳定性和清晰接口的 REST API、数据库设计和后端系统。",
+      "summary": "强大的后端能将产品想法转化为团队可以运营的系统。我为 ERP 模块、CRM 工作流、消息平台和定制企业软件设计 API、数据模型、身份验证和集成方案——始终强调可维护性和可靠性。",
+      "outcomes": [
+        "具备验证和清晰错误处理的结构化 REST API",
+        "根据访问模式和增长需求匹配的数据库设计",
+        "与第三方服务、Webhook 和任务队列的集成",
+        "面向实时和业务关键型应用的后端基础"
+      ],
+      "tags": [
+        "API",
+        "后端",
+        "数据库"
+      ],
+      "seoTitle": "雇用后端开发工程师",
+      "seoDescription": "雇用自由职业后端工程师，处理 REST API、数据库和企业系统集成——由 Aravinthan Balaji 交付。"
+    },
+    "saas-cloud": {
+      "shortTitle": "SaaS 与 ERP",
+      "title": "SaaS、ERP 与 CRM 解决方案",
+      "description": "能自动化运营并提升效率的 SaaS 产品、ERP 和 CRM 解决方案以及企业管理软件。",
+      "summary": "我开发 SaaS 平台和企业系统——包括 ERP 和 CRM 功能——帮助组织实现工作流自动化并获得清晰的运营可视性。交付内容包括功能开发、技术咨询、维护和性能优化，确保产品在上线后依然可靠稳定。",
+      "outcomes": [
+        "SaaS 仪表盘和多用户企业应用",
+        "根据运营需求量身定制的 ERP 和 CRM 功能",
+        "功能开发、维护和性能优化",
+        "针对架构和交付决策的技术咨询"
+      ],
+      "tags": [
+        "SaaS",
+        "ERP",
+        "CRM"
+      ],
+      "seoTitle": "雇用 SaaS 与 ERP 开发工程师",
+      "seoDescription": "为推进运营现代化的企业提供自由职业 SaaS、ERP 和 CRM 开发——由 Aravinthan Balaji 提供咨询与交付。"
+    }
+  },
+  "faqItems": {
+    "whatKinds": {
+      "question": "您能开发哪些类型的软件？",
+      "answer": "定制网络应用、企业管理软件、SaaS 平台、ERP 和 CRM 解决方案、电商系统、POS 集成应用、落地页、企业官网、内部工具、REST API 以及实时系统。"
+    },
+    "remote": {
+      "question": "您是否支持远程工作？",
+      "answer": "是的。我以灵活的工作时间进行远程工作，可承接自由职业项目、合同职位以及全职远程机会。通过清晰的进展更新和定期评审，项目进度始终保持可见。"
+    },
+    "aloneAndTeam": {
+      "question": "您能独立工作，也能融入团队吗？",
+      "answer": "是的。我既能独立负责交付，也能顺利融入现有的工程团队。在需要时，我也可以主导从设计、构建到发布的整个开发过程。"
+    },
+    "delivery": {
+      "question": "您如何看待项目交付？",
+      "answer": "我专注于理解业务需求、构建整洁的架构、编写可维护的代码，并保持可靠的沟通。在整个合作过程中，责任担当和按时交付始终是优先事项。"
+    },
+    "industries": {
+      "question": "您支持哪些行业？",
+      "answer": "物流、零售、电商、初创企业、中小型服务企业、制造业、教育、金融，以及正在推进业务自动化和数字化转型的团队。"
+    },
+    "howStart": {
+      "question": "我们该如何开始？",
+      "answer": "预约一次简短通话，或通过联系表单分享项目简述。在做出任何承诺之前，我们会先明确目标、约束条件和下一步安排。"
+    }
+  },
+  "projectsContent": {
+    "raja-supermart": {
+      "title": "Raja Supermart",
+      "subtitle": "生鲜杂货电商平台",
+      "description": "为一家印度超市打造的端到端生鲜杂货电商方案——包括店面、运营管理后台、配送流程，以及与传统 POS 系统的库存同步。",
+      "overview": "Raja Supermart 需要一个尊重门店现有日常运营方式的在线订购渠道。我设计并交付了一套全栈平台，涵盖顾客浏览与结账、员工使用的商品目录与电话订单工具、配送协调和退货处理——同时保持库存与现有的 Optech POS 数据库同步。",
+      "role": "负责架构设计、API、顾客端与管理端界面以及 AWS 部署的自由职业全栈工程师。",
+      "challenge": "库存和定价数据存储在无法替换的传统 SQL Server POS 系统中。订单依然通过电话和网站两种渠道到达。配送合作方需要按地址分组的任务分配，管理层也要求清晰的营收和品类报表——所有这些都不能干扰门店内的日常运营。",
+      "solution": "我交付了一个基于 React 的店面前端和 Node.js API，使用 MongoDB 存储商务数据、Redis 处理会话与缓存，并通过定时任务将库存与 Optech SQL Server 保持同步。管理后台负责处理商品目录结构、电话订单录入、合作方分配、退货处理和数据分析。资源存储和托管部署在 AWS 上，媒体文件使用 S3 存储。",
+      "highlights": [
+        "双数据库架构，让 MongoDB 商务数据与 Optech SQL Server 库存保持同步",
+        "涵盖商品目录、购物车、心愿单、结账和退货的顾客体验",
+        "用于电话订单、配送、商品目录和营收洞察的运营管理后台",
+        "在 AWS 上的生产环境托管，并通过 S3 实现可靠的媒体分发"
+      ],
+      "outcome": "rajasupermart.com 已上线运行，线上与线下运营保持同步。",
+      "tags": [
+        "电商",
+        "React",
+        "Node.js",
+        "AWS"
+      ]
+    },
+    "valathi-chits": {
+      "title": "Valathi Chit Funds",
+      "subtitle": "金融科技网络平台",
+      "description": "一个受监管的合会公开网站，具备双语内容、在线会员申请、收益计算器以及自动化法律文件生成功能。",
+      "overview": "Valathi Chit Funds 在泰米尔纳德邦经营着三家在政府注册登记下运营的分支机构。我构建了 valathichits.com，让潜在会员可以查看正在开放的合会小组、估算收益、通过电子签名在线申请，并获得合规文件——由 PostgreSQL 提供的 API 和便于运营的后台管理工具支撑。后续推出的配套 WhatsApp 运营控制台，进一步统一了代理消息沟通和分支机构工作流程。",
+      "role": "负责公开网站、REST API、PDF 自动化和 AWS 基础设施的自由职业全栈工程师。",
+      "challenge": "该产品必须同时服务英语和泰米尔语用户，满足申请流程的监管要求，并实现品牌化法律表单的自动生成——同时确保没有专职工程团队的小型团队也能顺利运营。",
+      "solution": "我交付了一个基于 Next.js 的双语体验，包含合会小组浏览、专用计算器以及带电子签名采集的申请流程。PostgreSQL 存储内容和申请数据；Puppeteer 用于生成多品牌法律 PDF 文件。部署运行在 Nginx 后面的 AWS EC2 上，使用 S3 存储，并通过 GitHub Actions 发布。",
+      "highlights": [
+        "具备计算器和小组查询功能的英语/泰米尔语双语公开网站",
+        "支持电子签名的在线会员申请",
+        "面向合规文书的自动化多品牌法律 PDF 生成流程",
+        "由 PostgreSQL 支持的 API，可用于内容与申请数据的管理"
+      ],
+      "outcome": "valathichits.com 目前服务三家分支机构，实现了精简的申请流程和自动化的法律文件生成。",
+      "tags": [
+        "金融科技",
+        "Next.js",
+        "PostgreSQL",
+        "AWS"
+      ]
+    },
+    "race-parts-india": {
+      "title": "Race Parts India",
+      "subtitle": "赛车运动电商平台",
+      "description": "高性能赛车运动商品目录，支持 WhatsApp 结账、Terraform 管理的 AWS 托管以及自动化 CI/CD 流程。",
+      "overview": "Race Parts India 需要一个可信、以移动端为先的赛车配件和模拟器硬件店面，同时在上线阶段避免全套商务后端的成本投入。我作为一体化项目交付了 React 店面前端、生产级 AWS 基础设施以及发布自动化——从界面设计到零停机部署一手完成。",
+      "role": "负责前端应用、云基础设施和 CI/CD 流水线的自由职业工程师。",
+      "challenge": "该业务需要精致的浏览、筛选、购物车和商品详情体验，同时倾向于采用轻量级结账模式。托管、SSL 和可重复的发布流程必须保持可靠，且不能依赖持续的人工服务器操作。",
+      "solution": "我构建了一个响应式 React 单页应用，提供响应式商品目录、购物车流程和图文并茂的商品详情页面，并将结账流程接入 WhatsApp，形成移动端用户熟悉的购买路径。Terraform 负责配置带有 Nginx 和自动化 SSL 的 AWS EC2 实例。GitHub Actions 流水线统一了构建流程和基于 rsync 的部署方式。",
+      "highlights": [
+        "按分类筛选的商品目录，配备响应式购物车和商品详情体验",
+        "避免早期后端订单管理开销的 WhatsApp 结账方式",
+        "由 Terraform 配置、搭载 Nginx 和自动化 SSL 续期的 AWS EC2",
+        "用于实现一致、低摩擦发布的 GitHub Actions CI/CD"
+      ],
+      "outcome": "racepartsindia.com 已正式上线，具备自动化部署能力，并为后续引入后端预留了清晰的扩展路径。",
+      "tags": [
+        "电商",
+        "React",
+        "Terraform",
+        "CI/CD"
+      ]
+    },
+    "wondermove-erp": {
+      "title": "Wondermove ERP",
+      "subtitle": "企业物流管理",
+      "description": "一个部署在 AWS 上的车队运营平台，涵盖行程管理、GST 合规、账簿工作流和财务报表。",
+      "overview": "在与泰米尔纳德邦一家初创公司合作期间，我参与打造了 Wondermove——一款专为已超出电子表格管理能力的物流运营商设计的 ERP 系统。该系统以行程生命周期管理、税务合规、账簿处理和管理报表为核心，让管理层能够全面掌握整个车队的成本和盈利状况。",
+      "role": "产品团队中的全栈工程师——负责涵盖前端、API 和 AWS 托管服务的各项功能开发。",
+      "challenge": "物流团队需要在多个互不相通的工具之间处理行程、发票和税务记录。财务准确性和 GST 处理尤为敏感，任何替代系统都必须在真实的运营负荷下迅速赢得信任。",
+      "solution": "我们在部署于 AWS 上的现代网络与 API 技术栈基础上交付了一套全栈 ERP 系统，并在财务计算和运营工作流方面保持严谨的工程规范。行程管理、GST 跟踪、账簿维护和预测功能整合在同一个运营界面中，服务于调度和财务相关方。",
+      "highlights": [
+        "统一的行程管理，支持日常车队运营",
+        "具备 GST 处理能力的财务工作流和账簿维护",
+        "提升成本和盈利可视性的报表功能",
+        "适应不断增长的物流业务负载的 AWS 托管交付"
+      ],
+      "outcome": "减少了车队运营管理中的人工协调工作，并提升了财务可视性。",
+      "tags": [
+        "企业级",
+        "全栈",
+        "AWS",
+        "ERP"
+      ]
+    }
+  },
+  "blogContent": {
+    "bridging-legacy-pos-with-modern-grocery-commerce": {
+      "title": "用传统 POS 系统连接现代生鲜杂货电商",
+      "excerpt": "双数据库架构设计、电话订单工作流和配送工具，如何让一家传统超市在无需替换现有 POS 系统的情况下实现线上销售。",
+      "category": "工程",
+      "readTime": "7 分钟阅读",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "许多印度零售商已经在运行稳定的销售点（POS）系统。当顾客开始期待送货上门服务时，替换这套基础设施往往不是第一步之选。更实际的做法是引入一个将 POS 视为库存权威数据源的在线销售渠道。"
+        },
+        {
+          "type": "heading",
+          "text": "明确库存数据的归属"
+        },
+        {
+          "type": "paragraph",
+          "text": "对于 Raja Supermart 而言，库存和定价数据依然保留在 Optech SQL Server 中。应用层数据——购物车、订单、客户账户——则存储在 MongoDB 中。一个定时同步任务负责协调库存数量，确保线上店面的数据始终与收银台的实际情况保持同步，不会出现明显偏差。"
+        },
+        {
+          "type": "heading",
+          "text": "按照订单实际到达的方式进行设计"
+        },
+        {
+          "type": "paragraph",
+          "text": "在生鲜杂货零售业务中，电话订单依然十分常见。管理员需要在处理网站结账、合作方分配和退货的同一个后台系统中下单并管理这些电话订单。统一的运营界面降低了培训成本，也减少了交接过程中的疏漏。"
+        },
+        {
+          "type": "heading",
+          "text": "在上线时保持运营可视性"
+        },
+        {
+          "type": "paragraph",
+          "text": "营收、品类表现和配送状态的仪表盘与精致的商品目录同样重要。当管理层无需导出电子表格就能回答基本问题时，该平台就能迅速赢得信任。"
+        }
+      ]
+    },
+    "bilingual-fintech-sites-that-stay-compliant": {
+      "title": "构建始终合规的双语金融科技网站",
+      "excerpt": "从交付一个具备英语/泰米尔语内容、在线申请和自动化法律 PDF 生成功能的合会公开平台中获得的经验。",
+      "category": "案例研究",
+      "readTime": "6 分钟阅读",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "受监管的金融产品所需的不仅仅是一个营销落地页。会员必须能用自己的语言理解产品内容，在明确的同意机制下完成申请，并收到符合跨品牌或跨分支机构法律要求的文件。"
+        },
+        {
+          "type": "heading",
+          "text": "本地化整个流程，而不只是文字标签"
+        },
+        {
+          "type": "paragraph",
+          "text": "对于 Valathi Chit Funds 而言，双语支持覆盖了浏览、计算器和申请文案。只有当收益估算和表单文字与分支机构工作人员实际讲解产品的方式保持一致时，本地化才能真正发挥作用。"
+        },
+        {
+          "type": "heading",
+          "text": "谨慎地自动化文书工作"
+        },
+        {
+          "type": "paragraph",
+          "text": "基于 Puppeteer 的 PDF 生成方案，能够根据结构化的申请数据生成多品牌的法律表单。其目标是减少人工修改和字段不匹配的情况——这在多个办事处共用同一个公开网站时尤为重要。"
+        },
+        {
+          "type": "heading",
+          "text": "为上线后的运营做好规划"
+        },
+        {
+          "type": "paragraph",
+          "text": "一个公开网站只是故事的一半。代理工作流程、消息沟通和后台内容更新，决定了这个数字渠道能否持续发挥作用。以运营控制台为出发点进行构建，可以减少日后临时拼凑工具的需求。"
+        }
+      ]
+    },
+    "when-whatsapp-checkout-beats-a-payments-stack": {
+      "title": "何时 WhatsApp 结账胜过完整的支付技术栈",
+      "excerpt": "为一个采用静态优先架构、通过 WhatsApp 下单的赛车运动电商店面做出的选择——让技术投入与业务成熟度相匹配。",
+      "category": "架构",
+      "readTime": "5 分钟阅读",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "并非每一个商品目录都需要在第一天就具备银行卡支付处理能力。对于已经通过 WhatsApp 进行销售沟通的专业零售商而言，一个将结账流程交给聊天工具处理的快速店面，其效果往往优于一个尚未完善的支付集成方案。"
+        },
+        {
+          "type": "heading",
+          "text": "为信任和速度而优化"
+        },
+        {
+          "type": "paragraph",
+          "text": "Race Parts India 需要在移动端提供精致的商品展示、筛选功能和清晰的购物车体验。买家的信任早已建立在 WhatsApp 之上。将这些流程连接起来，缩短了上市时间，也降低了托管的复杂度。"
+        },
+        {
+          "type": "heading",
+          "text": "投资于会长期保留的基础设施"
+        },
+        {
+          "type": "paragraph",
+          "text": "即便在精简架构中，Terraform、Nginx、SSL 自动化和 GitHub Actions 依然十分重要。它们保障了发布质量，也为日后订单量足以支撑后端系统时的接入预留了清晰的路径。"
+        }
+      ]
+    },
+    "hiring-a-freelance-full-stack-engineer": {
+      "title": "雇用自由职业全栈工程师时该有怎样的预期",
+      "excerpt": "一份为创始人和运营负责人准备的实用指南：项目范围、沟通方式、交付节奏，以及远程合作如何保持按计划推进。",
+      "category": "指南",
+      "readTime": "6 分钟阅读",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "当合作更像是产品合伙关系，而不是工单队列时，雇用一名自由职业工程师往往效果最佳。清晰的成果、明确的决策归属和切合实际的里程碑，永远比模糊的功能清单更有效。"
+        },
+        {
+          "type": "heading",
+          "text": "首先明确业务成果"
+        },
+        {
+          "type": "paragraph",
+          "text": "无论您需要的是电商渠道、内部 ERP 模块，还是企业官网，都请用运营层面的语言描述成功的标准：谁会使用它、它能支持哪些决策，以及上线后哪些方面必须保持可靠。"
+        },
+        {
+          "type": "heading",
+          "text": "期待获得架构层面的判断力"
+        },
+        {
+          "type": "paragraph",
+          "text": "一名优秀的全栈承包工程师应该能够建议哪些内容不应该构建。轻量级结账方案、分阶段迁移和审慎的云服务选型，往往比多加一个库或一个仪表盘页面能节省更多成本。"
+        },
+        {
+          "type": "heading",
+          "text": "远程交付依然需要节奏感"
+        },
+        {
+          "type": "paragraph",
+          "text": "当演示、书面更新和预发布评审保持可预期时，灵活的工作时间才能真正发挥作用。按时交付是一套流程——而不是一种性格特质。在启动通话结束前，务必了解风险、范围变更和交接工作将如何处理。"
+        }
+      ]
+    }
+  }
+}

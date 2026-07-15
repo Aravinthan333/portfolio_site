@@ -1,28 +1,34 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { ArrowUpRight, Check } from "lucide-react";
-import { services } from "@/data/profile";
 import { serviceIconMap } from "@/lib/icons";
-import { SITE } from "@/lib/site";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { PageHero } from "@/components/ui/PageHero";
 import { ProcessSection } from "@/components/sections/ProcessSection";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Button } from "@/components/ui/Button";
 
-const serviceHighlights: Record<string, string[]> = {
-  web: ["React & Next.js", "Responsive UI", "Performance tuning", "SEO-ready builds"],
-  backend: ["REST APIs", "Auth & security", "Database design", "Third-party integrations"],
-  saas: ["MVPs & dashboards", "Multi-tenant apps", "Subscription flows", "Clean architecture"],
-  cloud: ["AWS infrastructure", "Docker & Terraform", "CI/CD pipelines", "Zero-downtime deploys"],
+const serviceSlugs = ["web-development", "backend", "saas", "cloud"] as const;
+const serviceKeys = ["web", "backend", "saas", "cloud"] as const;
+const slugToKey: Record<(typeof serviceSlugs)[number], (typeof serviceKeys)[number]> = {
+  "web-development": "web",
+  backend: "backend",
+  saas: "saas",
+  cloud: "cloud",
 };
 
-export function ServicesPageContent() {
+export async function ServicesPageContent() {
+  const t = await getTranslations("pages.services");
+  const tServices = await getTranslations("services");
+  const tProfile = await getTranslations("profile");
+  const tCommon = await getTranslations("common");
+
   return (
     <>
       <PageHero
-        label="Services"
-        title="What I can build for you"
-        subtitle="Web apps, APIs, SaaS products, and cloud infrastructure - tailored for remote and contract engagements."
+        label={t("label")}
+        title={t("title")}
+        subtitle={t("subtitle")}
       />
 
       <section className="section-block !pt-0">
@@ -30,28 +36,28 @@ export function ServicesPageContent() {
           <FadeUp>
             <div className="services-intro">
               <p className="text-sm leading-relaxed text-muted sm:text-base">
-                {SITE.availability} I partner with founders and teams who need a reliable
-                software engineer from architecture through production launch.
+                {t("intro", { availability: tProfile("availability") })}
               </p>
             </div>
           </FadeUp>
 
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:mt-12 lg:gap-6">
-            {services.map((service, i) => {
-              const Icon = serviceIconMap[service.icon] ?? serviceIconMap.web;
-              const highlights = serviceHighlights[service.icon] ?? [];
+          <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 lg:mt-12 lg:gap-6">
+            {serviceSlugs.map((slug, i) => {
+              const key = slugToKey[slug];
+              const Icon = serviceIconMap[key] ?? serviceIconMap.web;
+              const highlights = tServices.raw(`${key}.highlights`) as string[];
 
               return (
-                <FadeUp key={service.slug} delay={0.04 + i * 0.04}>
-                  <article id={service.slug} className="service-card scroll-mt-28">
+                <FadeUp key={slug} delay={0.04 + i * 0.04}>
+                  <article id={slug} className="service-card scroll-mt-28">
                     <div className="service-card-top">
                       <div className="service-icon-wrap">
                         <Icon size={22} strokeWidth={1.75} />
                       </div>
-                      <h2 className="service-card-title">{service.title}</h2>
+                      <h2 className="service-card-title">{tServices(`${key}.title`)}</h2>
                     </div>
 
-                    <p className="service-card-desc">{service.description}</p>
+                    <p className="service-card-desc">{tServices(`${key}.description`)}</p>
 
                     <ul className="service-card-list">
                       {highlights.map((item) => (
@@ -63,7 +69,7 @@ export function ServicesPageContent() {
                     </ul>
 
                     <Link href="/contact" className="service-card-link">
-                      Discuss this service
+                      {tCommon("discussService")}
                       <ArrowUpRight size={15} />
                     </Link>
                   </article>
@@ -75,15 +81,14 @@ export function ServicesPageContent() {
           <FadeUp delay={0.2}>
             <div className="services-bottom-cta">
               <div>
-                <h2 className="font-display text-xl font-semibold tracking-tight sm:text-2xl">
-                  Not sure which service fits?
+                <h2 className="font-display text-lg font-semibold tracking-tight sm:text-xl md:text-2xl">
+                  {t("bottomTitle")}
                 </h2>
                 <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
-                  Tell me about your goals and I&apos;ll recommend the right approach - fixed
-                  scope, milestone-based, or ongoing contract.
+                  {t("bottomDesc")}
                 </p>
               </div>
-              <Button href="/contact">Contact Me</Button>
+              <Button href="/contact">{tCommon("contactMe")}</Button>
             </div>
           </FadeUp>
         </div>
