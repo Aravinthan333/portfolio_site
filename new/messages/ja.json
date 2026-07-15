@@ -142,6 +142,8 @@
       "emptyState": "まだ記事は公開されていません。",
       "emptyFilter": "このトピックの記事はまだありません。",
       "author": "Aravinthan Balaji",
+      "publication": "エンジニアリングノート",
+      "relatedPosts": "関連記事",
       "hireCtaTitle": "似たようなものが必要ですか？",
       "hireCtaDescription": "目標を教えてください - 本番環境への実践的な道筋をご提案します。"
     },

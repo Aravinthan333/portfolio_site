@@ -142,6 +142,8 @@
       "emptyState": "暂无已发布的文章。",
       "emptyFilter": "该主题下暂无文章。",
       "author": "Aravinthan Balaji",
+      "publication": "工程笔记",
+      "relatedPosts": "相关文章",
       "hireCtaTitle": "需要类似的解决方案？",
       "hireCtaDescription": "分享你的目标 - 我会建议一条切实可行的上线路径。"
     },

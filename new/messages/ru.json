@@ -142,6 +142,8 @@
       "emptyState": "Статьи пока не опубликованы.",
       "emptyFilter": "В этой теме пока нет статей.",
       "author": "Aravinthan Balaji",
+      "publication": "Инженерные заметки",
+      "relatedPosts": "Похожие статьи",
       "hireCtaTitle": "Нужно что-то похожее?",
       "hireCtaDescription": "Расскажите о своих целях - предложу практичный путь к production."
     },

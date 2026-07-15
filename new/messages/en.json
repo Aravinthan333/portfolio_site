@@ -142,6 +142,8 @@
       "emptyState": "No articles published yet.",
       "emptyFilter": "No articles in this topic yet.",
       "author": "Aravinthan Balaji",
+      "publication": "Engineering notes",
+      "relatedPosts": "Related articles",
       "hireCtaTitle": "Need something similar?",
       "hireCtaDescription": "Share your goals - I'll suggest a practical path to production."
     },
