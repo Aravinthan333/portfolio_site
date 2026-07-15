@@ -138,7 +138,10 @@
       "relatedProject": "相关项目",
       "viewCaseStudy": "查看案例研究",
       "backToBlog": "返回博客",
+      "allTopics": "全部",
       "emptyState": "暂无已发布的文章。",
+      "emptyFilter": "该主题下暂无文章。",
+      "author": "Aravinthan Balaji",
       "hireCtaTitle": "需要类似的解决方案？",
       "hireCtaDescription": "分享你的目标 - 我会建议一条切实可行的上线路径。"
     },

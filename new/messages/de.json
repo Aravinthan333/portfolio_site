@@ -138,7 +138,10 @@
       "relatedProject": "Verwandtes Projekt",
       "viewCaseStudy": "Fallstudie ansehen",
       "backToBlog": "Zurück zum Blog",
+      "allTopics": "Alle",
       "emptyState": "Noch keine Artikel veröffentlicht.",
+      "emptyFilter": "Noch keine Artikel in diesem Thema.",
+      "author": "Aravinthan Balaji",
       "hireCtaTitle": "Brauchen Sie etwas Ähnliches?",
       "hireCtaDescription": "Teilen Sie Ihre Ziele - ich schlage einen praktischen Weg zur Produktion vor."
     },

@@ -1,17 +1,17 @@
 "use client";
 
-import { BookOpen } from "lucide-react";
 import { BlogList, type BlogListItem } from "@/components/BlogList";
 import { HireCta } from "@/components/HireCta";
 import { AtmosphereBg } from "@/components/AtmosphereBg";
-import { ScrollReveal } from "@/components/ScrollReveal";
 
 type Props = {
   posts: BlogListItem[];
   title: string;
   subtitle: string;
-  readArticleLabel: string;
+  allTopicsLabel: string;
   emptyLabel: string;
+  emptyFilterLabel: string;
+  authorLabel: string;
   hireCtaTitle: string;
   hireCtaDescription: string;
 };
@@ -20,35 +20,38 @@ export function BlogPageView({
   posts,
   title,
   subtitle,
-  readArticleLabel,
+  allTopicsLabel,
   emptyLabel,
+  emptyFilterLabel,
+  authorLabel,
   hireCtaTitle,
   hireCtaDescription,
 }: Props) {
   return (
-    <section className="relative overflow-hidden py-10 sm:py-14">
+    <section className="relative overflow-hidden py-8 sm:py-10 md:py-12">
       <AtmosphereBg variant="mesh" />
       <div className="section-wrap relative">
-        <ScrollReveal>
-          <header className="mb-4 flex flex-col items-center justify-center gap-2 text-center sm:mb-5 sm:flex-row sm:gap-3.5">
-            <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--blue-600)]/15 bg-[var(--blue-50)] text-[var(--blue-600)] shadow-sm [&_svg]:h-5 [&_svg]:w-5">
-              <BookOpen strokeWidth={2} aria-hidden />
-            </span>
-            <h1 className="font-display text-[clamp(1.65rem,4vw,2.75rem)] font-medium tracking-tight text-[var(--fg)] text-balance">
+        <div className="blogs-page mx-auto w-full min-w-0 max-w-4xl xl:max-w-5xl">
+          <header className="mb-4 sm:mb-5 md:mb-6">
+            <h1 className="font-display text-2xl font-semibold tracking-tight text-[var(--fg)] sm:text-3xl lg:text-[2rem]">
               {title}
             </h1>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[var(--fg-muted)] sm:text-[0.9375rem]">
+              {subtitle}
+            </p>
           </header>
-          <p className="section-desc mx-auto mb-10 max-w-xl px-1 text-center sm:mb-12">
-            {subtitle}
-          </p>
-        </ScrollReveal>
 
-        <div className="mx-auto max-w-3xl">
-          <BlogList posts={posts} readArticleLabel={readArticleLabel} emptyLabel={emptyLabel} />
-        </div>
+          <BlogList
+            posts={posts}
+            allTopicsLabel={allTopicsLabel}
+            emptyLabel={emptyLabel}
+            emptyFilterLabel={emptyFilterLabel}
+            authorLabel={authorLabel}
+          />
 
-        <div className="mx-auto mt-10 max-w-3xl sm:mt-12">
-          <HireCta compact title={hireCtaTitle} description={hireCtaDescription} />
+          <div className="mt-10 sm:mt-12">
+            <HireCta compact title={hireCtaTitle} description={hireCtaDescription} />
+          </div>
         </div>
       </div>
     </section>

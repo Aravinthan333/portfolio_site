@@ -138,7 +138,10 @@
       "relatedProject": "Related project",
       "viewCaseStudy": "View case study",
       "backToBlog": "Back to blog",
+      "allTopics": "All",
       "emptyState": "No articles published yet.",
+      "emptyFilter": "No articles in this topic yet.",
+      "author": "Aravinthan Balaji",
       "hireCtaTitle": "Need something similar?",
       "hireCtaDescription": "Share your goals - I'll suggest a practical path to production."
     },

@@ -41,18 +41,21 @@ export default async function BlogPage({ params }: Props) {
         )}
       />
       <BlogPageView
-        posts={posts.map(({ slug, title, excerpt, category, date, readTime }) => ({
+        posts={posts.map(({ slug, title, excerpt, category, date, readTime, coverImage }) => ({
           slug,
           title,
           excerpt,
           category,
           date,
           readTime,
+          coverImage,
         }))}
         title={t("title")}
         subtitle={t("subtitle")}
-        readArticleLabel={t("readArticle")}
+        allTopicsLabel={t("allTopics")}
         emptyLabel={t("emptyState")}
+        emptyFilterLabel={t("emptyFilter")}
+        authorLabel={t("author")}
         hireCtaTitle={t("hireCtaTitle")}
         hireCtaDescription={t("hireCtaDescription")}
       />

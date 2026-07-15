@@ -138,7 +138,10 @@
       "relatedProject": "Связанный проект",
       "viewCaseStudy": "Смотреть кейс",
       "backToBlog": "Назад к блогу",
+      "allTopics": "Все",
       "emptyState": "Статьи пока не опубликованы.",
+      "emptyFilter": "В этой теме пока нет статей.",
+      "author": "Aravinthan Balaji",
       "hireCtaTitle": "Нужно что-то похожее?",
       "hireCtaDescription": "Расскажите о своих целях - предложу практичный путь к production."
     },
