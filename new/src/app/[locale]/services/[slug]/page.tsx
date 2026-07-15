@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { BlueInitials } from "@/components/BlueInitials";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { HireCta } from "@/components/HireCta";
 import { BookCallButton } from "@/components/BookCallButton";
@@ -59,7 +60,9 @@ export default async function ServiceDetailPage({ params }: Props) {
         <article className="mx-auto max-w-3xl">
           <header className="text-center">
             <p className="section-label">{t("label")}</p>
-            <h1 className="section-title mt-3">{service.title}</h1>
+            <h1 className="section-title mt-3">
+              <BlueInitials text={service.title} />
+            </h1>
             <p className="section-desc mx-auto mt-4 max-w-2xl">{service.description}</p>
             <div className="mt-6 flex flex-wrap justify-center gap-2">
               {service.tags.map((tag, i) => (

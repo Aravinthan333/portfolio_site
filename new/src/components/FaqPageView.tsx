@@ -1,7 +1,7 @@
 "use client";
 
-import { HelpCircle } from "lucide-react";
 import type { FaqItem } from "@/data/faq";
+import { BlueInitials } from "@/components/BlueInitials";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { HireCta } from "@/components/HireCta";
 import { AtmosphereBg } from "@/components/AtmosphereBg";
@@ -25,12 +25,9 @@ export function FaqPageView({
       <AtmosphereBg variant="mesh" />
       <div className="section-wrap relative">
         <ScrollReveal>
-          <header className="mb-10 flex flex-col items-center justify-center gap-2 text-center sm:mb-12 sm:flex-row sm:gap-3.5">
-            <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--blue-600)]/15 bg-[var(--blue-50)] text-[var(--blue-600)] shadow-sm [&_svg]:h-5 [&_svg]:w-5">
-              <HelpCircle strokeWidth={2} aria-hidden />
-            </span>
+          <header className="mb-10 text-center sm:mb-12">
             <h1 className="font-display text-[clamp(1.65rem,4vw,2.75rem)] font-medium tracking-tight text-[var(--fg)] text-balance">
-              {title}
+              <BlueInitials text={title} />
             </h1>
           </header>
         </ScrollReveal>

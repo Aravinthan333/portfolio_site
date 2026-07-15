@@ -1,5 +1,6 @@
 "use client";
 
+import { BlueInitials } from "@/components/BlueInitials";
 import { BlogList, type BlogListItem } from "@/components/BlogList";
 import { AtmosphereBg } from "@/components/AtmosphereBg";
 
@@ -29,7 +30,7 @@ export function BlogPageView({
         <div className="blogs-page mx-auto w-full min-w-0 max-w-4xl xl:max-w-5xl">
           <header className="mb-4 sm:mb-5 md:mb-6">
             <h1 className="font-display text-2xl font-semibold tracking-tight text-[var(--fg)] sm:text-3xl lg:text-[2rem]">
-              {title}
+              <BlueInitials text={title} />
             </h1>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[var(--fg-muted)] sm:text-[0.9375rem]">
               {subtitle}

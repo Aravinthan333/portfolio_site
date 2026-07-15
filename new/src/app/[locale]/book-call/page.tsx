@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowUpRight, Calendar } from "lucide-react";
+import { BlueInitials } from "@/components/BlueInitials";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { CallRequestForm } from "@/components/CallRequestForm";
 import { SITE } from "@/data/site";
@@ -42,7 +43,9 @@ export default async function BookCallPage({ params }: Props) {
 
         <header className="section-header mb-12">
           <p className="section-label">{t("label")}</p>
-          <h1 className="section-title mt-3">{t("title")}</h1>
+          <h1 className="section-title mt-3">
+            <BlueInitials text={t("title")} />
+          </h1>
           <p className="section-desc mt-4">{t("subtitle")}</p>
         </header>
 

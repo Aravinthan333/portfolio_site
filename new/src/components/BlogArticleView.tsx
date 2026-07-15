@@ -4,6 +4,7 @@ import Image from "next/image";
 import type { CSSProperties } from "react";
 import { ArrowLeft, Clock } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { BlueInitials } from "@/components/BlueInitials";
 import { BlogContentRenderer } from "@/components/blog/BlogContentRenderer";
 import { SITE } from "@/data/site";
 import type { BlogListItem } from "@/components/BlogList";
@@ -103,7 +104,7 @@ export function BlogArticleView({
             </div>
 
             <h1 className="blog-article-title font-display text-[1.75rem] font-semibold leading-[1.15] tracking-tight text-[var(--fg)] sm:text-[2.25rem] md:text-[2.5rem] lg:text-[2.75rem]">
-              {post.title}
+              <BlueInitials text={post.title} />
             </h1>
 
             <p className="mt-3 text-base leading-relaxed text-[var(--fg-muted)] sm:mt-4 sm:text-lg md:text-xl">

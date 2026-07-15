@@ -1,7 +1,8 @@
 "use client";
 
-import { Calendar, Mail } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { BlueInitials } from "@/components/BlueInitials";
 import { ContactForm } from "@/components/ContactForm";
 import { BookCallButton } from "@/components/BookCallButton";
 import { AtmosphereBg } from "@/components/AtmosphereBg";
@@ -27,12 +28,9 @@ export function ContactPageView({
       <AtmosphereBg variant="mesh" />
       <div className="section-wrap relative">
         <ScrollReveal>
-          <header className="mb-4 flex flex-col items-center justify-center gap-2 text-center sm:mb-5 sm:flex-row sm:gap-3.5">
-            <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--blue-600)]/15 bg-[var(--blue-50)] text-[var(--blue-600)] shadow-sm [&_svg]:h-5 [&_svg]:w-5">
-              <Mail strokeWidth={2} aria-hidden />
-            </span>
+          <header className="mb-4 text-center sm:mb-5">
             <h1 className="font-display text-[clamp(1.65rem,4vw,2.75rem)] font-medium tracking-tight text-[var(--fg)] text-balance">
-              {title}
+              <BlueInitials text={title} />
             </h1>
           </header>
           <p className="section-desc mx-auto mb-8 max-w-xl px-1 text-center sm:mb-12">

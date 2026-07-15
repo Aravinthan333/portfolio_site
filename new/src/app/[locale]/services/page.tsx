@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
+import { BlueInitials } from "@/components/BlueInitials";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { HireCta } from "@/components/HireCta";
 import { getLocalizedServices } from "@/lib/i18n-content";
@@ -46,7 +47,9 @@ export default async function ServicesPage({ params }: Props) {
 
         <header className="section-header">
           <p className="section-label">{t("label")}</p>
-          <h1 className="section-title mt-3">{t("title")}</h1>
+          <h1 className="section-title mt-3">
+            <BlueInitials text={t("title")} />
+          </h1>
           <p className="section-desc mt-4">{t("subtitle")}</p>
         </header>
 

@@ -6,6 +6,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { SITE } from "@/data/site";
+import { BlueInitials } from "@/components/BlueInitials";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AtmosphereBg } from "@/components/AtmosphereBg";
 import { ResumeDownloadButton } from "@/components/ResumeDownloadButton";
@@ -39,7 +40,7 @@ export function Hero() {
         <ScrollReveal delay={0.12}>
           <div className="mt-3 flex flex-col items-center gap-4 lg:flex-row lg:flex-wrap lg:justify-center lg:gap-x-5 lg:gap-y-3">
             <h1 className="font-display text-[clamp(2.75rem,7vw,4.75rem)] font-medium leading-[1.06] tracking-tight text-[var(--fg)]">
-              {SITE.name}
+              <BlueInitials text={SITE.name} />
             </h1>
             <div className="flex flex-wrap items-center justify-center gap-2">
               {tagKeys.map((key, i) => (
