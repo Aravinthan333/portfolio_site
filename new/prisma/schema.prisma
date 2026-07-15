@@ -77,6 +77,34 @@ model CallRequest {
   updatedAt          DateTime @updatedAt
 }
 
+// Bookings created via Calendly (webhook or API sync).
+model ScheduledCall {
+  id                  String    @id @default(cuid())
+  calendlyInviteeUri  String    @unique
+  calendlyEventUri    String?
+  name                String
+  email               String
+  phone               String?
+  timezone            String?
+  eventName           String?
+  startAt             DateTime
+  endAt               DateTime?
+  location            String?
+  cancelUrl           String?
+  rescheduleUrl       String?
+  inviteeAnswers      String?
+  notes               String?
+  status              String    @default("scheduled")
+  canceledAt          DateTime?
+  cancelReason        String?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  @@index([startAt])
+  @@index([status])
+  @@index([email])
+}
+
 model PageView {
   id        String   @id @default(cuid())
   path      String

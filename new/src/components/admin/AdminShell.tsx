@@ -7,6 +7,7 @@ import {
   FileText,
   Inbox,
   Phone,
+  CalendarClock,
   BarChart3,
   Search,
   LogOut,
@@ -20,6 +21,7 @@ const nav = [
   { href: "/admin/blogs", label: "Blogs", icon: FileText },
   { href: "/admin/submissions", label: "Applications", icon: Inbox },
   { href: "/admin/calls", label: "Call Requests", icon: Phone },
+  { href: "/admin/callSchedules", label: "Call Schedules", icon: CalendarClock },
   { href: "/admin/analytics", label: "Analytics", icon: BarChart3 },
   { href: "/admin/seo", label: "SEO", icon: Search },
 ];
@@ -51,7 +53,7 @@ export function AdminShell({
           {nav.map((item) => {
             const active =
               pathname === item.href ||
-              (item.href !== "/admin" && pathname.startsWith(item.href));
+              (item.href !== "/admin" && pathname.startsWith(`${item.href}/`));
             const Icon = item.icon;
             return (
               <Link
