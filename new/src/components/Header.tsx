@@ -22,6 +22,7 @@ export function Header() {
   const tA11y = useTranslations("a11y");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [headerHovered, setHeaderHovered] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -51,6 +52,8 @@ export function Header() {
   return (
     <>
       <header
+        onMouseEnter={() => setHeaderHovered(true)}
+        onMouseLeave={() => setHeaderHovered(false)}
         className={`fixed top-0 right-0 left-0 z-50 w-full border-b border-t-0 border-[rgba(15,23,42,0.08)] rounded-b-2xl backdrop-blur-xl transition-all duration-500 ${
           scrolled || menuOpen
             ? "bg-white/95 shadow-[var(--shadow-md)]"
@@ -58,15 +61,18 @@ export function Header() {
         }`}
       >
         <div className="section-wrap flex items-center justify-between gap-2 !py-3 sm:gap-3 sm:!py-3.5">
-          <Link href="/" className="group flex min-w-0 items-center gap-2 sm:gap-2.5">
+          <Link href="/" className="group flex min-w-0 items-center gap-2.5 sm:gap-3">
             <span className="relative flex h-2 w-2 shrink-0" aria-hidden>
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--blue-400)] opacity-50" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--blue-500)]" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
             </span>
-            <span className="truncate font-display text-sm font-semibold tracking-tight text-[var(--fg)] group-hover:text-[var(--blue-600)] sm:text-base">
+            <span className="truncate font-display text-base font-semibold tracking-tight text-[var(--fg)] transition-colors group-hover:text-black sm:text-lg md:text-xl">
               {SITE.shortName}
             </span>
-            <span className="hidden text-xs text-[var(--fg-subtle)] md:inline">{t("online")}</span>
+            <span className="ml-0.5 hidden items-center gap-1.5 rounded-full border border-emerald-600/20 bg-emerald-50 px-2.5 py-0.5 text-[11px] font-semibold tracking-wide text-emerald-700 uppercase md:inline-flex md:ml-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
+              {headerHovered ? t("available") : t("online")}
+            </span>
           </Link>
 
           <nav

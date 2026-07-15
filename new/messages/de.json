@@ -1,12 +1,13 @@
 {
   "nav": {
-    "work": "Arbeit",
+    "work": "Arbeiten",
     "services": "Leistungen",
-    "blog": "Blog",
+    "blog": "Blogs",
     "faq": "FAQ",
     "contact": "Kontakt",
     "hireMe": "Beauftragen",
     "online": "Online",
+    "available": "Verfügbar",
     "language": "Sprache",
     "downloadResume": "Lebenslauf herunterladen"
   },

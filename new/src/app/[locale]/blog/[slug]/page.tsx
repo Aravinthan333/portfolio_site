@@ -44,15 +44,13 @@ export default async function BlogDetailPage({ params }: Props) {
 
   const t = await getTranslations("pages.blog");
   const tNav = await getTranslations("nav");
-  const tCommon = await getTranslations("common");
   const tBreadcrumb = await getTranslations("breadcrumbs");
 
   const allPosts = await localizeBlogPosts(await getPublishedBlogs());
-  const sameCategory = allPosts.filter((p) => p.slug !== post.slug && p.category === post.category);
-  const fallback = allPosts.filter((p) => p.slug !== post.slug);
-  const relatedSource = (sameCategory.length > 0 ? sameCategory : fallback).slice(0, 3);
-  const relatedPosts = relatedSource.map(
-    ({ slug: s, title, excerpt, category, date, readTime, coverImage }) => ({
+  const relatedPosts = allPosts
+    .filter((p) => p.slug !== post.slug && p.category === post.category)
+    .slice(0, 3)
+    .map(({ slug: s, title, excerpt, category, date, readTime, coverImage }) => ({
       slug: s,
       title,
       excerpt,
@@ -60,8 +58,7 @@ export default async function BlogDetailPage({ params }: Props) {
       date,
       readTime,
       coverImage,
-    })
-  );
+    }));
 
   const relatedProject = post.relatedProject
     ? await getLocalizedProject(post.relatedProject)
@@ -115,8 +112,6 @@ export default async function BlogDetailPage({ params }: Props) {
           relatedPosts: t("relatedPosts"),
           relatedProject: t("relatedProject"),
           viewCaseStudy: t("viewCaseStudy"),
-          hireMe: tCommon("hireMe"),
-          bookCall: tCommon("bookCall"),
         }}
       />
     </SiteShell>

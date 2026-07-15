@@ -2,11 +2,12 @@
   "nav": {
     "work": "Работы",
     "services": "Услуги",
-    "blog": "Блог",
+    "blog": "Блоги",
     "faq": "FAQ",
     "contact": "Контакты",
     "hireMe": "Нанять меня",
     "online": "Онлайн",
+    "available": "Доступен",
     "language": "Язык",
     "downloadResume": "Скачать резюме"
   },

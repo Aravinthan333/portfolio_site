@@ -1,12 +1,13 @@
 {
   "nav": {
-    "work": "Work",
+    "work": "Works",
     "services": "Services",
-    "blog": "Blog",
+    "blog": "Blogs",
     "faq": "FAQ",
     "contact": "Contact",
     "hireMe": "Hire Me",
     "online": "Online",
+    "available": "Available",
     "language": "Language",
     "downloadResume": "Download resume"
   },

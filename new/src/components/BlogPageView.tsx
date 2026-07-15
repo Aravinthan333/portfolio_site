@@ -1,7 +1,6 @@
 "use client";
 
 import { BlogList, type BlogListItem } from "@/components/BlogList";
-import { HireCta } from "@/components/HireCta";
 import { AtmosphereBg } from "@/components/AtmosphereBg";
 
 type Props = {
@@ -12,8 +11,6 @@ type Props = {
   emptyLabel: string;
   emptyFilterLabel: string;
   authorLabel: string;
-  hireCtaTitle: string;
-  hireCtaDescription: string;
 };
 
 export function BlogPageView({
@@ -24,8 +21,6 @@ export function BlogPageView({
   emptyLabel,
   emptyFilterLabel,
   authorLabel,
-  hireCtaTitle,
-  hireCtaDescription,
 }: Props) {
   return (
     <section className="relative overflow-hidden py-8 sm:py-10 md:py-12">
@@ -48,10 +43,6 @@ export function BlogPageView({
             emptyFilterLabel={emptyFilterLabel}
             authorLabel={authorLabel}
           />
-
-          <div className="mt-10 sm:mt-12">
-            <HireCta compact title={hireCtaTitle} description={hireCtaDescription} />
-          </div>
         </div>
       </div>
     </section>

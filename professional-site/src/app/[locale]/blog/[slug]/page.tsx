@@ -55,7 +55,7 @@ export default async function BlogDetailPage({ params }: Props) {
         <div className="container-wide">
           <Link href="/blog" className="article-back-link">
             <ArrowLeft size={15} />
-            Back to blog
+            Back to blogs
           </Link>
 
           <div className="article-header mx-auto max-w-3xl">
@@ -114,7 +114,7 @@ export default async function BlogDetailPage({ params }: Props) {
 
             <div className="article-footer">
               <Link href="/blog" className="apple-link">
-                Back to blog
+                Back to blogs
               </Link>
               <Button href="/contact" variant="secondary">
                 Discuss a project

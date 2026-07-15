@@ -56,8 +56,6 @@ export default async function BlogPage({ params }: Props) {
         emptyLabel={t("emptyState")}
         emptyFilterLabel={t("emptyFilter")}
         authorLabel={t("author")}
-        hireCtaTitle={t("hireCtaTitle")}
-        hireCtaDescription={t("hireCtaDescription")}
       />
     </SiteShell>
   );
