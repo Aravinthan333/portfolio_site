@@ -185,7 +185,7 @@ export function CallRequestForm() {
         label="Timezone"
         error={errors.preferredTimezone?.message}
         required
-        hint="Defaults from your country or browser — change if needed."
+        hint="Defaults from your country or browser - change if needed."
       >
         <ThemedSelect
           {...register("preferredTimezone", {

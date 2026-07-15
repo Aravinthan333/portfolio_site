@@ -8,6 +8,7 @@ import { Link } from "@/i18n/navigation";
 import { SITE } from "@/data/site";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AtmosphereBg } from "@/components/AtmosphereBg";
+import { ResumeDownloadButton } from "@/components/ResumeDownloadButton";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons/SocialIcons";
 
 const tagKeys = ["webApps", "business", "saas", "backend"] as const;
@@ -101,6 +102,9 @@ export function Hero() {
               <Link href="/projects" className="btn-secondary">
                 {t("viewWork")}
               </Link>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+              <ResumeDownloadButton label={tCommon("downloadResume")} />
             </motion.div>
           </div>
         </ScrollReveal>

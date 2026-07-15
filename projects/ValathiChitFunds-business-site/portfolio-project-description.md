@@ -16,7 +16,7 @@ Bilingual chit fund platform with online applications, financial calculators, an
 
 ---
 
-## Short Description (1–2 sentences)
+## Short Description (1-2 sentences)
 
 Built the full-stack public website and API for Valathi Chit Funds, a government-registered Indian chit fund. The platform supports bilingual (EN/TA) content, online membership applications with digital signatures, domain-specific return calculators, and a multi-brand PDF pipeline for legal forms - deployed on AWS EC2.
 

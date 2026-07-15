@@ -40,7 +40,7 @@ export function professionalServiceSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: `${SITE.name} — Software Engineering`,
+    name: `${SITE.name} - Software Engineering`,
     description: SITE.tagline,
     url: getSiteUrl(),
     email: getEmail(),

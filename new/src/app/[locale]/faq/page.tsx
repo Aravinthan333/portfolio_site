@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SiteShell } from "@/components/layout/SiteShell";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FaqAccordion } from "@/components/FaqAccordion";
-import { HireCta } from "@/components/HireCta";
+import { FaqPageView } from "@/components/FaqPageView";
 import { getLocalizedFaqs } from "@/lib/i18n-content";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, faqPageSchema, jsonLdScript } from "@/lib/schema";
@@ -42,28 +40,12 @@ export default async function FaqPage({ params }: Props) {
           faqPageSchema(faqs),
         ])}
       />
-      <div className="section-wrap py-10 sm:py-16">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: tNav("faq") },
-          ]}
-        />
-
-        <header className="section-header mb-12">
-          <p className="section-label">{t("label")}</p>
-          <h1 className="section-title mt-3">{t("title")}</h1>
-          <p className="section-desc mt-4">{t("subtitle")}</p>
-        </header>
-
-        <div className="mx-auto max-w-3xl">
-          <FaqAccordion items={faqs} />
-        </div>
-
-        <div className="mt-16">
-          <HireCta title={t("hireCtaTitle")} description={t("hireCtaDescription")} />
-        </div>
-      </div>
+      <FaqPageView
+        faqs={faqs}
+        title={t("title")}
+        hireCtaTitle={t("hireCtaTitle")}
+        hireCtaDescription={t("hireCtaDescription")}
+      />
     </SiteShell>
   );
 }

@@ -4,7 +4,6 @@ import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { SiteShell } from "@/components/layout/SiteShell";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { HireCta } from "@/components/HireCta";
 import { BlogContentRenderer } from "@/components/blog/BlogContentRenderer";
 import { getBlogBySlug, getPublishedBlogs } from "@/lib/blogs";
@@ -74,13 +73,6 @@ export default async function BlogDetailPage({ params }: Props) {
       />
 
       <article className="section-wrap py-10 sm:py-16">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: tNav("blog"), href: "/blog" },
-            { label: post.title },
-          ]}
-        />
 
         <header className="mx-auto max-w-3xl text-center">
           <span className="pill-accent text-[11px]">{post.category}</span>

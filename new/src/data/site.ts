@@ -5,19 +5,21 @@ export const SITE = {
   roleLine: "Software Engineer | Freelance Software Consultant",
   tagline:
     "I design and build scalable web applications, business software, and custom digital solutions that help businesses automate operations, improve efficiency, and grow online.",
-  bio: "I am a Software Engineer and Full Stack Developer specializing in custom web applications, business software, SaaS platforms, and backend systems. I partner with startups and growing businesses to turn ideas into reliable, scalable, production-ready software — with clear communication and dependable delivery.",
+  bio: "I am a Software Engineer and Full Stack Developer specializing in custom web applications, business software, SaaS platforms, and backend systems. I partner with startups and growing businesses to turn ideas into reliable, scalable, production-ready software - with clear communication and dependable delivery.",
   summary:
-    "Software Engineer with experience developing business applications, e-commerce platforms, ERP solutions, CRM systems, and custom web applications. I take products from requirements through architecture, development, and deployment — collaborating with teams and clients to create software that delivers measurable business value.",
+    "Software Engineer with experience developing business applications, e-commerce platforms, ERP solutions, CRM systems, and custom web applications. I take products from requirements through architecture, development, and deployment - collaborating with teams and clients to create software that delivers measurable business value.",
   mission:
     "To build software that simplifies business operations, improves productivity, and helps organizations grow through reliable and scalable technology.",
   domain: "aravinthanbalaji.com",
   location: "India · Available Worldwide (Remote)",
   availability:
-    "Available for freelance projects, contract engagements, and full-time remote roles — independently or as part of your team.",
+    "Available for freelance projects, contract engagements, and full-time remote roles - independently or as part of your team.",
   email: "aravinthanbaalaji@gmail.com",
   linkedIn: "https://www.linkedin.com/in/aravinthanbalaji/",
   github: "https://github.com/Aravinthan333",
   calendly: "https://calendly.com/aravinthanbalaji",
+  /** Drop the PDF at `public/resume.pdf` when ready. */
+  resume: "/resume.pdf",
 };
 
 export const metrics = [
@@ -46,7 +48,7 @@ export const collaborators = [
   {
     title: "Engineering teams needing reinforcement",
     description:
-      "Integrate as a reliable contributor — or lead delivery when ownership and coordination are required.",
+      "Integrate as a reliable contributor - or lead delivery when ownership and coordination are required.",
   },
 ];
 
@@ -73,7 +75,7 @@ export const process = [
     step: "04",
     title: "Deliver",
     description:
-      "Ship to production with documentation and support — software that is reliable, secure, and ready to grow with the business.",
+      "Ship to production with documentation and support - software that is reliable, secure, and ready to grow with the business.",
   },
 ];
 
@@ -81,7 +83,7 @@ export const whyMe = [
   {
     title: "Solve business problems",
     description:
-      "I focus on outcomes that improve operations and growth — not complexity for its own sake.",
+      "I focus on outcomes that improve operations and growth - not complexity for its own sake.",
     stat: "Business-first engineering",
   },
   {

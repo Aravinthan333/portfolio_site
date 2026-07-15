@@ -324,7 +324,7 @@ Less than 60 chars.
 
 Description
 
-140–155 chars.
+140-155 chars.
 
 ---
 
@@ -1182,7 +1182,7 @@ Dev.to
 
 Publish new content every week
 
-Refresh old articles every 3–6 months
+Refresh old articles every 3-6 months
 
 Monitor Search Console for new queries
 

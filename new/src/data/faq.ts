@@ -3,7 +3,7 @@ export type FaqItem = {
   answer: string;
 };
 
-/** Keys under messages.*.faqItems — order matches homepage (first 4) then full FAQ page */
+/** Keys under messages.*.faqItems - order matches homepage (first 4) then full FAQ page */
 export const faqItemKeys = [
   "whatKinds",
   "remote",

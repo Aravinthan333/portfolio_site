@@ -94,7 +94,7 @@ body {
   @apply mb-8 text-center text-3xl font-bold tracking-tight sm:text-4xl md:mb-12 md:text-5xl lg:text-6xl;
 }
 
-/* Portfolio hero — inspired by aravinthan.netlify.app */
+/* Portfolio hero - inspired by aravinthan.netlify.app */
 .hero-portfolio {
   background: var(--background);
 }

@@ -16,7 +16,7 @@ Full-stack online grocery store with admin console, delivery logistics, and lega
 
 ---
 
-## Short Description (1–2 sentences)
+## Short Description (1-2 sentences)
 
 Built a production grocery e-commerce platform for Raja Supermart, an Indian supermarket. Customers browse and order online; admins manage products, orders, phone orders, deliveries, and returns from a unified console - all synced with a legacy Optech inventory system.
 

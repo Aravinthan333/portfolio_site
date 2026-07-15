@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowUpRight, Calendar } from "lucide-react";
 import { SiteShell } from "@/components/layout/SiteShell";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CallRequestForm } from "@/components/CallRequestForm";
 import { SITE } from "@/data/site";
 import { buildMetadata } from "@/lib/seo";
@@ -40,12 +39,6 @@ export default async function BookCallPage({ params }: Props) {
         )}
       />
       <div className="section-wrap py-10 sm:py-16">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: t("label") },
-          ]}
-        />
 
         <header className="section-header mb-12">
           <p className="section-label">{t("label")}</p>

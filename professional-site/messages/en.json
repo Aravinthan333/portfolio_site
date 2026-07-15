@@ -43,7 +43,7 @@
     "greeting": "Hello, I'm",
     "andImA": "And I'm a",
     "aboutMe": "About Me",
-    "aboutIntro": "I'm {name}, a {title} focused on delivering reliable, scalable software for businesses — from customer-facing applications and APIs to cloud infrastructure and production deployments.",
+    "aboutIntro": "I'm {name}, a {title} focused on delivering reliable, scalable software for businesses - from customer-facing applications and APIs to cloud infrastructure and production deployments.",
     "latestProjects": "Latest Projects",
     "mySkills": "My Skills",
     "technologies": "Technologies",
@@ -60,7 +60,7 @@
     "expertise": {
       "label": "Skills & Services",
       "title": "What I build and how I work",
-      "subtitle": "From production web apps and APIs to cloud infrastructure — here are the services I deliver and the technologies behind them."
+      "subtitle": "From production web apps and APIs to cloud infrastructure - here are the services I deliver and the technologies behind them."
     },
     "work": {
       "label": "Work",
@@ -79,7 +79,7 @@
       "intro": "{availability} I partner with founders and teams who need a reliable software engineer from architecture through production launch.",
       "getQuote": "Get a quote",
       "bottomTitle": "Not sure which service fits?",
-      "bottomDesc": "Describe your project and I'll recommend the right approach — no commitment required."
+      "bottomDesc": "Describe your project and I'll recommend the right approach - no commitment required."
     },
     "about": {
       "label": "About me",
@@ -91,9 +91,9 @@
     },
     "contact": {
       "title": "Contact Me",
-      "subtitle": "Share your project requirements or request a call — I'll respond within 24 hours.",
+      "subtitle": "Share your project requirements or request a call - I'll respond within 24 hours.",
       "messageHint": "Tell me about the service you need and your project goals.",
-      "callHint": "Pick a preferred date and time in your timezone — I'll see the IST equivalent."
+      "callHint": "Pick a preferred date and time in your timezone - I'll see the IST equivalent."
     },
     "process": {
       "label": "Approach",
@@ -142,7 +142,7 @@
     },
     "delivery": {
       "title": "End-to-end delivery",
-      "description": "Requirements through architecture, development, deployment, and post-launch support — one accountable owner."
+      "description": "Requirements through architecture, development, deployment, and post-launch support - one accountable owner."
     },
     "communication": {
       "title": "Clear communication",
@@ -150,7 +150,7 @@
     },
     "stack": {
       "title": "Modern, proven stack",
-      "description": "React, Next.js, Node.js, PostgreSQL, Redis, Docker, and AWS — technologies validated in production."
+      "description": "React, Next.js, Node.js, PostgreSQL, Redis, Docker, and AWS - technologies validated in production."
     }
   },
   "process": {
@@ -174,7 +174,7 @@
   "values": {
     "outcomes": {
       "title": "Business outcomes first",
-      "description": "Technical decisions are measured by the results they create — not by complexity or novelty."
+      "description": "Technical decisions are measured by the results they create - not by complexity or novelty."
     },
     "quality": {
       "title": "Quality and reliability",
@@ -190,13 +190,13 @@
       "company": "Wonderwhy Solution",
       "role": "Full Stack Engineer",
       "period": "Nov 2024 - Nov 2025",
-      "description": "Delivered enterprise logistics software end-to-end — trip management, GST compliance, financial reporting, and AWS infrastructure for a fleet operations platform."
+      "description": "Delivered enterprise logistics software end-to-end - trip management, GST compliance, financial reporting, and AWS infrastructure for a fleet operations platform."
     },
     "independent": {
       "company": "Independent Consultant",
       "role": "Software Engineer",
       "period": "Jan 2023 - Present",
-      "description": "Partner with businesses across e-commerce, fintech, and messaging to architect, build, and deploy production systems — from MVP to scale."
+      "description": "Partner with businesses across e-commerce, fintech, and messaging to architect, build, and deploy production systems - from MVP to scale."
     }
   },
   "contactForm": {

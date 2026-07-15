@@ -7,7 +7,7 @@ export default function NotFound() {
       <p className="section-label">404</p>
       <h1 className="section-title mt-3">Page not found</h1>
       <p className="section-desc mx-auto mt-4 max-w-md">
-        That URL doesn&apos;t exist. Try one of these instead — or get in touch if you&apos;re
+        That URL doesn&apos;t exist. Try one of these instead - or get in touch if you&apos;re
         looking to hire.
       </p>
 

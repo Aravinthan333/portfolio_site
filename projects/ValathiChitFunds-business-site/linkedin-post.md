@@ -27,6 +27,6 @@ Grateful to work on software that helps a real business serve its members better
 ---
 
 **Tips for posting:**
-- Add 2–4 screenshots (homepage, chit calculator, apply form, PDF preview)
+- Add 2-4 screenshots (homepage, chit calculator, apply form, PDF preview)
 - Tag relevant technologies if you want more reach
 - Consider a carousel: Problem → Solution → Tech stack → Outcome

@@ -16,14 +16,14 @@ export type SeoPageReport = {
 const STATIC_PAGES: { path: string; title: string; description: string }[] = [
   {
     path: "/",
-    title: `${SITE.name} — Software Engineer & Full Stack Developer`,
+    title: `${SITE.name} - Software Engineer & Full Stack Developer`,
     description: SITE.tagline,
   },
   {
     path: "/projects",
     title: "Projects & Case Studies",
     description:
-      "Case studies by Aravinthan Balaji — e-commerce, fintech, retail platforms, and business software delivered end to end.",
+      "Case studies by Aravinthan Balaji - e-commerce, fintech, retail platforms, and business software delivered end to end.",
   },
   {
     path: "/services",
@@ -39,7 +39,7 @@ const STATIC_PAGES: { path: string; title: string; description: string }[] = [
   },
   {
     path: "/contact",
-    title: "Hire Me — Contact",
+    title: "Hire Me - Contact",
     description:
       "Contact Aravinthan Balaji for freelance, contract, or remote software engineering engagements.",
   },

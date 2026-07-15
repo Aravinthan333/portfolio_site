@@ -3,7 +3,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Calendar, Mail } from "lucide-react";
 import { SiteShell } from "@/components/layout/SiteShell";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { SITE } from "@/data/site";
 import { buildMetadata } from "@/lib/seo";
@@ -43,12 +42,6 @@ export default async function ContactPage({ params }: Props) {
         )}
       />
       <div className="section-wrap py-10 sm:py-16">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: tNav("contact") },
-          ]}
-        />
 
         <header className="section-header mb-12">
           <p className="section-label">{t("label")}</p>

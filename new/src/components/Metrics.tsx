@@ -48,7 +48,7 @@ export function Metrics() {
   return (
     <section className="section-band relative overflow-hidden py-16 sm:py-20">
       <AtmosphereBg variant="band" />
-      <div className="section-wrap relative !px-[clamp(1rem,3vw,2.5rem)]">
+      <div className="section-wrap relative">
         <div className="w-full rounded-[2rem] border border-white/70 bg-white/70 px-4 py-8 shadow-[var(--shadow-md)] backdrop-blur-md sm:px-8 sm:py-10 lg:px-12">
           <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-8 md:grid-cols-4 md:gap-x-10 lg:gap-x-14">
             {metrics.map((m, i) => {

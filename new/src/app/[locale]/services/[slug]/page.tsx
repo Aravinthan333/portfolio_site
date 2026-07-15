@@ -4,7 +4,6 @@ import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { SiteShell } from "@/components/layout/SiteShell";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { HireCta } from "@/components/HireCta";
 import { services } from "@/data/services";
 import { getLocalizedService } from "@/lib/i18n-content";
@@ -55,13 +54,6 @@ export default async function ServiceDetailPage({ params }: Props) {
       />
 
       <div className="section-wrap py-10 sm:py-16">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: tNav("services"), href: "/services" },
-            { label: service.shortTitle },
-          ]}
-        />
 
         <article className="mx-auto max-w-3xl">
           <header className="text-center">

@@ -18,7 +18,7 @@ export default async function AdminCallsPage() {
       <AdminPageHeader
         icon={Phone}
         title="Call requests"
-        description="Scheduled and requested calls — client time and IST conversion shown below."
+        description="Scheduled and requested calls - client time and IST conversion shown below."
       />
       <div className="mt-8">
         <CallsTable items={serialized} />

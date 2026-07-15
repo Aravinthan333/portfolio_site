@@ -2,7 +2,7 @@ export const SITE = {
   name: "Aravinthan Balaji",
   title: "Software Engineer",
   tagline:
-    "I design and build production-grade web applications, APIs, and cloud infrastructure for businesses that need reliable software — from architecture through deployment.",
+    "I design and build production-grade web applications, APIs, and cloud infrastructure for businesses that need reliable software - from architecture through deployment.",
   domain: "aravinthanbalaji.com",
   location: "India · Available Worldwide (Remote)",
   availability:

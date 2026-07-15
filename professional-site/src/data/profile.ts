@@ -62,7 +62,7 @@ export const whyChoose = [
   {
     title: "End-to-end delivery",
     description:
-      "Requirements through architecture, development, deployment, and post-launch support — one accountable owner.",
+      "Requirements through architecture, development, deployment, and post-launch support - one accountable owner.",
     icon: "delivery",
   },
   {
@@ -74,7 +74,7 @@ export const whyChoose = [
   {
     title: "Modern, proven stack",
     description:
-      "React, Next.js, Node.js, PostgreSQL, Redis, Docker, and AWS — technologies validated in production.",
+      "React, Next.js, Node.js, PostgreSQL, Redis, Docker, and AWS - technologies validated in production.",
     icon: "stack",
   },
 ];
@@ -116,14 +116,14 @@ export const experience = [
     role: "Full Stack Engineer",
     period: "Nov 2024 - Nov 2025",
     description:
-      "Delivered enterprise logistics software end-to-end — trip management, GST compliance, financial reporting, and AWS infrastructure for a fleet operations platform.",
+      "Delivered enterprise logistics software end-to-end - trip management, GST compliance, financial reporting, and AWS infrastructure for a fleet operations platform.",
   },
   {
     company: "Independent Consultant",
     role: "Software Engineer",
     period: "Jan 2023 - Present",
     description:
-      "Partner with businesses across e-commerce, fintech, and messaging to architect, build, and deploy production systems — from MVP to scale.",
+      "Partner with businesses across e-commerce, fintech, and messaging to architect, build, and deploy production systems - from MVP to scale.",
   },
 ];
 
@@ -131,7 +131,7 @@ export const values = [
   {
     title: "Business outcomes first",
     description:
-      "Technical decisions are measured by the results they create — not by complexity or novelty.",
+      "Technical decisions are measured by the results they create - not by complexity or novelty.",
   },
   {
     title: "Quality and reliability",

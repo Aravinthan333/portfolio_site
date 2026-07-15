@@ -36,14 +36,14 @@
     "messageTab": "Nachricht senden",
     "callTab": "Anruf anfragen",
     "copyright": "Copyright © {year} {name} | Alle Rechte vorbehalten",
-    "ctaSubtitle": "Offen für Remote- und Vertragsarbeit. Erzählen Sie mir von Ihrem Projekt — ich antworte innerhalb von 24 Stunden.",
+    "ctaSubtitle": "Offen für Remote- und Vertragsarbeit. Erzählen Sie mir von Ihrem Projekt - ich antworte innerhalb von 24 Stunden.",
     "language": "Sprache"
   },
   "home": {
     "greeting": "Hallo, ich bin",
     "andImA": "Und ich bin",
     "aboutMe": "Über mich",
-    "aboutIntro": "Ich bin {name}, ein {title}, der sich auf zuverlässige, skalierbare Software für Unternehmen konzentriert — von kundenorientierten Anwendungen und APIs bis hin zu Cloud-Infrastruktur und Produktionsbereitstellungen.",
+    "aboutIntro": "Ich bin {name}, ein {title}, der sich auf zuverlässige, skalierbare Software für Unternehmen konzentriert - von kundenorientierten Anwendungen und APIs bis hin zu Cloud-Infrastruktur und Produktionsbereitstellungen.",
     "latestProjects": "Neueste Projekte",
     "mySkills": "Meine Fähigkeiten",
     "technologies": "Technologien",
@@ -60,7 +60,7 @@
     "expertise": {
       "label": "Fähigkeiten & Services",
       "title": "Was ich baue und wie ich arbeite",
-      "subtitle": "Von produktionsreifen Web-Apps und APIs bis zur Cloud-Infrastruktur — hier sind die Services, die ich liefere, und die Technologien dahinter."
+      "subtitle": "Von produktionsreifen Web-Apps und APIs bis zur Cloud-Infrastruktur - hier sind die Services, die ich liefere, und die Technologien dahinter."
     },
     "work": {
       "label": "Arbeit",
@@ -70,30 +70,30 @@
       "industryVerticals": "Branchen",
       "remoteDelivery": "Remote-Lieferung",
       "haveProject": "Haben Sie ein Projekt im Sinn?",
-      "projectCta": "Ich arbeite remote mit Startups und Unternehmen weltweit — auf Vertrags- oder Projektbasis."
+      "projectCta": "Ich arbeite remote mit Startups und Unternehmen weltweit - auf Vertrags- oder Projektbasis."
     },
     "services": {
       "label": "Services",
       "title": "Was ich für Sie bauen kann",
-      "subtitle": "Web-Apps, APIs, SaaS-Produkte und Cloud-Infrastruktur — maßgeschneidert für Remote- und Vertragsengagements.",
+      "subtitle": "Web-Apps, APIs, SaaS-Produkte und Cloud-Infrastruktur - maßgeschneidert für Remote- und Vertragsengagements.",
       "intro": "{availability} Ich arbeite mit Gründern und Teams zusammen, die einen zuverlässigen Software-Ingenieur von der Architektur bis zum Produktionsstart benötigen.",
       "getQuote": "Angebot anfordern",
       "bottomTitle": "Nicht sicher, welcher Service passt?",
-      "bottomDesc": "Beschreiben Sie Ihr Projekt und ich empfehle den richtigen Ansatz — ohne Verpflichtung."
+      "bottomDesc": "Beschreiben Sie Ihr Projekt und ich empfehle den richtigen Ansatz - ohne Verpflichtung."
     },
     "about": {
       "label": "Über mich",
       "standFor": "Wofür ich stehe",
       "experience": "Erfahrung",
-      "para1": "Ich bin {name}, ein {title} aus Indien. Ich helfe Startups und Unternehmen, produktionsreife Software zu entwerfen, zu bauen und auszuliefern — von kundenorientierten Webanwendungen bis zu Backend-APIs und Cloud-Infrastruktur.",
+      "para1": "Ich bin {name}, ein {title} aus Indien. Ich helfe Startups und Unternehmen, produktionsreife Software zu entwerfen, zu bauen und auszuliefern - von kundenorientierten Webanwendungen bis zu Backend-APIs und Cloud-Infrastruktur.",
       "para2": "Meine Arbeit umfasst E-Commerce-Plattformen, FinTech-Systeme, Echtzeit-Messaging-Konsolen und Unternehmens-ERP-Software. Ich begleite Projekte von den Anforderungen über Architektur, testgetriebene Entwicklung, Bereitstellung bis hin zur laufenden Unterstützung.",
       "para3": "Ich glaube an transparente Kommunikation, saubere Architektur und Software, die echte Geschäftsprobleme löst."
     },
     "contact": {
       "title": "Kontaktieren Sie mich",
-      "subtitle": "Teilen Sie Ihre Projektanforderungen oder fordern Sie einen Anruf an — ich antworte innerhalb von 24 Stunden.",
+      "subtitle": "Teilen Sie Ihre Projektanforderungen oder fordern Sie einen Anruf an - ich antworte innerhalb von 24 Stunden.",
       "messageHint": "Erzählen Sie mir von dem Service, den Sie benötigen, und Ihren Projektzielen.",
-      "callHint": "Wählen Sie ein bevorzugtes Datum und eine Uhrzeit in Ihrer Zeitzone — ich sehe die IST-Entsprechung."
+      "callHint": "Wählen Sie ein bevorzugtes Datum und eine Uhrzeit in Ihrer Zeitzone - ich sehe die IST-Entsprechung."
     },
     "process": {
       "label": "Ansatz",
@@ -109,7 +109,7 @@
   "services": {
     "web": {
       "title": "Webentwicklung",
-      "description": "Moderne, leistungsstarke Webanwendungen mit React, Next.js und TypeScript — von Unternehmenswebsites bis zu fortgeschrittenen Enterprise-Plattformen.",
+      "description": "Moderne, leistungsstarke Webanwendungen mit React, Next.js und TypeScript - von Unternehmenswebsites bis zu fortgeschrittenen Enterprise-Plattformen.",
       "highlights": ["React & Next.js", "Responsive UI", "Performance-Optimierung", "SEO-fertige Builds"]
     },
     "backend": {
@@ -119,7 +119,7 @@
     },
     "saas": {
       "title": "SaaS & Produktentwicklung",
-      "description": "MVPs, Admin-Dashboards, Multi-Tenant-Architekturen und Abonnement-Flows — mit sauberer Architektur und testgetriebenen Praktiken.",
+      "description": "MVPs, Admin-Dashboards, Multi-Tenant-Architekturen und Abonnement-Flows - mit sauberer Architektur und testgetriebenen Praktiken.",
       "highlights": ["MVPs & Dashboards", "Multi-Tenant-Apps", "Abonnement-Flows", "Saubere Architektur"]
     },
     "cloud": {
@@ -142,7 +142,7 @@
     },
     "delivery": {
       "title": "End-to-End-Lieferung",
-      "description": "Von Anforderungen über Architektur, Entwicklung, Bereitstellung bis zur Nachbetreuung — ein verantwortlicher Ansprechpartner."
+      "description": "Von Anforderungen über Architektur, Entwicklung, Bereitstellung bis zur Nachbetreuung - ein verantwortlicher Ansprechpartner."
     },
     "communication": {
       "title": "Klare Kommunikation",
@@ -150,13 +150,13 @@
     },
     "stack": {
       "title": "Moderner, bewährter Stack",
-      "description": "React, Next.js, Node.js, PostgreSQL, Redis, Docker und AWS — in der Produktion validierte Technologien."
+      "description": "React, Next.js, Node.js, PostgreSQL, Redis, Docker und AWS - in der Produktion validierte Technologien."
     }
   },
   "process": {
     "understand": {
       "title": "Verstehen",
-      "description": "Ich lerne Ihre Geschäftsziele, Nutzer und Einschränkungen kennen — und definiere dann Umfang, Meilensteine und Erfolgsmetriken."
+      "description": "Ich lerne Ihre Geschäftsziele, Nutzer und Einschränkungen kennen - und definiere dann Umfang, Meilensteine und Erfolgsmetriken."
     },
     "design": {
       "title": "Design & Architektur",
@@ -174,7 +174,7 @@
   "values": {
     "outcomes": {
       "title": "Geschäftsergebnisse zuerst",
-      "description": "Technische Entscheidungen werden an den Ergebnissen gemessen, die sie erzielen — nicht an Komplexität oder Neuheit."
+      "description": "Technische Entscheidungen werden an den Ergebnissen gemessen, die sie erzielen - nicht an Komplexität oder Neuheit."
     },
     "quality": {
       "title": "Qualität und Zuverlässigkeit",
@@ -190,7 +190,7 @@
       "company": "Wonderwhy Solution",
       "role": "Full-Stack-Ingenieur",
       "period": "Nov. 2024 - Nov. 2025",
-      "description": "End-to-End-Logistiksoftware geliefert — Reiseverwaltung, GST-Compliance, Finanzberichterstattung und AWS-Infrastruktur für eine Flottenbetriebsplattform."
+      "description": "End-to-End-Logistiksoftware geliefert - Reiseverwaltung, GST-Compliance, Finanzberichterstattung und AWS-Infrastruktur für eine Flottenbetriebsplattform."
     },
     "independent": {
       "company": "Unabhängiger Berater",

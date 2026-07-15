@@ -18,7 +18,7 @@ Freelance / Self-employed *(or your company name)*
 
 ## Project Dates
 
-*[Add your actual start–end dates, e.g. Mar 2025 – Present]*
+*[Add your actual start-end dates, e.g. Mar 2025 - Present]*
 
 ---
 

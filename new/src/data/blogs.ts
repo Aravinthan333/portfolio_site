@@ -31,7 +31,7 @@ export const blogPosts: BlogPost[] = [
       { type: "heading", text: "Keep inventory ownership clear" },
       {
         type: "paragraph",
-        text: "For Raja Supermart, stock and pricing remained in Optech SQL Server. Application data — carts, orders, customer accounts — lived in MongoDB. A scheduled sync job reconciled quantities so the storefront never drifted far from what the cash counter knew.",
+        text: "For Raja Supermart, stock and pricing remained in Optech SQL Server. Application data - carts, orders, customer accounts - lived in MongoDB. A scheduled sync job reconciled quantities so the storefront never drifted far from what the cash counter knew.",
       },
       { type: "heading", text: "Design for how orders actually arrive" },
       {
@@ -67,7 +67,7 @@ export const blogPosts: BlogPost[] = [
       { type: "heading", text: "Automate paperwork carefully" },
       {
         type: "paragraph",
-        text: "Puppeteer-driven PDF generation produced multi-brand legal forms from structured application data. The goal was fewer manual edits and fewer mismatched fields — especially valuable when multiple offices share one public site.",
+        text: "Puppeteer-driven PDF generation produced multi-brand legal forms from structured application data. The goal was fewer manual edits and fewer mismatched fields - especially valuable when multiple offices share one public site.",
       },
       { type: "heading", text: "Plan for operations after launch" },
       {
@@ -80,7 +80,7 @@ export const blogPosts: BlogPost[] = [
     slug: "when-whatsapp-checkout-beats-a-payments-stack",
     title: "When WhatsApp Checkout Beats a Full Payments Stack",
     excerpt:
-      "Choosing a static-first motorsport storefront with WhatsApp ordering — matching technology investment to business readiness.",
+      "Choosing a static-first motorsport storefront with WhatsApp ordering - matching technology investment to business readiness.",
     category: "Architecture",
     date: "2024-07-12",
     readTime: "5 min read",
@@ -128,7 +128,7 @@ export const blogPosts: BlogPost[] = [
       { type: "heading", text: "Remote delivery still needs rhythm" },
       {
         type: "paragraph",
-        text: "Flexible hours work when demos, written updates, and staging reviews stay predictable. On-time delivery is a process — not a personality trait. Ask how risk, scope changes, and handoffs are handled before the kickoff call ends.",
+        text: "Flexible hours work when demos, written updates, and staging reviews stay predictable. On-time delivery is a process - not a personality trait. Ask how risk, scope changes, and handoffs are handled before the kickoff call ends.",
       },
     ],
   },

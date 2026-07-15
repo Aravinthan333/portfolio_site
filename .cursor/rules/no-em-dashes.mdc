@@ -1,0 +1,16 @@
+---
+description: Use ASCII hyphen (-) instead of em/en dashes in all copy and UI text
+alwaysApply: true
+---
+
+# Punctuation: hyphens only
+
+Never use em dashes (`—`) or en dashes (`–`) in code, copy, UI strings, messages, comments, or docs for this project.
+
+Always use a plain hyphen-minus (`-`) instead.
+
+Examples:
+- Prefer: `India - Available Worldwide`
+- Avoid: `India — Available Worldwide`
+- Prefer: `Remote-ready - flexible hours`
+- Avoid: `Remote-ready — flexible hours`

@@ -3,7 +3,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { SiteShell } from "@/components/layout/SiteShell";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { HireCta } from "@/components/HireCta";
 import { getPublishedBlogs } from "@/lib/blogs";
 import { localizeBlogPosts } from "@/lib/i18n-content";
@@ -44,12 +43,6 @@ export default async function BlogPage({ params }: Props) {
         )}
       />
       <div className="section-wrap py-10 sm:py-16">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: tNav("blog") },
-          ]}
-        />
 
         <header className="section-header">
           <p className="section-label">{t("label")}</p>

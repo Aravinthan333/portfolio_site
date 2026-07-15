@@ -16,7 +16,7 @@ Real-time WhatsApp messaging console with bulk campaigns, SLA ticketing, and int
 
 ---
 
-## Short Description (1–2 sentences)
+## Short Description (1-2 sentences)
 
 Built an internal WhatsApp Business operations platform for an Indian chit fund. Agents manage customer conversations in real time, run scheduled bulk template campaigns, track SLA-aware support tickets, and administer the public website - all from a single Next.js + Express application deployed on AWS EC2.
 

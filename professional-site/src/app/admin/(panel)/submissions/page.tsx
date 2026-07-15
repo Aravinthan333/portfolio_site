@@ -18,7 +18,7 @@ export default async function AdminSubmissionsPage() {
       <AdminPageHeader
         icon={Inbox}
         title="Applications"
-        description="Contact form submissions — update status as you review and reply."
+        description="Contact form submissions - update status as you review and reply."
       />
       <div className="mt-8">
         <SubmissionsTable items={serialized} />

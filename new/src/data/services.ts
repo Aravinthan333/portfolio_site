@@ -18,7 +18,7 @@ export const services: Service[] = [
     description:
       "Custom web applications, company websites, and internal tools designed for clarity, performance, and long-term maintainability.",
     summary:
-      "I help businesses establish and improve their digital presence with custom web applications, landing pages, and business websites. Engagements cover architecture, interface implementation, API integration, and production deployment — software that is practical, scalable, and aligned with how your team operates.",
+      "I help businesses establish and improve their digital presence with custom web applications, landing pages, and business websites. Engagements cover architecture, interface implementation, API integration, and production deployment - software that is practical, scalable, and aligned with how your team operates.",
     outcomes: [
       "Custom web applications tailored to business workflows",
       "Company websites and landing pages built for conversion and clarity",
@@ -47,7 +47,7 @@ export const services: Service[] = [
     tags: ["E-Commerce", "POS", "Retail"],
     seoTitle: "Hire E-Commerce Developer",
     seoDescription:
-      "Freelance e-commerce and retail platform development — storefronts, admin tools, and POS integration by Aravinthan Balaji.",
+      "Freelance e-commerce and retail platform development - storefronts, admin tools, and POS integration by Aravinthan Balaji.",
   },
   {
     slug: "backend-apis",
@@ -56,7 +56,7 @@ export const services: Service[] = [
     description:
       "REST APIs, database design, and backend systems that power business applications with stability and clear contracts.",
     summary:
-      "Strong backends turn product ideas into systems teams can operate. I design APIs, data models, authentication, and integrations for ERP modules, CRM workflows, messaging platforms, and custom business software — with an emphasis on maintainability and reliability.",
+      "Strong backends turn product ideas into systems teams can operate. I design APIs, data models, authentication, and integrations for ERP modules, CRM workflows, messaging platforms, and custom business software - with an emphasis on maintainability and reliability.",
     outcomes: [
       "Well-structured REST APIs with validation and clear error handling",
       "Database design matched to access patterns and growth",
@@ -66,7 +66,7 @@ export const services: Service[] = [
     tags: ["APIs", "Backend", "Databases"],
     seoTitle: "Hire Backend Developer",
     seoDescription:
-      "Hire a freelance backend engineer for REST APIs, databases, and business system integrations — delivered by Aravinthan Balaji.",
+      "Hire a freelance backend engineer for REST APIs, databases, and business system integrations - delivered by Aravinthan Balaji.",
   },
   {
     slug: "saas-cloud",
@@ -75,7 +75,7 @@ export const services: Service[] = [
     description:
       "SaaS products, ERP and CRM solutions, and business management software that automate operations and improve efficiency.",
     summary:
-      "I develop SaaS platforms and business systems — including ERP and CRM capabilities — that help organizations automate workflows and gain visibility. Delivery includes feature development, technical consulting, maintenance, and performance work for products that must remain dependable after launch.",
+      "I develop SaaS platforms and business systems - including ERP and CRM capabilities - that help organizations automate workflows and gain visibility. Delivery includes feature development, technical consulting, maintenance, and performance work for products that must remain dependable after launch.",
     outcomes: [
       "SaaS dashboards and multi-user business applications",
       "ERP and CRM capabilities tailored to operational needs",
@@ -85,7 +85,7 @@ export const services: Service[] = [
     tags: ["SaaS", "ERP", "CRM"],
     seoTitle: "Hire SaaS & ERP Developer",
     seoDescription:
-      "Freelance SaaS, ERP, and CRM development for businesses modernizing operations — consulting and delivery by Aravinthan Balaji.",
+      "Freelance SaaS, ERP, and CRM development for businesses modernizing operations - consulting and delivery by Aravinthan Balaji.",
   },
 ];
 

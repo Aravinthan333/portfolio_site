@@ -7,7 +7,8 @@
     "contact": "Contact",
     "hireMe": "Hire Me",
     "online": "Online",
-    "language": "Language"
+    "language": "Language",
+    "downloadResume": "Download resume"
   },
   "hero": {
     "roleLine": "Software Engineer | Freelance Software Consultant",
@@ -26,7 +27,8 @@
     "bookCall": "Book a call",
     "openCalendly": "Or open Calendly",
     "skipToContent": "Skip to content",
-    "copyright": "© {year} {name}. Software engineer available for remote freelance and contract work."
+    "copyright": "© {year} {name}. Software engineer available for remote freelance and contract work.",
+    "downloadResume": "Download resume"
   },
   "metrics": {
     "ownership": "Product Ownership",
@@ -44,16 +46,16 @@
     "servicesTitle": "Software that simplifies how businesses operate.",
     "selectedWork": "Selected work",
     "projectsTitle": "Production systems shipped",
-    "projectsDesc": "Business software and digital products for e-commerce, finance, retail, and operations — open a case study for the full story.",
+    "projectsDesc": "Business software and digital products for e-commerce, finance, retail, and operations - open a case study for the full story.",
     "whoIWorkWith": "Who I work with",
     "collaboratorsTitle": "Partners who build with purpose",
-    "collaboratorsDesc": "Startups, growing businesses, and teams that need practical software — systems that automate operations, improve efficiency, and support long-term growth.",
+    "collaboratorsDesc": "Startups, growing businesses, and teams that need practical software - systems that automate operations, improve efficiency, and support long-term growth.",
     "process": "The process",
     "processTitle": "From brief to production",
-    "processDesc": "A connected delivery flow — each stage feeds the next so scope stays clear and releases stay on time.",
+    "processDesc": "A connected delivery flow - each stage feeds the next so scope stays clear and releases stay on time.",
     "whyMe": "Why work with me",
     "whyMeTitle": "Reliable delivery. Clear collaboration.",
-    "whyMeDesc": "I focus on solving business problems, building maintainable software, and owning outcomes — whether working independently or inside your team.",
+    "whyMeDesc": "I focus on solving business problems, building maintainable software, and owning outcomes - whether working independently or inside your team.",
     "expertise": "Expertise",
     "skillsTitle": "Technologies I deliver with",
     "skillsDesc": "Modern stacks chosen for maintainability, performance, and practical business delivery.",
@@ -73,11 +75,11 @@
     "build": "Build",
     "buildDesc": "Develop in iterations with transparent progress, staging reviews, and continuous feedback throughout the engagement.",
     "deliver": "Deliver",
-    "deliverDesc": "Ship to production with documentation and support — software that is reliable, secure, and ready to grow with the business."
+    "deliverDesc": "Ship to production with documentation and support - software that is reliable, secure, and ready to grow with the business."
   },
   "whyMe": {
     "solve": "Solve business problems",
-    "solveDesc": "I focus on outcomes that improve operations and growth — not complexity for its own sake.",
+    "solveDesc": "I focus on outcomes that improve operations and growth - not complexity for its own sake.",
     "solveStat": "Business-first engineering",
     "ship": "Ship maintainable software",
     "shipDesc": "Clean architecture, scalable design, and code written to evolve as your requirements change.",
@@ -97,12 +99,12 @@
     "retail": "Retail and service organizations",
     "retailDesc": "E-commerce platforms, logistics tooling, and customer-facing experiences designed for real-world workflows.",
     "teams": "Engineering teams needing reinforcement",
-    "teamsDesc": "Integrate as a reliable contributor — or lead delivery when ownership and coordination are required."
+    "teamsDesc": "Integrate as a reliable contributor - or lead delivery when ownership and coordination are required."
   },
   "hireCta": {
     "label": "Hire Me",
     "title": "Let's build software that moves your business forward",
-    "description": "Share your goals and constraints. I help startups and businesses turn ideas into reliable, maintainable products — from new builds to modernization and team augmentation."
+    "description": "Share your goals and constraints. I help startups and businesses turn ideas into reliable, maintainable products - from new builds to modernization and team augmentation."
   },
   "footer": {
     "projects": "Projects",
@@ -110,7 +112,8 @@
     "blog": "Blog",
     "faq": "FAQ",
     "contact": "Contact",
-    "bookCall": "Book a call"
+    "bookCall": "Book a call",
+    "downloadResume": "Download resume"
   },
   "pages": {
     "services": {
@@ -125,7 +128,7 @@
       "title": "Projects",
       "subtitle": "Production systems designed, built, and delivered for real business needs.",
       "hireCtaTitle": "Need something similar?",
-      "hireCtaDescription": "Share your goals — I'll suggest a practical path to production."
+      "hireCtaDescription": "Share your goals - I'll suggest a practical path to production."
     },
     "blog": {
       "label": "Insights",
@@ -141,7 +144,11 @@
       "title": "Frequently asked questions",
       "subtitle": "Answers about services, collaboration, and how engagements typically start.",
       "hireCtaTitle": "Still have questions?",
-      "hireCtaDescription": "Send a note or book a short call — happy to clarify scope before we commit."
+      "hireCtaDescription": "Send a note or book a short call - happy to clarify scope before we commit.",
+      "highlightBuild": "What I build",
+      "highlightRemote": "Remote-ready",
+      "highlightTeam": "Solo or team",
+      "highlightStart": "How we start"
     },
     "contact": {
       "label": "Contact",
@@ -157,24 +164,24 @@
       "subtitle": "Request a call or book instantly on Calendly.",
       "fastestPath": "Fastest path",
       "bookInstantlyTitle": "Book instantly on Calendly",
-      "bookInstantlyBody": "Pick a time that works — confirmation is immediate.",
+      "bookInstantlyBody": "Pick a time that works - confirmation is immediate.",
       "orRequestTitle": "Or request a call",
       "orRequestBody": "Leave your preferred slot and I'll confirm.",
       "openCalendlyBtn": "Open Calendly"
     },
     "serviceDetail": {
       "hireCtaTitle": "Ready to hire for {service}?",
-      "hireCtaDescription": "Tell me about your goals and constraints — I'll reply with clear next steps."
+      "hireCtaDescription": "Tell me about your goals and constraints - I'll reply with clear next steps."
     }
   },
   "site": {
     "title": "Software Engineer",
     "tagline": "I design and build scalable web applications, business software, and custom digital solutions that help businesses automate operations, improve efficiency, and grow online.",
-    "bio": "I am a Software Engineer and Full Stack Developer specializing in custom web applications, business software, SaaS platforms, and backend systems. I partner with startups and growing businesses to turn ideas into reliable, scalable, production-ready software — with clear communication and dependable delivery.",
-    "summary": "Software Engineer with experience developing business applications, e-commerce platforms, ERP solutions, CRM systems, and custom web applications. I take products from requirements through architecture, development, and deployment — collaborating with teams and clients to create software that delivers measurable business value.",
+    "bio": "I am a Software Engineer and Full Stack Developer specializing in custom web applications, business software, SaaS platforms, and backend systems. I partner with startups and growing businesses to turn ideas into reliable, scalable, production-ready software - with clear communication and dependable delivery.",
+    "summary": "Software Engineer with experience developing business applications, e-commerce platforms, ERP solutions, CRM systems, and custom web applications. I take products from requirements through architecture, development, and deployment - collaborating with teams and clients to create software that delivers measurable business value.",
     "mission": "To build software that simplifies business operations, improves productivity, and helps organizations grow through reliable and scalable technology.",
     "location": "India · Available Worldwide (Remote)",
-    "availability": "Available for freelance projects, contract engagements, and full-time remote roles — independently or as part of your team."
+    "availability": "Available for freelance projects, contract engagements, and full-time remote roles - independently or as part of your team."
   },
   "skills": {
     "languages": "Languages & runtimes",
@@ -219,7 +226,7 @@
       "preferredDate": "Preferred date",
       "preferredTime": "Preferred time",
       "timezone": "Timezone",
-      "timezoneHint": "Defaults to your browser timezone — change if needed.",
+      "timezoneHint": "Defaults to your browser timezone - change if needed.",
       "note": "Note",
       "optional": "(optional)",
       "placeholderName": "Your name",
@@ -239,7 +246,7 @@
   "errors": {
     "notFound": {
       "title": "Page not found",
-      "body": "That URL doesn't exist. Try one of these instead — or get in touch if you're looking to hire.",
+      "body": "That URL doesn't exist. Try one of these instead - or get in touch if you're looking to hire.",
       "home": "Home"
     },
     "unexpected": {
@@ -251,15 +258,15 @@
     }
   },
   "seo": {
-    "homeTitle": "{name} — Software Engineer & Full Stack Developer",
+    "homeTitle": "{name} - Software Engineer & Full Stack Developer",
     "homeDescription": "Hire Aravinthan Balaji to design and build scalable web applications, business software, SaaS platforms, and backend systems for startups and growing businesses.",
-    "servicesDescription": "Custom web applications, e-commerce, backend APIs, SaaS, ERP, and CRM development — hire Aravinthan Balaji for reliable software delivery.",
-    "projectsDescription": "Selected freelance and product engineering work — e-commerce, fintech, and enterprise platforms shipped end-to-end.",
+    "servicesDescription": "Custom web applications, e-commerce, backend APIs, SaaS, ERP, and CRM development - hire Aravinthan Balaji for reliable software delivery.",
+    "projectsDescription": "Selected freelance and product engineering work - e-commerce, fintech, and enterprise platforms shipped end-to-end.",
     "blogDescription": "Engineering notes on e-commerce, fintech platforms, cloud delivery, and hiring a freelance full-stack engineer.",
     "faqDescription": "Common questions about hiring Aravinthan Balaji for freelance projects, remote delivery, timelines, and engagement types.",
-    "contactTitle": "Hire Me — Contact",
+    "contactTitle": "Hire Me - Contact",
     "contactDescription": "Hire Aravinthan Balaji for freelance web, e-commerce, API, and cloud engineering. Send a project brief and get a response within 24 hours.",
-    "bookCallDescription": "Request a call with Aravinthan Balaji or book instantly on Calendly — discuss freelance projects, architecture, and delivery.",
+    "bookCallDescription": "Request a call with Aravinthan Balaji or book instantly on Calendly - discuss freelance projects, architecture, and delivery.",
     "softwareEngineering": "Software Engineering"
   },
   "projectLabels": {
@@ -294,7 +301,7 @@
       "shortTitle": "Web Development",
       "title": "Custom Web & Business Applications",
       "description": "Custom web applications, company websites, and internal tools designed for clarity, performance, and long-term maintainability.",
-      "summary": "I help businesses establish and improve their digital presence with custom web applications, landing pages, and business websites. Engagements cover architecture, interface implementation, API integration, and production deployment — software that is practical, scalable, and aligned with how your team operates.",
+      "summary": "I help businesses establish and improve their digital presence with custom web applications, landing pages, and business websites. Engagements cover architecture, interface implementation, API integration, and production deployment - software that is practical, scalable, and aligned with how your team operates.",
       "outcomes": [
         "Custom web applications tailored to business workflows",
         "Company websites and landing pages built for conversion and clarity",
@@ -326,13 +333,13 @@
         "Retail"
       ],
       "seoTitle": "Hire E-Commerce Developer",
-      "seoDescription": "Freelance e-commerce and retail platform development — storefronts, admin tools, and POS integration by Aravinthan Balaji."
+      "seoDescription": "Freelance e-commerce and retail platform development - storefronts, admin tools, and POS integration by Aravinthan Balaji."
     },
     "backend-apis": {
       "shortTitle": "Backend & APIs",
       "title": "Backend Systems & API Development",
       "description": "REST APIs, database design, and backend systems that power business applications with stability and clear contracts.",
-      "summary": "Strong backends turn product ideas into systems teams can operate. I design APIs, data models, authentication, and integrations for ERP modules, CRM workflows, messaging platforms, and custom business software — with an emphasis on maintainability and reliability.",
+      "summary": "Strong backends turn product ideas into systems teams can operate. I design APIs, data models, authentication, and integrations for ERP modules, CRM workflows, messaging platforms, and custom business software - with an emphasis on maintainability and reliability.",
       "outcomes": [
         "Well-structured REST APIs with validation and clear error handling",
         "Database design matched to access patterns and growth",
@@ -345,13 +352,13 @@
         "Databases"
       ],
       "seoTitle": "Hire Backend Developer",
-      "seoDescription": "Hire a freelance backend engineer for REST APIs, databases, and business system integrations — delivered by Aravinthan Balaji."
+      "seoDescription": "Hire a freelance backend engineer for REST APIs, databases, and business system integrations - delivered by Aravinthan Balaji."
     },
     "saas-cloud": {
       "shortTitle": "SaaS & ERP",
       "title": "SaaS, ERP & CRM Solutions",
       "description": "SaaS products, ERP and CRM solutions, and business management software that automate operations and improve efficiency.",
-      "summary": "I develop SaaS platforms and business systems — including ERP and CRM capabilities — that help organizations automate workflows and gain visibility. Delivery includes feature development, technical consulting, maintenance, and performance work for products that must remain dependable after launch.",
+      "summary": "I develop SaaS platforms and business systems - including ERP and CRM capabilities - that help organizations automate workflows and gain visibility. Delivery includes feature development, technical consulting, maintenance, and performance work for products that must remain dependable after launch.",
       "outcomes": [
         "SaaS dashboards and multi-user business applications",
         "ERP and CRM capabilities tailored to operational needs",
@@ -364,7 +371,7 @@
         "CRM"
       ],
       "seoTitle": "Hire SaaS & ERP Developer",
-      "seoDescription": "Freelance SaaS, ERP, and CRM development for businesses modernizing operations — consulting and delivery by Aravinthan Balaji."
+      "seoDescription": "Freelance SaaS, ERP, and CRM development for businesses modernizing operations - consulting and delivery by Aravinthan Balaji."
     }
   },
   "faqItems": {
@@ -397,10 +404,10 @@
     "raja-supermart": {
       "title": "Raja Supermart",
       "subtitle": "Grocery E-Commerce Platform",
-      "description": "End-to-end grocery commerce for an Indian supermarket — storefront, operations console, delivery workflows, and inventory sync with a legacy POS.",
-      "overview": "Raja Supermart needed an online ordering channel that respected how the store already ran day to day. I designed and shipped a full-stack platform covering customer browsing and checkout, staff tools for catalog and phone orders, delivery coordination, and returns — while keeping stock aligned with an existing Optech POS database.",
+      "description": "End-to-end grocery commerce for an Indian supermarket - storefront, operations console, delivery workflows, and inventory sync with a legacy POS.",
+      "overview": "Raja Supermart needed an online ordering channel that respected how the store already ran day to day. I designed and shipped a full-stack platform covering customer browsing and checkout, staff tools for catalog and phone orders, delivery coordination, and returns - while keeping stock aligned with an existing Optech POS database.",
       "role": "Freelance full-stack engineer responsible for architecture, APIs, customer and admin interfaces, and AWS deployment.",
-      "challenge": "Inventory and pricing lived in a legacy SQL Server POS that could not be replaced. Orders still arrived by phone as well as the web. Delivery partners needed address-grouped assignments, and leadership required clear revenue and category reporting — all without disrupting in-store operations.",
+      "challenge": "Inventory and pricing lived in a legacy SQL Server POS that could not be replaced. Orders still arrived by phone as well as the web. Delivery partners needed address-grouped assignments, and leadership required clear revenue and category reporting - all without disrupting in-store operations.",
       "solution": "I delivered a React storefront and Node.js API with MongoDB for commerce data, Redis for sessions and cache, and scheduled jobs that reconcile stock with Optech SQL Server. The admin console handles catalog structure, phone-order entry, partner assignment, returns, and analytics. Assets and hosting sit on AWS with S3 for media.",
       "highlights": [
         "Dual-database design keeping MongoDB commerce data in step with Optech SQL Server inventory",
@@ -420,9 +427,9 @@
       "title": "Valathi Chit Funds",
       "subtitle": "FinTech Web Platform",
       "description": "Regulated chit fund public site with bilingual content, online membership applications, return calculators, and automated legal PDF generation.",
-      "overview": "Valathi Chit Funds operates three Tamil Nadu branches under government registration. I built valathichits.com so prospective members can review active groups, estimate returns, apply online with digital signatures, and receive compliant documentation — backed by a PostgreSQL API and ops-ready admin tooling. A companion WhatsApp operations console later unified agent messaging and branch workflows.",
+      "overview": "Valathi Chit Funds operates three Tamil Nadu branches under government registration. I built valathichits.com so prospective members can review active groups, estimate returns, apply online with digital signatures, and receive compliant documentation - backed by a PostgreSQL API and ops-ready admin tooling. A companion WhatsApp operations console later unified agent messaging and branch workflows.",
       "role": "Freelance full-stack engineer for the public site, REST API, PDF automation, and AWS infrastructure.",
-      "challenge": "The product had to serve English and Tamil audiences, satisfy regulatory expectations for applications, and automate branded legal forms — while remaining operable by a small team without a dedicated engineering staff.",
+      "challenge": "The product had to serve English and Tamil audiences, satisfy regulatory expectations for applications, and automate branded legal forms - while remaining operable by a small team without a dedicated engineering staff.",
       "solution": "I shipped a Next.js bilingual experience with group browsing, domain-specific calculators, and an application flow with signature capture. PostgreSQL stores content and applications; Puppeteer generates multi-brand legal PDFs. Deployment runs on AWS EC2 behind Nginx with S3 storage and GitHub Actions releases.",
       "highlights": [
         "Bilingual English/Tamil public site with calculators and group discovery",
@@ -442,7 +449,7 @@
       "title": "Race Parts India",
       "subtitle": "Motorsport E-Commerce",
       "description": "High-performance motorsport catalog with WhatsApp checkout, Terraform-managed AWS hosting, and automated CI/CD.",
-      "overview": "Race Parts India needed a credible, mobile-first storefront for racing components and simulator hardware without the cost of a full commerce backend at launch. I delivered the React storefront, production AWS footprint, and release automation as one engagement — from UI through zero-downtime deploys.",
+      "overview": "Race Parts India needed a credible, mobile-first storefront for racing components and simulator hardware without the cost of a full commerce backend at launch. I delivered the React storefront, production AWS footprint, and release automation as one engagement - from UI through zero-downtime deploys.",
       "role": "Freelance engineer for the frontend application, cloud infrastructure, and CI/CD pipelines.",
       "challenge": "The business required polished browsing, filtering, cart, and product detail experiences while preferring a lightweight checkout model. Hosting, SSL, and repeatable releases had to remain dependable without constant manual server work.",
       "solution": "I built a React SPA with a responsive catalog, cart flows, and image-rich product pages, routing checkout through WhatsApp for a familiar mobile purchase path. Terraform provisions AWS EC2 with Nginx and automated SSL. GitHub Actions pipelines standardize builds and rsync-based deployments.",
@@ -464,8 +471,8 @@
       "title": "Wondermove ERP",
       "subtitle": "Enterprise Logistics",
       "description": "Fleet operations platform covering trip management, GST compliance, ledger workflows, and financial reporting on AWS.",
-      "overview": "During my time with a Tamil Nadu startup, I contributed to Wondermove — an ERP built for logistics operators who had outgrown spreadsheets. The system centers on trip lifecycle management, tax compliance, ledgers, and management reporting so leadership can see cost and profitability across the fleet.",
-      "role": "Full-stack engineer within a product team — features spanning frontend, APIs, and AWS-hosted services.",
+      "overview": "During my time with a Tamil Nadu startup, I contributed to Wondermove - an ERP built for logistics operators who had outgrown spreadsheets. The system centers on trip lifecycle management, tax compliance, ledgers, and management reporting so leadership can see cost and profitability across the fleet.",
+      "role": "Full-stack engineer within a product team - features spanning frontend, APIs, and AWS-hosted services.",
       "challenge": "Logistics teams juggled trips, invoices, and tax records across disconnected tools. Financial accuracy and GST handling were especially sensitive, and any replacement system had to earn trust quickly under real operational load.",
       "solution": "We delivered a full-stack ERP on a modern web and API stack hosted on AWS, with disciplined engineering around financial calculations and operational workflows. Trip management, GST tracking, ledger maintenance, and forecasting sit in one operational surface for dispatch and finance stakeholders.",
       "highlights": [
@@ -500,7 +507,7 @@
         },
         {
           "type": "paragraph",
-          "text": "For Raja Supermart, stock and pricing remained in Optech SQL Server. Application data — carts, orders, customer accounts — lived in MongoDB. A scheduled sync job reconciled quantities so the storefront never drifted far from what the cash counter knew."
+          "text": "For Raja Supermart, stock and pricing remained in Optech SQL Server. Application data - carts, orders, customer accounts - lived in MongoDB. A scheduled sync job reconciled quantities so the storefront never drifted far from what the cash counter knew."
         },
         {
           "type": "heading",
@@ -544,7 +551,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Puppeteer-driven PDF generation produced multi-brand legal forms from structured application data. The goal was fewer manual edits and fewer mismatched fields — especially valuable when multiple offices share one public site."
+          "text": "Puppeteer-driven PDF generation produced multi-brand legal forms from structured application data. The goal was fewer manual edits and fewer mismatched fields - especially valuable when multiple offices share one public site."
         },
         {
           "type": "heading",
@@ -558,7 +565,7 @@
     },
     "when-whatsapp-checkout-beats-a-payments-stack": {
       "title": "When WhatsApp Checkout Beats a Full Payments Stack",
-      "excerpt": "Choosing a static-first motorsport storefront with WhatsApp ordering — matching technology investment to business readiness.",
+      "excerpt": "Choosing a static-first motorsport storefront with WhatsApp ordering - matching technology investment to business readiness.",
       "category": "Architecture",
       "readTime": "5 min read",
       "content": [
@@ -616,7 +623,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Flexible hours work when demos, written updates, and staging reviews stay predictable. On-time delivery is a process — not a personality trait. Ask how risk, scope changes, and handoffs are handled before the kickoff call ends."
+          "text": "Flexible hours work when demos, written updates, and staging reviews stay predictable. On-time delivery is a process - not a personality trait. Ask how risk, scope changes, and handoffs are handled before the kickoff call ends."
         }
       ]
     }
