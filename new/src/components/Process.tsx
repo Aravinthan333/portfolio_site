@@ -11,12 +11,33 @@ const steps = [
   { step: "04", key: "deliver" as const },
 ];
 
+function StepCard({
+  title,
+  description,
+  className = "",
+}: {
+  title: string;
+  description: string;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`rounded-2xl border border-[rgba(15,23,42,0.06)] bg-white/90 p-4 shadow-[var(--shadow-md)] backdrop-blur-sm sm:p-5 ${className}`}
+    >
+      <h3 className="font-display text-lg font-medium tracking-tight text-[var(--fg)] sm:text-xl xl:text-2xl">
+        {title}
+      </h3>
+      <p className="mt-2 text-sm leading-relaxed text-[var(--fg-muted)]">{description}</p>
+    </div>
+  );
+}
+
 export function Process() {
   const t = useTranslations("process");
   const tSec = useTranslations("sections");
 
   return (
-    <section id="process" className="section-band relative overflow-hidden py-20 sm:py-28">
+    <section id="process" className="section-band relative overflow-hidden py-16 sm:py-20 lg:py-28">
       <AtmosphereBg variant="band" />
       <div className="section-wrap relative">
         <ScrollReveal>
@@ -27,7 +48,8 @@ export function Process() {
           </div>
         </ScrollReveal>
 
-        <div className="relative mt-14 lg:hidden">
+        {/* Mobile: vertical timeline */}
+        <div className="relative mt-10 md:hidden">
           <div
             className="absolute bottom-8 left-[1.375rem] top-8 w-px bg-gradient-to-b from-[var(--green-300)] via-[var(--blue-300)] to-[var(--green-300)]"
             aria-hidden
@@ -35,27 +57,45 @@ export function Process() {
           <ol className="relative space-y-0">
             {steps.map((step, i) => (
               <ScrollReveal key={step.step} delay={i * 0.08}>
-                <li className="relative flex gap-5 pb-8 last:pb-0">
+                <li className="relative flex gap-4 pb-8 last:pb-0 sm:gap-5">
                   <div className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-[var(--green-300)] bg-[var(--surface)] shadow-[var(--shadow-sm)]">
                     <span className="text-xs font-bold tabular-nums text-[var(--green-600)]">
                       {step.step}
                     </span>
                   </div>
-                  <div className="min-w-0 flex-1 rounded-2xl border border-[rgba(15,23,42,0.06)] bg-white/90 p-5 shadow-[var(--shadow-md)] backdrop-blur-sm">
-                    <h3 className="font-display text-xl font-medium tracking-tight text-[var(--fg)]">
-                      {t(step.key)}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[var(--fg-muted)]">
-                      {t(`${step.key}Desc`)}
-                    </p>
-                  </div>
+                  <StepCard
+                    title={t(step.key)}
+                    description={t(`${step.key}Desc`)}
+                    className="min-w-0 flex-1"
+                  />
                 </li>
               </ScrollReveal>
             ))}
           </ol>
         </div>
 
-        <div className="mt-14 hidden lg:block">
+        {/* Tablet: 2x2 grid */}
+        <ol className="mt-10 hidden gap-5 md:grid md:grid-cols-2 xl:hidden">
+          {steps.map((step, i) => (
+            <ScrollReveal key={step.step} delay={i * 0.08}>
+              <li className="flex gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-[var(--green-300)] bg-[var(--surface)] shadow-[var(--shadow-sm)]">
+                  <span className="text-xs font-bold tabular-nums text-[var(--green-600)]">
+                    {step.step}
+                  </span>
+                </div>
+                <StepCard
+                  title={t(step.key)}
+                  description={t(`${step.key}Desc`)}
+                  className="min-w-0 flex-1"
+                />
+              </li>
+            </ScrollReveal>
+          ))}
+        </ol>
+
+        {/* Desktop: horizontal 4-column */}
+        <div className="mt-14 hidden xl:block">
           <ol className="relative grid grid-cols-4 gap-0">
             <div
               className="absolute left-[12.5%] right-[12.5%] top-[2.25rem] h-0.5 bg-gradient-to-r from-[var(--green-300)] via-[var(--blue-300)] to-[var(--green-400)]"
@@ -82,14 +122,11 @@ export function Process() {
                     </span>
                   )}
 
-                  <div className="mt-6 w-full rounded-2xl border border-[rgba(15,23,42,0.06)] bg-white/90 p-5 text-center shadow-[var(--shadow-md)] backdrop-blur-sm transition-all hover:border-[rgba(59,130,246,0.28)] hover:shadow-[var(--shadow-lg)]">
-                    <h3 className="font-display text-2xl font-medium tracking-tight text-[var(--fg)]">
-                      {t(step.key)}
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-[var(--fg-muted)]">
-                      {t(`${step.key}Desc`)}
-                    </p>
-                  </div>
+                  <StepCard
+                    title={t(step.key)}
+                    description={t(`${step.key}Desc`)}
+                    className="mt-6 w-full text-center transition-all hover:border-[rgba(59,130,246,0.28)] hover:shadow-[var(--shadow-lg)]"
+                  />
                 </li>
               </ScrollReveal>
             ))}

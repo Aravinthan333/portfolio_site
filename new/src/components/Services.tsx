@@ -13,13 +13,13 @@ export function Services() {
   const services = useLocalizedServices();
 
   return (
-    <section id="services" className="relative overflow-hidden py-20 sm:py-28">
+    <section id="services" className="relative overflow-hidden py-16 sm:py-20 lg:py-28">
       <AtmosphereBg variant="mesh" />
       <div className="section-wrap relative">
         <ScrollReveal>
-          <div className="section-header max-w-none">
+          <div className="section-header">
             <p className="section-label">{t("whatIDo")}</p>
-            <h2 className="font-display mt-3 whitespace-nowrap text-[clamp(1.25rem,4.8vw,3.25rem)] font-medium leading-tight tracking-tight text-[var(--fg)]">
+            <h2 className="font-display mt-3 text-[clamp(1.35rem,4.8vw,3.25rem)] font-medium leading-tight tracking-tight text-[var(--fg)] text-balance">
               {t("servicesTitle")}
             </h2>
           </div>

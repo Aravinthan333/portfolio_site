@@ -26,12 +26,12 @@ export function Hero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-5 pt-28 pb-20 text-center sm:px-8 sm:pt-32">
+    <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden pt-24 pb-16 text-center sm:pt-28 sm:pb-20 lg:pt-32">
       <AtmosphereBg variant="hero" />
 
-      <div className="relative mx-auto w-full max-w-4xl">
+      <div className="section-wrap relative mx-auto w-full max-w-4xl">
         <ScrollReveal delay={0.08}>
-          <p className="text-sm font-semibold tracking-wide text-[var(--blue-600)] sm:text-base">
+          <p className="mx-auto max-w-md text-xs font-semibold tracking-wide text-[var(--blue-600)] sm:max-w-none sm:text-sm md:text-base">
             {t("roleLine")}
           </p>
         </ScrollReveal>
@@ -87,30 +87,30 @@ export function Hero() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.38}>
-          <div className="mt-9 flex flex-wrap justify-center gap-3">
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-              <Link href="/contact" className="btn-primary">
+          <div className="mt-8 flex flex-col items-stretch gap-2.5 sm:mt-9 min-[480px]:flex-row min-[480px]:flex-wrap min-[480px]:items-center min-[480px]:justify-center min-[480px]:gap-3">
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="min-[480px]:flex-none">
+              <Link href="/contact" className="btn-primary w-full min-[480px]:w-auto">
                 {tCommon("hireMe")}
                 <ArrowUpRight size={16} />
               </Link>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-              <BookCallButton label={t("bookCall")} className="btn-secondary" />
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="min-[480px]:flex-none">
+              <BookCallButton label={t("bookCall")} className="btn-secondary w-full min-[480px]:w-auto" />
             </motion.div>
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-              <Link href="/projects" className="btn-secondary">
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="min-[480px]:flex-none">
+              <Link href="/projects" className="btn-secondary w-full min-[480px]:w-auto">
                 {t("viewWork")}
               </Link>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-              <ResumeDownloadButton label={tCommon("downloadResume")} />
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="min-[480px]:flex-none">
+              <ResumeDownloadButton label={tCommon("downloadResume")} className="w-full min-[480px]:w-auto" />
             </motion.div>
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.45}>
           <motion.div
-            className="relative mx-auto mt-14 aspect-square w-40 sm:w-48"
+            className="relative mx-auto mt-10 aspect-square w-32 sm:mt-14 sm:w-40 md:w-48"
             animate={reduceMotion ? undefined : { y: [0, -8, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           >

@@ -139,14 +139,14 @@ body {
   font-family: var(--font-display), Georgia, "Times New Roman", serif;
 }
 
-/* Layout - full viewport width with comfortable side padding */
+/* Layout - fluid padding with a comfortable max width on large screens */
 .section-wrap {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  max-width: none;
-  padding-left: clamp(1.75rem, 7vw, 6.5rem);
-  padding-right: clamp(1.75rem, 7vw, 6.5rem);
+  max-width: 90rem;
+  padding-left: clamp(1rem, 4vw, 6.5rem);
+  padding-right: clamp(1rem, 4vw, 6.5rem);
 }
 
 .section-header {
@@ -157,7 +157,7 @@ body {
 }
 
 .section-label {
-  font-size: 0.6875rem;
+  font-size: clamp(0.625rem, 1.5vw, 0.6875rem);
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -166,17 +166,19 @@ body {
 
 .section-title {
   font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-size: clamp(1.75rem, 4.5vw, 3.25rem);
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.12;
   letter-spacing: -0.02em;
   color: var(--fg);
+  text-wrap: balance;
 }
 
 .section-desc {
-  font-size: 0.9375rem;
+  font-size: clamp(0.875rem, 1.8vw, 0.9375rem);
   line-height: 1.7;
   color: var(--fg-muted);
+  text-wrap: pretty;
 }
 
 /* Cards - floating, soft, elite */
@@ -244,18 +246,26 @@ body {
 .btn-primary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   border-radius: 9999px;
   border: 1px solid transparent;
   background: var(--blue-500);
-  padding: 0.8rem 1.6rem;
-  font-size: 0.875rem;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: #ffffff;
   box-shadow:
     0 1px 2px rgba(15, 23, 42, 0.06),
     0 8px 20px -6px rgba(37, 99, 235, 0.45);
   transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .btn-primary {
+    padding: 0.8rem 1.6rem;
+    font-size: 0.875rem;
+  }
 }
 
 .btn-primary:hover {
@@ -268,17 +278,25 @@ body {
 .btn-secondary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   border-radius: 9999px;
   border: 1px solid rgba(15, 23, 42, 0.1);
   background: rgba(255, 255, 255, 0.85);
-  padding: 0.8rem 1.6rem;
-  font-size: 0.875rem;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--fg);
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
   transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .btn-secondary {
+    padding: 0.8rem 1.6rem;
+    font-size: 0.875rem;
+  }
 }
 
 .btn-secondary:hover {
@@ -432,11 +450,17 @@ body {
 /* Metrics */
 .metric-value {
   font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(1.75rem, 3.2vw, 3.25rem);
+  font-size: clamp(1.35rem, 4vw, 3.25rem);
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--blue-600);
-  white-space: nowrap;
+  text-wrap: balance;
+}
+
+@media (min-width: 640px) {
+  .metric-value {
+    font-size: clamp(1.75rem, 3.2vw, 3.25rem);
+  }
 }
 
 /* Project cards */

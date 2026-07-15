@@ -29,9 +29,9 @@ export function Contact() {
           </div>
         </ScrollReveal>
 
-        <div className="overflow-hidden rounded-[2rem] border border-[rgba(15,23,42,0.06)] bg-white shadow-[var(--shadow-lg)]">
+        <div className="overflow-hidden rounded-[1.25rem] border border-[rgba(15,23,42,0.06)] bg-white shadow-[var(--shadow-lg)] sm:rounded-[2rem]">
           <div className="grid lg:grid-cols-2">
-            <div className="relative overflow-hidden bg-gradient-to-br from-[var(--blue-50)] via-white to-[var(--blue-100)]/40 p-8 text-center sm:p-12 sm:text-left">
+            <div className="relative overflow-hidden bg-gradient-to-br from-[var(--blue-50)] via-white to-[var(--blue-100)]/40 p-5 text-center sm:p-8 sm:text-left lg:p-12">
               <div
                 className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full opacity-70 blur-2xl"
                 style={{ background: "radial-gradient(circle, rgba(59,130,246,0.25), transparent 70%)" }}
@@ -81,7 +81,7 @@ export function Contact() {
               </ScrollReveal>
             </div>
 
-            <div className="border-t border-[var(--border)] bg-[var(--grey-100)]/50 p-8 sm:p-12 lg:border-t-0 lg:border-l">
+            <div className="border-t border-[var(--border)] bg-[var(--grey-100)]/50 p-5 sm:p-8 lg:border-t-0 lg:border-l lg:p-12">
               <ScrollReveal delay={0.1}>
                 <ContactForm />
               </ScrollReveal>

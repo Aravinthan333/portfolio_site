@@ -37,9 +37,7 @@ export function HireCta({ title, description, className = "", compact = false }:
         </h2>
         <p
           className={`section-desc mx-auto ${
-            compact
-              ? "mt-2 !text-sm whitespace-nowrap"
-              : "mt-4 max-w-xl"
+            compact ? "mt-2 max-w-xl !text-sm text-balance" : "mt-4 max-w-xl"
           }`}
         >
           {description ?? t("description")}

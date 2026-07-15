@@ -61,15 +61,15 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:justify-end">
+          <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:justify-end">
             <ResumeDownloadButton
               label={t("downloadResume")}
-              className="btn-secondary !px-4 !py-2.5 !text-sm"
+              className="btn-secondary w-full justify-center !px-4 !py-2.5 !text-sm sm:w-auto"
               iconSize={15}
             />
             <BookCallButton
               label={t("bookCall")}
-              className="btn-primary !gap-2 !px-5 !py-2.5 !text-sm shadow-[0_8px_22px_-8px_rgba(37,99,235,0.55)]"
+              className="btn-primary w-full justify-center !gap-2 !px-5 !py-2.5 !text-sm shadow-[0_8px_22px_-8px_rgba(37,99,235,0.55)] sm:w-auto"
               iconSize={16}
             />
           </div>

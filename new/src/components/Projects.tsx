@@ -144,7 +144,7 @@ export function Projects() {
           </div>
         </ScrollReveal>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:gap-6">
+        <div className="mt-10 grid gap-5 sm:mt-14 sm:grid-cols-2 lg:gap-6 xl:grid-cols-3">
           {projects.map((project, i) => (
             <ProjectCard key={project.slug} project={project} index={i} />
           ))}
