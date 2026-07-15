@@ -307,7 +307,8 @@
     "label": "Service",
     "howIHelp": "How I help",
     "outcomes": "Outcomes",
-    "allServices": "All services"
+    "allServices": "All services",
+    "nextStepsHint": "{service} - discuss scope, timeline, and next steps."
   },
   "servicesContent": {
     "web-development": {

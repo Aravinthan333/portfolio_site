@@ -19,7 +19,7 @@ export function Footer() {
   const tHero = useTranslations("hero");
 
   return (
-    <footer className="relative overflow-hidden border-t border-[rgba(59,130,246,0.12)]">
+    <footer className="relative overflow-hidden">
       <div
         className="pointer-events-none absolute inset-0"
         aria-hidden
@@ -29,8 +29,8 @@ export function Footer() {
         }}
       />
 
-      <div className="section-wrap relative py-7 sm:py-8">
-        <div className="flex flex-col items-center justify-between gap-5 rounded-2xl border border-[rgba(59,130,246,0.14)] bg-white/80 px-5 py-5 shadow-[var(--shadow-sm)] backdrop-blur-sm sm:flex-row sm:gap-6 sm:px-6 sm:py-5">
+      <div className="relative px-3 py-7 sm:px-5 sm:py-8 md:px-6 lg:px-8">
+        <div className="mx-auto flex w-full max-w-[96rem] flex-col items-center justify-between gap-5 rounded-full border border-[rgba(59,130,246,0.18)] bg-white/85 px-6 py-5 shadow-[var(--shadow-sm)] backdrop-blur-sm sm:flex-row sm:gap-8 sm:px-10 sm:py-6 md:px-12 lg:px-14 xl:px-16">
           <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:items-center sm:gap-4 sm:text-left">
             <div>
               <div className="inline-flex items-center gap-2">

@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import { BlueInitials } from "@/components/BlueInitials";
 import { SiteShell } from "@/components/layout/SiteShell";
-import { HireCta } from "@/components/HireCta";
-import { BookCallButton } from "@/components/BookCallButton";
+import { ServiceDetailView } from "@/components/ServiceDetailView";
 import { services } from "@/data/services";
 import { getLocalizedService } from "@/lib/i18n-content";
 import { buildMetadata } from "@/lib/seo";
@@ -37,7 +33,6 @@ export default async function ServiceDetailPage({ params }: Props) {
   if (!service) notFound();
 
   const t = await getTranslations("serviceLabels");
-  const tPages = await getTranslations("pages.serviceDetail");
   const tNav = await getTranslations("nav");
   const tCommon = await getTranslations("common");
   const tBreadcrumb = await getTranslations("breadcrumbs");
@@ -54,78 +49,25 @@ export default async function ServiceDetailPage({ params }: Props) {
           ])
         )}
       />
-
-      <div className="section-wrap py-10 sm:py-16">
-
-        <article className="mx-auto max-w-3xl">
-          <header className="text-center">
-            <p className="section-label">{t("label")}</p>
-            <h1 className="section-title mt-3">
-              <BlueInitials text={service.title} />
-            </h1>
-            <p className="section-desc mx-auto mt-4 max-w-2xl">{service.description}</p>
-            <div className="mt-6 flex flex-wrap justify-center gap-2">
-              {service.tags.map((tag, i) => (
-                <span
-                  key={tag}
-                  className={i % 2 === 0 ? "pill-accent text-[11px]" : "pill-blue text-[11px]"}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </header>
-
-          <section className="mt-14">
-            <h2 className="font-display text-xl font-medium text-[var(--green-600)] sm:text-2xl">
-              {t("howIHelp")}
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-[var(--fg-muted)]">{service.summary}</p>
-          </section>
-
-          <section className="mt-10">
-            <h2 className="font-display text-xl font-medium text-[var(--green-600)] sm:text-2xl">
-              {t("outcomes")}
-            </h2>
-            <ul className="mt-4 space-y-3">
-              {service.outcomes.map((item) => (
-                <li
-                  key={item}
-                  className="flex gap-3 text-base leading-relaxed text-[var(--fg-muted)]"
-                >
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--green-500)]" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-3 border-t border-[var(--border)] pt-10">
-            <Link href="/contact" className="btn-primary">
-              {tCommon("hireMe")}
-              <ArrowUpRight size={16} />
-            </Link>
-            <BookCallButton label={tCommon("bookCall")} className="btn-secondary" />
-          </div>
-
-          <div className="mt-10 text-center">
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[var(--green-600)]"
-            >
-              <ArrowLeft size={14} />
-              {t("allServices")}
-            </Link>
-          </div>
-        </article>
-
-        <div className="mt-16">
-          <HireCta
-            title={tPages("hireCtaTitle", { service: service.shortTitle })}
-            description={tPages("hireCtaDescription")}
-          />
-        </div>
-      </div>
+      <ServiceDetailView
+        service={{
+          slug: service.slug,
+          title: service.title,
+          shortTitle: service.shortTitle,
+          description: service.description,
+          summary: service.summary,
+          outcomes: service.outcomes,
+          tags: service.tags,
+        }}
+        labels={{
+          backToServices: t("allServices"),
+          howIHelp: t("howIHelp"),
+          outcomes: t("outcomes"),
+          contact: tNav("contact"),
+          bookCall: tCommon("bookCall"),
+          nextStepsHint: t("nextStepsHint", { service: service.shortTitle }),
+        }}
+      />
     </SiteShell>
   );
 }

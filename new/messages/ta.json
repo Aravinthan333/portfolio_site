@@ -307,7 +307,8 @@
     "label": "சேவை",
     "howIHelp": "நான் எவ்வாறு உதவுகிறேன்",
     "outcomes": "விளைவுகள்",
-    "allServices": "அனைத்து சேவைகளும்"
+    "allServices": "அனைத்து சேவைகளும்",
+    "nextStepsHint": "{service} - அளவு, கால அட்டவணை மற்றும் அடுத்த படிகள் பற்றி பேசுவோம்."
   },
   "servicesContent": {
     "web-development": {

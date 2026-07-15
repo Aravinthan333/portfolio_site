@@ -307,7 +307,8 @@
     "label": "Услуга",
     "howIHelp": "Как я помогаю",
     "outcomes": "Результаты",
-    "allServices": "Все услуги"
+    "allServices": "Все услуги",
+    "nextStepsHint": "{service} - обсудим объём, сроки и следующие шаги."
   },
   "servicesContent": {
     "web-development": {

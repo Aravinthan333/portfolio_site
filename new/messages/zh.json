@@ -307,7 +307,8 @@
     "label": "服务",
     "howIHelp": "我能提供的帮助",
     "outcomes": "成果",
-    "allServices": "所有服务"
+    "allServices": "所有服务",
+    "nextStepsHint": "{service} - 一起聊聊范围、时间和下一步。"
   },
   "servicesContent": {
     "web-development": {
