@@ -54,10 +54,10 @@ export function Process() {
             className="absolute bottom-8 left-[1.375rem] top-8 w-px bg-gradient-to-b from-[var(--green-300)] via-[var(--blue-300)] to-[var(--green-300)]"
             aria-hidden
           />
-          <ol className="relative space-y-0">
+          <ol className="relative grid auto-rows-fr gap-8">
             {steps.map((step, i) => (
-              <ScrollReveal key={step.step} delay={i * 0.08}>
-                <li className="relative flex gap-4 pb-8 last:pb-0 sm:gap-5">
+              <ScrollReveal key={step.step} delay={i * 0.08} className="h-full">
+                <li className="relative flex h-full gap-4 sm:gap-5">
                   <div className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-[var(--green-300)] bg-[var(--surface)] shadow-[var(--shadow-sm)]">
                     <span className="text-xs font-bold tabular-nums text-[var(--green-600)]">
                       {step.step}
@@ -66,7 +66,7 @@ export function Process() {
                   <StepCard
                     title={t(step.key)}
                     description={t(`${step.key}Desc`)}
-                    className="min-w-0 flex-1"
+                    className="h-full min-w-0 flex-1"
                   />
                 </li>
               </ScrollReveal>
@@ -75,10 +75,10 @@ export function Process() {
         </div>
 
         {/* Tablet: 2x2 grid */}
-        <ol className="mt-10 hidden gap-5 md:grid md:grid-cols-2 xl:hidden">
+        <ol className="mt-10 hidden auto-rows-fr gap-5 md:grid md:grid-cols-2 xl:hidden">
           {steps.map((step, i) => (
-            <ScrollReveal key={step.step} delay={i * 0.08}>
-              <li className="flex gap-4">
+            <ScrollReveal key={step.step} delay={i * 0.08} className="h-full">
+              <li className="flex h-full gap-4">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-[var(--green-300)] bg-[var(--surface)] shadow-[var(--shadow-sm)]">
                   <span className="text-xs font-bold tabular-nums text-[var(--green-600)]">
                     {step.step}
@@ -87,7 +87,7 @@ export function Process() {
                 <StepCard
                   title={t(step.key)}
                   description={t(`${step.key}Desc`)}
-                  className="min-w-0 flex-1"
+                  className="h-full min-w-0 flex-1"
                 />
               </li>
             </ScrollReveal>
@@ -103,8 +103,8 @@ export function Process() {
             />
 
             {steps.map((step, i) => (
-              <ScrollReveal key={step.step} delay={i * 0.1}>
-                <li className="relative flex flex-col items-center px-3 text-center">
+              <ScrollReveal key={step.step} delay={i * 0.1} className="h-full">
+                <li className="relative flex h-full flex-col items-center px-3 text-center">
                   <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-[var(--green-300)] bg-[var(--surface)] shadow-[var(--shadow-md)] ring-4 ring-[var(--bg-alt)]">
                     <span className="text-sm font-bold tabular-nums text-[var(--green-600)]">
                       {step.step}
@@ -125,7 +125,7 @@ export function Process() {
                   <StepCard
                     title={t(step.key)}
                     description={t(`${step.key}Desc`)}
-                    className="mt-6 w-full text-center transition-all hover:border-[rgba(59,130,246,0.28)] hover:shadow-[var(--shadow-lg)]"
+                    className="mt-6 w-full flex-1 text-center transition-all hover:border-[rgba(59,130,246,0.28)] hover:shadow-[var(--shadow-lg)]"
                   />
                 </li>
               </ScrollReveal>
