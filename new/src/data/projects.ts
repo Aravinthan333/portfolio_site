@@ -102,33 +102,6 @@ export const projects: Project[] = [
     image: "/images/projects/race-parts-india.svg",
     accent: "#ef4444",
   },
-  {
-    slug: "wondermove-erp",
-    title: "Wondermove ERP",
-    subtitle: "Enterprise Logistics",
-    description:
-      "Fleet operations platform covering trip management, GST compliance, ledger workflows, and financial reporting on AWS.",
-    overview:
-      "During my time with a Tamil Nadu startup, I contributed to Wondermove - an ERP built for logistics operators who had outgrown spreadsheets. The system centers on trip lifecycle management, tax compliance, ledgers, and management reporting so leadership can see cost and profitability across the fleet.",
-    role: "Full-stack engineer within a product team - features spanning frontend, APIs, and AWS-hosted services.",
-    challenge:
-      "Logistics teams juggled trips, invoices, and tax records across disconnected tools. Financial accuracy and GST handling were especially sensitive, and any replacement system had to earn trust quickly under real operational load.",
-    solution:
-      "We delivered a full-stack ERP on a modern web and API stack hosted on AWS, with disciplined engineering around financial calculations and operational workflows. Trip management, GST tracking, ledger maintenance, and forecasting sit in one operational surface for dispatch and finance stakeholders.",
-    highlights: [
-      "Unified trip management for day-to-day fleet operations",
-      "GST-aware financial workflows and ledger maintenance",
-      "Reporting that improves visibility into cost and profitability",
-      "AWS-hosted delivery suited to growing logistics workloads",
-    ],
-    outcome:
-      "Reduced manual coordination and improved financial visibility for fleet operations management.",
-    stack: ["Full Stack", "AWS", "ERP", "PostgreSQL"],
-    tags: ["Enterprise", "Full Stack", "AWS", "ERP"],
-    year: "2025",
-    image: "/images/projects/wondermove-erp.svg",
-    accent: "#8b5cf6",
-  },
 ];
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
