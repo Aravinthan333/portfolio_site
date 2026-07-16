@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { BlogArticleView } from "@/components/BlogArticleView";
 import { getBlogBySlug, getPublishedBlogs } from "@/lib/blogs";
-import { localizeBlogPost, localizeBlogPosts, getLocalizedProject } from "@/lib/i18n-content";
+import { localizeBlogPost, localizeBlogPosts } from "@/lib/i18n-content";
+import { getProjectBySlug } from "@/lib/projects";
 import { buildMetadata } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/site";
 import {
@@ -61,7 +62,7 @@ export default async function BlogDetailPage({ params }: Props) {
     }));
 
   const relatedProject = post.relatedProject
-    ? await getLocalizedProject(post.relatedProject)
+    ? await getProjectBySlug(post.relatedProject)
     : undefined;
 
   return (

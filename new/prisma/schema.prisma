@@ -46,6 +46,29 @@ model BlogPost {
   updatedAt      DateTime @updatedAt
 }
 
+model ProjectCaseStudy {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  subtitle    String
+  description String
+  overview    String
+  role        String
+  challenge   String
+  solution    String
+  highlights  String
+  outcome     String
+  stack       String
+  tags        String
+  liveUrl     String?
+  year        String
+  image       String
+  accent      String?
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
 model ContactSubmission {
   id        String   @id @default(cuid())
   name      String

@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import {
   LayoutDashboard,
   FileText,
+  BriefcaseBusiness,
   Inbox,
   Phone,
   CalendarClock,
@@ -19,6 +20,7 @@ const nav = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/profile", label: "Site profile", icon: UserCircle },
   { href: "/admin/blogs", label: "Blogs", icon: FileText },
+  { href: "/admin/projects", label: "Projects", icon: BriefcaseBusiness },
   { href: "/admin/submissions", label: "Applications", icon: Inbox },
   { href: "/admin/calls", label: "Call Requests", icon: Phone },
   { href: "/admin/callSchedules", label: "Call Schedules", icon: CalendarClock },

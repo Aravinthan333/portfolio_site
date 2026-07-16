@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
 import { blogPosts } from "../src/data/blogs";
+import { projects } from "../src/data/projects";
 import { SITE } from "../src/data/site";
 
 const prisma = new PrismaClient();
@@ -53,7 +54,35 @@ async function main() {
     });
   }
 
-  console.log(`Seeded admin "${name}" (${email}) and ${blogPosts.length} blog posts.`);
+  for (const project of projects) {
+    await prisma.projectCaseStudy.upsert({
+      where: { slug: project.slug },
+      update: {},
+      create: {
+        slug: project.slug,
+        title: project.title,
+        subtitle: project.subtitle,
+        description: project.description,
+        overview: project.overview,
+        role: project.role,
+        challenge: project.challenge,
+        solution: project.solution,
+        highlights: JSON.stringify(project.highlights),
+        outcome: project.outcome,
+        stack: JSON.stringify(project.stack),
+        tags: JSON.stringify(project.tags),
+        liveUrl: project.liveUrl ?? null,
+        year: project.year,
+        image: project.image,
+        accent: project.accent,
+        published: true,
+      },
+    });
+  }
+
+  console.log(
+    `Seeded admin "${name}" (${email}), ${blogPosts.length} blog posts, and ${projects.length} projects.`
+  );
 }
 
 main()

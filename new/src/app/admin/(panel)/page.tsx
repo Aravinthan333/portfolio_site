@@ -59,6 +59,9 @@ export default async function AdminDashboardPage() {
         <Link href="/admin/blogs/new" className="rounded-full bg-accent px-5 py-2 text-sm text-white">
           New blog post
         </Link>
+        <Link href="/admin/projects/new" className="rounded-full border border-border px-5 py-2 text-sm">
+          New project
+        </Link>
         <Link href="/admin/submissions" className="rounded-full border border-border px-5 py-2 text-sm">
           View applications
         </Link>
