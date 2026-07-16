@@ -240,17 +240,17 @@ export function HomeExplore({ projects, services, posts }: Props) {
           <ScrollReveal delay={0.12} className="lg:col-span-4">
             <Link
               href="/faq"
-              className="group/faq flex h-full min-h-52 flex-col justify-between overflow-hidden rounded-[1.75rem] border border-[var(--blue-200)] bg-gradient-to-br from-[var(--blue-600)] to-[var(--blue-700)] p-6 text-white shadow-[var(--shadow-md)] sm:p-7"
+              className="group/faq flex h-full min-h-52 flex-col justify-between overflow-hidden rounded-[1.75rem] border border-[var(--blue-400)] bg-[var(--blue-500)] p-6 text-white shadow-[var(--shadow-md)] transition-[border-color,box-shadow,transform] hover:-translate-y-0.5 hover:border-[var(--blue-500)] hover:shadow-[var(--shadow-lg)] sm:p-7"
             >
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 text-white">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 text-white">
                 <CircleHelp size={20} aria-hidden />
               </span>
               <div className="mt-10">
                 <h3 className="font-display text-2xl font-semibold">{t("faqTitle")}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/75">
+                <p className="mt-2 text-sm leading-relaxed text-white/80">
                   {t("faqDescription")}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold">
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white">
                   {t("visitFaq")}
                   <ArrowUpRight
                     size={15}
