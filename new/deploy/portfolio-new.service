@@ -1,0 +1,23 @@
+[Unit]
+Description=Aravinthan portfolio (new Next.js app)
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Must match the Linux user that owns /var/www/portfolio (see setup-vm.sh)
+User=portfolio
+Group=portfolio
+WorkingDirectory=/var/www/portfolio/new
+Environment=NODE_ENV=production
+EnvironmentFile=/var/www/portfolio/new/.env
+ExecStartPre=/bin/mkdir -p /var/www/portfolio/new/public/uploads/blogs
+ExecStart=/usr/bin/npm run start
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

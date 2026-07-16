@@ -1,0 +1,178 @@
+# Manual deploy of the Next.js app in /new to a GCP Compute Engine Ubuntu VM.
+#
+# Required GitHub secrets:
+#   GCP_SA_KEY       - Service account JSON key (compute OS Login / IAP tunnel access)
+#   GCP_PROJECT_ID   - GCP project id
+#   GCE_INSTANCE     - VM instance name
+#   GCE_ZONE         - e.g. asia-south1-a
+#
+# Optional GitHub secrets:
+#   GCE_SSH_USER     - SSH login user (must be able to write the deploy path + restart systemd)
+#   DEPLOY_PATH      - App path on the VM (default: /var/www/portfolio/new)
+#   AUTH_SECRET      - Used for CI smoke build only (>= 32 chars); production secret stays on the VM .env
+#
+# One-time on the VM: bash new/deploy/setup-vm.sh <repo-url> main
+
+name: Deploy new (GCP)
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Git ref (branch, tag, or SHA) to deploy
+        required: true
+        default: main
+        type: string
+      run_migrations:
+        description: Run prisma migrate deploy on the VM
+        required: true
+        default: true
+        type: boolean
+      skip_ci_build:
+        description: Skip the CI build smoke check (faster, less safe)
+        required: true
+        default: false
+        type: boolean
+
+concurrency:
+  group: deploy-new-gcp
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Build and deploy /new
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+
+      - name: Setup Node.js
+        if: ${{ inputs.skip_ci_build == false }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: new/package-lock.json
+
+      - name: Install dependencies
+        if: ${{ inputs.skip_ci_build == false }}
+        working-directory: new
+        run: npm ci
+
+      - name: CI build smoke check
+        if: ${{ inputs.skip_ci_build == false }}
+        working-directory: new
+        env:
+          DATABASE_URL: file:./prisma/ci.db
+          AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
+          NEXT_PUBLIC_SITE_URL: https://aravinthanbalaji.com
+          NEXT_PUBLIC_EMAIL: aravinthanbaalaji@gmail.com
+          ADMIN_NAME: CI
+          ADMIN_EMAIL: ci@example.com
+          ADMIN_PASSWORD: ci-only-not-for-production
+        run: |
+          if [ -z "${AUTH_SECRET:-}" ] || [ "${#AUTH_SECRET}" -lt 32 ]; then
+            echo "AUTH_SECRET missing or short - using CI placeholder"
+            export AUTH_SECRET="ci-build-only-secret-32chars-min!!"
+          fi
+          npx prisma migrate deploy
+          npm run build
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+
+      - name: Deploy on GCE Ubuntu VM
+        env:
+          INSTANCE: ${{ secrets.GCE_INSTANCE }}
+          ZONE: ${{ secrets.GCE_ZONE }}
+          SSH_USER: ${{ secrets.GCE_SSH_USER }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+          GIT_REF: ${{ inputs.ref }}
+          RUN_MIGRATIONS: ${{ inputs.run_migrations }}
+          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${INSTANCE:-}" ] || [ -z "${ZONE:-}" ]; then
+            echo "GCE_INSTANCE and GCE_ZONE secrets are required"
+            exit 1
+          fi
+
+          DEPLOY_PATH="${DEPLOY_PATH:-/var/www/portfolio/new}"
+
+          SSH_EXTRA=()
+          if [ -n "${SSH_USER:-}" ]; then
+            SSH_EXTRA+=(--ssh-flag="-l ${SSH_USER}")
+          fi
+
+          # shellcheck disable=SC2029
+          gcloud compute ssh "$INSTANCE" \
+            --zone="$ZONE" \
+            --project="$GCP_PROJECT_ID" \
+            "${SSH_EXTRA[@]}" \
+            --command="$(cat <<EOF
+          set -euo pipefail
+          DEPLOY_PATH='${DEPLOY_PATH}'
+          GIT_REF='${GIT_REF}'
+          RUN_MIGRATIONS='${RUN_MIGRATIONS}'
+
+          echo "==> Deploying \$GIT_REF into \$DEPLOY_PATH"
+          cd "\$DEPLOY_PATH"
+
+          if [ ! -f .env ]; then
+            echo "Missing \$DEPLOY_PATH/.env on the VM. Create it before deploying."
+            exit 1
+          fi
+
+          if [ -d .git ]; then
+            git fetch --prune origin
+            git checkout --force "\$GIT_REF"
+            git reset --hard "origin/\$GIT_REF" 2>/dev/null || git reset --hard "\$GIT_REF"
+          elif [ -d ../.git ]; then
+            cd ..
+            git fetch --prune origin
+            git checkout --force "\$GIT_REF"
+            git reset --hard "origin/\$GIT_REF" 2>/dev/null || git reset --hard "\$GIT_REF"
+            cd new
+          else
+            echo "No git repo at \$DEPLOY_PATH or its parent. Re-run setup-vm.sh."
+            exit 1
+          fi
+
+          mkdir -p "\$HOME/.npm"
+          npm ci --cache "\$HOME/.npm" --prefer-offline
+
+          if [ "\$RUN_MIGRATIONS" = "true" ]; then
+            echo "==> Running prisma migrate deploy"
+            npx prisma migrate deploy
+          else
+            echo "==> Skipping migrations"
+          fi
+
+          npm run build
+
+          if systemctl list-unit-files --type=service | grep -q '^portfolio-new.service'; then
+            sudo systemctl restart portfolio-new
+            sudo systemctl --no-pager --full status portfolio-new || true
+          else
+            echo "portfolio-new.service not installed. Install new/deploy/portfolio-new.service"
+            exit 1
+          fi
+
+          echo "==> Deploy finished"
+          EOF
+          )"
