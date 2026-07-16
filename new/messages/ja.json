@@ -68,6 +68,22 @@
     "contactTitle": "始める準備はできましたか？",
     "contactDesc": "概要を共有いただければ、明確な次のステップをご返信します。"
   },
+  "homeExplore": {
+    "label": "見る",
+    "title": "実績、サービス、実践的なアイデア",
+    "description": "私が作るもの、仕事の進め方、リリースしたプロダクトの背景にある考え方をすぐに確認できます。",
+    "workTitle": "注目の実績",
+    "viewAllWork": "すべての実績",
+    "servicesTitle": "サービス",
+    "viewAllServices": "すべてのサービス",
+    "writingTitle": "最新の記事",
+    "viewAllPosts": "すべての記事",
+    "faqTitle": "ご質問ですか？",
+    "faqDescription": "サービス、協業、期間、開始方法についての回答を確認できます。",
+    "visitFaq": "よくある質問へ",
+    "noProjects": "プロジェクト事例を準備しています。",
+    "noPosts": "新しい記事を近日公開します。"
+  },
   "process": {
     "discover": "発見",
     "discoverDesc": "事業要件、利用者、制約を理解し、初日から正しい課題に取り組むソリューションを実現します。",

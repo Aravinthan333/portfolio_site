@@ -68,6 +68,22 @@
     "contactTitle": "准备好开始了吗？",
     "contactDesc": "分享您的需求说明，我会给出清晰的下一步安排。"
   },
+  "homeExplore": {
+    "label": "探索",
+    "title": "项目、服务与实用思考",
+    "description": "快速了解我构建的产品、工作方式，以及已交付产品背后的思考。",
+    "workTitle": "精选项目",
+    "viewAllWork": "查看全部项目",
+    "servicesTitle": "服务",
+    "viewAllServices": "查看全部服务",
+    "writingTitle": "最新文章",
+    "viewAllPosts": "查看全部文章",
+    "faqTitle": "有问题？",
+    "faqDescription": "快速了解服务、协作、时间安排和如何开始。",
+    "visitFaq": "查看常见问题",
+    "noProjects": "项目精选正在准备中。",
+    "noPosts": "新文章即将发布。"
+  },
   "process": {
     "discover": "探索",
     "discoverDesc": "了解业务需求、用户和约束条件，确保解决方案从第一天起就针对正确的问题。",

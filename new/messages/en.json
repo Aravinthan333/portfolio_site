@@ -68,6 +68,22 @@
     "contactTitle": "Ready to start?",
     "contactDesc": "Share a brief and I'll respond with clear next steps."
   },
+  "homeExplore": {
+    "label": "Explore",
+    "title": "Work, services, and practical ideas",
+    "description": "A quick route to what I build, how I work, and the thinking behind shipped products.",
+    "workTitle": "Featured work",
+    "viewAllWork": "View all work",
+    "servicesTitle": "Services",
+    "viewAllServices": "View all services",
+    "writingTitle": "Latest writing",
+    "viewAllPosts": "View all posts",
+    "faqTitle": "Have a question?",
+    "faqDescription": "Find quick answers about services, collaboration, timelines, and getting started.",
+    "visitFaq": "Visit the FAQ",
+    "noProjects": "Project highlights are being prepared.",
+    "noPosts": "New articles are coming soon."
+  },
   "process": {
     "discover": "Discover",
     "discoverDesc": "Understand business requirements, users, and constraints so the solution addresses the right problem from day one.",

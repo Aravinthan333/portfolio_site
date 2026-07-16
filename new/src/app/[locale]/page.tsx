@@ -1,25 +1,26 @@
 import { Hero } from "@/components/Hero";
 import { Metrics } from "@/components/Metrics";
-import { Services } from "@/components/Services";
-import { Projects } from "@/components/Projects";
+import { HomeExplore } from "@/components/HomeExplore";
 import { Collaborators } from "@/components/Collaborators";
 import { Process } from "@/components/Process";
 import { WhyMe } from "@/components/WhyMe";
 import { Skills } from "@/components/Skills";
 import { Contact } from "@/components/Contact";
-import { HireCta } from "@/components/HireCta";
-import { HomeFaq } from "@/components/HomeFaq";
 import { SITE } from "@/data/site";
 import { buildMetadata } from "@/lib/seo";
 import {
-  faqPageSchema,
   jsonLdScript,
   personSchema,
   professionalServiceSchema,
   websiteSchema,
 } from "@/lib/schema";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { getLocalizedHomepageFaqs } from "@/lib/i18n-content";
+import {
+  getLocalizedServices,
+  localizeBlogPosts,
+} from "@/lib/i18n-content";
+import { getLatestPublishedBlogs } from "@/lib/blogs";
+import { getPublishedProjects } from "@/lib/projects";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -36,13 +37,17 @@ export async function generateMetadata({ params }: Props) {
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const homepageFaqs = await getLocalizedHomepageFaqs();
+  const [projects, rawPosts, services] = await Promise.all([
+    getPublishedProjects(),
+    getLatestPublishedBlogs(2),
+    getLocalizedServices(),
+  ]);
+  const posts = await localizeBlogPosts(rawPosts);
 
   const schema = [
     personSchema(),
     professionalServiceSchema(),
     websiteSchema(),
-    faqPageSchema(homepageFaqs),
   ];
 
   return (
@@ -53,16 +58,37 @@ export default async function HomePage({ params }: Props) {
       />
       <Hero />
       <Metrics />
-      <Services />
-      <Projects />
+      <HomeExplore
+        projects={projects.slice(0, 2).map(
+          ({ slug, title, subtitle, year, image, liveUrl, hasCaseStudy }) => ({
+            slug,
+            title,
+            subtitle,
+            year,
+            image,
+            liveUrl,
+            hasCaseStudy,
+          }),
+        )}
+        services={services.map(({ slug, shortTitle }) => ({
+          slug,
+          title: shortTitle,
+        }))}
+        posts={posts.map(
+          ({ slug, title, category, date, readTime, coverImage }) => ({
+            slug,
+            title,
+            category,
+            date,
+            readTime,
+            coverImage,
+          }),
+        )}
+      />
       <Collaborators />
       <Process />
       <WhyMe />
       <Skills />
-      <HomeFaq />
-      <div className="section-wrap pb-20 sm:pb-28">
-        <HireCta />
-      </div>
       <Contact />
     </>
   );

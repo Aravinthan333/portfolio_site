@@ -27,22 +27,26 @@ export function Hero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden pt-24 pb-16 text-center sm:pt-28 sm:pb-20 lg:pt-32">
+    <section className="relative flex min-h-[calc(100svh-4rem)] items-center overflow-hidden py-16 sm:py-20 lg:py-24">
       <AtmosphereBg variant="hero" />
 
-      <div className="section-wrap relative mx-auto w-full max-w-4xl">
-        <ScrollReveal delay={0.08}>
-          <p className="mx-auto max-w-md text-xs font-semibold tracking-wide text-[var(--blue-600)] sm:max-w-none sm:text-sm md:text-base">
-            {t("roleLine")}
-          </p>
-        </ScrollReveal>
+      <div className="section-wrap relative w-full">
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(19rem,0.65fr)] lg:gap-16 xl:gap-24">
+          <div className="text-center lg:text-left">
+            <ScrollReveal delay={0.08}>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--blue-600)] sm:text-sm">
+                {t("roleLine")}
+              </p>
+            </ScrollReveal>
 
-        <ScrollReveal delay={0.12}>
-          <div className="mt-3 flex flex-col items-center gap-4 lg:flex-row lg:flex-wrap lg:justify-center lg:gap-x-5 lg:gap-y-3">
-            <h1 className="font-display text-[clamp(2.75rem,7vw,4.75rem)] font-medium leading-[1.06] tracking-tight text-[var(--fg)]">
-              <BlueInitials text={SITE.name} />
-            </h1>
-            <div className="flex flex-wrap items-center justify-center gap-2">
+            <ScrollReveal delay={0.12}>
+              <h1 className="font-display mt-4 text-[clamp(3rem,8vw,6.5rem)] font-medium leading-[0.96] tracking-[-0.045em] text-[var(--fg)] lg:max-w-4xl">
+                <BlueInitials text={SITE.name} />
+              </h1>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.18}>
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
               {tagKeys.map((key, i) => (
                 <motion.span
                   key={key}
@@ -54,80 +58,81 @@ export function Hero() {
                   {t(`tags.${key}`)}
                 </motion.span>
               ))}
-            </div>
-          </div>
-        </ScrollReveal>
+              </div>
+            </ScrollReveal>
 
-        <ScrollReveal delay={0.2}>
-          <div className="mt-5 flex items-center justify-center gap-2">
-            {socialLinks.map(({ href, label, Icon }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(15,23,42,0.08)] bg-white/80 text-[var(--fg-muted)] shadow-[var(--shadow-sm)] transition-colors hover:border-[var(--blue-200)] hover:bg-[var(--blue-50)] hover:text-[var(--blue-600)]"
+            <ScrollReveal delay={0.24}>
+              <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-[var(--fg-muted)] sm:text-lg lg:mx-0">
+                {tSite("bio")}
+              </p>
+              <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-[var(--fg-subtle)] sm:text-base lg:mx-0">
+                {tSite("tagline")}
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.3}>
+              <div className="mt-8 flex flex-col items-stretch gap-2.5 min-[480px]:flex-row min-[480px]:flex-wrap min-[480px]:items-center min-[480px]:justify-center min-[480px]:gap-3 lg:justify-start">
+                <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+                  <Link href="/contact" className="btn-primary w-full min-[480px]:w-auto">
+                    {tCommon("hireMe")}
+                    <ArrowUpRight size={16} />
+                  </Link>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+                  <BookCallButton
+                    label={t("bookCall")}
+                    className="btn-secondary w-full min-[480px]:w-auto"
+                  />
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+                  <Link href="/projects" className="btn-secondary w-full min-[480px]:w-auto">
+                    {t("viewWork")}
+                  </Link>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+                  <ResumeDownloadButton
+                    label={tCommon("downloadResume")}
+                    className="w-full min-[480px]:w-auto"
+                  />
+                </motion.div>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          <ScrollReveal delay={0.2}>
+            <div className="relative mx-auto w-full max-w-sm">
+              <div className="absolute -inset-8 rounded-full bg-gradient-to-br from-[var(--blue-200)]/60 via-[var(--blue-100)]/25 to-transparent blur-3xl" />
+              <motion.div
+                className="relative mx-auto aspect-[4/5] max-w-[19rem] overflow-hidden rounded-[2.5rem] border-[7px] border-white bg-white shadow-[var(--shadow-xl)] ring-1 ring-[var(--blue-100)] sm:max-w-[22rem] lg:max-w-none"
+                animate={reduceMotion ? undefined : { y: [0, -8, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               >
-                <Icon size={18} />
-              </a>
-            ))}
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.28}>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[var(--fg-muted)] sm:text-lg">
-            {tSite("bio")}
-          </p>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.32}>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[var(--fg-subtle)] sm:text-base">
-            {tSite("tagline")}
-          </p>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.38}>
-          <div className="mt-8 flex flex-col items-stretch gap-2.5 sm:mt-9 min-[480px]:flex-row min-[480px]:flex-wrap min-[480px]:items-center min-[480px]:justify-center min-[480px]:gap-3">
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="min-[480px]:flex-none">
-              <Link href="/contact" className="btn-primary w-full min-[480px]:w-auto">
-                {tCommon("hireMe")}
-                <ArrowUpRight size={16} />
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="min-[480px]:flex-none">
-              <BookCallButton label={t("bookCall")} className="btn-secondary w-full min-[480px]:w-auto" />
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="min-[480px]:flex-none">
-              <Link href="/projects" className="btn-secondary w-full min-[480px]:w-auto">
-                {t("viewWork")}
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="min-[480px]:flex-none">
-              <ResumeDownloadButton label={tCommon("downloadResume")} className="w-full min-[480px]:w-auto" />
-            </motion.div>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.45}>
-          <motion.div
-            className="relative mx-auto mt-10 aspect-square w-32 sm:mt-14 sm:w-40 md:w-48"
-            animate={reduceMotion ? undefined : { y: [0, -8, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-[var(--blue-200)]/50 via-[var(--blue-100)]/30 to-transparent blur-2xl" />
-            <div className="relative overflow-hidden rounded-full border-[6px] border-white bg-white p-1 shadow-[var(--shadow-xl)] ring-1 ring-[var(--blue-100)]">
-              <Image
-                src="/images/profile.jpg"
-                alt={`${SITE.name}, ${tSite("title")}`}
-                width={200}
-                height={200}
-                priority
-                className="rounded-full object-cover"
-              />
+                <Image
+                  src="/images/profile.jpg"
+                  alt={`${SITE.name}, ${tSite("title")}`}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 24rem, 22rem"
+                  className="object-cover"
+                />
+              </motion.div>
+              <div className="relative mx-auto -mt-6 flex w-fit items-center gap-2 rounded-full border border-[rgba(15,23,42,0.08)] bg-white/95 px-3 py-2 shadow-[var(--shadow-md)] backdrop-blur">
+                {socialLinks.map(({ href, label, Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full text-[var(--fg-muted)] transition-colors hover:bg-[var(--blue-50)] hover:text-[var(--blue-600)]"
+                  >
+                    <Icon size={17} />
+                  </a>
+                ))}
+              </div>
             </div>
-          </motion.div>
-        </ScrollReveal>
+          </ScrollReveal>
+        </div>
       </div>
     </section>
   );

@@ -68,6 +68,22 @@
     "contactTitle": "Bereit anzufangen?",
     "contactDesc": "Teilen Sie ein Briefing und ich antworte mit klaren nächsten Schritten."
   },
+  "homeExplore": {
+    "label": "Entdecken",
+    "title": "Projekte, Leistungen und praktische Ideen",
+    "description": "Ein schneller Überblick darüber, was ich entwickle, wie ich arbeite und welche Gedanken hinter ausgelieferten Produkten stehen.",
+    "workTitle": "Ausgewählte Projekte",
+    "viewAllWork": "Alle Projekte",
+    "servicesTitle": "Leistungen",
+    "viewAllServices": "Alle Leistungen",
+    "writingTitle": "Neueste Beiträge",
+    "viewAllPosts": "Alle Beiträge",
+    "faqTitle": "Noch eine Frage?",
+    "faqDescription": "Kurze Antworten zu Leistungen, Zusammenarbeit, Zeitplänen und dem Einstieg.",
+    "visitFaq": "Zu den FAQ",
+    "noProjects": "Projekt-Highlights werden vorbereitet.",
+    "noPosts": "Neue Beiträge folgen bald."
+  },
   "process": {
     "discover": "Discover",
     "discoverDesc": "Geschäftsanforderungen, Nutzer und Rahmenbedingungen verstehen, damit die Lösung von Anfang an das richtige Problem adressiert.",
