@@ -49,13 +49,13 @@ export function ProjectsPageView({
           </p>
         </ScrollReveal>
 
-        <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2 lg:gap-5">
+        <div className="mx-auto grid max-w-5xl gap-4">
           {projects.map((project, index) => (
             <ScrollReveal key={project.slug} delay={index * 0.05} className="h-full">
               {project.hasCaseStudy ? (
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[rgba(15,23,42,0.06)] bg-white/85 shadow-[var(--shadow-sm)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-[rgba(37,99,235,0.18)] hover:shadow-[var(--shadow-md)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[rgba(15,23,42,0.06)] bg-white/85 shadow-[var(--shadow-sm)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5 hover:border-[rgba(37,99,235,0.18)] hover:shadow-[var(--shadow-md)] sm:flex-row"
                 >
                   <ProjectCardContent project={project} actionLabel={viewCaseStudyLabel} />
                 </Link>
@@ -64,7 +64,7 @@ export function ProjectsPageView({
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[rgba(15,23,42,0.06)] bg-white/85 shadow-[var(--shadow-sm)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-[rgba(37,99,235,0.18)] hover:shadow-[var(--shadow-md)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[rgba(15,23,42,0.06)] bg-white/85 shadow-[var(--shadow-sm)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5 hover:border-[rgba(37,99,235,0.18)] hover:shadow-[var(--shadow-md)] sm:flex-row"
                 >
                   <ProjectCardContent project={project} actionLabel={liveSiteLabel} />
                 </a>
@@ -86,7 +86,7 @@ function ProjectCardContent({
 }) {
   return (
     <>
-      <div className="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-[var(--blue-50)] via-white to-[var(--blue-100)]">
+      <div className="relative aspect-[16/9] shrink-0 overflow-hidden bg-gradient-to-br from-[var(--blue-50)] via-white to-[var(--blue-100)] sm:aspect-auto sm:min-h-[12.5rem] sm:w-[42%]">
         <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(15,23,42,0.06)] via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
         <Image
           src={project.image}
@@ -101,22 +101,16 @@ function ProjectCardContent({
           </p>
         </div>
       </div>
-      <div className="flex flex-1 flex-col p-4 sm:p-5">
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--blue-500)]">
-              {project.year}
-            </p>
-            <h2 className="font-display mt-1.5 text-xl font-semibold leading-[1.12] tracking-tight text-[var(--fg)] transition-colors group-hover:text-[var(--blue-600)] sm:text-[1.4rem]">
-              {project.title}
-            </h2>
-          </div>
-          <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[var(--blue-200)] bg-white text-[var(--blue-600)] shadow-[var(--shadow-sm)] transition-colors group-hover:border-[var(--blue-400)] group-hover:bg-[var(--blue-50)]">
-            <ArrowUpRight size={15} aria-hidden />
-          </span>
+      <div className="flex flex-1 flex-col p-4 sm:p-5 lg:p-6">
+        <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.14em]">
+          <span className="text-[var(--blue-500)]">{project.year}</span>
+          <span className="h-1 w-1 rounded-full bg-[var(--blue-300)]" aria-hidden />
+          <span className="text-[var(--fg-subtle)]">{project.subtitle}</span>
         </div>
 
-        <p className="mt-2 text-sm text-[var(--fg-muted)]">{project.subtitle}</p>
+        <h2 className="font-display mt-3 text-xl font-semibold leading-[1.12] tracking-tight text-[var(--fg)] transition-colors group-hover:text-[var(--blue-600)] sm:text-[1.5rem]">
+          {project.title}
+        </h2>
 
         <div className="mt-3 flex flex-wrap gap-1.5">
           {project.tags.map((tag) => (
@@ -126,7 +120,7 @@ function ProjectCardContent({
           ))}
         </div>
 
-        <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-medium text-[var(--blue-600)]">
+        <span className="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-[var(--blue-200)] bg-[var(--blue-50)] px-3 py-1.5 text-sm font-medium text-[var(--blue-600)] transition-colors group-hover:border-[var(--blue-400)] group-hover:bg-white">
           {actionLabel}
           <ArrowUpRight size={14} aria-hidden />
         </span>

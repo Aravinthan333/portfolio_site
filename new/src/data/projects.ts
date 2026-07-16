@@ -82,7 +82,7 @@ export const projects: Project[] = [
   },
   {
     slug: "valathi-chat-system",
-    title: "Valathi Chat System",
+    title: "Valathi Chits Chat System",
     subtitle: "Multi-Agent WhatsApp Operations",
     description:
       "A shared WhatsApp operations console for branch teams to manage customer conversations, assignments, templates, and follow-ups from one workspace.",
