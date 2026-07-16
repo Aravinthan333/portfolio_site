@@ -2,7 +2,6 @@
 
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { BlueInitials } from "@/components/BlueInitials";
 import { BookCallButton } from "@/components/BookCallButton";
 import { AtmosphereBg } from "@/components/AtmosphereBg";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -59,7 +58,7 @@ export function ServiceDetailView({ service, labels }: Props) {
             </div>
 
             <h1 className="font-display text-[1.75rem] font-semibold leading-[1.15] tracking-tight text-[var(--fg)] sm:text-[2.25rem] md:text-[2.5rem]">
-              <BlueInitials text={service.title} />
+              {service.title}
             </h1>
 
             <p className="mt-3 text-base leading-relaxed text-[var(--fg-muted)] sm:mt-4 sm:text-lg">
