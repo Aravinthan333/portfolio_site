@@ -22,6 +22,8 @@ type ProjectFormData = {
   year: string;
   image: string;
   accent: string;
+  hasCaseStudy: boolean;
+  galleryImages: string[];
   published: boolean;
 };
 
@@ -57,6 +59,8 @@ export function ProjectForm({ initial }: Props) {
     year: initial?.year ?? new Date().getFullYear().toString(),
     image: initial?.image ?? "",
     accent: initial?.accent ?? "",
+    hasCaseStudy: initial?.hasCaseStudy ?? true,
+    galleryImages: initial?.galleryImages ?? ["", "", ""],
     published: initial?.published ?? true,
   });
 
@@ -76,6 +80,7 @@ export function ProjectForm({ initial }: Props) {
       tags: linesToList(form.tags),
       liveUrl: form.liveUrl.trim() || undefined,
       accent: form.accent.trim() || undefined,
+      galleryImages: form.galleryImages.map((url) => url.trim()).filter(Boolean),
     };
 
     const url = initial?.id ? `/api/admin/projects/${initial.id}` : "/api/admin/projects";
@@ -177,6 +182,14 @@ export function ProjectForm({ initial }: Props) {
               />
               Published on public site
             </label>
+            <label className="flex items-center gap-2 text-sm">
+              <input
+                type="checkbox"
+                checked={form.hasCaseStudy}
+                onChange={(e) => update("hasCaseStudy", e.target.checked)}
+              />
+              Show case study page
+            </label>
           </FormSection>
 
           <FormSection title="Project image" step={initial?.id ? undefined : "2"}>
@@ -187,6 +200,27 @@ export function ProjectForm({ initial }: Props) {
               kind="image"
             />
           </FormSection>
+
+          {form.hasCaseStudy && (
+            <FormSection title="Case study snapshots">
+              <p className="text-xs leading-relaxed text-muted">
+                Add up to three screenshots. Empty slots appear as placeholders on the public case study.
+              </p>
+              {[0, 1, 2].map((index) => (
+                <BlogMediaField
+                  key={index}
+                  label={`Snapshot ${index + 1}`}
+                  value={form.galleryImages[index] ?? ""}
+                  onChange={(url) => {
+                    const galleryImages = [...form.galleryImages];
+                    galleryImages[index] = url;
+                    update("galleryImages", galleryImages);
+                  }}
+                  kind="image"
+                />
+              ))}
+            </FormSection>
+          )}
 
           <FormSection title="Quick copy" step={initial?.id ? undefined : "3"}>
             <Field label="Card description">

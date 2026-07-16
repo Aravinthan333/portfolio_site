@@ -64,6 +64,8 @@ model ProjectCaseStudy {
   year        String
   image       String
   accent      String?
+  hasCaseStudy Boolean  @default(true)
+  galleryImages String  @default("[]")
   published   Boolean  @default(true)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt

@@ -55,27 +55,33 @@ async function main() {
   }
 
   for (const project of projects) {
+    const data = {
+      title: project.title,
+      subtitle: project.subtitle,
+      description: project.description,
+      overview: project.overview,
+      role: project.role,
+      challenge: project.challenge,
+      solution: project.solution,
+      highlights: JSON.stringify(project.highlights),
+      outcome: project.outcome,
+      stack: JSON.stringify(project.stack),
+      tags: JSON.stringify(project.tags),
+      liveUrl: project.liveUrl ?? null,
+      year: project.year,
+      image: project.image,
+      accent: project.accent,
+      hasCaseStudy: project.hasCaseStudy,
+      galleryImages: JSON.stringify(project.galleryImages),
+      published: true,
+    };
+
     await prisma.projectCaseStudy.upsert({
       where: { slug: project.slug },
-      update: {},
+      update: data,
       create: {
         slug: project.slug,
-        title: project.title,
-        subtitle: project.subtitle,
-        description: project.description,
-        overview: project.overview,
-        role: project.role,
-        challenge: project.challenge,
-        solution: project.solution,
-        highlights: JSON.stringify(project.highlights),
-        outcome: project.outcome,
-        stack: JSON.stringify(project.stack),
-        tags: JSON.stringify(project.tags),
-        liveUrl: project.liveUrl ?? null,
-        year: project.year,
-        image: project.image,
-        accent: project.accent,
-        published: true,
+        ...data,
       },
     });
   }

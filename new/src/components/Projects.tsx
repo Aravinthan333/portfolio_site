@@ -40,7 +40,12 @@ function ProjectCard({
 
   return (
     <ScrollReveal delay={index * 0.1}>
-      <Link href={`/projects/${project.slug}`} className="block">
+      <Link
+        href={project.hasCaseStudy ? `/projects/${project.slug}` : project.liveUrl ?? "/projects"}
+        target={project.hasCaseStudy ? undefined : "_blank"}
+        rel={project.hasCaseStudy ? undefined : "noopener noreferrer"}
+        className="block"
+      >
         <motion.div
           ref={ref}
           className="project-card group relative cursor-pointer overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] will-change-transform"

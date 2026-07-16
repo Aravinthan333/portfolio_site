@@ -30,7 +30,8 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    setMenuOpen(false);
+    const timer = window.setTimeout(() => setMenuOpen(false), 0);
+    return () => window.clearTimeout(timer);
   }, [pathname]);
 
   useEffect(() => {
@@ -56,9 +57,9 @@ export function Header() {
             : "bg-white/80 shadow-[var(--shadow-sm)]"
         }`}
       >
-        <div className="section-wrap flex items-center justify-between gap-2 !py-3.5 sm:gap-3 sm:!py-4">
+        <div className="section-wrap flex items-center justify-between gap-2 !py-2 sm:gap-3 sm:!py-2.5">
           <Link href="/" className="group flex shrink-0 items-center gap-1.5 overflow-visible sm:gap-2">
-            <span className="-ml-1 relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--blue-600)] shadow-[var(--shadow-sm)] transition-shadow duration-300 group-hover:shadow-[0_0_0_3px_rgba(37,99,235,0.18),0_8px_20px_-6px_rgba(37,99,235,0.55)] sm:-ml-1.5 sm:h-10 sm:w-10">
+            <span className="-ml-1 relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--blue-600)] shadow-[var(--shadow-sm)] transition-shadow duration-300 group-hover:shadow-[0_0_0_3px_rgba(37,99,235,0.18),0_8px_20px_-6px_rgba(37,99,235,0.55)] sm:-ml-1.5 sm:h-9 sm:w-9">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 14"
@@ -80,7 +81,7 @@ export function Header() {
               </svg>
             </span>
             <span
-              className="font-script inline-block overflow-visible px-1.5 pt-2 pb-1 text-xl font-semibold leading-[1.4] tracking-normal text-[var(--fg)] normal-case transition-[text-shadow] duration-300 group-hover:[text-shadow:0_4px_14px_rgba(37,99,235,0.45)] sm:text-2xl md:text-[1.75rem]"
+              className="font-script inline-block overflow-visible px-1 pt-1.5 pb-0.5 text-xl font-semibold leading-[1.3] tracking-normal text-[var(--fg)] normal-case transition-[text-shadow] duration-300 group-hover:[text-shadow:0_4px_14px_rgba(37,99,235,0.45)] sm:text-[1.4rem] md:text-[1.6rem]"
               aria-label="Aravinthan B"
             >
               <span className="inline-block text-[1.35em] font-bold text-[var(--blue-600)]">
@@ -125,17 +126,17 @@ export function Header() {
               label={t("downloadResume")}
               iconOnly
               iconSize={16}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[rgba(15,23,42,0.08)] bg-white/80 text-[var(--fg-muted)] shadow-[var(--shadow-sm)] transition-colors hover:border-[var(--blue-200)] hover:bg-[var(--blue-50)] hover:text-[var(--blue-600)] md:hidden"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-xl border border-[rgba(15,23,42,0.08)] bg-white/80 text-[var(--fg-muted)] shadow-[var(--shadow-sm)] transition-colors hover:border-[var(--blue-200)] hover:bg-[var(--blue-50)] hover:text-[var(--blue-600)] md:hidden"
             />
             <ResumeDownloadButton
               label={t("downloadResume")}
-              className="btn-secondary !hidden !px-3 !py-2 !text-xs md:!inline-flex lg:!px-4 lg:!py-2.5 lg:!text-sm"
+              className="btn-secondary !hidden !px-3 !py-1.5 !text-xs md:!inline-flex lg:!px-4 lg:!py-2 lg:!text-sm"
               iconSize={15}
             />
             <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="hidden sm:block">
               <Link
                 href="/contact"
-                className="btn-primary !px-3 !py-2 !text-xs lg:!px-5 lg:!py-2.5 lg:!text-sm"
+                className="btn-primary !px-3 !py-1.5 !text-xs lg:!px-5 lg:!py-2 lg:!text-sm"
               >
                 {t("hireMe")}
               </Link>
@@ -143,7 +144,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setMenuOpen((v) => !v)}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[rgba(15,23,42,0.08)] bg-white/80 text-[var(--fg-muted)] shadow-[var(--shadow-sm)] transition-colors hover:border-[var(--blue-200)] hover:bg-[var(--blue-50)] hover:text-[var(--blue-600)] lg:hidden"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-xl border border-[rgba(15,23,42,0.08)] bg-white/80 text-[var(--fg-muted)] shadow-[var(--shadow-sm)] transition-colors hover:border-[var(--blue-200)] hover:bg-[var(--blue-50)] hover:text-[var(--blue-600)] lg:hidden"
               aria-expanded={menuOpen}
               aria-controls="mobile-nav"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -164,7 +165,7 @@ export function Header() {
 
       <nav
         id="mobile-nav"
-        className={`fixed top-[3.25rem] right-0 left-0 z-40 max-h-[calc(100svh-3.25rem)] overflow-y-auto border-b border-[rgba(15,23,42,0.08)] bg-white/98 px-4 py-4 shadow-[var(--shadow-lg)] backdrop-blur-xl transition-all duration-300 lg:hidden ${
+        className={`fixed top-14 right-0 left-0 z-40 max-h-[calc(100svh-3.5rem)] overflow-y-auto border-b border-[rgba(15,23,42,0.08)] bg-white/98 px-4 py-4 shadow-[var(--shadow-lg)] backdrop-blur-xl transition-all duration-300 lg:hidden ${
           menuOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0 pointer-events-none"
         }`}
         aria-label={tA11y("primaryNav")}

@@ -20,6 +20,8 @@ export type ProjectCaseStudy = {
   year: string;
   image: string;
   accent?: string;
+  hasCaseStudy: boolean;
+  galleryImages: string[];
   published?: boolean;
 };
 
@@ -50,6 +52,8 @@ function fromDb(row: {
   year: string;
   image: string;
   accent: string | null;
+  hasCaseStudy: boolean;
+  galleryImages: string;
   published: boolean;
 }) {
   return {
@@ -70,6 +74,8 @@ function fromDb(row: {
     year: row.year,
     image: row.image,
     accent: row.accent ?? undefined,
+    hasCaseStudy: row.hasCaseStudy,
+    galleryImages: parseList(row.galleryImages),
     published: row.published,
   } satisfies ProjectCaseStudy;
 }
@@ -129,6 +135,8 @@ export function staticProjectsToSeedData(projects: StaticProject[]) {
     year: project.year,
     image: project.image,
     accent: project.accent,
+    hasCaseStudy: project.hasCaseStudy,
+    galleryImages: serializeList(project.galleryImages),
     published: true,
   }));
 }

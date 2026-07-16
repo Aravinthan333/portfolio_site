@@ -29,20 +29,7 @@ export async function getLocalizedService(slug: string): Promise<Service | null>
 }
 
 export async function getLocalizedProjects(): Promise<Project[]> {
-  const t = await getTranslations("projectsContent");
-  return projectMeta.map((p) => ({
-    ...p,
-    title: t(`${p.slug}.title`),
-    subtitle: t(`${p.slug}.subtitle`),
-    description: t(`${p.slug}.description`),
-    overview: t(`${p.slug}.overview`),
-    role: t(`${p.slug}.role`),
-    challenge: t(`${p.slug}.challenge`),
-    solution: t(`${p.slug}.solution`),
-    highlights: t.raw(`${p.slug}.highlights`) as string[],
-    outcome: t(`${p.slug}.outcome`),
-    tags: t.raw(`${p.slug}.tags`) as string[],
-  }));
+  return projectMeta;
 }
 
 export async function getLocalizedProject(slug: string): Promise<Project | null> {

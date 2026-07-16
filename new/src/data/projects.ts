@@ -15,6 +15,8 @@ export type Project = {
   year: string;
   image: string;
   accent: string;
+  hasCaseStudy: boolean;
+  galleryImages: string[];
 };
 
 export const projects: Project[] = [
@@ -45,11 +47,13 @@ export const projects: Project[] = [
     year: "2024",
     image: "/images/projects/raja-supermart.svg",
     accent: "#10b981",
+    hasCaseStudy: true,
+    galleryImages: [],
   },
   {
     slug: "valathi-chits",
-    title: "Valathi Chit Funds",
-    subtitle: "FinTech Web Platform",
+    title: "Valathi Chits Business Site",
+    subtitle: "Bilingual FinTech Business Site",
     description:
       "Regulated chit fund public site with bilingual content, online membership applications, return calculators, and automated legal PDF generation.",
     overview:
@@ -73,6 +77,38 @@ export const projects: Project[] = [
     year: "2024",
     image: "/images/projects/valathi-chits.svg",
     accent: "#3b82f6",
+    hasCaseStudy: false,
+    galleryImages: [],
+  },
+  {
+    slug: "valathi-chat-system",
+    title: "Valathi Chat System",
+    subtitle: "Multi-Agent WhatsApp Operations",
+    description:
+      "A shared WhatsApp operations console for branch teams to manage customer conversations, assignments, templates, and follow-ups from one workspace.",
+    overview:
+      "Valathi Chits needed a structured way for multiple staff members and branches to work from shared WhatsApp conversations without losing context. I designed and delivered an operations console that brings messaging, assignment, customer context, and follow-up workflows into one browser-based workspace.",
+    role:
+      "Lead full-stack engineer responsible for product architecture, real-time messaging workflows, admin experience, integrations, deployment, and delivery.",
+    challenge:
+      "Customer conversations were difficult to coordinate across staff and branches. Teams needed clear ownership, conversation history, reusable responses, and reliable status tracking while continuing to use WhatsApp as the customer-facing channel.",
+    solution:
+      "I built a multi-user chat console connected to WhatsApp workflows, with shared inboxes, agent assignment, templates, customer context, notes, and operational statuses. The system centralizes branch communication while preserving a familiar channel for customers.",
+    highlights: [
+      "Shared inbox for multi-agent and multi-branch customer support",
+      "Conversation assignment, status tracking, notes, and follow-up workflows",
+      "Reusable message templates for consistent customer communication",
+      "Real-time operational visibility for staff and administrators",
+    ],
+    outcome:
+      "A centralized messaging workspace that gives branch teams clearer ownership, faster responses, and better continuity across customer conversations.",
+    stack: ["Next.js", "Node.js", "PostgreSQL", "WhatsApp API", "WebSockets", "AWS"],
+    tags: ["Chat System", "WhatsApp", "Real-Time", "Operations"],
+    year: "2025",
+    image: "/images/projects/valathi-chat-system.svg",
+    accent: "#2563eb",
+    hasCaseStudy: true,
+    galleryImages: [],
   },
   {
     slug: "race-parts-india",
@@ -101,6 +137,8 @@ export const projects: Project[] = [
     year: "2024",
     image: "/images/projects/race-parts-india.svg",
     accent: "#ef4444",
+    hasCaseStudy: false,
+    galleryImages: [],
   },
 ];
 

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowLeft, ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, ExternalLink, ImageIcon } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { AtmosphereBg } from "@/components/AtmosphereBg";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -22,6 +22,7 @@ type Project = {
   liveUrl?: string;
   year: string;
   image: string;
+  galleryImages: string[];
 };
 
 type Props = {
@@ -34,6 +35,8 @@ type Props = {
     theSolution: string;
     keyHighlights: string;
     outcome: string;
+    projectSnapshots: string;
+    snapshot: string;
     technologies: string;
     visitLive: string;
     discussSimilar: string;
@@ -103,6 +106,42 @@ export function ProjectCaseStudyView({ project, labels }: Props) {
           </ScrollReveal>
 
           <ScrollReveal delay={0.06}>
+            <section className="mt-8 sm:mt-10">
+              <h2 className="font-display text-xl font-medium tracking-tight text-[var(--fg)] sm:text-2xl">
+                {labels.projectSnapshots}
+              </h2>
+              <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                {[0, 1, 2].map((index) => {
+                  const snapshot = project.galleryImages[index];
+                  return (
+                    <div
+                      key={index}
+                      className="relative aspect-[4/3] overflow-hidden rounded-xl border border-[rgba(59,130,246,0.18)] bg-white/80 shadow-[var(--shadow-sm)]"
+                    >
+                      {snapshot ? (
+                        <Image
+                          src={snapshot}
+                          alt={`${project.title} - ${labels.snapshot} ${index + 1}`}
+                          fill
+                          className="object-cover"
+                          unoptimized={snapshot.startsWith("/uploads/")}
+                        />
+                      ) : (
+                        <div className="flex h-full flex-col items-center justify-center bg-gradient-to-br from-[var(--blue-50)] via-white to-[var(--blue-100)] text-[var(--blue-500)]">
+                          <ImageIcon size={24} strokeWidth={1.7} aria-hidden />
+                          <span className="mt-2 text-xs font-medium">
+                            {labels.snapshot} {index + 1}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.08}>
             <div className="relative mt-8 overflow-hidden rounded-xl border border-[rgba(15,23,42,0.06)] bg-white/90 p-5 shadow-[var(--shadow-md)] sm:mt-10 sm:p-7">
               <div
                 className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[var(--blue-50)]/70 via-transparent to-transparent"

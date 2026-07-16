@@ -29,24 +29,7 @@ export function useLocalizedServices(): Service[] {
 }
 
 export function useLocalizedProjects(): Project[] {
-  const t = useTranslations("projectsContent");
-  return useMemo(
-    () =>
-      projectMeta.map((p) => ({
-        ...p,
-        title: t(`${p.slug}.title`),
-        subtitle: t(`${p.slug}.subtitle`),
-        description: t(`${p.slug}.description`),
-        overview: t(`${p.slug}.overview`),
-        role: t(`${p.slug}.role`),
-        challenge: t(`${p.slug}.challenge`),
-        solution: t(`${p.slug}.solution`),
-        highlights: t.raw(`${p.slug}.highlights`) as string[],
-        outcome: t(`${p.slug}.outcome`),
-        tags: t.raw(`${p.slug}.tags`) as string[],
-      })),
-    [t],
-  );
+  return projectMeta;
 }
 
 export function useLocalizedFaqs(limit?: number): FaqItem[] {
