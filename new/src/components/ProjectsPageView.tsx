@@ -51,11 +51,11 @@ export function ProjectsPageView({
 
         <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2 lg:gap-5">
           {projects.map((project, index) => (
-            <ScrollReveal key={project.slug} delay={index * 0.05}>
+            <ScrollReveal key={project.slug} delay={index * 0.05} className="h-full">
               {project.hasCaseStudy ? (
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="group block overflow-hidden rounded-2xl border border-[rgba(15,23,42,0.06)] bg-white/85 shadow-[var(--shadow-sm)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-[rgba(37,99,235,0.18)] hover:shadow-[var(--shadow-md)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[rgba(15,23,42,0.06)] bg-white/85 shadow-[var(--shadow-sm)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-[rgba(37,99,235,0.18)] hover:shadow-[var(--shadow-md)]"
                 >
                   <ProjectCardContent project={project} actionLabel={viewCaseStudyLabel} />
                 </Link>
@@ -64,7 +64,7 @@ export function ProjectsPageView({
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block overflow-hidden rounded-2xl border border-[rgba(15,23,42,0.06)] bg-white/85 shadow-[var(--shadow-sm)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-[rgba(37,99,235,0.18)] hover:shadow-[var(--shadow-md)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[rgba(15,23,42,0.06)] bg-white/85 shadow-[var(--shadow-sm)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-[rgba(37,99,235,0.18)] hover:shadow-[var(--shadow-md)]"
                 >
                   <ProjectCardContent project={project} actionLabel={liveSiteLabel} />
                 </a>
@@ -95,8 +95,13 @@ function ProjectCardContent({
           className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           unoptimized={project.image.startsWith("/uploads/")}
         />
+        <div className="absolute inset-0 flex items-end bg-[rgba(15,23,42,0.72)] p-4 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 sm:p-5">
+          <p className="text-sm leading-relaxed text-white">
+            {project.description}
+          </p>
+        </div>
       </div>
-      <div className="p-4 sm:p-5">
+      <div className="flex flex-1 flex-col p-4 sm:p-5">
         <div className="flex items-start justify-between gap-3">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--blue-500)]">
@@ -112,9 +117,6 @@ function ProjectCardContent({
         </div>
 
         <p className="mt-2 text-sm text-[var(--fg-muted)]">{project.subtitle}</p>
-        <p className="mt-3 text-sm leading-relaxed text-[var(--fg-muted)]">
-          {project.description}
-        </p>
 
         <div className="mt-3 flex flex-wrap gap-1.5">
           {project.tags.map((tag) => (
@@ -124,7 +126,7 @@ function ProjectCardContent({
           ))}
         </div>
 
-        <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[var(--blue-600)]">
+        <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-medium text-[var(--blue-600)]">
           {actionLabel}
           <ArrowUpRight size={14} aria-hidden />
         </span>

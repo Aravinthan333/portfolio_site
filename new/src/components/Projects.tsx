@@ -39,16 +39,16 @@ function ProjectCard({
   };
 
   return (
-    <ScrollReveal delay={index * 0.1}>
+    <ScrollReveal delay={index * 0.1} className="h-full">
       <Link
         href={project.hasCaseStudy ? `/projects/${project.slug}` : project.liveUrl ?? "/projects"}
         target={project.hasCaseStudy ? undefined : "_blank"}
         rel={project.hasCaseStudy ? undefined : "noopener noreferrer"}
-        className="block"
+        className="block h-full"
       >
         <motion.div
           ref={ref}
-          className="project-card group relative cursor-pointer overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] will-change-transform"
+          className="project-card group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] will-change-transform"
           style={{ rotateX, rotateY, transformPerspective: 1000 }}
           onMouseMove={onMove}
           onMouseEnter={() => setHovered(true)}
@@ -70,6 +70,12 @@ function ProjectCard({
               />
             </motion.div>
 
+            <div className="absolute inset-0 flex items-end bg-[rgba(15,23,42,0.72)] p-5 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+              <p className="text-sm leading-relaxed text-white">
+                {project.description}
+              </p>
+            </div>
+
             <motion.div
               className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-[var(--green-200)] bg-[var(--surface)] shadow-[var(--shadow-sm)]"
               animate={{ rotate: hovered ? 0 : -45, scale: hovered ? 1 : 0.92 }}
@@ -79,7 +85,7 @@ function ProjectCard({
             </motion.div>
           </div>
 
-          <div className="relative p-5 text-center sm:p-6 sm:text-left">
+          <div className="relative flex flex-1 flex-col p-5 text-center sm:p-6 sm:text-left">
             <div className="flex flex-col items-center gap-1 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <motion.h3
@@ -94,15 +100,8 @@ function ProjectCard({
               <span className="shrink-0 text-xs text-[var(--fg-subtle)]">{project.year}</span>
             </div>
 
-            <motion.p
-              className="mt-3 text-sm leading-relaxed text-[var(--fg-muted)]"
-              animate={{ opacity: hovered ? 1 : 0.8 }}
-            >
-              {project.description}
-            </motion.p>
-
             <motion.div
-              className="mt-4 flex flex-wrap justify-center gap-1.5 sm:justify-start"
+              className="mt-auto flex flex-wrap justify-center gap-1.5 pt-4 sm:justify-start"
               animate={{ y: hovered ? 0 : 2, opacity: hovered ? 1 : 0.75 }}
             >
               {project.tags.map((tag) => (
