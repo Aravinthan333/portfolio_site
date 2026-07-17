@@ -105,7 +105,11 @@ fi
 echo "==> Checking website on 127.0.0.1:3001"
 WEBSITE_READY=false
 for _ in {1..15}; do
-  if curl --fail --silent --show-error http://127.0.0.1:3001/ >/dev/null; then
+  if curl --fail --silent --show-error \
+    --header "Host: aravinthanbalaji.com" \
+    --header "X-Forwarded-Host: aravinthanbalaji.com" \
+    --header "X-Forwarded-Proto: https" \
+    http://127.0.0.1:3001/ >/dev/null; then
     WEBSITE_READY=true
     break
   fi

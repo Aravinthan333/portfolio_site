@@ -220,8 +220,13 @@ jobs:
              ! sudo systemctl is-active --quiet portfolio-new || \
              ! curl --fail --silent --show-error \
                  --retry 10 --retry-connrefused --retry-delay 2 \
+                 --header "Host: aravinthanbalaji.com" \
+                 --header "X-Forwarded-Host: aravinthanbalaji.com" \
+                 --header "X-Forwarded-Proto: https" \
                  http://127.0.0.1:3001/ >/dev/null; then
             echo "New release failed to start - rolling back"
+            sudo systemctl --no-pager --full status portfolio-new || true
+            sudo journalctl -u portfolio-new -n 100 --no-pager || true
             rm -rf "$APP_DIR"
             mv "$LIVE_DIR" "$APP_DIR"
             if [ -d "$PREVIOUS_DIR" ]; then
