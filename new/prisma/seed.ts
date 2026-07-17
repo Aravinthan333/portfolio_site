@@ -18,38 +18,47 @@ async function main() {
     create: { email, name, passwordHash },
   });
 
+  const profile = {
+    name: SITE.name,
+    title: SITE.title,
+    tagline: SITE.tagline,
+    domain: SITE.domain,
+    location: SITE.location,
+    availability: SITE.availability,
+    email: SITE.email,
+    linkedIn: SITE.linkedIn,
+    github: SITE.github,
+    calendly: SITE.calendly,
+  };
+
   await prisma.siteProfile.upsert({
     where: { id: "default" },
-    update: {},
+    update: profile,
     create: {
       id: "default",
-      name: SITE.name,
-      title: SITE.title,
-      tagline: SITE.tagline,
-      domain: SITE.domain,
-      location: SITE.location,
-      availability: SITE.availability,
-      email: SITE.email,
-      linkedIn: SITE.linkedIn,
-      github: SITE.github,
-      calendly: SITE.calendly,
+      ...profile,
     },
   });
 
   for (const post of blogPosts) {
+    const data = {
+      title: post.title,
+      excerpt: post.excerpt,
+      category: post.category,
+      coverImage: null,
+      content: JSON.stringify(post.content),
+      readTime: post.readTime,
+      relatedProject: post.relatedProject ?? null,
+      published: true,
+      publishedAt: new Date(post.date),
+    };
+
     await prisma.blogPost.upsert({
       where: { slug: post.slug },
-      update: {},
+      update: data,
       create: {
         slug: post.slug,
-        title: post.title,
-        excerpt: post.excerpt,
-        category: post.category,
-        content: JSON.stringify(post.content),
-        readTime: post.readTime,
-        relatedProject: post.relatedProject ?? null,
-        published: true,
-        publishedAt: new Date(post.date),
+        ...data,
       },
     });
   }
