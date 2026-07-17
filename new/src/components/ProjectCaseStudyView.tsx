@@ -98,7 +98,7 @@ export function ProjectCaseStudyView({ project, labels }: Props) {
                   alt={project.title}
                   fill
                   priority
-                  className="object-cover"
+                  className="object-contain"
                   unoptimized={project.image.startsWith("/uploads/")}
                 />
               </div>
@@ -116,14 +116,14 @@ export function ProjectCaseStudyView({ project, labels }: Props) {
                   return (
                     <div
                       key={index}
-                      className="relative aspect-[4/3] overflow-hidden rounded-xl border border-[rgba(59,130,246,0.18)] bg-white/80 shadow-[var(--shadow-sm)]"
+                      className="relative aspect-video overflow-hidden rounded-xl border border-[rgba(59,130,246,0.18)] bg-white shadow-[var(--shadow-sm)]"
                     >
                       {snapshot ? (
                         <Image
                           src={snapshot}
                           alt={`${project.title} - ${labels.snapshot} ${index + 1}`}
                           fill
-                          className="object-cover"
+                          className="object-contain"
                           unoptimized={snapshot.startsWith("/uploads/")}
                         />
                       ) : (

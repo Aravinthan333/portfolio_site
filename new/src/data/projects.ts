@@ -105,10 +105,14 @@ export const projects: Project[] = [
     stack: ["Next.js", "Node.js", "PostgreSQL", "WhatsApp API", "WebSockets", "AWS"],
     tags: ["Chat System", "WhatsApp", "Real-Time", "Operations"],
     year: "2025",
-    image: "/images/projects/valathi-chat-system.svg",
+    image: "/images/projects/valathiChitsChatSystem/templates.png",
     accent: "#2563eb",
     hasCaseStudy: true,
-    galleryImages: [],
+    galleryImages: [
+      "/images/projects/valathiChitsChatSystem/dashboard.png",
+      "/images/projects/valathiChitsChatSystem/templateCreation.png",
+      "/images/projects/valathiChitsChatSystem/auction.png",
+    ],
   },
   {
     slug: "race-parts-india",

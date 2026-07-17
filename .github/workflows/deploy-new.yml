@@ -20,7 +20,7 @@ on:
         default: main
         type: string
       run_migrations:
-        description: Run prisma migrate deploy on the VM
+        description: Run Prisma migrations and seed canonical content on the VM
         required: true
         default: true
         type: boolean
@@ -202,6 +202,7 @@ jobs:
 
           if [ "$RUN_MIGRATIONS" = "true" ]; then
             npx prisma migrate deploy
+            npx prisma db seed
           else
             echo "==> Skipping migrations"
           fi
