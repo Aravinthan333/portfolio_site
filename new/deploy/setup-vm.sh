@@ -72,7 +72,8 @@ sudo chown -R "$APP_USER:$APP_USER" "$APP_DIR"
 
 cd "$APP_DIR"
 ln -sfn "$ENV_FILE" .env
-chmod 600 "$ENV_FILE"
+sudo chown "$APP_USER:$APP_USER" "$ENV_FILE"
+sudo chmod 600 "$ENV_FILE"
 
 echo "==> Installing dependencies, migrating, and building"
 sudo -u "$APP_USER" env HOME="$APP_HOME" bash -c "
