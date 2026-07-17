@@ -147,7 +147,9 @@ jobs:
 
           sudo nginx -t
           sudo systemctl is-active --quiet nginx
-          curl --fail --silent --show-error http://127.0.0.1/nginx-health
+          curl --fail --silent --show-error \
+            --header "Host: $DOMAIN" \
+            http://127.0.0.1/nginx-health
           REMOTE_SCRIPT
 
           printf -v REMOTE_COMMAND 'bash -s -- %q %q' \
