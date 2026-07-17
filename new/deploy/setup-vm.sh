@@ -36,7 +36,17 @@ else
 fi
 
 sudo "$PACKAGE_MANAGER" update -y
-sudo "$PACKAGE_MANAGER" install -y ca-certificates curl
+sudo "$PACKAGE_MANAGER" install -y ca-certificates
+
+# Amazon Linux 2023 provides the curl command through curl-minimal. Installing
+# the full curl package alongside it causes a package conflict.
+if ! command -v curl >/dev/null 2>&1; then
+  if [ "$PACKAGE_MANAGER" = "dnf" ]; then
+    sudo "$PACKAGE_MANAGER" install -y curl-minimal
+  else
+    sudo "$PACKAGE_MANAGER" install -y curl
+  fi
+fi
 
 if ! command -v node >/dev/null 2>&1; then
   curl -fsSL "https://rpm.nodesource.com/setup_${NODE_MAJOR}.x" | sudo -E bash -
