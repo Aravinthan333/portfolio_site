@@ -6,9 +6,10 @@
 #
 # The repository's new/ directory is deployed to ~/new on EC2.
 # Production environment values stay in ~/.env on EC2 and are linked to ~/new/.env.
-# The first deployment bootstraps Amazon Linux, nginx, swap, and systemd.
+# The first deployment bootstraps Node.js, swap, and the systemd website service.
+# nginx and TLS are managed independently by configure-nginx.yml.
 
-name: Deploy new (AWS EC2)
+name: Deploy website (AWS EC2)
 
 on:
   workflow_dispatch:
@@ -216,7 +217,10 @@ jobs:
           mv "$APP_DIR" "$LIVE_DIR"
 
           if ! sudo systemctl restart portfolio-new || \
-             ! sudo systemctl is-active --quiet portfolio-new; then
+             ! sudo systemctl is-active --quiet portfolio-new || \
+             ! curl --fail --silent --show-error \
+                 --retry 10 --retry-connrefused --retry-delay 2 \
+                 http://127.0.0.1:3001/ >/dev/null; then
             echo "New release failed to start - rolling back"
             rm -rf "$APP_DIR"
             mv "$LIVE_DIR" "$APP_DIR"

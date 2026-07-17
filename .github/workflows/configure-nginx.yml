@@ -1,0 +1,172 @@
+# Manually configure nginx and TLS for aravinthanbalaji.com on AWS EC2.
+# Required secrets in the GitHub Environment named "prod":
+#   AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION
+#   EC2_USER, EC2_IP, EC2_SSH_KEY
+
+name: Configure nginx (AWS EC2)
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_certificate:
+        description: Issue or renew the Let's Encrypt certificate
+        required: true
+        default: true
+        type: boolean
+      certificate_email:
+        description: Email for Let's Encrypt expiry notices
+        required: true
+        default: aravinthanbaalaji@gmail.com
+        type: string
+
+concurrency:
+  group: configure-nginx-aws-ec2
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  configure:
+    name: Configure nginx and HTTPS
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: prod
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Verify AWS credentials
+        run: aws sts get-caller-identity
+
+      - name: Configure SSH
+        env:
+          EC2_IP: ${{ secrets.EC2_IP }}
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          if [ -z "${EC2_IP:-}" ] || [ -z "${SSH_PRIVATE_KEY:-}" ]; then
+            echo "EC2_IP and EC2_SSH_KEY secrets are required"
+            exit 1
+          fi
+
+          install -m 700 -d "$HOME/.ssh"
+          printf '%s\n' "$SSH_PRIVATE_KEY" > "$HOME/.ssh/ec2_nginx_key"
+          chmod 600 "$HOME/.ssh/ec2_nginx_key"
+          ssh-keyscan -H "$EC2_IP" > "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/known_hosts"
+
+      - name: Upload nginx configuration
+        env:
+          EC2_IP: ${{ secrets.EC2_IP }}
+          EC2_USER: ${{ secrets.EC2_USER }}
+        run: |
+          set -euo pipefail
+          scp \
+            -i "$HOME/.ssh/ec2_nginx_key" \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            new/deploy/nginx-portfolio.conf \
+            "$EC2_USER@$EC2_IP:/tmp/portfolio-nginx.conf"
+
+      - name: Configure nginx and TLS
+        env:
+          EC2_IP: ${{ secrets.EC2_IP }}
+          EC2_USER: ${{ secrets.EC2_USER }}
+          ISSUE_CERTIFICATE: ${{ inputs.issue_certificate }}
+          CERTIFICATE_EMAIL: ${{ inputs.certificate_email }}
+        run: |
+          set -euo pipefail
+
+          cat > /tmp/configure-nginx-remote.sh <<'REMOTE_SCRIPT'
+          set -euo pipefail
+          ISSUE_CERTIFICATE="$1"
+          CERTIFICATE_EMAIL="$2"
+          DOMAIN="aravinthanbalaji.com"
+
+          if command -v dnf >/dev/null 2>&1; then
+            PACKAGE_MANAGER=dnf
+          elif command -v yum >/dev/null 2>&1; then
+            PACKAGE_MANAGER=yum
+          else
+            echo "This workflow supports Amazon Linux with dnf or yum."
+            exit 1
+          fi
+
+          sudo "$PACKAGE_MANAGER" install -y nginx
+          sudo install -m 644 /tmp/portfolio-nginx.conf /etc/nginx/conf.d/portfolio.conf
+          sudo nginx -t
+          sudo systemctl enable --now nginx
+          sudo systemctl reload nginx
+
+          if [ "$ISSUE_CERTIFICATE" = "true" ]; then
+            if ! command -v certbot >/dev/null 2>&1; then
+              if ! sudo "$PACKAGE_MANAGER" install -y certbot python3-certbot-nginx; then
+                echo "Certbot package unavailable - installing in /opt/certbot"
+                sudo "$PACKAGE_MANAGER" install -y python3 python3-pip
+                sudo python3 -m venv /opt/certbot
+                sudo /opt/certbot/bin/pip install --upgrade pip certbot certbot-nginx
+                sudo ln -sfn /opt/certbot/bin/certbot /usr/local/bin/certbot
+              fi
+            fi
+
+            CERTBOT_MODE=(--keep-until-expiring)
+            if [ -f "/etc/letsencrypt/live/$DOMAIN/fullchain.pem" ]; then
+              # The source-controlled HTTP config was just reinstalled, so
+              # reapply the existing certificate even when renewal is not due.
+              CERTBOT_MODE=(--reinstall)
+            fi
+
+            sudo certbot \
+              --nginx \
+              --non-interactive \
+              --agree-tos \
+              --redirect \
+              "${CERTBOT_MODE[@]}" \
+              --email "$CERTIFICATE_EMAIL" \
+              -d "$DOMAIN"
+
+            CERTBOT_PATH="$(command -v certbot)"
+            printf '17 3 * * * root %s renew --quiet --deploy-hook "systemctl reload nginx"\n' "$CERTBOT_PATH" \
+              | sudo tee /etc/cron.d/certbot-renew >/dev/null
+            sudo chmod 644 /etc/cron.d/certbot-renew
+          fi
+
+          sudo nginx -t
+          sudo systemctl is-active --quiet nginx
+          curl --fail --silent --show-error http://127.0.0.1/nginx-health
+          REMOTE_SCRIPT
+
+          printf -v REMOTE_COMMAND 'bash -s -- %q %q' \
+            "$ISSUE_CERTIFICATE" "$CERTIFICATE_EMAIL"
+
+          ssh \
+            -i "$HOME/.ssh/ec2_nginx_key" \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            -o ServerAliveInterval=30 \
+            "$EC2_USER@$EC2_IP" \
+            "$REMOTE_COMMAND" < /tmp/configure-nginx-remote.sh
+
+      - name: Verify public domain
+        env:
+          ISSUE_CERTIFICATE: ${{ inputs.issue_certificate }}
+        run: |
+          set -euo pipefail
+          if [ "$ISSUE_CERTIFICATE" = "true" ]; then
+            curl --fail --show-error --silent \
+              --retry 5 --retry-delay 5 \
+              https://aravinthanbalaji.com/nginx-health
+          else
+            curl --fail --show-error --silent \
+              --retry 5 --retry-delay 5 \
+              http://aravinthanbalaji.com/nginx-health
+          fi

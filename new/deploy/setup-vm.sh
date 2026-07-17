@@ -25,7 +25,7 @@ if [ ! -f "$ENV_FILE" ]; then
   exit 1
 fi
 
-echo "==> Installing Node.js ${NODE_MAJOR}.x, rsync, git, and nginx"
+echo "==> Installing Node.js ${NODE_MAJOR}.x"
 if command -v dnf >/dev/null 2>&1; then
   PACKAGE_MANAGER=dnf
 elif command -v yum >/dev/null 2>&1; then
@@ -36,7 +36,7 @@ else
 fi
 
 sudo "$PACKAGE_MANAGER" update -y
-sudo "$PACKAGE_MANAGER" install -y ca-certificates curl git nginx rsync
+sudo "$PACKAGE_MANAGER" install -y ca-certificates curl
 
 if ! command -v node >/dev/null 2>&1; then
   curl -fsSL "https://rpm.nodesource.com/setup_${NODE_MAJOR}.x" | sudo -E bash -
@@ -91,13 +91,18 @@ else
   echo "Missing $SERVICE_SRC - start manually with: sudo -u $APP_USER bash -lc 'cd $APP_DIR && npm start'"
 fi
 
-NGINX_SRC="$APP_DIR/deploy/nginx-portfolio.conf"
-if [ -f "$NGINX_SRC" ]; then
-  echo "==> Installing nginx reverse proxy"
-  sudo cp "$NGINX_SRC" /etc/nginx/conf.d/portfolio.conf
-  sudo nginx -t
-  sudo systemctl enable --now nginx
-  sudo systemctl reload nginx
+echo "==> Checking website on 127.0.0.1:3001"
+WEBSITE_READY=false
+for _ in {1..15}; do
+  if curl --fail --silent --show-error http://127.0.0.1:3001/ >/dev/null; then
+    WEBSITE_READY=true
+    break
+  fi
+  sleep 2
+done
+if [ "$WEBSITE_READY" != "true" ]; then
+  echo "Website did not become ready on port 3001."
+  exit 1
 fi
 
 # Allow the user who runs this script (and typically GitHub Actions SSH) to restart the app
@@ -117,6 +122,5 @@ echo "Setup complete."
 echo "Next:"
 echo "  1. Keep production values in $ENV_FILE; $APP_DIR/.env is a symlink"
 echo "  2. Use DATABASE_URL=\"file:./prod.db\" for SQLite"
-echo "  3. In the EC2 security group, allow 80/443 and allow workflow SSH access"
-echo "  4. Point DNS to an Elastic IP, then configure TLS with certbot"
-echo "  5. Run workflow 'Deploy new (AWS EC2)' from GitHub Actions"
+echo "  3. Run workflow 'Deploy website (AWS EC2)' for website releases"
+echo "  4. Run workflow 'Configure nginx (AWS EC2)' separately for nginx and TLS"
