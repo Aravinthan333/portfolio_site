@@ -135,9 +135,14 @@ jobs:
               -d "$DOMAIN"
 
             CERTBOT_PATH="$(command -v certbot)"
+            if ! command -v crond >/dev/null 2>&1; then
+              sudo "$PACKAGE_MANAGER" install -y cronie
+            fi
+            sudo install -d -m 755 /etc/cron.d
             printf '17 3 * * * root %s renew --quiet --deploy-hook "systemctl reload nginx"\n' "$CERTBOT_PATH" \
               | sudo tee /etc/cron.d/certbot-renew >/dev/null
             sudo chmod 644 /etc/cron.d/certbot-renew
+            sudo systemctl enable --now crond
           fi
 
           sudo nginx -t
