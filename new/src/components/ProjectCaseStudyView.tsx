@@ -50,6 +50,10 @@ export function ProjectCaseStudyView({ project, labels }: Props) {
     { label: labels.theChallenge, content: project.challenge },
     { label: labels.theSolution, content: project.solution },
   ];
+  const snapshots =
+    project.galleryImages.length > 0
+      ? project.galleryImages
+      : ["", "", ""];
 
   return (
     <section className="relative overflow-hidden py-8 sm:py-10 md:py-12">
@@ -110,12 +114,11 @@ export function ProjectCaseStudyView({ project, labels }: Props) {
               <h2 className="font-display text-xl font-medium tracking-tight text-[var(--fg)] sm:text-2xl">
                 {labels.projectSnapshots}
               </h2>
-              <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                {[0, 1, 2].map((index) => {
-                  const snapshot = project.galleryImages[index];
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                {snapshots.map((snapshot, index) => {
                   return (
                     <div
-                      key={index}
+                      key={snapshot || index}
                       className="relative aspect-video overflow-hidden rounded-xl border border-[rgba(59,130,246,0.18)] bg-white shadow-[var(--shadow-sm)]"
                     >
                       {snapshot ? (
