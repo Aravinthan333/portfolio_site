@@ -1,16 +1,12 @@
 # Manual deploy of the Next.js app in /new to an AWS EC2 Amazon Linux instance.
 #
-# Required GitHub secrets:
-#   EC2_HOST             - Public IP or DNS name of the EC2 instance
-#   EC2_SSH_PRIVATE_KEY  - Entire PEM private key
-#   EC2_KNOWN_HOSTS      - Output of: ssh-keyscan -H <EC2_HOST>
+# Required secrets in the GitHub Environment named "prod":
+#   AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION
+#   EC2_USER, EC2_IP, EC2_SSH_KEY
 #
-# Optional GitHub secrets:
-#   EC2_SSH_USER     - Defaults to ec2-user
-#   DEPLOY_PATH      - Defaults to /var/www/portfolio/new
-#   AUTH_SECRET      - CI smoke build only; production secret stays in the EC2 .env
-#
-# One-time on EC2: bash new/deploy/setup-vm.sh <repo-url> main
+# The repository's new/ directory is deployed to ~/new on EC2.
+# Production environment values stay in ~/.env on EC2 and are linked to ~/new/.env.
+# The first deployment bootstraps Amazon Linux, nginx, swap, and systemd.
 
 name: Deploy new (AWS EC2)
 
@@ -45,6 +41,7 @@ jobs:
     name: Build and deploy /new
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    environment: prod
 
     steps:
       - name: Checkout
@@ -84,68 +81,120 @@ jobs:
           npx prisma migrate deploy
           npm run build
 
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Verify AWS credentials
+        run: aws sts get-caller-identity
+
       - name: Configure SSH
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
-          KNOWN_HOSTS: ${{ secrets.EC2_KNOWN_HOSTS }}
+          EC2_IP: ${{ secrets.EC2_IP }}
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
         run: |
           set -euo pipefail
-          if [ -z "${SSH_PRIVATE_KEY:-}" ] || [ -z "${KNOWN_HOSTS:-}" ]; then
-            echo "EC2_SSH_PRIVATE_KEY and EC2_KNOWN_HOSTS secrets are required"
+          if [ -z "${EC2_IP:-}" ] || [ -z "${SSH_PRIVATE_KEY:-}" ]; then
+            echo "EC2_IP and EC2_SSH_KEY secrets are required"
             exit 1
           fi
           install -m 700 -d "$HOME/.ssh"
           printf '%s\n' "$SSH_PRIVATE_KEY" > "$HOME/.ssh/ec2_deploy_key"
           chmod 600 "$HOME/.ssh/ec2_deploy_key"
-          printf '%s\n' "$KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          ssh-keyscan -H "$EC2_IP" > "$HOME/.ssh/known_hosts"
           chmod 600 "$HOME/.ssh/known_hosts"
 
-      - name: Deploy on EC2
+      - name: Upload /new release to EC2
         env:
-          EC2_HOST: ${{ secrets.EC2_HOST }}
-          SSH_USER: ${{ secrets.EC2_SSH_USER }}
-          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
-          GIT_REF: ${{ inputs.ref }}
+          EC2_IP: ${{ secrets.EC2_IP }}
+          EC2_USER: ${{ secrets.EC2_USER }}
+        run: |
+          set -euo pipefail
+          if [ -z "${EC2_USER:-}" ]; then
+            echo "EC2_USER secret is required"
+            exit 1
+          fi
+
+          tar \
+            --exclude='.env' \
+            --exclude='.next' \
+            --exclude='node_modules' \
+            --exclude='prisma/*.db' \
+            --exclude='prisma/*.db-journal' \
+            --exclude='public/uploads' \
+            -C new -czf - . \
+            | ssh \
+                -i "$HOME/.ssh/ec2_deploy_key" \
+                -o BatchMode=yes \
+                -o StrictHostKeyChecking=yes \
+                -o ServerAliveInterval=30 \
+                "$EC2_USER@$EC2_IP" \
+                'rm -rf "$HOME/new-release" && mkdir -p "$HOME/new-release" && tar -xzf - -C "$HOME/new-release"'
+
+      - name: Build and restart on EC2
+        env:
+          EC2_IP: ${{ secrets.EC2_IP }}
+          EC2_USER: ${{ secrets.EC2_USER }}
           RUN_MIGRATIONS: ${{ inputs.run_migrations }}
         run: |
           set -euo pipefail
 
-          if [ -z "${EC2_HOST:-}" ]; then
-            echo "EC2_HOST secret is required"
-            exit 1
-          fi
-
-          SSH_USER="${SSH_USER:-ec2-user}"
-          DEPLOY_PATH="${DEPLOY_PATH:-/var/www/portfolio/new}"
-
           cat > /tmp/deploy-new-remote.sh <<'REMOTE_SCRIPT'
           set -euo pipefail
-          DEPLOY_PATH="$1"
-          GIT_REF="$2"
-          RUN_MIGRATIONS="$3"
+          shopt -s nullglob
+          RUN_MIGRATIONS="$1"
+          APP_DIR="$HOME/new-release"
+          LIVE_DIR="$HOME/new"
+          PREVIOUS_DIR="$HOME/new-previous"
+          ENV_FILE="$HOME/.env"
 
-          echo "==> Deploying $GIT_REF into $DEPLOY_PATH"
-          cd "$DEPLOY_PATH"
-
-          if [ ! -f .env ]; then
-            echo "Missing $DEPLOY_PATH/.env on EC2. Create it before deploying."
+          if [ ! -f "$ENV_FILE" ]; then
+            echo "Missing $ENV_FILE on EC2."
             exit 1
           fi
 
-          if [ -d .git ]; then
-            REPO_DIR="$DEPLOY_PATH"
-          elif [ -d ../.git ]; then
-            REPO_DIR="$(cd .. && pwd)"
-          else
-            echo "No git repo at $DEPLOY_PATH or its parent. Re-run setup-vm.sh."
-            exit 1
+          FIRST_DEPLOY=true
+          SERVICE_STOPPED=false
+          if systemctl list-unit-files --type=service | grep -q '^portfolio-new.service'; then
+            FIRST_DEPLOY=false
+            sudo systemctl stop portfolio-new
+            SERVICE_STOPPED=true
           fi
 
-          cd "$REPO_DIR"
-          git fetch --prune origin
-          git checkout --force "$GIT_REF"
-          git reset --hard "origin/$GIT_REF" 2>/dev/null || git reset --hard "$GIT_REF"
-          cd "$DEPLOY_PATH"
+          recover_service() {
+            if [ "$SERVICE_STOPPED" = true ] && [ -d "$LIVE_DIR" ]; then
+              echo "Deployment failed - restarting the current release"
+              sudo systemctl restart portfolio-new || true
+            fi
+          }
+          trap recover_service ERR
+
+          mkdir -p "$APP_DIR/prisma" "$APP_DIR/public/uploads"
+
+          # Carry persistent SQLite data and uploaded media into the new release.
+          if [ -d "$LIVE_DIR" ]; then
+            DB_FILES=("$LIVE_DIR"/prisma/*.db "$LIVE_DIR"/prisma/*.db-journal)
+            if [ "${#DB_FILES[@]}" -gt 0 ]; then
+              cp -a "${DB_FILES[@]}" "$APP_DIR/prisma/"
+            fi
+            if [ -d "$LIVE_DIR/public/uploads" ]; then
+              cp -a "$LIVE_DIR/public/uploads/." "$APP_DIR/public/uploads/"
+            fi
+          fi
+
+          cd "$APP_DIR"
+          ln -sfn "$ENV_FILE" .env
+
+          # First deployment also bootstraps Amazon Linux, swap, nginx, and systemd.
+          if [ "$FIRST_DEPLOY" = true ]; then
+            rm -rf "$LIVE_DIR"
+            mv "$APP_DIR" "$LIVE_DIR"
+            bash "$LIVE_DIR/deploy/setup-vm.sh"
+            exit 0
+          fi
 
           mkdir -p "$HOME/.npm"
           npm ci --cache "$HOME/.npm" --prefer-offline
@@ -157,19 +206,39 @@ jobs:
           fi
 
           # t2.micro has 1 GiB RAM. setup-vm.sh creates swap for this build.
+          rm -rf .next
           npm run build
-          sudo systemctl restart portfolio-new
-          sudo systemctl is-active --quiet portfolio-new
+
+          rm -rf "$PREVIOUS_DIR"
+          if [ -d "$LIVE_DIR" ]; then
+            mv "$LIVE_DIR" "$PREVIOUS_DIR"
+          fi
+          mv "$APP_DIR" "$LIVE_DIR"
+
+          if ! sudo systemctl restart portfolio-new || \
+             ! sudo systemctl is-active --quiet portfolio-new; then
+            echo "New release failed to start - rolling back"
+            rm -rf "$APP_DIR"
+            mv "$LIVE_DIR" "$APP_DIR"
+            if [ -d "$PREVIOUS_DIR" ]; then
+              mv "$PREVIOUS_DIR" "$LIVE_DIR"
+              sudo systemctl restart portfolio-new
+            fi
+            SERVICE_STOPPED=false
+            exit 1
+          fi
+
+          SERVICE_STOPPED=false
+          rm -rf "$PREVIOUS_DIR"
           echo "==> Deploy finished"
           REMOTE_SCRIPT
 
-          printf -v REMOTE_COMMAND 'bash -s -- %q %q %q' \
-            "$DEPLOY_PATH" "$GIT_REF" "$RUN_MIGRATIONS"
+          printf -v REMOTE_COMMAND 'bash -s -- %q' "$RUN_MIGRATIONS"
 
           ssh \
             -i "$HOME/.ssh/ec2_deploy_key" \
             -o BatchMode=yes \
             -o StrictHostKeyChecking=yes \
             -o ServerAliveInterval=30 \
-            "$SSH_USER@$EC2_HOST" \
+            "$EC2_USER@$EC2_IP" \
             "$REMOTE_COMMAND" < /tmp/deploy-new-remote.sh

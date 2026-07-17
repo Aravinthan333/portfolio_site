@@ -1,27 +1,31 @@
 #!/usr/bin/env bash
 # One-time setup for an AWS EC2 Amazon Linux instance hosting the /new app.
-# Run with a sudo-capable account.
+# Run as the EC2 SSH user after ~/new has been uploaded by the workflow.
 #
 # Usage:
-#   bash setup-vm.sh https://github.com/Aravinthan333/portfolio_site.git main
+#   bash ~/new/deploy/setup-vm.sh
 #
 set -euo pipefail
 
-REPO_URL="${1:-}"
-GIT_REF="${2:-main}"
-APP_ROOT="${APP_ROOT:-/var/www/portfolio}"
-APP_DIR="$APP_ROOT/new"
-APP_USER="${APP_USER:-portfolio}"
+APP_USER="${APP_USER:-$USER}"
+APP_HOME="${APP_HOME:-$HOME}"
+APP_DIR="${APP_DIR:-$APP_HOME/new}"
+ENV_FILE="${ENV_FILE:-$APP_HOME/.env}"
 NODE_MAJOR="${NODE_MAJOR:-20}"
 SWAP_SIZE_MB="${SWAP_SIZE_MB:-2048}"
 
-if [ -z "$REPO_URL" ]; then
-  echo "Usage: $0 <git-repo-url> [ref]"
-  echo "Example: $0 https://github.com/Aravinthan333/portfolio_site.git main"
+if [ ! -f "$APP_DIR/package.json" ]; then
+  echo "Missing $APP_DIR/package.json."
+  echo "Run the GitHub deployment once to upload new/, then run this setup script."
   exit 1
 fi
 
-echo "==> Installing Node.js ${NODE_MAJOR}.x, git, and nginx"
+if [ ! -f "$ENV_FILE" ]; then
+  echo "Missing production environment file at $ENV_FILE."
+  exit 1
+fi
+
+echo "==> Installing Node.js ${NODE_MAJOR}.x, rsync, git, and nginx"
 if command -v dnf >/dev/null 2>&1; then
   PACKAGE_MANAGER=dnf
 elif command -v yum >/dev/null 2>&1; then
@@ -32,7 +36,7 @@ else
 fi
 
 sudo "$PACKAGE_MANAGER" update -y
-sudo "$PACKAGE_MANAGER" install -y ca-certificates curl git nginx
+sudo "$PACKAGE_MANAGER" install -y ca-certificates curl git nginx rsync
 
 if ! command -v node >/dev/null 2>&1; then
   curl -fsSL "https://rpm.nodesource.com/setup_${NODE_MAJOR}.x" | sudo -E bash -
@@ -52,36 +56,16 @@ if ! swapon --show=NAME --noheadings | grep -q .; then
   echo "/swapfile swap swap defaults 0 0" | sudo tee -a /etc/fstab >/dev/null
 fi
 
-if ! id "$APP_USER" >/dev/null 2>&1; then
-  echo "==> Creating system user $APP_USER"
-  sudo useradd --system --create-home --shell /usr/sbin/nologin "$APP_USER"
-fi
-
 echo "==> Creating app directories"
-sudo mkdir -p "$APP_DIR/public/uploads/blogs" "$APP_DIR/prisma"
-sudo chown -R "$APP_USER:$APP_USER" "$APP_ROOT"
-
-if [ ! -d "$APP_ROOT/.git" ]; then
-  echo "==> Cloning repository into $APP_ROOT"
-  sudo -u "$APP_USER" git clone --branch "$GIT_REF" "$REPO_URL" "$APP_ROOT"
-else
-  echo "==> Repo already present at $APP_ROOT"
-fi
+mkdir -p "$APP_DIR/public/uploads/blogs" "$APP_DIR/prisma"
+sudo chown -R "$APP_USER:$APP_USER" "$APP_DIR"
 
 cd "$APP_DIR"
-
-if [ ! -f .env ]; then
-  echo "==> Creating .env from .env.example (EDIT BEFORE GOING LIVE)"
-  sudo -u "$APP_USER" cp .env.example .env
-  # SQLite URLs are resolved relative to prisma/schema.prisma.
-  sudo -u "$APP_USER" sed -i 's|^DATABASE_URL=.*|DATABASE_URL="file:./prod.db"|' .env
-  echo "Edit $APP_DIR/.env now: AUTH_SECRET, ADMIN_PASSWORD, NEXT_PUBLIC_SITE_URL, etc."
-fi
-sudo chown "$APP_USER:$APP_USER" .env
-sudo chmod 640 .env
+ln -sfn "$ENV_FILE" .env
+chmod 600 "$ENV_FILE"
 
 echo "==> Installing dependencies, migrating, and building"
-sudo -u "$APP_USER" env HOME="/home/$APP_USER" bash -c "
+sudo -u "$APP_USER" env HOME="$APP_HOME" bash -c "
   set -euo pipefail
   cd '$APP_DIR'
   mkdir -p \"\$HOME/.npm\"
@@ -95,9 +79,10 @@ SERVICE_SRC="$APP_DIR/deploy/portfolio-new.service"
 if [ -f "$SERVICE_SRC" ]; then
   echo "==> Installing systemd unit"
   sed \
-    -e "s|/var/www/portfolio/new|$APP_DIR|g" \
-    -e "s|User=portfolio|User=$APP_USER|g" \
-    -e "s|Group=portfolio|Group=$APP_USER|g" \
+    -e "s|/home/ec2-user/new|$APP_DIR|g" \
+    -e "s|/home/ec2-user/.env|$ENV_FILE|g" \
+    -e "s|User=ec2-user|User=$APP_USER|g" \
+    -e "s|Group=ec2-user|Group=$APP_USER|g" \
     "$SERVICE_SRC" | sudo tee /etc/systemd/system/portfolio-new.service >/dev/null
   sudo systemctl daemon-reload
   sudo systemctl enable --now portfolio-new
@@ -116,26 +101,22 @@ if [ -f "$NGINX_SRC" ]; then
 fi
 
 # Allow the user who runs this script (and typically GitHub Actions SSH) to restart the app
-# without a password. Adjust DEPLOY_SSH_USER if Actions uses a different account.
+# without a password.
 DEPLOY_SSH_USER="${DEPLOY_SSH_USER:-$USER}"
 if [ "$DEPLOY_SSH_USER" != "root" ] && id "$DEPLOY_SSH_USER" >/dev/null 2>&1; then
   echo "==> Allowing $DEPLOY_SSH_USER to restart portfolio-new via sudo"
   SYSTEMCTL_PATH="$(command -v systemctl)"
-  echo "$DEPLOY_SSH_USER ALL=(root) NOPASSWD: $SYSTEMCTL_PATH restart portfolio-new, $SYSTEMCTL_PATH status portfolio-new, $SYSTEMCTL_PATH is-active portfolio-new" \
+  echo "$DEPLOY_SSH_USER ALL=(root) NOPASSWD: $SYSTEMCTL_PATH start portfolio-new, $SYSTEMCTL_PATH stop portfolio-new, $SYSTEMCTL_PATH restart portfolio-new, $SYSTEMCTL_PATH status portfolio-new, $SYSTEMCTL_PATH is-active portfolio-new" \
     | sudo tee "/etc/sudoers.d/portfolio-new-$DEPLOY_SSH_USER" >/dev/null
   sudo chmod 440 "/etc/sudoers.d/portfolio-new-$DEPLOY_SSH_USER"
 
-  # Let the deploy SSH user update the git tree / build as $APP_USER via shared group
-  sudo usermod -aG "$APP_USER" "$DEPLOY_SSH_USER" || true
-  sudo chmod -R g+rwX "$APP_ROOT"
-  sudo find "$APP_ROOT" -type d -exec chmod g+s {} \;
 fi
 
 echo ""
 echo "Setup complete."
 echo "Next:"
-echo "  1. Edit $APP_DIR/.env (AUTH_SECRET >= 32 chars, strong ADMIN_PASSWORD)"
-echo "  2. Install deploy/nginx-portfolio.conf as /etc/nginx/conf.d/portfolio.conf"
-echo "  3. In the EC2 security group, allow 80/443 publicly and SSH only from trusted IPs"
+echo "  1. Keep production values in $ENV_FILE; $APP_DIR/.env is a symlink"
+echo "  2. Use DATABASE_URL=\"file:./prod.db\" for SQLite"
+echo "  3. In the EC2 security group, allow 80/443 and allow workflow SSH access"
 echo "  4. Point DNS to an Elastic IP, then configure TLS with certbot"
-echo "  5. Add EC2 GitHub Actions secrets and run workflow 'Deploy new (AWS EC2)'"
+echo "  5. Run workflow 'Deploy new (AWS EC2)' from GitHub Actions"

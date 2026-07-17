@@ -5,13 +5,13 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-# Must match the Linux user that owns /var/www/portfolio (see setup-vm.sh)
-User=portfolio
-Group=portfolio
-WorkingDirectory=/var/www/portfolio/new
+# setup-vm.sh rewrites these defaults when EC2_USER differs.
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/home/ec2-user/new
 Environment=NODE_ENV=production
-EnvironmentFile=/var/www/portfolio/new/.env
-ExecStartPre=/bin/mkdir -p /var/www/portfolio/new/public/uploads/blogs
+EnvironmentFile=/home/ec2-user/.env
+ExecStartPre=/bin/mkdir -p /home/ec2-user/new/public/uploads/blogs
 ExecStart=/usr/bin/npm run start
 Restart=on-failure
 RestartSec=5
