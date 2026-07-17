@@ -92,7 +92,7 @@ export function Hero() {
                 <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                   <ResumeDownloadButton
                     label={tCommon("downloadResume")}
-                    className="w-full min-[480px]:w-auto"
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[var(--blue-200)] bg-gradient-to-r from-white to-[var(--blue-50)] px-5 py-2.5 text-sm font-semibold text-[var(--blue-700)] shadow-[var(--shadow-sm)] transition-[border-color,box-shadow,background-color] hover:border-[var(--blue-400)] hover:shadow-[var(--shadow-md)] min-[480px]:w-auto [&_svg]:transition-transform group-hover:[&_svg]:translate-y-0.5"
                   />
                 </motion.div>
               </div>
