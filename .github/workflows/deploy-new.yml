@@ -1,19 +1,18 @@
-# Manual deploy of the Next.js app in /new to a GCP Compute Engine Ubuntu VM.
+# Manual deploy of the Next.js app in /new to an AWS EC2 Amazon Linux instance.
 #
 # Required GitHub secrets:
-#   GCP_SA_KEY       - Service account JSON key (compute OS Login / IAP tunnel access)
-#   GCP_PROJECT_ID   - GCP project id
-#   GCE_INSTANCE     - VM instance name
-#   GCE_ZONE         - e.g. asia-south1-a
+#   EC2_HOST             - Public IP or DNS name of the EC2 instance
+#   EC2_SSH_PRIVATE_KEY  - Entire PEM private key
+#   EC2_KNOWN_HOSTS      - Output of: ssh-keyscan -H <EC2_HOST>
 #
 # Optional GitHub secrets:
-#   GCE_SSH_USER     - SSH login user (must be able to write the deploy path + restart systemd)
-#   DEPLOY_PATH      - App path on the VM (default: /var/www/portfolio/new)
-#   AUTH_SECRET      - Used for CI smoke build only (>= 32 chars); production secret stays on the VM .env
+#   EC2_SSH_USER     - Defaults to ec2-user
+#   DEPLOY_PATH      - Defaults to /var/www/portfolio/new
+#   AUTH_SECRET      - CI smoke build only; production secret stays in the EC2 .env
 #
-# One-time on the VM: bash new/deploy/setup-vm.sh <repo-url> main
+# One-time on EC2: bash new/deploy/setup-vm.sh <repo-url> main
 
-name: Deploy new (GCP)
+name: Deploy new (AWS EC2)
 
 on:
   workflow_dispatch:
@@ -35,7 +34,7 @@ on:
         type: boolean
 
 concurrency:
-  group: deploy-new-gcp
+  group: deploy-new-aws-ec2
   cancel-in-progress: false
 
 permissions:
@@ -70,7 +69,7 @@ jobs:
         if: ${{ inputs.skip_ci_build == false }}
         working-directory: new
         env:
-          DATABASE_URL: file:./prisma/ci.db
+          DATABASE_URL: file:./ci.db
           AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
           NEXT_PUBLIC_SITE_URL: https://aravinthanbalaji.com
           NEXT_PUBLIC_EMAIL: aravinthanbaalaji@gmail.com
@@ -85,94 +84,92 @@ jobs:
           npx prisma migrate deploy
           npm run build
 
-      - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v2
-        with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
-
-      - name: Set up Cloud SDK
-        uses: google-github-actions/setup-gcloud@v2
-        with:
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-
-      - name: Deploy on GCE Ubuntu VM
+      - name: Configure SSH
         env:
-          INSTANCE: ${{ secrets.GCE_INSTANCE }}
-          ZONE: ${{ secrets.GCE_ZONE }}
-          SSH_USER: ${{ secrets.GCE_SSH_USER }}
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          KNOWN_HOSTS: ${{ secrets.EC2_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SSH_PRIVATE_KEY:-}" ] || [ -z "${KNOWN_HOSTS:-}" ]; then
+            echo "EC2_SSH_PRIVATE_KEY and EC2_KNOWN_HOSTS secrets are required"
+            exit 1
+          fi
+          install -m 700 -d "$HOME/.ssh"
+          printf '%s\n' "$SSH_PRIVATE_KEY" > "$HOME/.ssh/ec2_deploy_key"
+          chmod 600 "$HOME/.ssh/ec2_deploy_key"
+          printf '%s\n' "$KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/known_hosts"
+
+      - name: Deploy on EC2
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          SSH_USER: ${{ secrets.EC2_SSH_USER }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
           GIT_REF: ${{ inputs.ref }}
           RUN_MIGRATIONS: ${{ inputs.run_migrations }}
-          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
         run: |
           set -euo pipefail
 
-          if [ -z "${INSTANCE:-}" ] || [ -z "${ZONE:-}" ]; then
-            echo "GCE_INSTANCE and GCE_ZONE secrets are required"
+          if [ -z "${EC2_HOST:-}" ]; then
+            echo "EC2_HOST secret is required"
             exit 1
           fi
 
+          SSH_USER="${SSH_USER:-ec2-user}"
           DEPLOY_PATH="${DEPLOY_PATH:-/var/www/portfolio/new}"
 
-          SSH_EXTRA=()
-          if [ -n "${SSH_USER:-}" ]; then
-            SSH_EXTRA+=(--ssh-flag="-l ${SSH_USER}")
-          fi
-
-          # shellcheck disable=SC2029
-          gcloud compute ssh "$INSTANCE" \
-            --zone="$ZONE" \
-            --project="$GCP_PROJECT_ID" \
-            "${SSH_EXTRA[@]}" \
-            --command="$(cat <<EOF
+          cat > /tmp/deploy-new-remote.sh <<'REMOTE_SCRIPT'
           set -euo pipefail
-          DEPLOY_PATH='${DEPLOY_PATH}'
-          GIT_REF='${GIT_REF}'
-          RUN_MIGRATIONS='${RUN_MIGRATIONS}'
+          DEPLOY_PATH="$1"
+          GIT_REF="$2"
+          RUN_MIGRATIONS="$3"
 
-          echo "==> Deploying \$GIT_REF into \$DEPLOY_PATH"
-          cd "\$DEPLOY_PATH"
+          echo "==> Deploying $GIT_REF into $DEPLOY_PATH"
+          cd "$DEPLOY_PATH"
 
           if [ ! -f .env ]; then
-            echo "Missing \$DEPLOY_PATH/.env on the VM. Create it before deploying."
+            echo "Missing $DEPLOY_PATH/.env on EC2. Create it before deploying."
             exit 1
           fi
 
           if [ -d .git ]; then
-            git fetch --prune origin
-            git checkout --force "\$GIT_REF"
-            git reset --hard "origin/\$GIT_REF" 2>/dev/null || git reset --hard "\$GIT_REF"
+            REPO_DIR="$DEPLOY_PATH"
           elif [ -d ../.git ]; then
-            cd ..
-            git fetch --prune origin
-            git checkout --force "\$GIT_REF"
-            git reset --hard "origin/\$GIT_REF" 2>/dev/null || git reset --hard "\$GIT_REF"
-            cd new
+            REPO_DIR="$(cd .. && pwd)"
           else
-            echo "No git repo at \$DEPLOY_PATH or its parent. Re-run setup-vm.sh."
+            echo "No git repo at $DEPLOY_PATH or its parent. Re-run setup-vm.sh."
             exit 1
           fi
 
-          mkdir -p "\$HOME/.npm"
-          npm ci --cache "\$HOME/.npm" --prefer-offline
+          cd "$REPO_DIR"
+          git fetch --prune origin
+          git checkout --force "$GIT_REF"
+          git reset --hard "origin/$GIT_REF" 2>/dev/null || git reset --hard "$GIT_REF"
+          cd "$DEPLOY_PATH"
 
-          if [ "\$RUN_MIGRATIONS" = "true" ]; then
-            echo "==> Running prisma migrate deploy"
+          mkdir -p "$HOME/.npm"
+          npm ci --cache "$HOME/.npm" --prefer-offline
+
+          if [ "$RUN_MIGRATIONS" = "true" ]; then
             npx prisma migrate deploy
           else
             echo "==> Skipping migrations"
           fi
 
+          # t2.micro has 1 GiB RAM. setup-vm.sh creates swap for this build.
           npm run build
-
-          if systemctl list-unit-files --type=service | grep -q '^portfolio-new.service'; then
-            sudo systemctl restart portfolio-new
-            sudo systemctl --no-pager --full status portfolio-new || true
-          else
-            echo "portfolio-new.service not installed. Install new/deploy/portfolio-new.service"
-            exit 1
-          fi
-
+          sudo systemctl restart portfolio-new
+          sudo systemctl is-active --quiet portfolio-new
           echo "==> Deploy finished"
-          EOF
-          )"
+          REMOTE_SCRIPT
+
+          printf -v REMOTE_COMMAND 'bash -s -- %q %q %q' \
+            "$DEPLOY_PATH" "$GIT_REF" "$RUN_MIGRATIONS"
+
+          ssh \
+            -i "$HOME/.ssh/ec2_deploy_key" \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            -o ServerAliveInterval=30 \
+            "$SSH_USER@$EC2_HOST" \
+            "$REMOTE_COMMAND" < /tmp/deploy-new-remote.sh

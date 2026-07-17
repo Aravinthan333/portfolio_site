@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# One-time setup for an Ubuntu GCE VM that will host the /new Next.js app.
+# One-time setup for an AWS EC2 Amazon Linux instance hosting the /new app.
 # Run with a sudo-capable account.
 #
 # Usage:
@@ -13,6 +13,7 @@ APP_ROOT="${APP_ROOT:-/var/www/portfolio}"
 APP_DIR="$APP_ROOT/new"
 APP_USER="${APP_USER:-portfolio}"
 NODE_MAJOR="${NODE_MAJOR:-20}"
+SWAP_SIZE_MB="${SWAP_SIZE_MB:-2048}"
 
 if [ -z "$REPO_URL" ]; then
   echo "Usage: $0 <git-repo-url> [ref]"
@@ -20,17 +21,36 @@ if [ -z "$REPO_URL" ]; then
   exit 1
 fi
 
-echo "==> Installing Node.js ${NODE_MAJOR}.x and git"
-sudo apt-get update -y
-sudo apt-get install -y ca-certificates curl gnupg git
+echo "==> Installing Node.js ${NODE_MAJOR}.x, git, and nginx"
+if command -v dnf >/dev/null 2>&1; then
+  PACKAGE_MANAGER=dnf
+elif command -v yum >/dev/null 2>&1; then
+  PACKAGE_MANAGER=yum
+else
+  echo "This script supports Amazon Linux (dnf or yum)."
+  exit 1
+fi
+
+sudo "$PACKAGE_MANAGER" update -y
+sudo "$PACKAGE_MANAGER" install -y ca-certificates curl git nginx
 
 if ! command -v node >/dev/null 2>&1; then
-  curl -fsSL "https://deb.nodesource.com/setup_${NODE_MAJOR}.x" | sudo -E bash -
-  sudo apt-get install -y nodejs
+  curl -fsSL "https://rpm.nodesource.com/setup_${NODE_MAJOR}.x" | sudo -E bash -
+  sudo "$PACKAGE_MANAGER" install -y nodejs
 fi
 
 node -v
 npm -v
+
+# A t2.micro has only 1 GiB RAM. Next.js production builds can exceed that.
+if ! swapon --show=NAME --noheadings | grep -q .; then
+  echo "==> Creating ${SWAP_SIZE_MB} MB swap file for builds"
+  sudo dd if=/dev/zero of=/swapfile bs=1M count="$SWAP_SIZE_MB" status=progress
+  sudo chmod 600 /swapfile
+  sudo mkswap /swapfile
+  sudo swapon /swapfile
+  echo "/swapfile swap swap defaults 0 0" | sudo tee -a /etc/fstab >/dev/null
+fi
 
 if ! id "$APP_USER" >/dev/null 2>&1; then
   echo "==> Creating system user $APP_USER"
@@ -53,12 +73,15 @@ cd "$APP_DIR"
 if [ ! -f .env ]; then
   echo "==> Creating .env from .env.example (EDIT BEFORE GOING LIVE)"
   sudo -u "$APP_USER" cp .env.example .env
-  sudo -u "$APP_USER" sed -i 's|^DATABASE_URL=.*|DATABASE_URL="file:./prisma/prod.db"|' .env
+  # SQLite URLs are resolved relative to prisma/schema.prisma.
+  sudo -u "$APP_USER" sed -i 's|^DATABASE_URL=.*|DATABASE_URL="file:./prod.db"|' .env
   echo "Edit $APP_DIR/.env now: AUTH_SECRET, ADMIN_PASSWORD, NEXT_PUBLIC_SITE_URL, etc."
 fi
+sudo chown "$APP_USER:$APP_USER" .env
+sudo chmod 640 .env
 
-echo "==> Installing deps, migrating, building"
-sudo -u "$APP_USER" bash -lc "
+echo "==> Installing dependencies, migrating, and building"
+sudo -u "$APP_USER" env HOME="/home/$APP_USER" bash -c "
   set -euo pipefail
   cd '$APP_DIR'
   mkdir -p \"\$HOME/.npm\"
@@ -83,12 +106,22 @@ else
   echo "Missing $SERVICE_SRC - start manually with: sudo -u $APP_USER bash -lc 'cd $APP_DIR && npm start'"
 fi
 
+NGINX_SRC="$APP_DIR/deploy/nginx-portfolio.conf"
+if [ -f "$NGINX_SRC" ]; then
+  echo "==> Installing nginx reverse proxy"
+  sudo cp "$NGINX_SRC" /etc/nginx/conf.d/portfolio.conf
+  sudo nginx -t
+  sudo systemctl enable --now nginx
+  sudo systemctl reload nginx
+fi
+
 # Allow the user who runs this script (and typically GitHub Actions SSH) to restart the app
 # without a password. Adjust DEPLOY_SSH_USER if Actions uses a different account.
 DEPLOY_SSH_USER="${DEPLOY_SSH_USER:-$USER}"
 if [ "$DEPLOY_SSH_USER" != "root" ] && id "$DEPLOY_SSH_USER" >/dev/null 2>&1; then
   echo "==> Allowing $DEPLOY_SSH_USER to restart portfolio-new via sudo"
-  echo "$DEPLOY_SSH_USER ALL=(root) NOPASSWD: /bin/systemctl restart portfolio-new, /bin/systemctl status portfolio-new, /bin/systemctl is-active portfolio-new" \
+  SYSTEMCTL_PATH="$(command -v systemctl)"
+  echo "$DEPLOY_SSH_USER ALL=(root) NOPASSWD: $SYSTEMCTL_PATH restart portfolio-new, $SYSTEMCTL_PATH status portfolio-new, $SYSTEMCTL_PATH is-active portfolio-new" \
     | sudo tee "/etc/sudoers.d/portfolio-new-$DEPLOY_SSH_USER" >/dev/null
   sudo chmod 440 "/etc/sudoers.d/portfolio-new-$DEPLOY_SSH_USER"
 
@@ -102,7 +135,7 @@ echo ""
 echo "Setup complete."
 echo "Next:"
 echo "  1. Edit $APP_DIR/.env (AUTH_SECRET >= 32 chars, strong ADMIN_PASSWORD)"
-echo "  2. Grant the GitHub Actions SA permission to SSH to this VM (OS Login or SSH keys)"
-echo "  3. Open firewall for 80/443; keep 3001 bound to localhost behind nginx"
-echo "  4. Install nginx config from deploy/nginx-portfolio.conf + certbot"
-echo "  5. Add GitHub Actions secrets and run workflow 'Deploy new (GCP)'"
+echo "  2. Install deploy/nginx-portfolio.conf as /etc/nginx/conf.d/portfolio.conf"
+echo "  3. In the EC2 security group, allow 80/443 publicly and SSH only from trusted IPs"
+echo "  4. Point DNS to an Elastic IP, then configure TLS with certbot"
+echo "  5. Add EC2 GitHub Actions secrets and run workflow 'Deploy new (AWS EC2)'"
