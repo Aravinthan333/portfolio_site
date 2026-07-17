@@ -26,7 +26,7 @@
     "learnMore": "Подробнее",
     "hireMe": "Нанять меня",
     "bookCall": "Записаться на звонок",
-    "openCalendly": "Или открыть Calendly",
+    "openGoogleCalendar": "Или открыть Google Календарь",
     "skipToContent": "Перейти к содержимому",
     "copyright": "© {year} {name}. Инженер-программист, доступен для удалённой фриланс- и контрактной работы.",
     "downloadResume": "Скачать резюме"
@@ -185,13 +185,13 @@
     "bookCall": {
       "label": "Записаться на звонок",
       "title": "Запланировать разговор",
-      "subtitle": "Запросите звонок или забронируйте сразу через Calendly.",
+      "subtitle": "Запросите звонок или выберите время в Google Календаре.",
       "fastestPath": "Самый быстрый путь",
-      "bookInstantlyTitle": "Забронировать сразу через Calendly",
-      "bookInstantlyBody": "Выберите удобное время - подтверждение придёт мгновенно.",
+      "bookInstantlyTitle": "Запланировать через Google Календарь",
+      "bookInstantlyBody": "Выберите свободное время и автоматически получите приглашение Google Meet.",
       "orRequestTitle": "Или запросите звонок",
       "orRequestBody": "Оставьте удобный слот, и я подтвержу.",
-      "openCalendlyBtn": "Открыть Calendly"
+      "openGoogleCalendarBtn": "Открыть Google Календарь"
     },
     "serviceDetail": {
       "hireCtaTitle": "Готовы нанять для {service}?",
@@ -295,7 +295,7 @@
     "faqDescription": "Частые вопросы о найме Aravinthan Balaji для фриланс-проектов, удалённой поставки, сроков и типов сотрудничества.",
     "contactTitle": "Нанять меня - Контакты",
     "contactDescription": "Наймите Aravinthan Balaji для фриланс-разработки веб, e-commerce, API и облачных решений. Отправьте бриф проекта и получите ответ в течение 24 часов.",
-    "bookCallDescription": "Запросите звонок с Aravinthan Balaji или забронируйте сразу через Calendly - обсудим фриланс-проекты, архитектуру и поставку.",
+    "bookCallDescription": "Запросите звонок с Aravinthan Balaji или запланируйте его через Google Календарь - обсудим фриланс-проекты, архитектуру и поставку.",
     "softwareEngineering": "Инженерия программного обеспечения"
   },
   "projectLabels": {

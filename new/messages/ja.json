@@ -26,7 +26,7 @@
     "learnMore": "詳しく見る",
     "hireMe": "依頼する",
     "bookCall": "通話を予約",
-    "openCalendly": "またはCalendlyを開く",
+    "openGoogleCalendar": "またはGoogleカレンダーを開く",
     "skipToContent": "コンテンツへスキップ",
     "copyright": "© {year} {name}. リモートでのフリーランス・契約業務に対応するソフトウェアエンジニア。",
     "downloadResume": "履歴書をダウンロード"
@@ -185,13 +185,13 @@
     "bookCall": {
       "label": "通話を予約",
       "title": "打ち合わせの日程を調整",
-      "subtitle": "通話をリクエストするか、Calendlyで即時予約してください。",
+      "subtitle": "通話をリクエストするか、Googleカレンダーで時間を選択してください。",
       "fastestPath": "最も早い方法",
-      "bookInstantlyTitle": "Calendlyで即時予約",
-      "bookInstantlyBody": "ご都合の良い時間を選んでください - すぐに確定します。",
+      "bookInstantlyTitle": "Googleカレンダーで予約",
+      "bookInstantlyBody": "空いている時間を選択すると、Google Meetの招待が自動的に届きます。",
       "orRequestTitle": "または通話をリクエスト",
       "orRequestBody": "ご希望の時間帯をお知らせいただければ、確定のご連絡をします。",
-      "openCalendlyBtn": "Calendlyを開く"
+      "openGoogleCalendarBtn": "Googleカレンダーを開く"
     },
     "serviceDetail": {
       "hireCtaTitle": "{service}のご依頼をご検討ですか？",
@@ -295,7 +295,7 @@
     "faqDescription": "Aravinthan Balajiへのフリーランスプロジェクト、リモート提供、スケジュール、契約形態に関するよくある質問。",
     "contactTitle": "依頼する - お問い合わせ",
     "contactDescription": "フリーランスのWeb、EC、API、クラウドエンジニアリングをAravinthan Balajiに依頼しましょう。プロジェクトの概要を送信いただければ、24時間以内にご返信します。",
-    "bookCallDescription": "Aravinthan Balajiに通話をリクエストするか、Calendlyで即時予約してください - フリーランスプロジェクト、アーキテクチャ、提供について話し合います。",
+    "bookCallDescription": "Aravinthan Balajiに通話をリクエストするか、Googleカレンダーで予約してください - フリーランスプロジェクト、アーキテクチャ、提供について話し合います。",
     "softwareEngineering": "ソフトウェアエンジニアリング"
   },
   "projectLabels": {

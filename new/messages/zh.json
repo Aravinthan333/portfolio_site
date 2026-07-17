@@ -26,7 +26,7 @@
     "learnMore": "了解更多",
     "hireMe": "雇用我",
     "bookCall": "预约通话",
-    "openCalendly": "或打开 Calendly",
+    "openGoogleCalendar": "或打开 Google 日历",
     "skipToContent": "跳转到内容",
     "copyright": "© {year} {name}。可为远程自由职业和合同工作提供服务的软件工程师。",
     "downloadResume": "下载简历"
@@ -185,13 +185,13 @@
     "bookCall": {
       "label": "预约通话",
       "title": "安排一次沟通",
-      "subtitle": "申请通话，或直接在 Calendly 上即时预约。",
+      "subtitle": "申请通话，或在 Google 日历中选择时间。",
       "fastestPath": "最快方式",
-      "bookInstantlyTitle": "在 Calendly 上即时预约",
-      "bookInstantlyBody": "选择一个合适的时间--即时确认。",
+      "bookInstantlyTitle": "通过 Google 日历预约",
+      "bookInstantlyBody": "选择可用时间，并自动收到 Google Meet 邀请。",
       "orRequestTitle": "或申请通话",
       "orRequestBody": "留下您期望的时间段，我会与您确认。",
-      "openCalendlyBtn": "打开 Calendly"
+      "openGoogleCalendarBtn": "打开 Google 日历"
     },
     "serviceDetail": {
       "hireCtaTitle": "准备好雇用我提供 {service} 服务了吗？",
@@ -295,7 +295,7 @@
     "faqDescription": "关于雇用 Aravinthan Balaji 从事自由职业项目、远程交付、时间安排和合作方式的常见问题解答。",
     "contactTitle": "雇用我 - 联系方式",
     "contactDescription": "雇用 Aravinthan Balaji，从事自由职业的网络、电商、API 和云工程项目。发送项目简述，24 小时内获得回复。",
-    "bookCallDescription": "申请与 Aravinthan Balaji 通话，或直接在 Calendly 上即时预约--讨论自由职业项目、架构与交付。",
+    "bookCallDescription": "申请与 Aravinthan Balaji 通话，或通过 Google 日历预约 - 讨论自由职业项目、架构与交付。",
     "softwareEngineering": "软件工程"
   },
   "projectLabels": {

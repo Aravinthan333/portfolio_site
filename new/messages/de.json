@@ -26,7 +26,7 @@
     "learnMore": "Mehr erfahren",
     "hireMe": "Beauftragen",
     "bookCall": "Gespräch buchen",
-    "openCalendly": "Oder Calendly öffnen",
+    "openGoogleCalendar": "Oder Google Kalender öffnen",
     "skipToContent": "Zum Inhalt springen",
     "copyright": "© {year} {name}. Software Engineer verfügbar für Remote-Freelance- und Vertragsarbeit.",
     "downloadResume": "Lebenslauf herunterladen"
@@ -185,13 +185,13 @@
     "bookCall": {
       "label": "Gespräch buchen",
       "title": "Gespräch vereinbaren",
-      "subtitle": "Fordern Sie ein Gespräch an oder buchen Sie sofort über Calendly.",
+      "subtitle": "Fordern Sie ein Gespräch an oder wählen Sie einen Termin in Google Kalender.",
       "fastestPath": "Schnellster Weg",
-      "bookInstantlyTitle": "Sofort über Calendly buchen",
-      "bookInstantlyBody": "Wählen Sie einen passenden Zeitpunkt - die Bestätigung erfolgt sofort.",
+      "bookInstantlyTitle": "Mit Google Kalender planen",
+      "bookInstantlyBody": "Wählen Sie einen freien Termin und erhalten Sie automatisch eine Google Meet-Einladung.",
       "orRequestTitle": "Oder ein Gespräch anfragen",
       "orRequestBody": "Hinterlassen Sie Ihren gewünschten Termin und ich bestätige ihn.",
-      "openCalendlyBtn": "Calendly öffnen"
+      "openGoogleCalendarBtn": "Google Kalender öffnen"
     },
     "serviceDetail": {
       "hireCtaTitle": "Bereit, mich für {service} zu beauftragen?",
@@ -295,7 +295,7 @@
     "faqDescription": "Häufige Fragen zur Beauftragung von Aravinthan Balaji für Freelance-Projekte, Remote-Delivery, Zeitpläne und Engagement-Arten.",
     "contactTitle": "Beauftragen - Kontakt",
     "contactDescription": "Beauftragen Sie Aravinthan Balaji für freiberufliches Web-, E-Commerce-, API- und Cloud-Engineering. Senden Sie ein Projektbriefing und erhalten Sie innerhalb von 24 Stunden eine Antwort.",
-    "bookCallDescription": "Fordern Sie ein Gespräch mit Aravinthan Balaji an oder buchen Sie sofort über Calendly - besprechen Sie Freelance-Projekte, Architektur und Delivery.",
+    "bookCallDescription": "Fordern Sie ein Gespräch mit Aravinthan Balaji an oder planen Sie es über Google Kalender - besprechen Sie Freelance-Projekte, Architektur und Delivery.",
     "softwareEngineering": "Software Engineering"
   },
   "projectLabels": {

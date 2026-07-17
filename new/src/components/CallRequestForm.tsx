@@ -4,8 +4,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { CheckCircle2, Phone } from "lucide-react";
-import { SITE } from "@/data/site";
 import { ThemedSelect } from "@/components/ThemedSelect";
+import { getGoogleCalendar } from "@/lib/site";
 import {
   formatTimezoneLabel,
   getBrowserTimezone,
@@ -18,9 +18,13 @@ export function CallRequestForm() {
   const [timezone, setTimezone] = useState("Asia/Kolkata");
   const timezones = useMemo(() => getSupportedTimezones(), []);
   const minDate = new Date().toISOString().split("T")[0];
+  const googleCalendarUrl = getGoogleCalendar();
 
   useEffect(() => {
-    setTimezone(getBrowserTimezone());
+    const timer = window.setTimeout(() => {
+      setTimezone(getBrowserTimezone());
+    }, 0);
+    return () => window.clearTimeout(timer);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -197,12 +201,12 @@ export function CallRequestForm() {
         <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
           {t("errorBefore")}{" "}
           <a
-            href={SITE.calendly}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={googleCalendarUrl}
+            target={googleCalendarUrl.startsWith("http") ? "_blank" : undefined}
+            rel={googleCalendarUrl.startsWith("http") ? "noopener noreferrer" : undefined}
             className="font-medium underline"
           >
-            Calendly
+            Google Calendar
           </a>
           {t("errorAfter")}
         </p>

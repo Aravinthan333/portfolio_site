@@ -4,9 +4,9 @@ import { ArrowUpRight, Calendar } from "lucide-react";
 import { BlueInitials } from "@/components/BlueInitials";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { CallRequestForm } from "@/components/CallRequestForm";
-import { SITE } from "@/data/site";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, jsonLdScript } from "@/lib/schema";
+import { getGoogleCalendar } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -27,6 +27,8 @@ export default async function BookCallPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("pages.bookCall");
   const tBreadcrumb = await getTranslations("breadcrumbs");
+  const googleCalendarUrl = getGoogleCalendar();
+  const hasGoogleCalendarUrl = googleCalendarUrl.startsWith("http");
 
   return (
     <SiteShell>
@@ -49,27 +51,29 @@ export default async function BookCallPage({ params }: Props) {
           <p className="section-desc mt-4">{t("subtitle")}</p>
         </header>
 
-        <a
-          href={SITE.calendly}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mb-10 flex flex-col items-center gap-4 rounded-3xl border border-[var(--green-200)] bg-gradient-to-br from-[var(--green-50)] via-[var(--surface)] to-[var(--blue-50)] p-8 text-center shadow-[var(--shadow-md)] transition-shadow hover:shadow-[var(--shadow-lg)] sm:flex-row sm:justify-between sm:p-10 sm:text-left"
-        >
-          <div>
-            <p className="section-label">{t("fastestPath")}</p>
-            <h2 className="font-display mt-2 text-2xl font-medium text-[var(--fg)] sm:text-3xl">
-              {t("bookInstantlyTitle")}
-            </h2>
-            <p className="mt-2 text-sm text-[var(--fg-muted)]">{t("bookInstantlyBody")}</p>
-          </div>
-          <span className="btn-primary shrink-0">
-            <Calendar size={16} />
-            {t("openCalendlyBtn")}
-            <ArrowUpRight size={16} />
-          </span>
-        </a>
+        {hasGoogleCalendarUrl && (
+          <a
+            href={googleCalendarUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-10 flex flex-col items-center gap-4 rounded-3xl border border-[var(--green-200)] bg-gradient-to-br from-[var(--green-50)] via-[var(--surface)] to-[var(--blue-50)] p-8 text-center shadow-[var(--shadow-md)] transition-shadow hover:shadow-[var(--shadow-lg)] sm:flex-row sm:justify-between sm:p-10 sm:text-left"
+          >
+            <div>
+              <p className="section-label">{t("fastestPath")}</p>
+              <h2 className="font-display mt-2 text-2xl font-medium text-[var(--fg)] sm:text-3xl">
+                {t("bookInstantlyTitle")}
+              </h2>
+              <p className="mt-2 text-sm text-[var(--fg-muted)]">{t("bookInstantlyBody")}</p>
+            </div>
+            <span className="btn-primary shrink-0">
+              <Calendar size={16} />
+              {t("openGoogleCalendarBtn")}
+              <ArrowUpRight size={16} />
+            </span>
+          </a>
+        )}
 
-        <div className="overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-lg)]">
+        <div id="call-request" className="overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-lg)]">
           <div className="border-b border-[var(--border)] bg-[var(--bg-alt)] px-8 py-6 sm:px-12">
             <h2 className="font-display text-xl font-medium text-[var(--fg)]">
               {t("orRequestTitle")}

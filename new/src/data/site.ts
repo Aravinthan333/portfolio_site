@@ -17,6 +17,7 @@ export const SITE = {
   email: "aravinthanbaalaji@gmail.com",
   linkedIn: "https://www.linkedin.com/in/aravinthanbalaji/",
   github: "https://github.com/Aravinthan333",
+  /** Legacy profile field retained for existing database compatibility. */
   calendly: "https://calendly.com/aravinthanbalaji",
   /** Drop the PDF at `public/resume.pdf` when ready. */
   resume: "/resume.pdf",

@@ -26,7 +26,7 @@
     "learnMore": "Learn more",
     "hireMe": "Hire Me",
     "bookCall": "Book a call",
-    "openCalendly": "Or open Calendly",
+    "openGoogleCalendar": "Or open Google Calendar",
     "skipToContent": "Skip to content",
     "copyright": "© {year} {name}. Software engineer available for remote freelance and contract work.",
     "downloadResume": "Download resume"
@@ -185,13 +185,13 @@
     "bookCall": {
       "label": "Book a call",
       "title": "Schedule a conversation",
-      "subtitle": "Request a call or book instantly on Calendly.",
+      "subtitle": "Request a call or choose a time in Google Calendar.",
       "fastestPath": "Fastest path",
-      "bookInstantlyTitle": "Book instantly on Calendly",
-      "bookInstantlyBody": "Pick a time that works - confirmation is immediate.",
+      "bookInstantlyTitle": "Schedule with Google Calendar",
+      "bookInstantlyBody": "Choose an available time and receive a Google Meet invitation automatically.",
       "orRequestTitle": "Or request a call",
       "orRequestBody": "Leave your preferred slot and I'll confirm.",
-      "openCalendlyBtn": "Open Calendly"
+      "openGoogleCalendarBtn": "Open Google Calendar"
     },
     "serviceDetail": {
       "hireCtaTitle": "Ready to hire for {service}?",
@@ -295,7 +295,7 @@
     "faqDescription": "Common questions about hiring Aravinthan Balaji for freelance projects, remote delivery, timelines, and engagement types.",
     "contactTitle": "Hire Me - Contact",
     "contactDescription": "Hire Aravinthan Balaji for freelance web, e-commerce, API, and cloud engineering. Send a project brief and get a response within 24 hours.",
-    "bookCallDescription": "Request a call with Aravinthan Balaji or book instantly on Calendly - discuss freelance projects, architecture, and delivery.",
+    "bookCallDescription": "Request a call with Aravinthan Balaji or schedule through Google Calendar - discuss freelance projects, architecture, and delivery.",
     "softwareEngineering": "Software Engineering"
   },
   "projectLabels": {

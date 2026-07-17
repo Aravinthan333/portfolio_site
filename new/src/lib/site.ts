@@ -22,5 +22,5 @@ export const getLinkedIn = (): string =>
 export const getGitHub = (): string =>
   process.env.NEXT_PUBLIC_GITHUB ?? SITE_DATA.github;
 
-export const getCalendly = (): string =>
-  process.env.NEXT_PUBLIC_CALENDLY ?? SITE_DATA.calendly;
+export const getGoogleCalendar = (): string =>
+  process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_URL?.trim() || "/book-call";

@@ -1,7 +1,7 @@
 "use client";
 
 import { Calendar } from "lucide-react";
-import { SITE } from "@/data/site";
+import { getGoogleCalendar } from "@/lib/site";
 
 type Props = {
   label: string;
@@ -14,11 +14,13 @@ export function BookCallButton({
   className = "btn-primary",
   iconSize = 16,
 }: Props) {
+  const googleCalendarUrl = getGoogleCalendar();
+
   return (
     <a
-      href={SITE.calendly}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={googleCalendarUrl}
+      target={googleCalendarUrl.startsWith("http") ? "_blank" : undefined}
+      rel={googleCalendarUrl.startsWith("http") ? "noopener noreferrer" : undefined}
       className={className}
     >
       <Calendar size={iconSize} strokeWidth={2} />
