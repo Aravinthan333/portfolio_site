@@ -96,7 +96,8 @@ if [ -f "$SERVICE_SRC" ]; then
     -e "s|Group=ec2-user|Group=$APP_USER|g" \
     "$SERVICE_SRC" | sudo tee /etc/systemd/system/portfolio-new.service >/dev/null
   sudo systemctl daemon-reload
-  sudo systemctl enable --now portfolio-new
+  sudo systemctl enable portfolio-new
+  sudo systemctl restart portfolio-new
   sudo systemctl --no-pager --full status portfolio-new || true
 else
   echo "Missing $SERVICE_SRC - start manually with: sudo -u $APP_USER bash -lc 'cd $APP_DIR && npm start'"
