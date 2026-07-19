@@ -96,13 +96,13 @@ function ProjectCardContent({
 
       <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,23,42,0.94)] via-[rgba(15,23,42,0.18)] to-[rgba(15,23,42,0.08)] transition-colors duration-300 group-hover:from-[rgba(15,23,42,0.98)] group-hover:via-[rgba(15,23,42,0.55)]" />
 
-      <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-3 p-4 sm:p-5">
-        <span className="rounded-full border border-white/20 bg-[rgba(15,23,42,0.38)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-md">
+      <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-2 p-4 sm:gap-3 sm:p-5">
+        <span className="shrink-0 rounded-full border border-white/20 bg-[rgba(15,23,42,0.38)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-md">
           {project.year}
         </span>
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/90 px-3 py-1.5 text-xs font-semibold text-[var(--blue-700)] shadow-[var(--shadow-sm)] backdrop-blur-md">
-          {actionLabel}
-          <ArrowUpRight size={13} aria-hidden />
+        <span className="inline-flex max-w-[min(100%,11rem)] items-center gap-1.5 truncate rounded-full border border-white/25 bg-white/90 px-2.5 py-1.5 text-[11px] font-semibold text-[var(--blue-700)] shadow-[var(--shadow-sm)] backdrop-blur-md sm:max-w-none sm:px-3 sm:text-xs">
+          <span className="truncate">{actionLabel}</span>
+          <ArrowUpRight size={13} className="shrink-0" aria-hidden />
         </span>
       </div>
 
@@ -113,7 +113,7 @@ function ProjectCardContent({
         <h2 className="font-display mt-1.5 text-2xl font-semibold leading-[1.08] tracking-tight sm:text-[1.7rem]">
           {project.title}
         </h2>
-        <p className="max-h-0 overflow-hidden text-sm leading-relaxed text-white/85 opacity-0 transition-all duration-300 group-hover:mt-3 group-hover:max-h-24 group-hover:opacity-100 group-focus-visible:mt-3 group-focus-visible:max-h-24 group-focus-visible:opacity-100">
+        <p className="mt-3 max-h-24 overflow-hidden text-sm leading-relaxed text-white/85 opacity-100 transition-all duration-300 md:mt-0 md:max-h-0 md:opacity-0 md:group-hover:mt-3 md:group-hover:max-h-24 md:group-hover:opacity-100 md:group-focus-visible:mt-3 md:group-focus-visible:max-h-24 md:group-focus-visible:opacity-100">
           {project.description}
         </p>
       </div>

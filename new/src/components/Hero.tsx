@@ -27,7 +27,7 @@ export function Hero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="relative flex min-h-[calc(100svh-4rem)] items-center overflow-hidden py-16 sm:py-20 lg:py-24">
+    <section className="relative flex min-h-[calc(100svh-4rem)] items-center overflow-hidden pt-[calc(4rem+env(safe-area-inset-top))] pb-16 sm:pt-[calc(5rem+env(safe-area-inset-top))] sm:pb-20 lg:pt-24 lg:pb-24">
       <AtmosphereBg variant="hero" />
 
       <div className="section-wrap relative w-full">

@@ -485,10 +485,16 @@ body {
   border: 1px solid var(--border);
   background: var(--grey-100);
   padding: 0.75rem 1rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--fg);
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .input-field {
+    font-size: 0.875rem;
+  }
 }
 
 .input-field::placeholder {
@@ -511,7 +517,7 @@ body {
   border: 1px solid var(--border);
   background: var(--grey-100);
   padding: 0.75rem 1rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.25rem;
   color: var(--fg-subtle);
   outline: none;
@@ -519,6 +525,12 @@ body {
     border-color 0.2s ease,
     box-shadow 0.2s ease,
     background 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .themed-select-trigger {
+    font-size: 0.875rem;
+  }
 }
 
 .themed-select-trigger.has-value {

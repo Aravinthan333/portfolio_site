@@ -29,8 +29,8 @@ export function Footer() {
         }}
       />
 
-      <div className="relative px-3 py-7 sm:px-5 sm:py-8 md:px-6 lg:px-8">
-        <div className="mx-auto flex w-full max-w-[96rem] flex-col items-center justify-between gap-5 rounded-full border border-[rgba(59,130,246,0.18)] bg-white/85 px-6 py-5 shadow-[var(--shadow-sm)] backdrop-blur-sm sm:flex-row sm:gap-8 sm:px-10 sm:py-6 md:px-12 lg:px-14 xl:px-16">
+      <div className="relative px-3 py-7 pb-[calc(1.75rem+env(safe-area-inset-bottom))] sm:px-5 sm:py-8 md:px-6 lg:px-8">
+        <div className="mx-auto flex w-full max-w-[96rem] flex-col items-center justify-between gap-5 rounded-3xl border border-[rgba(59,130,246,0.18)] bg-white/85 px-5 py-5 shadow-[var(--shadow-sm)] backdrop-blur-sm sm:flex-row sm:gap-8 sm:rounded-[2rem] sm:px-10 sm:py-6 md:px-12 lg:rounded-full lg:px-14 xl:px-16">
           <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:items-center sm:gap-4 sm:text-left">
             <div>
               <div className="inline-flex items-center gap-2">

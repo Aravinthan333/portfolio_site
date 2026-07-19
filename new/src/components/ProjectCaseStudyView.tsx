@@ -179,7 +179,7 @@ export function ProjectCaseStudyView({ project, labels }: Props) {
                   </ul>
                 </section>
 
-                <div className="rounded-2xl border border-[var(--blue-200)] bg-[var(--blue-50)] p-6 sm:p-8">
+                <div className="rounded-2xl border border-[var(--blue-200)] bg-[var(--blue-50)] p-4 sm:p-6 md:p-8">
                   <p className="text-xs font-semibold uppercase tracking-wider text-[var(--blue-600)]">
                     {labels.outcome}
                   </p>
@@ -206,19 +206,19 @@ export function ProjectCaseStudyView({ project, labels }: Props) {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-8 flex w-full flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
               {project.liveUrl && (
                 <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-secondary"
+                  className="btn-secondary w-full justify-center sm:w-auto"
                 >
                   <ExternalLink size={16} />
                   {labels.visitLive}
                 </a>
               )}
-              <Link href="/contact" className="btn-primary">
+              <Link href="/contact" className="btn-primary w-full justify-center sm:w-auto">
                 {labels.discussSimilar}
                 <ArrowUpRight size={16} />
               </Link>

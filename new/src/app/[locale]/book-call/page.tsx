@@ -56,7 +56,7 @@ export default async function BookCallPage({ params }: Props) {
             href={googleCalendarUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mb-10 flex flex-col items-center gap-4 rounded-3xl border border-[var(--green-200)] bg-gradient-to-br from-[var(--green-50)] via-[var(--surface)] to-[var(--blue-50)] p-8 text-center shadow-[var(--shadow-md)] transition-shadow hover:shadow-[var(--shadow-lg)] sm:flex-row sm:justify-between sm:p-10 sm:text-left"
+            className="mb-10 flex flex-col items-center gap-4 rounded-3xl border border-[var(--green-200)] bg-gradient-to-br from-[var(--green-50)] via-[var(--surface)] to-[var(--blue-50)] p-5 text-center shadow-[var(--shadow-md)] transition-shadow hover:shadow-[var(--shadow-lg)] sm:flex-row sm:justify-between sm:p-10 sm:text-left"
           >
             <div>
               <p className="section-label">{t("fastestPath")}</p>
@@ -65,7 +65,7 @@ export default async function BookCallPage({ params }: Props) {
               </h2>
               <p className="mt-2 text-sm text-[var(--fg-muted)]">{t("bookInstantlyBody")}</p>
             </div>
-            <span className="btn-primary shrink-0">
+            <span className="btn-primary w-full shrink-0 justify-center sm:w-auto">
               <Calendar size={16} />
               {t("openGoogleCalendarBtn")}
               <ArrowUpRight size={16} />
@@ -74,13 +74,13 @@ export default async function BookCallPage({ params }: Props) {
         )}
 
         <div id="call-request" className="overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-lg)]">
-          <div className="border-b border-[var(--border)] bg-[var(--bg-alt)] px-8 py-6 sm:px-12">
+          <div className="border-b border-[var(--border)] bg-[var(--bg-alt)] px-5 py-5 sm:px-12 sm:py-6">
             <h2 className="font-display text-xl font-medium text-[var(--fg)]">
               {t("orRequestTitle")}
             </h2>
             <p className="mt-1 text-sm text-[var(--fg-muted)]">{t("orRequestBody")}</p>
           </div>
-          <div className="p-8 sm:p-12">
+          <div className="p-5 sm:p-12">
             <CallRequestForm />
           </div>
         </div>

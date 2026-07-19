@@ -40,7 +40,7 @@ export function LanguageSwitcher({ compact = false }: { compact?: boolean }) {
         title={localeNames[locale]}
         className={`inline-flex items-center justify-center transition-colors active:scale-95 ${
           compact
-            ? "h-10 w-10 rounded-xl text-[var(--fg-muted)] hover:bg-[var(--blue-50)] hover:text-[var(--blue-600)]"
+            ? "h-8 w-8 rounded-xl text-[var(--fg-muted)] hover:bg-[var(--blue-50)] hover:text-[var(--blue-600)]"
             : "h-10 w-10 rounded-xl border border-[rgba(15,23,42,0.08)] bg-white/80 text-[var(--fg-muted)] shadow-[var(--shadow-sm)] hover:border-[var(--blue-200)] hover:bg-[var(--blue-50)] hover:text-[var(--blue-600)]"
         }`}
       >

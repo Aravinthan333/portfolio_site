@@ -51,14 +51,14 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 right-0 left-0 z-50 w-full border-b border-t-0 border-[rgba(15,23,42,0.08)] rounded-b-2xl backdrop-blur-xl transition-all duration-500 ${
+        className={`fixed top-0 right-0 left-0 z-50 w-full border-b border-t-0 border-[rgba(15,23,42,0.08)] rounded-b-2xl pt-[env(safe-area-inset-top)] backdrop-blur-xl transition-all duration-500 ${
           scrolled || menuOpen
             ? "bg-white/95 shadow-[var(--shadow-md)]"
             : "bg-white/80 shadow-[var(--shadow-sm)]"
         }`}
       >
-        <div className="section-wrap flex items-center justify-between gap-2 !py-2 sm:gap-3 sm:!py-2.5">
-          <Link href="/" className="group flex shrink-0 items-center gap-1.5 overflow-visible sm:gap-2">
+        <div className="section-wrap flex h-14 items-center justify-between gap-2 !py-0 sm:h-16 sm:gap-3">
+          <Link href="/" className="group flex min-w-0 flex-1 items-center gap-1.5 overflow-visible sm:gap-2 sm:flex-none">
             <span className="-ml-1 relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--blue-600)] shadow-[var(--shadow-sm)] transition-shadow duration-300 group-hover:shadow-[0_0_0_3px_rgba(37,99,235,0.18),0_8px_20px_-6px_rgba(37,99,235,0.55)] sm:-ml-1.5 sm:h-9 sm:w-9">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ export function Header() {
               </svg>
             </span>
             <span
-              className="font-script inline-block overflow-visible px-1 pt-1.5 pb-0.5 text-xl font-semibold leading-[1.3] tracking-normal text-[var(--fg)] normal-case transition-[text-shadow] duration-300 group-hover:[text-shadow:0_4px_14px_rgba(37,99,235,0.45)] sm:text-[1.4rem] md:text-[1.6rem]"
+              className="font-script inline-block overflow-visible px-1 pt-1.5 pb-0.5 text-[1.15rem] font-semibold leading-[1.3] tracking-normal text-[var(--fg)] normal-case transition-[text-shadow] duration-300 group-hover:[text-shadow:0_4px_14px_rgba(37,99,235,0.45)] sm:text-[1.4rem] md:text-[1.6rem]"
               aria-label="Aravinthan B"
             >
               <span className="inline-block text-[1.35em] font-bold text-[var(--blue-600)]">
@@ -92,7 +92,7 @@ export function Header() {
                 B
               </span>
             </span>
-            <span className="ml-0.5 hidden items-center gap-1.5 rounded-full border border-emerald-600/20 bg-emerald-50 px-2.5 py-0.5 text-[11px] font-semibold tracking-wide text-emerald-700 uppercase md:inline-flex md:ml-1.5">
+            <span className="ml-0.5 hidden items-center gap-1.5 rounded-full border border-emerald-600/20 bg-emerald-50 px-2.5 py-0.5 text-[11px] font-semibold tracking-wide text-emerald-700 uppercase lg:inline-flex lg:ml-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
               {t("online")}
             </span>
@@ -126,14 +126,14 @@ export function Header() {
               label={t("downloadResume")}
               iconOnly
               iconSize={16}
-              className="inline-flex h-8 w-8 items-center justify-center rounded-xl border border-[rgba(15,23,42,0.08)] bg-white/80 text-[var(--fg-muted)] shadow-[var(--shadow-sm)] transition-colors hover:border-[var(--blue-200)] hover:bg-[var(--blue-50)] hover:text-[var(--blue-600)] md:hidden"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-xl border border-[rgba(15,23,42,0.08)] bg-white/80 text-[var(--fg-muted)] shadow-[var(--shadow-sm)] transition-colors hover:border-[var(--blue-200)] hover:bg-[var(--blue-50)] hover:text-[var(--blue-600)] lg:hidden"
             />
             <ResumeDownloadButton
               label={t("downloadResume")}
-              className="btn-secondary !hidden !px-3 !py-1.5 !text-xs md:!inline-flex lg:!px-4 lg:!py-2 lg:!text-sm"
+              className="btn-secondary !hidden !px-3 !py-1.5 !text-xs lg:!inline-flex lg:!px-4 lg:!py-2 lg:!text-sm"
               iconSize={15}
             />
-            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="hidden sm:block">
+            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="hidden lg:block">
               <Link
                 href="/contact"
                 className="btn-primary !px-3 !py-1.5 !text-xs lg:!px-5 lg:!py-2 lg:!text-sm"
@@ -165,7 +165,7 @@ export function Header() {
 
       <nav
         id="mobile-nav"
-        className={`fixed top-14 right-0 left-0 z-40 max-h-[calc(100svh-3.5rem)] overflow-y-auto border-b border-[rgba(15,23,42,0.08)] bg-white/98 px-4 py-4 shadow-[var(--shadow-lg)] backdrop-blur-xl transition-all duration-300 lg:hidden ${
+        className={`fixed top-[calc(3.5rem+env(safe-area-inset-top))] right-0 left-0 z-40 max-h-[calc(100svh-3.5rem-env(safe-area-inset-top))] overflow-y-auto border-b border-[rgba(15,23,42,0.08)] bg-white/98 px-4 py-4 shadow-[var(--shadow-lg)] backdrop-blur-xl transition-all duration-300 sm:top-[calc(4rem+env(safe-area-inset-top))] sm:max-h-[calc(100svh-4rem-env(safe-area-inset-top))] lg:hidden ${
           menuOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0 pointer-events-none"
         }`}
         aria-label={tA11y("primaryNav")}
@@ -186,7 +186,7 @@ export function Header() {
             );
           })}
         </ul>
-        <div className="mt-4 space-y-2 border-t border-[rgba(15,23,42,0.06)] pt-4 sm:hidden">
+        <div className="mt-4 space-y-2 border-t border-[rgba(15,23,42,0.06)] pt-4 lg:hidden">
           <ResumeDownloadButton
             label={t("downloadResume")}
             className="btn-secondary w-full justify-center !text-sm"

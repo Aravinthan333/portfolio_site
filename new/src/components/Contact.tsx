@@ -50,17 +50,17 @@ export function Contact() {
                 </a>
               </div>
 
-              <div className="flex flex-col gap-3 sm:flex-row sm:justify-center lg:flex-col lg:items-stretch">
+              <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:justify-center lg:w-auto lg:flex-col lg:items-stretch">
                 <Link
                   href="/contact"
-                  className="inline-flex min-w-44 items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[var(--blue-700)] shadow-[var(--shadow-md)] transition-transform hover:-translate-y-0.5"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[var(--blue-700)] shadow-[var(--shadow-md)] transition-transform hover:-translate-y-0.5 sm:min-w-44 sm:w-auto"
                 >
                   {tCommon("hireMe")}
                   <ArrowUpRight size={16} aria-hidden />
                 </Link>
                 <BookCallButton
                   label={tHero("bookCall")}
-                  className="inline-flex min-w-44 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/20"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/20 sm:min-w-44 sm:w-auto"
                 />
               </div>
             </div>

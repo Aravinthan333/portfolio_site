@@ -42,17 +42,25 @@ export function HireCta({ title, description, className = "", compact = false }:
         >
           {description ?? t("description")}
         </p>
-        <div className={`flex flex-wrap items-center justify-center gap-2.5 ${compact ? "mt-5" : "mt-8 gap-3"}`}>
+        <div className={`flex flex-col items-stretch gap-2.5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center ${compact ? "mt-5" : "mt-8 sm:gap-3"}`}>
           <Link
             href="/contact"
-            className={compact ? "btn-primary !px-4 !py-2 !text-xs sm:!text-sm" : "btn-primary"}
+            className={
+              compact
+                ? "btn-primary w-full justify-center !px-4 !py-2.5 !text-sm sm:w-auto"
+                : "btn-primary w-full justify-center sm:w-auto"
+            }
           >
             {tCommon("hireMe")}
             <ArrowUpRight size={compact ? 14 : 16} />
           </Link>
           <BookCallButton
             label={tCommon("bookCall")}
-            className={compact ? "btn-secondary !px-4 !py-2 !text-xs sm:!text-sm" : "btn-secondary"}
+            className={
+              compact
+                ? "btn-secondary w-full justify-center !px-4 !py-2.5 !text-sm sm:w-auto"
+                : "btn-secondary w-full justify-center sm:w-auto"
+            }
             iconSize={compact ? 14 : 16}
           />
         </div>

@@ -80,16 +80,16 @@ export function HomeExplore({ projects, services, posts }: Props) {
         <div className="mt-10 grid gap-4 lg:mt-14 lg:grid-cols-12">
           <ScrollReveal className="lg:col-span-7">
             <article className="h-full overflow-hidden rounded-[1.75rem] border border-[rgba(15,23,42,0.07)] bg-white p-5 shadow-[var(--shadow-md)] sm:p-7">
-              <div className="mb-5 flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--blue-50)] text-[var(--blue-600)]">
+              <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                <div className="flex min-w-0 items-center gap-3">
+                  <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--blue-50)] text-[var(--blue-600)]">
                     <BriefcaseBusiness size={19} aria-hidden />
                   </span>
                   <h3 className="font-display text-xl font-semibold text-[var(--fg)] sm:text-2xl">
                     {t("workTitle")}
                   </h3>
                 </div>
-                <Link href="/projects" className={gatewayClass}>
+                <Link href="/projects" className={`${gatewayClass} self-start sm:self-auto`}>
                   {t("viewAllWork")}
                   <ArrowRight size={15} aria-hidden />
                 </Link>
@@ -173,16 +173,16 @@ export function HomeExplore({ projects, services, posts }: Props) {
 
           <ScrollReveal delay={0.08} className="lg:col-span-8">
             <article className="h-full rounded-[1.75rem] border border-[rgba(15,23,42,0.07)] bg-white p-5 shadow-[var(--shadow-md)] sm:p-7">
-              <div className="mb-5 flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--blue-50)] text-[var(--blue-600)]">
+              <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                <div className="flex min-w-0 items-center gap-3">
+                  <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--blue-50)] text-[var(--blue-600)]">
                     <BookOpenText size={19} aria-hidden />
                   </span>
                   <h3 className="font-display text-xl font-semibold text-[var(--fg)] sm:text-2xl">
                     {t("writingTitle")}
                   </h3>
                 </div>
-                <Link href="/blog" className={gatewayClass}>
+                <Link href="/blog" className={`${gatewayClass} self-start sm:self-auto`}>
                   {t("viewAllPosts")}
                   <ArrowRight size={15} aria-hidden />
                 </Link>
@@ -194,7 +194,7 @@ export function HomeExplore({ projects, services, posts }: Props) {
                     <Link
                       key={post.slug}
                       href={`/blog/${post.slug}`}
-                      className="group/post flex min-w-0 gap-4 rounded-2xl border border-[rgba(15,23,42,0.06)] bg-[var(--grey-100)]/55 p-3 transition-colors hover:border-[var(--blue-200)] hover:bg-[var(--blue-50)]"
+                      className="group/post flex min-w-0 gap-3 rounded-2xl border border-[rgba(15,23,42,0.06)] bg-[var(--grey-100)]/55 p-3 transition-colors hover:border-[var(--blue-200)] hover:bg-[var(--blue-50)] sm:gap-4"
                     >
                       <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-gradient-to-br from-[var(--blue-100)] to-white">
                         {post.coverImage ? (
@@ -284,11 +284,11 @@ function ProjectContent({
         unoptimized={project.image.startsWith("/uploads/")}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,23,42,0.92)] via-[rgba(15,23,42,0.12)] to-transparent" />
-      <div className="absolute inset-x-0 top-0 flex justify-between gap-2 p-3">
-        <span className="rounded-full bg-[rgba(15,23,42,0.42)] px-2.5 py-1 text-[10px] font-semibold text-white backdrop-blur">
+      <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-2 p-3">
+        <span className="max-w-[45%] shrink-0 truncate rounded-full bg-[rgba(15,23,42,0.42)] px-2.5 py-1 text-[10px] font-semibold text-white backdrop-blur">
           {project.year}
         </span>
-        <span className="rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-semibold text-[var(--blue-700)]">
+        <span className="max-w-[55%] truncate rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-semibold text-[var(--blue-700)]">
           {actionLabel}
         </span>
       </div>

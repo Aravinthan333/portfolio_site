@@ -105,21 +105,21 @@ export function ServiceDetailView({ service, labels }: Props) {
           <ScrollReveal delay={0.1}>
             <div className="relative mt-6 overflow-hidden rounded-xl border border-[rgba(59,130,246,0.18)] bg-white/70 shadow-[var(--shadow-md)] sm:mt-8">
               <AtmosphereBg variant="cta" />
-              <div className="relative flex flex-col items-stretch justify-center gap-3 px-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:py-7">
+              <div className="relative flex flex-col items-stretch justify-center gap-3 px-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:py-7">
                 <p className="text-center text-sm leading-relaxed text-[var(--fg-muted)] sm:text-left sm:text-[0.9375rem]">
                   {labels.nextStepsHint}
                 </p>
-                <div className="flex flex-col gap-2 sm:flex-row sm:shrink-0">
+                <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:shrink-0">
                   <Link
                     href="/contact"
-                    className="btn-primary inline-flex justify-center !px-4 !py-2.5 !text-sm"
+                    className="btn-primary inline-flex w-full justify-center !px-4 !py-2.5 !text-sm sm:w-auto"
                   >
                     {labels.contact}
                     <ArrowUpRight size={15} aria-hidden />
                   </Link>
                   <BookCallButton
                     label={labels.bookCall}
-                    className="btn-secondary inline-flex justify-center !px-4 !py-2.5 !text-sm"
+                    className="btn-secondary inline-flex w-full justify-center !px-4 !py-2.5 !text-sm sm:w-auto"
                     iconSize={15}
                   />
                 </div>
