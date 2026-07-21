@@ -18,7 +18,13 @@ export function ResumeDownloadButton({
   iconOnly = false,
 }: Props) {
   return (
-    <a href={SITE.resume} download className={className} aria-label={label} title={label}>
+    <a
+      href={SITE.resume}
+      download={SITE.resumeDownloadName}
+      className={className}
+      aria-label={label}
+      title={label}
+    >
       <Download size={iconSize} strokeWidth={2} />
       {iconOnly ? <span className="sr-only">{label}</span> : label}
     </a>
